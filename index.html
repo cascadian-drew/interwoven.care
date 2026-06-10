@@ -183,6 +183,10 @@
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    @media (min-width: 881px) and (max-width: 1080px) {
+      .nav-links { gap: 1.05rem; }
+    }
+
     @media (max-width: 880px) {
       .nav-toggle { display: block; }
 
@@ -435,6 +439,94 @@
       color: rgba(43, 43, 43, 0.72);
     }
 
+    /* ---------- About ---------- */
+
+    .about-grid {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: minmax(210px, 270px) 1fr;
+      gap: clamp(1.6rem, 4vw, 2.8rem);
+      align-items: center;
+    }
+
+    .about-grid > div p:first-child { margin-top: 0; }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      border-radius: 999px 999px 18px 18px;
+      overflow: hidden;
+      border: 1px solid rgba(43, 43, 43, 0.08);
+      background:
+        radial-gradient(120% 90% at 50% 0%, rgba(63, 167, 163, 0.16), transparent 70%),
+        linear-gradient(180deg, rgba(217, 162, 27, 0.13), rgba(122, 150, 43, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portrait .knot-placeholder { width: 64px; opacity: 0.8; }
+
+    .portrait .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 719px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .portrait { width: min(62vw, 240px); margin: 0 auto; }
+    }
+
+    /* ---------- Kind Words ---------- */
+
+    #kind-words { background: rgba(217, 162, 27, 0.07); }
+
+    .quotes {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .quote-card {
+      position: relative;
+      margin: 0;
+      background: #FFFDF9;
+      border: 1px solid rgba(43, 43, 43, 0.07);
+      border-radius: 14px;
+      padding: 2rem 1.4rem 1.4rem;
+      box-shadow: 0 3px 14px rgba(43, 43, 43, 0.05);
+    }
+
+    .quote-card::before {
+      content: "\201C";
+      position: absolute;
+      top: 0.35rem;
+      left: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--ochre);
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      font-style: italic;
+      font-size: 0.99rem;
+      line-height: 1.65;
+      color: rgba(43, 43, 43, 0.85);
+    }
+
+    .quote-card blockquote p { margin: 0; }
+
+    .quote-card figcaption {
+      margin-top: 0.85rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--plum);
+    }
+
     /* ---------- FAQs ---------- */
 
     .faq-list { margin-top: 1.4rem; }
@@ -569,6 +661,7 @@
         <a href="#about">About Us</a>
         <a href="#philosophy">Our Philosophy</a>
         <a href="#offerings">Our Offerings</a>
+        <a href="#kind-words">Kind Words</a>
         <a href="#faqs">FAQs</a>
         <a class="nav-cta" href="#book">Book a Conversation</a>
       </div>
@@ -585,7 +678,7 @@
       <p class="sub rise d3">Adaptive in-home family support in Tacoma, Washington.</p>
       <div class="hero-actions rise d4">
         <a class="btn btn-primary" href="#book">Book a conversation</a>
-        <a class="btn btn-ghost" href="#offerings">Our offerings</a>
+        <a class="btn btn-ghost" href="#about">Learn more</a>
       </div>
     </section>
 
@@ -595,9 +688,18 @@
       <div class="wrap" data-reveal>
         <p class="eyebrow">About Us</p>
         <h2>Care that begins with relationship</h2>
-        <!-- Bri: your story here — background, family, what led you to this work. A photo would sit beautifully beside this text. -->
-        <p>Interwoven Family Care was founded by Bri in Tacoma, Washington, out of a simple conviction: children flourish when their whole family is supported. Rather than dropping care into a household like a service call, we weave into the life that's already there — your rhythms, your values, your way of doing things.</p>
-        <p>Every engagement starts with listening. Before we ever pick up a thread, we get to know your family's particular weave: what's working, what's strained, and where a steady hand would help most.</p>
+        <div class="about-grid">
+          <!-- Drew: when you have Bri's photo, drop it in assets/ and replace the placeholder div's
+               contents with:  <img class="photo" src="assets/bri.jpg" alt="Bri, founder of Interwoven Family Care">  -->
+          <div class="portrait">
+            <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
+          </div>
+          <div>
+            <!-- Bri: your story here — background, family, what led you to this work. -->
+            <p>Interwoven Family Care was founded by Bri in Tacoma, Washington, out of a simple conviction: children flourish when their whole family is supported. Rather than dropping care into a household like a service call, we weave into the life that's already there — your rhythms, your values, your way of doing things.</p>
+            <p>Every engagement starts with listening. Before we ever pick up a thread, we get to know your family's particular weave: what's working, what's strained, and where a steady hand would help most.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -647,6 +749,36 @@
           </div>
         </div>
         <p class="tailored">Every family's weave is different — offerings are tailored together, in conversation.</p>
+      </div>
+    </section>
+
+    <section class="section" id="kind-words">
+      <div class="wrap-wide" data-reveal>
+        <p class="eyebrow">Kind Words</p>
+        <h2>What families say</h2>
+        <div class="quotes">
+          <!-- PLACEHOLDER QUOTES — do not ship these! Bri: paste in real testimonials
+               (first names / initials only, with each family's permission). -->
+          <figure class="quote-card">
+            <blockquote>
+              <p>Bri doesn't just watch our kids — she sees them. Within a week she knew their rhythms better than most of our family does.</p>
+            </blockquote>
+            <figcaption>— A Tacoma family (placeholder)</figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>
+              <p>The first time we came home to a calm house, a fed toddler, and a finished bedtime routine, I nearly cried.</p>
+            </blockquote>
+            <figcaption>— A Tacoma family (placeholder)</figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>
+              <p>Our daughter asks when Bri is coming back roughly five minutes after she leaves.</p>
+            </blockquote>
+            <figcaption>— A Tacoma family (placeholder)</figcaption>
+          </figure>
+        </div>
+        <p class="tailored">Have kind words of your own? We'd love to weave them in — <a href="mailto:bri@interwoven.care">bri@interwoven.care</a>.</p>
       </div>
     </section>
 
@@ -734,14 +866,14 @@
 
     const spotter = new IntersectionObserver(entries => {
       entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        sectionLinks.forEach(a => a.classList.remove('active'));
         const link = sectionLinks.get(e.target.id);
-        if (link && e.isIntersecting) {
-          sectionLinks.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
+        if (link) link.classList.add('active');
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
 
+    spotter.observe(document.getElementById('top'));
     sectionLinks.forEach((a, id) => {
       const sec = document.getElementById(id);
       if (sec) spotter.observe(sec);
