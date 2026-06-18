@@ -24,9 +24,11 @@
   <style>
     :root {
       --teal:   #3FA7A3;
+      --deep-teal: #379793;
       --moss:   #7A962B;
       --copper: #D96A1D;
       --ochre:  #D9A21B;
+      --gold:   #B88A2A;
       --plum:   #7A2E4F;
       --ivory:  #F6F3EE;
       --ink:    #2B2B2B;
@@ -419,8 +421,20 @@
       box-shadow: 0 3px 14px rgba(43, 43, 43, 0.05);
     }
 
-    .cards .card:nth-child(2) { border-top-color: var(--moss); }
-    .cards .card:nth-child(3) { border-top-color: var(--copper); }
+    .cards .card {
+      border-top-color: transparent;
+      background:
+        linear-gradient(#FFFDF9, #FFFDF9) padding-box,
+        var(--card-accent, linear-gradient(90deg, var(--teal), var(--teal))) border-box;
+      border-top-width: 4px;
+    }
+
+    .cards .card:nth-child(1) { --card-accent: linear-gradient(90deg, rgba(92, 32, 58, 0.82) 0%, rgba(155, 69, 105, 0.76) 34%, rgba(216, 154, 179, 0.68) 50%, rgba(122, 46, 79, 0.8) 72%, rgba(75, 24, 48, 0.82) 100%); }
+    .cards .card:nth-child(2) { --card-accent: linear-gradient(90deg, rgba(39, 126, 123, 0.82) 0%, rgba(90, 188, 184, 0.76) 34%, rgba(182, 236, 233, 0.68) 50%, rgba(63, 167, 163, 0.8) 72%, rgba(31, 102, 99, 0.82) 100%); }
+    .cards .card:nth-child(3) { --card-accent: linear-gradient(90deg, rgba(155, 113, 20, 0.82) 0%, rgba(226, 180, 59, 0.76) 34%, rgba(248, 222, 123, 0.68) 50%, rgba(217, 162, 27, 0.8) 72%, rgba(125, 90, 18, 0.82) 100%); }
+    .cards .card:nth-child(4) { --card-accent: linear-gradient(90deg, rgba(163, 71, 18, 0.82) 0%, rgba(228, 122, 45, 0.76) 34%, rgba(243, 178, 125, 0.68) 50%, rgba(217, 106, 29, 0.8) 72%, rgba(127, 50, 12, 0.82) 100%); }
+    .cards .card:nth-child(5) { --card-accent: linear-gradient(90deg, rgba(143, 106, 30, 0.82) 0%, rgba(226, 193, 90, 0.76) 34%, rgba(255, 241, 168, 0.68) 50%, rgba(184, 138, 42, 0.8) 72%, rgba(125, 90, 24, 0.82) 100%); }
+    .cards .card:nth-child(6) { --card-accent: linear-gradient(90deg, rgba(89, 109, 30, 0.82) 0%, rgba(140, 170, 54, 0.76) 34%, rgba(214, 229, 138, 0.68) 50%, rgba(122, 150, 43, 0.8) 72%, rgba(63, 80, 19, 0.82) 100%); }
 
     .card h3 {
       margin: 0 0 0.55rem;
@@ -429,7 +443,8 @@
       font-size: 1.12rem;
     }
 
-    .card p { margin: 0; font-size: 0.97rem; line-height: 1.65; color: rgba(43, 43, 43, 0.8); }
+    .card p { margin: 0 0 0.85rem; font-size: 0.97rem; line-height: 1.65; color: rgba(43, 43, 43, 0.8); }
+    .card p:last-child { margin-bottom: 0; }
 
     .tailored {
       margin: 2rem auto 0;
@@ -442,39 +457,48 @@
     /* ---------- About ---------- */
 
     .about-grid {
-      margin-top: 2.2rem;
+      margin-top: 1.2rem;
       display: grid;
-      grid-template-columns: minmax(210px, 270px) 1fr;
-      gap: clamp(1.6rem, 4vw, 2.8rem);
+      grid-template-columns: 1fr;
       align-items: center;
     }
 
     .about-grid > div p:first-child { margin-top: 0; }
+    .about-grid > div:last-child { max-width: 44rem; margin: 0 auto; }
+    .about-copy p { margin: 0 0 1.15rem; }
+    .about-copy p:last-child { margin-bottom: 0; }
 
-    .portrait {
-      aspect-ratio: 4 / 5;
-      border-radius: 999px 999px 18px 18px;
+    .section-mark {
+      width: 112px;
+      aspect-ratio: 1;
+      margin: 0 auto 1.6rem;
+      border-radius: 999px;
       overflow: hidden;
       border: 1px solid rgba(43, 43, 43, 0.08);
       background:
-        radial-gradient(120% 90% at 50% 0%, rgba(63, 167, 163, 0.16), transparent 70%),
-        linear-gradient(180deg, rgba(217, 162, 27, 0.13), rgba(122, 150, 43, 0.1));
+        radial-gradient(110% 90% at 50% 0%, rgba(63, 167, 163, 0.14), transparent 72%),
+        linear-gradient(180deg, rgba(217, 162, 27, 0.11), rgba(122, 150, 43, 0.08));
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .portrait .knot-placeholder { width: 64px; opacity: 0.8; }
+    .section-mark.between-sections { margin-top: 2.4rem; }
 
-    .portrait .photo {
+    .section-mark .knot-placeholder { width: 68px; opacity: 0.82; }
+
+    .section-mark .photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
+    #about-bri { padding-top: 0; }
+
     @media (max-width: 719px) {
       .about-grid { grid-template-columns: 1fr; }
-      .portrait { width: min(62vw, 240px); margin: 0 auto; }
+      .section-mark { width: 96px; margin: 0 auto 1.4rem; }
+      .section-mark.between-sections { margin-top: 2rem; }
     }
 
     /* ---------- Kind Words ---------- */
@@ -658,10 +682,10 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#about">About Us</a>
-        <a href="#philosophy">Our Philosophy</a>
-        <a href="#offerings">Our Offerings</a>
-        <a href="#kind-words">Kind Words</a>
+        <a href="#about">About IFC</a>
+        <a href="#about-bri">About the Founder</a>
+        <a href="#offerings">Offerings</a>
+        <a href="#philosophy">Philosophy</a>
         <a href="#faqs">FAQs</a>
         <a class="nav-cta" href="#book">Book a Conversation</a>
       </div>
@@ -682,29 +706,83 @@
       </div>
     </section>
 
-    <!-- DRAFT COPY: everything below is placeholder voice for Bri to rewrite or bless -->
-
     <section class="section" id="about">
       <div class="wrap" data-reveal>
-        <p class="eyebrow">About Us</p>
-        <h2>Care that begins with relationship</h2>
+        <div class="section-mark">
+          <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
+        </div>
+        <p class="eyebrow">About IFC</p>
+        <h2>Support that sees the whole family</h2>
         <div class="about-grid">
-          <!-- Drew: when you have Bri's photo, drop it in assets/ and replace the placeholder div's
-               contents with:  <img class="photo" src="assets/bri.jpg" alt="Bri, founder of Interwoven Family Care">  -->
-          <div class="portrait">
-            <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
+          <div class="about-copy">
+            <p>Interwoven Family Care was built by Brianna Waugh (Bri) after years of working directly with families and seeing proof of one simple truth: people do best when they are seen, understood, and supported as a whole.</p>
+            <p>Families flourish when they are supported as a whole. People flourish when they are understood.</p>
+            <p>Interwoven Family Care weaves into your life as it is: your rhythms, your values, your systems, your chaos, your calm. We trust you. We believe families should remain active participants in decisions that affect their lives. Your goals matter. Your values matter. Your voice matters.</p>
+            <p>Support works best when it is done with families, not to them or for them. Meaningful support begins with understanding.</p>
+            <p>Interwoven Family Care helps people build confidence in their own observations, decisions, and understanding of their families. We believe community care is self-care. Families become resources for one another, strengthening connection, belonging, and support throughout the community.</p>
+            <p>This work attracts all kinds of families who need individualized, practical support in their home and everyday life. We are for households that are overworked, overwhelmed, and then some.</p>
+            <p>Caregivers carry so much. Let Interwoven Family Care come alongside you and yours with practical, relationship-based support rooted in trust, respect, connection, and sustainability in your real life.</p>
           </div>
-          <div>
-            <!-- Bri: your story here — background, family, what led you to this work. -->
-            <p>Interwoven Family Care was founded by Bri in Tacoma, Washington, out of a simple conviction: children flourish when their whole family is supported. Rather than dropping care into a household like a service call, we weave into the life that's already there — your rhythms, your values, your way of doing things.</p>
-            <p>Much of our practice is with neurodivergent kids and kids with higher support needs — work Bri considers her calling, and the place her gift shows most. Kids tend to decide she's one of theirs within about a visit.</p>
-            <p>Every engagement starts with listening. Before we ever pick up a thread, we get to know your family's particular weave: what's working, what's strained, and where a steady hand would help most.</p>
-          </div>
+        </div>
+        <div class="section-mark between-sections">
+          <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
         </div>
       </div>
     </section>
 
+    <section class="section" id="about-bri">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">About the Founder</p>
+        <h2>Meeting People Where They Are</h2>
+        <p>I founded Interwoven Family Care after years of working alongside families in early childhood centers, in-home care, and community support.</p>
+        <p>My experience includes supporting families with a wide variety of needs. I understand there are many unique ways to move through the world.</p>
+        <p>More than anything, I believe people deserve to be approached with curiosity, respect, and understanding. I trust families know themselves better than anyone else.</p>
+        <p>I believe people deserve support for who they want to become while also being understood as they are. Optimism is my choice. I have seen real growth and lived it.</p>
+        <p>I believe meaningful support begins with understanding.</p>
+      </div>
+    </section>
+
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
+    <section class="section" id="offerings">
+      <div class="wrap-wide" data-reveal>
+        <p class="eyebrow">Offerings</p>
+        <h2>Practical Support for You and Yours</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Family Support</h3>
+            <p>Relationship-based care shaped for your family's unique needs, strengths, and goals.</p>
+            <p>Support may include caregiver support, childcare, problem-solving, emotional support, and having a trusted sounding board as you navigate everyday life.</p>
+          </div>
+          <div class="card">
+            <h3>Breathing Room</h3>
+            <p>Sometimes help is having another set of capable hands.</p>
+            <p>Practical support that helps reduce overwhelm, create capacity, and make space for your family to focus on what matters most.</p>
+          </div>
+          <div class="card">
+            <h3>Routines &amp; Transitions</h3>
+            <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
+            <p>Daily routines and transitions quietly shape the tone of an entire day. Support may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help your daily life feel steadier and more manageable.</p>
+          </div>
+          <div class="card">
+            <h3>Advocacy Support</h3>
+            <p>Navigating schools, providers, and systems while carrying the realities of family life is harder than it needs to be.</p>
+            <p>Advocacy includes meeting preparation, priority planning, and building confidence as you continue to advocate for yourself and your family.</p>
+          </div>
+          <div class="card">
+            <h3>Implementation &amp; Resources</h3>
+            <p>Turning ideas, resources, and recommendations from trusted professionals into practical next steps.</p>
+            <p>We will focus on solutions that fit your real life, capacity, and circumstances.</p>
+          </div>
+          <div class="card">
+            <h3>Environment Support</h3>
+            <p>Support shaping spaces indoors and out so daily life functions with less friction.</p>
+            <p>Support may include environments that encourage independence, regulation, and routines that make sense for the people who live there.</p>
+          </div>
+        </div>
+        <p class="tailored">Every family is different. Support is built around your needs, strengths, goals, and circumstances. If you don't see yourself reflected here, reach out anyway. Meaningful support begins with a conversation.</p>
+      </div>
+    </section>
 
     <section class="section" id="philosophy">
       <div class="wrap" data-reveal>
@@ -727,60 +805,6 @@
             <p>Trust comes first. Consistent faces, honest conversation, real connection.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="offerings">
-      <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Our Offerings</p>
-        <h2>Support shaped around your family</h2>
-        <div class="cards">
-          <!-- Bri: these three are placeholders — rename, reorder, add real offerings as you define them. -->
-          <div class="card">
-            <h3>In-home childcare</h3>
-            <p>Attentive, engaged, awesome care that meets your children where they are — in the comfort and rhythm of home.</p>
-          </div>
-          <div class="card">
-            <h3>Whole-family support</h3>
-            <p>Help with the routines, transitions, and load-bearing logistics that keep a household steady.</p>
-          </div>
-          <div class="card">
-            <h3>Neurodivergence-affirming care</h3>
-            <p>A majority of our practice is with neurodivergent kids and kids with higher support needs. We meet each kid where they are, build trust at their pace, and stay steady on the hard days.</p>
-          </div>
-        </div>
-        <p class="tailored">Every family's weave is different — every engagement is bespoke, shaped together in conversation. Don't see your situation above? Ask anyway — most of our favorite arrangements began as an "unusual" one.</p>
-      </div>
-    </section>
-
-    <section class="section" id="kind-words">
-      <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Kind Words</p>
-        <h2>What families say</h2>
-        <div class="quotes">
-          <!-- SAMPLE QUOTES, shipped deliberately labeled as samples while real testimonials
-               are collected. Bri: paste in the real ones (first names / initials only, with
-               each family's permission) and drop the "Sample quote" figcaptions. -->
-          <figure class="quote-card">
-            <blockquote>
-              <p>Bri doesn't just watch our kids — she sees them. Within a week she knew their rhythms better than most of our family does.</p>
-            </blockquote>
-            <figcaption>— Sample quote (real ones coming soon)</figcaption>
-          </figure>
-          <figure class="quote-card">
-            <blockquote>
-              <p>The first time we came home to a calm house, a fed toddler, and a finished bedtime routine, I nearly cried.</p>
-            </blockquote>
-            <figcaption>— Sample quote (real ones coming soon)</figcaption>
-          </figure>
-          <figure class="quote-card">
-            <blockquote>
-              <p>Our daughter asks when Bri is coming back roughly five minutes after she leaves.</p>
-            </blockquote>
-            <figcaption>— Sample quote (real ones coming soon)</figcaption>
-          </figure>
-        </div>
-        <p class="tailored">Have kind words of your own? We'd love to weave them in — <a href="mailto:bri@interwoven.care">bri@interwoven.care</a>.</p>
       </div>
     </section>
 
