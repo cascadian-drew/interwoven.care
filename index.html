@@ -372,9 +372,11 @@
 
     .values {
       margin-top: 2.5rem;
+      margin-left: calc((44rem - min(54rem, calc(100vw - 3rem))) / 2);
+      margin-right: calc((44rem - min(54rem, calc(100vw - 3rem))) / 2);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.25rem 1.7rem;
     }
 
     .values h3 {
@@ -395,11 +397,31 @@
       border-radius: 50%;
     }
 
-    .values > div:nth-child(1) h3::before { background: var(--teal); }
-    .values > div:nth-child(2) h3::before { background: var(--moss); }
-    .values > div:nth-child(3) h3::before { background: var(--ochre); }
+    .values > div:nth-child(1) h3::before {
+      background: radial-gradient(circle at 35% 30%, rgba(216, 154, 179, 0.95), var(--plum) 55%, #4B1830 100%);
+    }
+
+    .values > div:nth-child(2) h3::before {
+      background: radial-gradient(circle at 35% 30%, rgba(182, 236, 233, 0.95), var(--teal) 55%, #1F6663 100%);
+    }
+
+    .values > div:nth-child(3) h3::before {
+      background: radial-gradient(circle at 35% 30%, rgba(243, 178, 125, 0.95), var(--copper) 55%, #7F320C 100%);
+    }
+
+    .values > div:nth-child(4) h3::before {
+      background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 55%, #3F5013 100%);
+    }
 
     .values p { margin: 0; font-size: 0.97rem; line-height: 1.6; color: rgba(43, 43, 43, 0.78); }
+
+    @media (max-width: 719px) {
+      .values {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
 
     /* ---------- Offerings ---------- */
 
@@ -786,23 +808,27 @@
 
     <section class="section" id="philosophy">
       <div class="wrap" data-reveal>
-        <p class="eyebrow">Our Philosophy</p>
-        <h2>One thread at a time, the whole cloth holds</h2>
-        <p class="pullquote">“Childcare is one thread in the larger weave of family&nbsp;support.”</p>
-        <p>Families aren't a collection of separate needs — they're a fabric, woven from relationships, routines, and care. When one thread is strained, the whole cloth feels it. And when support is woven in thoughtfully, everything holds together more easily.</p>
-        <p>That's why our care is adaptive by design. The support a family needs in a newborn season looks nothing like what it needs during a move, a new school year, or a hard stretch. We adjust as your family's weave changes — because it will.</p>
+        <p class="eyebrow">Our Approach</p>
+        <h2>Support for Who You Are Now</h2>
+        <p class="pullquote">Childcare is only one thread in the larger weave of family support, not the whole story.</p>
+        <p>Families are not a collection of separate needs. They are whole systems of relationships, routines, values, stress, care, and capacity.</p>
+        <p>Interwoven Family Care begins by understanding the whole picture, then building support that fits the family in front of me.</p>
         <div class="values">
           <div>
-            <h3>Whole-family lens</h3>
-            <p>We support the system, not just the schedule — parents and children alike.</p>
+            <h3>Whole-Family Lens</h3>
+            <p>Support considers children, caregivers, routines, relationships, and the household as a connected whole.</p>
           </div>
           <div>
-            <h3>Adaptive by design</h3>
-            <p>Support that reshapes itself as seasons, needs, and rhythms change.</p>
+            <h3>Adaptive by Design</h3>
+            <p>Support changes as your family, season, needs, and circumstances change.</p>
           </div>
           <div>
-            <h3>Rooted in relationship</h3>
-            <p>Trust comes first. Consistent faces, honest conversation, real connection.</p>
+            <h3>Rooted in Relationship</h3>
+            <p>Trust comes first. Real support is built through consistency, curiosity, and respect.</p>
+          </div>
+          <div>
+            <h3>Community Care</h3>
+            <p>Families are not meant to do this alone. Meaningful support includes connection, belonging, and access to the people, resources, and relationships that help families thrive.</p>
           </div>
         </div>
       </div>
