@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interwoven Family Care - Adaptive In-Home Family Support in Tacoma, WA</title>
-  <meta name="description" content="Interwoven Family Care supports the family as a whole: adaptive in-home family support in Tacoma, Washington, with deep experience caring for neurodivergent children and families with higher support needs. Book a conversation with us.">
+  <meta name="description" content="Interwoven Family Care offers adaptive in-home family support in Tacoma, Washington, for routines, transitions, caregiver capacity, and practical care in daily life.">
   <link rel="canonical" href="https://interwoven.care/">
   <link rel="icon" type="image/png" href="assets/heart.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -65,6 +65,18 @@
       text-decoration: none;
     }
     .skip-link:focus-visible { left: 0.5rem; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     /* ---------- Navbar ---------- */
 
@@ -227,7 +239,7 @@
     /* ---------- Hero ---------- */
 
     .hero {
-      min-height: calc(100svh - var(--nav-h));
+      min-height: calc(92svh - var(--nav-h));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -261,6 +273,25 @@
       font-size: clamp(1rem, 2.4vw, 1.1rem);
       line-height: 1.55;
       color: var(--plum);
+    }
+
+    .announcement {
+      padding: 0.7rem 1.25rem;
+      background: rgba(217, 162, 27, 0.13);
+      border-bottom: 1px solid rgba(217, 162, 27, 0.28);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.92rem, 2.2vw, 1rem);
+      line-height: 1.35;
+      color: var(--plum);
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .announcement a {
+      color: var(--ink);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.18em;
     }
 
     .hero-actions {
@@ -476,6 +507,159 @@
       color: rgba(43, 43, 43, 0.72);
     }
 
+    .section-actions {
+      margin-top: 1.6rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ---------- Fit + Steps ---------- */
+
+    #fit { background: rgba(255, 253, 249, 0.42); }
+
+    .fit-intro {
+      margin: 0 auto;
+      max-width: 38rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .fit-list {
+      margin: 2rem auto 0;
+      padding: 0;
+      max-width: 48rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.05rem 1.8rem;
+      list-style: none;
+    }
+
+    .fit-list li {
+      position: relative;
+      padding: 0 0 0 1.6rem;
+      color: rgba(43, 43, 43, 0.86);
+      line-height: 1.65;
+    }
+
+    .fit-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 0.62rem;
+      height: 0.62rem;
+      border-radius: 999px;
+      background: var(--plum);
+      box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1);
+    }
+
+    .fit-list li:nth-child(2)::before { background: var(--teal); box-shadow: 0 0 0 4px rgba(63, 167, 163, 0.12); }
+    .fit-list li:nth-child(3)::before { background: var(--copper); box-shadow: 0 0 0 4px rgba(217, 106, 29, 0.11); }
+    .fit-list li:nth-child(4)::before { background: var(--moss); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
+    .fit-list li:nth-child(5)::before { background: var(--gold); box-shadow: 0 0 0 4px rgba(184, 138, 42, 0.12); }
+    .fit-list li:nth-child(6)::before { background: var(--plum); box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1); }
+
+    #book {
+      background: rgba(217, 162, 27, 0.055);
+    }
+
+    .steps {
+      margin: 2rem auto 0;
+      padding: 0;
+      max-width: 56rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      counter-reset: steps;
+      list-style: none;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      padding: 1.35rem;
+      border-top: 4px solid rgba(63, 167, 163, 0.7);
+      border-radius: 14px;
+      background: #FFFDF9;
+      box-shadow: 0 3px 14px rgba(43, 43, 43, 0.05);
+      text-align: left;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.9rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(122, 46, 79, 0.1);
+      color: var(--plum);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+    }
+
+    .steps h3 {
+      margin: 0 0 0.45rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .steps p {
+      margin: 0;
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: rgba(43, 43, 43, 0.78);
+    }
+
+    .start-contact {
+      margin: 2rem auto 0;
+      max-width: 38rem;
+      text-align: center;
+    }
+
+    .start-contact p {
+      margin: 0 auto;
+      max-width: 34rem;
+    }
+
+    @media (max-width: 719px) {
+      .fit-list,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-actions {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+
+    .contact-actions .btn {
+      min-width: min(100%, 14.5rem);
+      text-align: center;
+      border: 2px solid currentColor;
+      background: #FFFDF9;
+      box-shadow: 0 2px 10px rgba(43, 43, 43, 0.06);
+    }
+
+    .contact-actions .btn:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 5px 16px rgba(43, 43, 43, 0.1);
+    }
+
+    .contact-actions .btn-email {
+      color: var(--plum);
+    }
+
+    .contact-actions .btn-call {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: var(--ink);
+    }
+
     /* ---------- About ---------- */
 
     .about-grid {
@@ -514,8 +698,6 @@
       height: 100%;
       object-fit: cover;
     }
-
-    #about-bri { padding-top: 0; }
 
     @media (max-width: 719px) {
       .about-grid { grid-template-columns: 1fr; }
@@ -614,11 +796,8 @@
     /* ---------- Book ---------- */
 
     #book {
-      text-align: center;
       background-image: radial-gradient(40rem 26rem at 50% 0%, rgba(63, 167, 163, 0.07), transparent 70%);
     }
-
-    #book p { max-width: 34rem; margin-left: auto; margin-right: auto; }
 
     #book .btn-primary { margin-top: 1.6rem; font-size: 1.1rem; }
 
@@ -704,49 +883,70 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#offerings">Offerings</a>
+        <a href="#offerings">Services</a>
         <a href="#philosophy">Philosophy</a>
         <a href="#about">About IFC</a>
         <a href="#about-bri">About the Founder</a>
         <a href="#faqs">FAQs</a>
-        <a class="nav-cta" href="#book">Book a Conversation</a>
+        <a class="nav-cta" href="#book">Ask About Support</a>
       </div>
     </div>
   </nav>
 
   <main id="main">
+    <div class="announcement">
+      Summer family support spots are open in Tacoma and nearby Pierce County. <a href="#book">Ask about support.</a>
+    </div>
+
     <section class="hero" id="top">
       <img class="crest rise d1" src="assets/house.png" alt="" width="640" height="709">
       <h1 style="margin:0; line-height:0;">
-        <img class="wordmark rise d2" src="assets/wordmark.png" alt="Interwoven Family Care" width="1120" height="530">
+        <span class="sr-only">Interwoven Family Care</span>
+        <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
       </h1>
-      <p class="lede rise d3">Interwoven Family Care supports the family as&nbsp;a&nbsp;whole.</p>
-      <p class="sub rise d3">Adaptive in-home family support in Tacoma for seasons when routines, recommendations,<br> caregiver capacity, or child needs call for more steadiness in daily life.</p>
+      <p class="lede rise d3">Adaptive in-home support for families carrying a lot.</p>
+      <p class="sub rise d3">Interwoven Family Care helps Tacoma-area families with routines, transitions, caregiver capacity, and practical support in daily life.</p>
       <div class="hero-actions rise d4">
-        <a class="btn btn-primary" href="#book">Book a conversation</a>
-        <a class="btn btn-ghost" href="#offerings">Learn more</a>
+        <a class="btn btn-primary" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-Minute Call</a>
+        <a class="btn btn-ghost" href="#offerings">Explore Services</a>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">Is This For Us?</p>
+        <h2>When daily life is hard to hold</h2>
+        <p class="fit-intro">You do not need the perfect words for what is hard. We can start with what is happening in your home right now.</p>
+        <ul class="fit-list">
+          <li>Transitions take more energy than your family has right now.</li>
+          <li>You need another steady adult alongside both children and caregivers.</li>
+          <li>Recommendations from providers or schools are hard to implement in real life.</li>
+          <li>Your child or household needs care that is more individualized than a preset menu.</li>
+          <li>You are navigating IEP meetings, doctor appointments, systems, or advocacy decisions.</li>
+          <li>You need breathing room without feeling judged, managed, or misunderstood.</li>
+        </ul>
       </div>
     </section>
 
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Offerings</p>
-        <h2>Practical Support for You and Yours</h2>
+        <p class="eyebrow">Services</p>
+        <h2>Ways IFC Helps</h2>
         <div class="cards">
           <div class="card">
             <h3>Family Support</h3>
             <p>Relationship-based care shaped for your family's unique needs, strengths, and goals.</p>
-            <p>Support may include caregiver support, childcare, problem-solving, emotional support, and having a trusted sounding board as you navigate everyday life.</p>
+            <p>This may include caregiver support, childcare, problem-solving, emotional steadiness, and having a trusted sounding board as you navigate everyday life.</p>
           </div>
           <div class="card">
             <h3>Breathing Room</h3>
             <p>Sometimes help is having another set of capable hands.</p>
-            <p>Practical support that helps reduce overwhelm, create capacity, and make space for your family to focus on what matters most.</p>
+            <p>Practical help that reduces overwhelm, creates capacity, and makes space for your family to focus on what matters most.</p>
           </div>
           <div class="card">
             <h3>Routines &amp; Transitions</h3>
             <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
-            <p>Daily routines and transitions quietly shape the tone of an entire day. Support may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help your daily life feel steadier and more manageable.</p>
+            <p>Daily routines and transitions quietly shape the tone of an entire day. This may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help your daily life feel steadier and more manageable.</p>
           </div>
           <div class="card">
             <h3>Advocacy Support</h3>
@@ -756,33 +956,36 @@
           <div class="card">
             <h3>Implementation &amp; Resources</h3>
             <p>Turning ideas, resources, and recommendations from trusted professionals into practical next steps.</p>
-            <p>We will focus on solutions that fit your real life, capacity, and circumstances.</p>
+            <p>We focus on solutions that fit your real life, capacity, and circumstances.</p>
           </div>
           <div class="card">
             <h3>Environment Support</h3>
-            <p>Support shaping spaces indoors and out so daily life functions with less friction.</p>
-            <p>Support may include environments that encourage independence, regulation, and routines that make sense for the people who live there.</p>
+            <p>Shaping spaces indoors and out so daily life functions with less friction.</p>
+            <p>This may include environments that encourage independence, regulation, and routines that make sense for the people who live there.</p>
           </div>
         </div>
-        <p class="tailored">Every family is different. Support is built around your needs, strengths, goals, and circumstances. If you don't see yourself reflected here, reach out anyway. Meaningful support begins with a conversation.</p>
+        <p class="tailored">Every family is different. We start with the people, rhythms, and circumstances in front of us.</p>
+        <div class="section-actions">
+          <a class="btn btn-primary" href="#book">Ask About Support</a>
+        </div>
       </div>
     </section>
 
     <section class="section" id="philosophy">
       <div class="wrap" data-reveal>
         <p class="eyebrow">Our Approach</p>
-        <h2>Support for Who You Are Now</h2>
+        <h2>Care That Starts With Understanding</h2>
         <p class="pullquote">Childcare is only one thread in the larger weave of family support, not the whole story.</p>
         <p>Families are not a collection of separate needs. They are whole systems shaped by relationships, routines, values, care, stress, and capacity.</p>
-        <p>Interwoven Family Care begins by understanding the whole picture, then building support that fits the family in front of me.</p>
+        <p>Interwoven Family Care begins by understanding the whole picture, then building care that fits the family in front of us.</p>
         <div class="values">
           <div>
             <h3>Whole-Family Lens</h3>
-            <p>Support considers children, caregivers, routines, relationships, and the household as a connected whole.</p>
+            <p>Care considers children, caregivers, routines, relationships, and the household as a connected whole.</p>
           </div>
           <div>
             <h3>Adaptive by Design</h3>
-            <p>Support changes as your family, season, needs, and circumstances change.</p>
+            <p>Care changes as your family, season, needs, and circumstances change.</p>
           </div>
           <div>
             <h3>Rooted in Relationship</h3>
@@ -790,8 +993,37 @@
           </div>
           <div>
             <h3>Community Care</h3>
-            <p>Families are not meant to do this alone. Meaningful support includes connection, belonging, and access to the people, resources, and relationships that help families thrive.</p>
+            <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help families thrive.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="book">
+      <div class="wrap-wide" data-reveal>
+        <p class="eyebrow">How It Starts</p>
+        <h2>A low-pressure first conversation</h2>
+        <ol class="steps">
+          <li>
+            <h3>Reach out</h3>
+            <p>Send an email or choose a 30-minute phone call slot with a little about your family and what life feels like right now.</p>
+          </li>
+          <li>
+            <h3>Have a conversation</h3>
+            <p>You can start with what feels hardest, what is already working, what you have tried, or what you wish felt easier.</p>
+          </li>
+          <li>
+            <h3>Build the shape</h3>
+            <p>Together, we talk through care that fits your needs, schedule, capacity, and real household rhythm.</p>
+          </li>
+        </ol>
+        <div class="start-contact">
+          <p>Ready to talk through what this could look like? Choose a low-pressure call, or send an email if writing feels easier.</p>
+          <div class="contact-actions">
+            <a class="btn btn-call" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-Minute Call</a>
+            <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri</a>
+          </div>
+          <p class="book-note">Prefer email? Write to bri@interwoven.care. Prefer a quick conversation? Choose a phone time that works for you.</p>
         </div>
       </div>
     </section>
@@ -802,37 +1034,34 @@
           <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
         </div>
         <p class="eyebrow">About IFC</p>
-        <h2>Support that sees the whole family</h2>
+        <h2>Built around real family life</h2>
         <div class="about-grid">
           <div class="about-copy">
-            <p>Interwoven Family Care was built by Brianna Waugh (Bri) after years of working directly with families and seeing proof of one simple truth: people do best when they are seen, understood, and supported as a whole.</p>
-            <p>Families flourish when they are supported as a whole. People flourish when they are understood.</p>
-            <p>Interwoven Family Care weaves into your life as it is: your rhythms, your values, your systems, your chaos, your calm. We trust you. We believe families should remain active participants in decisions that affect their lives. Your goals matter. Your values matter. Your voice matters.</p>
-            <p>Support works best when it is done with families, not to them or for them. Meaningful support begins with understanding.</p>
-            <p>Interwoven Family Care helps people build confidence in their own observations, decisions, and understanding of their families. We believe community care is self-care. Families become resources for one another, strengthening connection, belonging, and support throughout the community.</p>
-            <p>This work attracts all kinds of families who need individualized, practical support in their home and everyday life. We are for households that are overworked, overwhelmed, and then some.</p>
-            <p>Caregivers carry so much. Let Interwoven Family Care come alongside you and yours with practical, relationship-based support rooted in trust, respect, connection, and sustainability in your real life.</p>
+            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
+            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what is already happening, and building from there.</p>
+            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
+            <p>The goal is less stress, more steadiness, and more room for families to enjoy their time together.</p>
           </div>
-        </div>
-        <div class="section-mark between-sections">
-          <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
         </div>
       </div>
     </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="about-bri">
       <div class="wrap" data-reveal>
         <p class="eyebrow">About the Founder</p>
         <h2>Meeting People Where They Are</h2>
-        <p>I founded Interwoven Family Care after years of working alongside families in early childhood centers, in-home care, and community support.</p>
-        <p>My experience includes supporting families with a wide variety of needs. I understand there are many unique ways to move through the world.</p>
-        <p>More than anything, I believe people deserve to be approached with curiosity, respect, and understanding. I trust families know themselves better than anyone else.</p>
-        <p>I believe people deserve support for who they want to become while also being understood as they are. Optimism is my choice. I have seen real growth and lived it.</p>
-        <p>I believe meaningful support begins with understanding.</p>
+        <p>I'm Brianna (Bri) Waugh, founder of Interwoven Family Care. I built this work after more than a decade alongside children, caregivers, and families in early childhood centers, in-home care, and community programs.</p>
+        <p>Again and again, my work has brought me alongside children with higher support needs, neurodivergent children, and families holding several kinds of complexity at once. I am comfortable in the thick of family life: routines, transitions, big feelings, uncertainty, problem-solving, and the moments when everyone is doing their best and still needs more help.</p>
+        <p>My background includes Reggio Emilia-inspired programs, Montessori centers, Head Start and Early Head Start classrooms, in-home care, and community-based family support. I lean play-based and relationship-centered, with deep respect for environments that encourage independence, curiosity, critical thinking, rhythm, regulation, and belonging.</p>
+        <p>More than anything, I believe this work has to be specific to your family. I want families to reach out and talk with me, because your family's nuance matters. Your children, your household, your rhythms, your worries, your values, and your hopes all shape what care should look like for you.</p>
       </div>
     </section>
 
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+    <div class="section-mark between-sections" aria-hidden="true">
+      <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
+    </div>
 
     <section class="section" id="faqs">
       <div class="wrap" data-reveal>
@@ -849,7 +1078,7 @@
           </details>
           <details>
             <summary>Do you work with families with higher support needs?</summary>
-            <p>Yes. This is central to our work. We work with all families navigating complex needs. We move at the pace of trust and shape care around what helps your child and household feel more understood, steady, and supported.</p>
+            <p>Yes. This is central to our work. We work with families navigating complex needs. We move at the pace of trust and shape care around what helps your child and household feel more understood, steady, and supported.</p>
           </details>
           <details>
             <summary>What does "adaptive" care mean?</summary>
@@ -858,6 +1087,10 @@
           <details>
             <summary>What ages do you work with?</summary>
             <p>Because IFC supports the family as a whole, there is no strict age cutoff. Tell us about your children, your household, and what you're carrying. We'll talk together about what fits.</p>
+          </details>
+          <details>
+            <summary>What might support look like in real life?</summary>
+            <p>It might look like coming alongside a single parent with two children during the after-school or evening stretch, when everyone is tired and the next transition is already coming. One child may be neurodivergent, one may need help with attention or big feelings, and the caregiver may need another steady adult in the room who can notice patterns, support regulation and communication, help the transition feel less overwhelming, and talk through what might make tomorrow go a little more smoothly. For another family, it might look like preparing for an IEP meeting, building a calmer morning rhythm, or sorting through what is and is not working at home.</p>
           </details>
           <details>
             <summary>How does scheduling work?</summary>
@@ -871,18 +1104,6 @@
       </div>
     </section>
 
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
-    <section class="section" id="book">
-      <div class="wrap" data-reveal>
-        <p class="eyebrow">Book a Conversation</p>
-        <h2>Let's Start With a Conversation</h2>
-        <p>Tell me a little about your family, what life looks like right now, what is working, and what is feeling harder. We'll start there and talk through what might fit.</p>
-        <!-- When Bri sets up a scheduler (e.g. Calendly), swap this button's href for the booking link. -->
-        <a class="btn btn-primary" href="mailto:bri@interwoven.care?subject=Booking%20a%20conversation">Email bri@interwoven.care</a>
-        <p class="book-note">I'll get back to you soon.</p>
-      </div>
-    </section>
   </main>
 
   <footer>
