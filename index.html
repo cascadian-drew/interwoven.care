@@ -23,12 +23,12 @@
 
   <style>
     :root {
-      --teal:   #3FA7A3;
-      --deep-teal: #379793;
+      --teal:   #3F7A73;
+      --deep-teal: #336A64;
       --moss:   #7A962B;
-      --copper: #D96A1D;
-      --ochre:  #D9A21B;
-      --gold:   #B88A2A;
+      --copper: #D9A15D;
+      --ochre:  #7A962B;
+      --gold:   #D9A15D;
       --plum:   #7A2E4F;
       --ivory:  #F6F3EE;
       --ink:    #2B2B2B;
@@ -48,9 +48,22 @@
       text-rendering: optimizeLegibility;
     }
 
-    ::selection { background: rgba(63, 167, 163, 0.28); }
+    ::selection { background: rgba(63, 122, 115, 0.28); }
 
     img { display: block; height: auto; }
+
+    main {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(246, 243, 238, 0) 0%,
+          rgba(246, 243, 238, 0) 34%,
+          rgba(63, 122, 115, 0.07) 54%,
+          rgba(122, 46, 79, 0.055) 70%,
+          rgba(122, 150, 43, 0.065) 88%,
+          rgba(246, 243, 238, 0.72) 100%
+        );
+    }
 
     .skip-link {
       position: absolute;
@@ -153,19 +166,25 @@
     .nav-links a:not(.nav-cta).active::after { transform: scaleX(1); }
 
     .nav-cta {
-      padding: 0.55em 1.2em;
+      padding: 0.72em 1.2em;
       border-radius: 999px;
       background: var(--teal);
-      color: var(--ink);
+      color: var(--ivory);
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
       white-space: nowrap;
-      transition: background-color 160ms ease;
+      box-shadow: 0 3px 12px rgba(63, 122, 115, 0.18);
+      transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .nav-cta:hover { background: #379793; }
+    .nav-cta:hover {
+      background: var(--deep-teal);
+      color: var(--ivory);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(63, 122, 115, 0.22);
+    }
 
     a:focus-visible, button:focus-visible, summary:focus-visible {
       outline: 3px solid var(--plum);
@@ -247,8 +266,8 @@
       text-align: center;
       padding: clamp(1.5rem, 4vh, 3.5rem) 1.5rem;
       background-image:
-        radial-gradient(55rem 38rem at 10% -10%, rgba(63, 167, 163, 0.07), transparent 60%),
-        radial-gradient(48rem 34rem at 105% 108%, rgba(217, 162, 27, 0.08), transparent 60%);
+        radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
+        radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
     .crest { width: min(48vw, 21vh, 230px); }
@@ -275,10 +294,64 @@
       color: var(--plum);
     }
 
+    .hero-situations {
+      margin: 1rem auto 0;
+      padding: 0;
+      width: min(100%, 56rem);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.55rem;
+      list-style: none;
+    }
+
+    .hero-situations a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 3.1rem;
+      padding: 0.55em 0.9em;
+      border: 1.5px solid rgba(122, 46, 79, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.74);
+      color: rgba(43, 43, 43, 0.82);
+      font-size: 0.92rem;
+      line-height: 1.3;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 9px rgba(43, 43, 43, 0.045);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .hero-situations a:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 5px 16px rgba(43, 43, 43, 0.09);
+    }
+
+    .hero-situations li:nth-child(1) a {
+      border-color: rgba(63, 122, 115, 0.46);
+      background: rgba(63, 122, 115, 0.1);
+    }
+
+    .hero-situations li:nth-child(2) a {
+      border-color: rgba(122, 46, 79, 0.42);
+      background: rgba(122, 46, 79, 0.09);
+    }
+
+    .hero-situations li:nth-child(3) a {
+      border-color: rgba(122, 150, 43, 0.42);
+      background: rgba(122, 150, 43, 0.1);
+    }
+
+    .hero-situations li:nth-child(4) a {
+      border-color: rgba(217, 161, 93, 0.54);
+      background: rgba(217, 161, 93, 0.14);
+    }
+
     .announcement {
       padding: 0.7rem 1.25rem;
-      background: rgba(217, 162, 27, 0.13);
-      border-bottom: 1px solid rgba(217, 162, 27, 0.28);
+      background: rgba(217, 161, 93, 0.16);
+      border-bottom: 1px solid rgba(217, 161, 93, 0.28);
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
       font-size: clamp(0.92rem, 2.2vw, 1rem);
@@ -294,6 +367,14 @@
       text-underline-offset: 0.18em;
     }
 
+    @media (max-width: 720px) {
+      .hero-situations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-situations a { min-height: 3.15rem; }
+    }
+
     .hero-actions {
       margin-top: clamp(1.4rem, 3.2vh, 2.4rem);
       display: flex;
@@ -304,40 +385,50 @@
 
     .btn {
       display: inline-block;
-      padding: 0.8em 1.6em;
+      min-height: 3.05rem;
+      padding: 0.78em 1.45em;
       border-radius: 999px;
+      border: 2px solid transparent;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      line-height: 1.25;
       text-decoration: none;
-      transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      text-align: center;
+      transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
     }
 
     .btn-primary {
       background: var(--teal);
-      color: var(--ink);
-      box-shadow: 0 2px 10px rgba(43, 43, 43, 0.08);
+      color: var(--ivory);
+      border-color: var(--teal);
+      box-shadow: 0 4px 14px rgba(63, 122, 115, 0.22);
     }
 
     .btn-primary:hover {
-      background: #379793;
+      background: var(--deep-teal);
       transform: translateY(-1.5px);
-      box-shadow: 0 5px 16px rgba(43, 43, 43, 0.12);
+      box-shadow: 0 7px 18px rgba(63, 122, 115, 0.26);
     }
 
     .btn-ghost {
-      border: 2px solid rgba(122, 150, 43, 0.55);
-      color: var(--ink);
+      border: 2px solid rgba(122, 46, 79, 0.42);
+      background: rgba(255, 253, 249, 0.62);
+      color: var(--plum);
+      box-shadow: 0 2px 10px rgba(43, 43, 43, 0.045);
     }
 
     .btn-ghost:hover {
-      border-color: var(--moss);
+      border-color: var(--plum);
+      background: rgba(122, 46, 79, 0.08);
       transform: translateY(-1.5px);
     }
 
     /* ---------- Sections ---------- */
 
     section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+
+    .anchor-target { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
     .section {
       padding: clamp(3.25rem, 8vh, 5.5rem) 1.5rem;
@@ -375,6 +466,7 @@
       align-items: center;
       justify-content: center;
       gap: 1.1rem;
+      padding: 1.1rem 1.5rem;
     }
 
     .knot-divider::before,
@@ -410,6 +502,15 @@
       gap: 2.25rem 1.7rem;
     }
 
+    .values > div {
+      padding-left: 1rem;
+      border-left: 3px solid rgba(122, 46, 79, 0.42);
+    }
+
+    .values > div:nth-child(2) { border-left-color: rgba(63, 122, 115, 0.58); }
+    .values > div:nth-child(3) { border-left-color: rgba(217, 161, 93, 0.66); }
+    .values > div:nth-child(4) { border-left-color: rgba(122, 150, 43, 0.55); }
+
     .values h3 {
       margin: 0 0 0.45rem;
       display: flex;
@@ -433,11 +534,11 @@
     }
 
     .values > div:nth-child(2) h3::before {
-      background: radial-gradient(circle at 35% 30%, rgba(182, 236, 233, 0.95), var(--teal) 55%, #1F6663 100%);
+      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 55%, #254D49 100%);
     }
 
     .values > div:nth-child(3) h3::before {
-      background: radial-gradient(circle at 35% 30%, rgba(243, 178, 125, 0.95), var(--copper) 55%, #7F320C 100%);
+      background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 55%, #8D5A27 100%);
     }
 
     .values > div:nth-child(4) h3::before {
@@ -456,8 +557,6 @@
 
     /* ---------- Offerings ---------- */
 
-    #offerings { background: rgba(63, 167, 163, 0.055); }
-
     .cards {
       margin-top: 2.2rem;
       display: grid;
@@ -466,28 +565,28 @@
     }
 
     .card {
-      background: #FFFDF9;
-      border: 1px solid rgba(43, 43, 43, 0.07);
+      background: rgba(255, 253, 249, 0.88);
+      border: 1px solid rgba(43, 43, 43, 0.075);
       border-top: 4px solid var(--teal);
       border-radius: 14px;
       padding: 1.5rem 1.4rem 1.4rem;
-      box-shadow: 0 3px 14px rgba(43, 43, 43, 0.05);
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
     }
 
     .cards .card {
       border-top-color: transparent;
       background:
-        linear-gradient(#FFFDF9, #FFFDF9) padding-box,
+        linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
         var(--card-accent, linear-gradient(90deg, var(--teal), var(--teal))) border-box;
       border-top-width: 4px;
     }
 
-    .cards .card:nth-child(1) { --card-accent: linear-gradient(90deg, rgba(92, 32, 58, 0.82) 0%, rgba(155, 69, 105, 0.76) 34%, rgba(216, 154, 179, 0.68) 50%, rgba(122, 46, 79, 0.8) 72%, rgba(75, 24, 48, 0.82) 100%); }
-    .cards .card:nth-child(2) { --card-accent: linear-gradient(90deg, rgba(155, 113, 20, 0.82) 0%, rgba(226, 180, 59, 0.76) 34%, rgba(248, 222, 123, 0.68) 50%, rgba(217, 162, 27, 0.8) 72%, rgba(125, 90, 18, 0.82) 100%); }
-    .cards .card:nth-child(3) { --card-accent: linear-gradient(90deg, rgba(39, 126, 123, 0.82) 0%, rgba(90, 188, 184, 0.76) 34%, rgba(182, 236, 233, 0.68) 50%, rgba(63, 167, 163, 0.8) 72%, rgba(31, 102, 99, 0.82) 100%); }
-    .cards .card:nth-child(4) { --card-accent: linear-gradient(90deg, rgba(163, 71, 18, 0.82) 0%, rgba(228, 122, 45, 0.76) 34%, rgba(243, 178, 125, 0.68) 50%, rgba(217, 106, 29, 0.8) 72%, rgba(127, 50, 12, 0.82) 100%); }
-    .cards .card:nth-child(5) { --card-accent: linear-gradient(90deg, rgba(89, 109, 30, 0.82) 0%, rgba(140, 170, 54, 0.76) 34%, rgba(214, 229, 138, 0.68) 50%, rgba(122, 150, 43, 0.8) 72%, rgba(63, 80, 19, 0.82) 100%); }
-    .cards .card:nth-child(6) { --card-accent: linear-gradient(90deg, rgba(143, 106, 30, 0.82) 0%, rgba(226, 193, 90, 0.76) 34%, rgba(255, 241, 168, 0.68) 50%, rgba(184, 138, 42, 0.8) 72%, rgba(125, 90, 24, 0.82) 100%); }
+    .cards .card:nth-child(1) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.82), rgba(63, 122, 115, 0.38)); }
+    .cards .card:nth-child(2) { --card-accent: linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(122, 46, 79, 0.3)); }
+    .cards .card:nth-child(3) { --card-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.66), rgba(122, 150, 43, 0.3)); }
+    .cards .card:nth-child(4) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.82), rgba(63, 122, 115, 0.38)); }
+    .cards .card:nth-child(5) { --card-accent: linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(122, 46, 79, 0.3)); }
+    .cards .card:nth-child(6) { --card-accent: linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(217, 161, 93, 0.36)); }
 
     .card h3 {
       margin: 0 0 0.55rem;
@@ -514,8 +613,6 @@
     }
 
     /* ---------- Fit + Steps ---------- */
-
-    #fit { background: rgba(255, 253, 249, 0.42); }
 
     .fit-intro {
       margin: 0 auto;
@@ -553,15 +650,13 @@
       box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1);
     }
 
-    .fit-list li:nth-child(2)::before { background: var(--teal); box-shadow: 0 0 0 4px rgba(63, 167, 163, 0.12); }
-    .fit-list li:nth-child(3)::before { background: var(--copper); box-shadow: 0 0 0 4px rgba(217, 106, 29, 0.11); }
-    .fit-list li:nth-child(4)::before { background: var(--moss); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
-    .fit-list li:nth-child(5)::before { background: var(--gold); box-shadow: 0 0 0 4px rgba(184, 138, 42, 0.12); }
-    .fit-list li:nth-child(6)::before { background: var(--plum); box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1); }
-
-    #book {
-      background: rgba(217, 162, 27, 0.055);
-    }
+    .fit-list li:nth-child(2)::before { background: var(--teal); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
+    .fit-list li:nth-child(3)::before { background: var(--moss); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
+    .fit-list li:nth-child(4)::before { background: var(--plum); box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1); }
+    .fit-list li:nth-child(5)::before { background: var(--teal); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
+    .fit-list li:nth-child(6)::before { background: var(--moss); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
+    .fit-list li:nth-child(7)::before { background: var(--plum); box-shadow: 0 0 0 4px rgba(122, 46, 79, 0.1); }
+    .fit-list li:nth-child(8)::before { background: var(--copper); box-shadow: 0 0 0 4px rgba(217, 161, 93, 0.15); }
 
     .steps {
       margin: 2rem auto 0;
@@ -577,12 +672,15 @@
     .steps li {
       counter-increment: steps;
       padding: 1.35rem;
-      border-top: 4px solid rgba(63, 167, 163, 0.7);
+      border-top: 4px solid rgba(63, 122, 115, 0.72);
       border-radius: 14px;
-      background: #FFFDF9;
+      background: rgba(255, 253, 249, 0.88);
       box-shadow: 0 3px 14px rgba(43, 43, 43, 0.05);
       text-align: left;
     }
+
+    .steps li:nth-child(2) { border-top-color: rgba(122, 46, 79, 0.66); }
+    .steps li:nth-child(3) { border-top-color: rgba(122, 150, 43, 0.66); }
 
     .steps li::before {
       content: counter(steps);
@@ -639,10 +737,6 @@
 
     .contact-actions .btn {
       min-width: min(100%, 14.5rem);
-      text-align: center;
-      border: 2px solid currentColor;
-      background: #FFFDF9;
-      box-shadow: 0 2px 10px rgba(43, 43, 43, 0.06);
     }
 
     .contact-actions .btn:hover {
@@ -651,13 +745,15 @@
     }
 
     .contact-actions .btn-email {
+      border-color: rgba(122, 46, 79, 0.42);
+      background: rgba(255, 253, 249, 0.78);
       color: var(--plum);
     }
 
     .contact-actions .btn-call {
       border-color: var(--teal);
       background: var(--teal);
-      color: var(--ink);
+      color: var(--ivory);
     }
 
     /* ---------- About ---------- */
@@ -680,16 +776,18 @@
       margin: 0 auto 1.6rem;
       border-radius: 999px;
       overflow: hidden;
-      border: 1px solid rgba(43, 43, 43, 0.08);
+      border: 1px solid rgba(122, 46, 79, 0.14);
       background:
-        radial-gradient(110% 90% at 50% 0%, rgba(63, 167, 163, 0.14), transparent 72%),
-        linear-gradient(180deg, rgba(217, 162, 27, 0.11), rgba(122, 150, 43, 0.08));
+        linear-gradient(135deg, rgba(122, 46, 79, 0.17), rgba(217, 161, 93, 0.2) 48%, rgba(63, 122, 115, 0.16));
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .section-mark.between-sections { margin-top: 2.4rem; }
+    .section-mark.between-sections {
+      margin-top: 2.4rem;
+      margin-bottom: 0;
+    }
 
     .section-mark .knot-placeholder { width: 68px; opacity: 0.82; }
 
@@ -707,7 +805,7 @@
 
     /* ---------- Kind Words ---------- */
 
-    #kind-words { background: rgba(217, 162, 27, 0.07); }
+    #kind-words { background: rgba(217, 161, 93, 0.08); }
 
     .quotes {
       margin-top: 2.2rem;
@@ -760,8 +858,14 @@
     .faq-list { margin-top: 1.4rem; }
 
     details {
-      border-bottom: 1px solid rgba(43, 43, 43, 0.12);
+      border-bottom: 1px solid rgba(43, 43, 43, 0.1);
+      border-left: 3px solid transparent;
+      padding-left: 0.7rem;
     }
+
+    details:nth-child(3n + 1) { border-left-color: rgba(63, 122, 115, 0.5); }
+    details:nth-child(3n + 2) { border-left-color: rgba(122, 46, 79, 0.38); }
+    details:nth-child(3n) { border-left-color: rgba(122, 150, 43, 0.42); }
 
     summary {
       display: flex;
@@ -795,10 +899,6 @@
 
     /* ---------- Book ---------- */
 
-    #book {
-      background-image: radial-gradient(40rem 26rem at 50% 0%, rgba(63, 167, 163, 0.07), transparent 70%);
-    }
-
     #book .btn-primary { margin-top: 1.6rem; font-size: 1.1rem; }
 
     .book-note { margin-top: 1.1rem; font-size: 0.92rem; color: rgba(43, 43, 43, 0.62); }
@@ -806,8 +906,10 @@
     /* ---------- Footer ---------- */
 
     footer {
-      padding: 2.2rem 1rem 1.6rem;
-      border-top: 1px solid rgba(43, 43, 43, 0.08);
+      padding: 2rem 1rem 1.6rem;
+      border-top: 0;
+      background:
+        linear-gradient(180deg, rgba(63, 122, 115, 0.08), rgba(217, 161, 93, 0.1) 58%, rgba(255, 253, 249, 0.68));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -906,6 +1008,12 @@
       </h1>
       <p class="lede rise d3">Adaptive in-home support for families carrying a lot.</p>
       <p class="sub rise d3">Interwoven Family Care helps Tacoma-area families with routines, transitions, caregiver capacity, and practical support in daily life.</p>
+      <ul class="hero-situations rise d4" aria-label="Common reasons families reach out">
+        <li><a href="#philosophy">School or therapy concerns</a></li>
+        <li><a href="#support-example">Neurodivergent family life</a></li>
+        <li><a href="#about-bri">Hard routines and transitions</a></li>
+        <li><a href="#about">Caregiver overwhelm</a></li>
+      </ul>
       <div class="hero-actions rise d4">
         <a class="btn btn-primary" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-Minute Call</a>
         <a class="btn btn-ghost" href="#offerings">Explore Services</a>
@@ -916,14 +1024,16 @@
       <div class="wrap" data-reveal>
         <p class="eyebrow">Is This For Us?</p>
         <h2>When daily life is hard to hold</h2>
-        <p class="fit-intro">You do not need the perfect words for what is hard. We can start with what is happening in your home right now.</p>
+        <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or therapy recommendation. You do not need the perfect words before we start.</p>
         <ul class="fit-list">
-          <li>Transitions take more energy than your family has right now.</li>
-          <li>You need another steady adult alongside both children and caregivers.</li>
-          <li>Recommendations from providers or schools are hard to implement in real life.</li>
-          <li>Your child or household needs care that is more individualized than a preset menu.</li>
-          <li>You are navigating IEP meetings, doctor appointments, systems, or advocacy decisions.</li>
-          <li>You need breathing room without feeling judged, managed, or misunderstood.</li>
+          <li>You are looking for in-home family support that goes beyond just childcare.</li>
+          <li>Your family is adjusting after a diagnosis or concern related to autism, ADHD, development, sensory needs, school, or health.</li>
+          <li>Mornings, evenings, bedtime, school drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</li>
+          <li>You need another steady adult who can support children, siblings, routines, and caregiver capacity at the same time.</li>
+          <li>Therapy strategies, IEP or 504 goals, behavior plans, or provider recommendations make sense on paper but are hard to carry into daily life.</li>
+          <li>Your child needs care shaped around regulation, communication, sensory needs, big feelings, independence, and your family's real rhythm.</li>
+          <li>You are navigating IEP meetings, 504 plans, referrals, waitlists, appointments, resources, or advocacy decisions.</li>
+          <li>You need practical help, breathing room, or respite without feeling judged, managed, or misunderstood.</li>
         </ul>
       </div>
     </section>
@@ -935,38 +1045,38 @@
         <div class="cards">
           <div class="card">
             <h3>Family Support</h3>
-            <p>Relationship-based care shaped for your family's unique needs, strengths, and goals.</p>
-            <p>This may include caregiver support, childcare, problem-solving, emotional steadiness, and having a trusted sounding board as you navigate everyday life.</p>
+            <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
+            <p>This may include caregiver support, childcare, problem-solving, emotional steadiness, and a trusted sounding board as you navigate everyday life with children who need more individualized support.</p>
           </div>
-          <div class="card">
+          <div class="card anchor-target" id="breathing-room">
             <h3>Breathing Room</h3>
-            <p>Sometimes help is having another set of capable hands.</p>
-            <p>Practical help that reduces overwhelm, creates capacity, and makes space for your family to focus on what matters most.</p>
+            <p>Sometimes help is having another capable adult in the room during the parts of the week that take the most out of everyone.</p>
+            <p>Practical support that reduces caregiver overwhelm, creates capacity, and gives your family more room to recover, connect, and reset.</p>
           </div>
-          <div class="card">
+          <div class="card anchor-target" id="routines-transitions">
             <h3>Routines &amp; Transitions</h3>
             <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
-            <p>Daily routines and transitions quietly shape the tone of an entire day. This may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help your daily life feel steadier and more manageable.</p>
+            <p>This may include emotional regulation, sensory needs, skill-building, scaffolding independence, and practical strategies that help daily life feel steadier and more manageable.</p>
           </div>
           <div class="card">
             <h3>Advocacy Support</h3>
-            <p>Navigating schools, providers, and systems while carrying the realities of family life is harder than it needs to be.</p>
-            <p>Advocacy includes meeting preparation, priority planning, and building confidence as you continue to advocate for yourself and your family.</p>
+            <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, and service systems while carrying family life is harder than it needs to be.</p>
+            <p>Advocacy support includes meeting preparation, priority planning, and building confidence as you continue to advocate for your child and family.</p>
           </div>
-          <div class="card">
+          <div class="card anchor-target" id="implementation-resources">
             <h3>Implementation &amp; Resources</h3>
-            <p>Turning ideas, resources, and recommendations from trusted professionals into practical next steps.</p>
-            <p>We focus on solutions that fit your real life, capacity, and circumstances.</p>
+            <p>Turning therapy strategies, provider recommendations, school ideas, and resource lists into practical next steps at home.</p>
+            <p>We focus on solutions that fit your real life, capacity, household rhythm, and circumstances.</p>
           </div>
           <div class="card">
             <h3>Environment Support</h3>
-            <p>Shaping spaces indoors and out so daily life functions with less friction.</p>
-            <p>This may include environments that encourage independence, regulation, and routines that make sense for the people who live there.</p>
+            <p>Shaping indoor and outdoor spaces so daily routines, regulation, independence, and transitions have less friction.</p>
+            <p>This may include environments that make sense for neurodivergent children, higher-support needs, caregivers, siblings, and the people who live there.</p>
           </div>
         </div>
         <p class="tailored">Every family is different. We start with the people, rhythms, and circumstances in front of us.</p>
         <div class="section-actions">
-          <a class="btn btn-primary" href="#book">Ask About Support</a>
+          <a class="btn btn-primary" href="#book">Talk Through What You Need</a>
         </div>
       </div>
     </section>
@@ -1088,7 +1198,7 @@
             <summary>What ages do you work with?</summary>
             <p>Because IFC supports the family as a whole, there is no strict age cutoff. Tell us about your children, your household, and what you're carrying. We'll talk together about what fits.</p>
           </details>
-          <details>
+          <details class="anchor-target" id="support-example">
             <summary>What might support look like in real life?</summary>
             <p>It might look like coming alongside a single parent with two children during the after-school or evening stretch, when everyone is tired and the next transition is already coming. One child may be neurodivergent, one may need help with attention or big feelings, and the caregiver may need another steady adult in the room who can notice patterns, support regulation and communication, help the transition feel less overwhelming, and talk through what might make tomorrow go a little more smoothly. For another family, it might look like preparing for an IEP meeting, building a calmer morning rhythm, or sorting through what is and is not working at home.</p>
           </details>
@@ -1127,6 +1237,15 @@
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }));
+
+    const openLinkedDetails = () => {
+      if (!location.hash) return;
+      const target = document.getElementById(location.hash.slice(1));
+      if (target && target.tagName.toLowerCase() === 'details') target.open = true;
+    };
+
+    window.addEventListener('hashchange', openLinkedDetails);
+    openLinkedDetails();
 
     const revealer = new IntersectionObserver(entries => {
       entries.forEach(e => {
