@@ -814,10 +814,20 @@
       gap: 1.4rem;
     }
 
-    .quotes-single {
-      max-width: 48rem;
+    .quotes-pair {
+      max-width: 62rem;
       margin-left: auto;
       margin-right: auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    @media (max-width: 980px) {
+      .quotes-pair {
+        max-width: 52rem;
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
     }
 
     .quote-card {
@@ -1175,13 +1185,21 @@
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">Kind Words</p>
         <h2>Built on Trust</h2>
-        <div class="quotes quotes-single">
+        <div class="quotes quotes-pair">
           <figure class="quote-card">
             <blockquote>
               <p>Brianna has been a remarkable caregiver for both of my children, first when my oldest was a toddler and again years later with my younger child. She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
               <p>One of my children is nonverbal and autistic, and Brianna went above and beyond to connect with him through visual tools and his special interests. She is thorough, follows up with detailed care plans, and her expertise in child development shines through in every interaction. I trust her completely and highly recommend her holistic approach to anyone seeking exceptional child care and family support. I know any parent who walks through her door will feel the same trust and warmth we did.</p>
             </blockquote>
             <figcaption>Jewel Spencer <span>Past client, connected since 2015</span></figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>
+              <p>Brianna's holistic care for children, seeing and accepting them just as they are, is phenomenal. She has always shown up for our neurodivergent daughter with real presence and investment in our child's special interests and favorite activities. She brings the same warmth to the whole family and is a true partner in care.</p>
+              <p>Brianna's reliability, strong background in early childhood education and child development, and excellent judgment are additional reasons we have always rested easy when our daughter has been in her care. I highly recommend her to families seeking child care or support, especially families with added layers of needs, including IEPs, 504s, diagnostic processes, and respite care. Our daughter adores Brianna and always enjoys their time together.</p>
+              <p>Bri was an excellent caretaker for my child. She was patient and kind, and took my child's needs to heart. I wholeheartedly recommend her services.</p>
+            </blockquote>
+            <figcaption>Heather and Way Jeng <span>Past clients, connected since 2019</span></figcaption>
           </figure>
         </div>
       </div>
