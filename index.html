@@ -484,7 +484,7 @@
     /* ---------- Philosophy ---------- */
 
     .pullquote {
-      margin: 1.8rem 0;
+      margin: 0.9rem 0 1.55rem;
       font-style: italic;
       font-size: clamp(1.25rem, 3vw, 1.6rem);
       line-height: 1.5;
@@ -599,7 +599,7 @@
     .card p:last-child { margin-bottom: 0; }
 
     .tailored {
-      margin: 2rem auto 0;
+      margin: 2.1rem auto 0;
       max-width: 38rem;
       text-align: center;
       font-style: italic;
@@ -615,7 +615,7 @@
     /* ---------- Fit + Steps ---------- */
 
     .fit-intro {
-      margin: 0 auto;
+      margin: -0.25rem auto 0;
       max-width: 38rem;
       text-align: center;
       text-wrap: balance;
@@ -709,8 +709,35 @@
       color: rgba(43, 43, 43, 0.78);
     }
 
+    .payment-note {
+      margin: 2.65rem auto 0;
+      max-width: 42rem;
+      padding: 2.05rem 0 0;
+      border-top: 1px solid rgba(122, 46, 79, 0.16);
+      text-align: center;
+    }
+
+    .payment-note h3 {
+      margin: 0 0 0.7rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-size: 1.18rem;
+      color: var(--plum);
+      text-align: center;
+    }
+
+    .payment-note p {
+      margin: 0 auto;
+      max-width: 39rem;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: rgba(43, 43, 43, 0.8);
+      text-align: left;
+    }
+
+    .payment-note p + p { margin-top: 0.75rem; }
+
     .start-contact {
-      margin: 2rem auto 0;
+      margin: 2.45rem auto 0;
       max-width: 38rem;
       text-align: center;
     }
@@ -718,6 +745,66 @@
     .start-contact p {
       margin: 0 auto;
       max-width: 34rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      margin: 1.55rem auto 0;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: rgba(43, 43, 43, 0.62);
+      text-align: center;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      min-height: 2.35rem;
+      padding: 0.5rem 0.72rem;
+      border: 1px solid rgba(122, 46, 79, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.64);
+      color: var(--plum);
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(43, 43, 43, 0.035);
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-1px);
+      border-color: rgba(122, 46, 79, 0.36);
+      background: rgba(255, 253, 249, 0.9);
+    }
+
+    .social-links svg {
+      width: 1rem;
+      height: 1rem;
+      flex: none;
+      fill: currentColor;
+    }
+
+    .social-links .instagram { color: #7A2E4F; }
+    .social-links .facebook { color: #336A64; }
+    .social-links .substack { color: #9A622A; }
+
+    .social-band {
+      padding: 2.3rem 1.5rem 2.8rem;
+      background: rgba(246, 243, 238, 0.72);
+    }
+
+    .social-band .social-links {
+      margin-top: 0;
+      font-size: 0.95rem;
+    }
+
+    .social-band .social-links span {
+      flex-basis: 100%;
     }
 
     @media (max-width: 719px) {
@@ -728,11 +815,11 @@
     }
 
     .contact-actions {
-      margin-top: 1.6rem;
+      margin-top: 1.65rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.9rem;
+      gap: 1rem;
     }
 
     .contact-actions .btn {
@@ -926,7 +1013,9 @@
 
     #book .btn-primary { margin-top: 1.6rem; font-size: 1.1rem; }
 
-    .book-note { margin-top: 1.1rem; font-size: 0.92rem; color: rgba(43, 43, 43, 0.62); }
+    .book-note { margin-top: 1.25rem; font-size: 0.92rem; color: rgba(43, 43, 43, 0.62); }
+
+    .book-note + .social-links { margin-top: 2rem; }
 
     /* ---------- Footer ---------- */
 
@@ -999,6 +1088,17 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <svg aria-hidden="true" focusable="false" style="display: none;">
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <path d="M7.9 2h8.2C19.4 2 22 4.6 22 7.9v8.2c0 3.3-2.6 5.9-5.9 5.9H7.9C4.6 22 2 19.4 2 16.1V7.9C2 4.6 4.6 2 7.9 2Zm0 2C5.7 4 4 5.7 4 7.9v8.2C4 18.3 5.7 20 7.9 20h8.2c2.2 0 3.9-1.7 3.9-3.9V7.9C20 5.7 18.3 4 16.1 4H7.9Zm8.9 2.9a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7.1A4.9 4.9 0 1 1 12 17a4.9 4.9 0 0 1 0-9.9Zm0 2A2.9 2.9 0 1 0 12 15a2.9 2.9 0 0 0 0-5.9Z"/>
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path d="M22 12.1C22 6.5 17.5 2 11.9 2S2 6.5 2 12.1C2 17.1 5.7 21.3 10.5 22v-7H8v-2.9h2.5V9.9c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8L16 15h-2.4v7c4.8-.8 8.4-4.9 8.4-9.9Z"/>
+    </symbol>
+    <symbol id="icon-substack" viewBox="0 0 24 24">
+      <path d="M4 3h16v2.2H4V3Zm0 4.4h16v2.2H4V7.4Zm0 4.4h16V22l-8-4.5L4 22V11.8Z"/>
+    </symbol>
+  </svg>
 
   <nav class="nav" id="nav" aria-label="Main">
     <div class="nav-inner">
@@ -1099,7 +1199,7 @@
             <p>This may include environments that make sense for neurodivergent children, higher-support needs, caregivers, siblings, and the people who live there.</p>
           </div>
         </div>
-        <p class="tailored">Every family is different. We start with the people, rhythms, and circumstances in front of us.</p>
+        <p class="tailored">Every family brings a different mix of people, rhythms, needs, and capacity. We begin there.</p>
         <div class="section-actions">
           <a class="btn btn-primary" href="#book">Talk Through What You Need</a>
         </div>
@@ -1127,7 +1227,7 @@
             <p>Trust comes first. Real support is built through consistency, curiosity, and respect.</p>
           </div>
           <div>
-            <h3>Community Care</h3>
+            <h3>Community through Care</h3>
             <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help families thrive.</p>
           </div>
         </div>
@@ -1137,7 +1237,7 @@
     <section class="section" id="book">
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">How It Starts</p>
-        <h2>A low-pressure first conversation</h2>
+        <h2>A low-pressure conversation, step by step</h2>
         <ol class="steps">
           <li>
             <h3>Reach out</h3>
@@ -1152,6 +1252,12 @@
             <p>Together, we talk through care that fits your needs, schedule, capacity, and real household rhythm.</p>
           </li>
         </ol>
+        <div class="payment-note anchor-target" id="payment">
+          <h3>Paying for Care: What Feels Realistic</h3>
+          <p>Interwoven Family Care is private pay right now, and cost is part of the first conversation. We can talk openly about what kind of support would help, what feels realistic, and what options may be worth exploring.</p>
+          <p>IFC is looking into possible funding paths such as WA Cares, DSHS, FSA/HSA, DDA, CIIBS, Kinship Care, and other family support resources. If you already receive services or support, you are welcome to ask whether they may connect.</p>
+          <p>Talking through what you need also means talking through what you can afford and how. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and sustainable.</p>
+        </div>
         <div class="start-contact">
           <p>Ready to talk through what this could look like? Choose a low-pressure call, or send an email if writing feels easier.</p>
           <div class="contact-actions">
@@ -1159,6 +1265,20 @@
             <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri</a>
           </div>
           <p class="book-note">Prefer email? Write to bri@interwoven.care. Prefer a quick conversation? Choose a phone time that works for you.</p>
+          <div class="social-links" aria-label="Interwoven Family Care social links">
+            <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+              <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+              Substack
+            </a>
+            <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+              <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+              Facebook
+            </a>
+            <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+              <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1178,6 +1298,20 @@
             <p>The goal is less stress, more steadiness, and more room for families to enjoy their time together.</p>
           </div>
         </div>
+        <div class="social-links" aria-label="Interwoven Family Care social links">
+          <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+            <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+            Substack
+          </a>
+          <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+            <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+            Facebook
+          </a>
+          <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+            <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+            Instagram
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1188,15 +1322,15 @@
         <div class="quotes quotes-pair">
           <figure class="quote-card">
             <blockquote>
-              <p>Brianna has been a remarkable caregiver for both of my children, first when my oldest was a toddler and again years later with my younger child. She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
-              <p>One of my children is nonverbal and autistic, and Brianna went above and beyond to connect with him through visual tools and his special interests. She is thorough, follows up with detailed care plans, and her expertise in child development shines through in every interaction. I trust her completely and highly recommend her holistic approach to anyone seeking exceptional child care and family support. I know any parent who walks through her door will feel the same trust and warmth we did.</p>
+              <p>Bri has been a remarkable caregiver for both of my children, first when my oldest was a toddler and again years later with my younger child. She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
+              <p>One of my children is nonverbal and autistic, and Bri went above and beyond to connect with him through visual tools and his special interests. She is thorough, follows up with detailed care plans, and her expertise in child development shines through in every interaction. I trust her completely and highly recommend her holistic approach to anyone seeking exceptional child care and family support. I know any parent who walks through her door will feel the same trust and warmth we did.</p>
             </blockquote>
             <figcaption>Jewel Spencer <span>Past client, connected since 2015</span></figcaption>
           </figure>
           <figure class="quote-card">
             <blockquote>
-              <p>Brianna's holistic care for children, seeing and accepting them just as they are, is phenomenal. She has always shown up for our neurodivergent daughter with real presence and investment in our child's special interests and favorite activities. She brings the same warmth to the whole family and is a true partner in care.</p>
-              <p>Brianna's reliability, strong background in early childhood education and child development, and excellent judgment are additional reasons we have always rested easy when our daughter has been in her care. I highly recommend her to families seeking child care or support, especially families with added layers of needs, including IEPs, 504s, diagnostic processes, and respite care. Our daughter adores Brianna and always enjoys their time together.</p>
+              <p>Bri's holistic care for children, seeing and accepting them just as they are, is phenomenal. She has always shown up for our neurodivergent daughter with real presence and investment in our child's special interests and favorite activities. She brings the same warmth to the whole family and is a true partner in care.</p>
+              <p>Bri's reliability, strong background in early childhood education and child development, and excellent judgment are additional reasons we have always rested easy when our daughter has been in her care. I highly recommend her to families seeking child care or support, especially families with added layers of needs, including IEPs, 504s, diagnostic processes, and respite care. Our daughter adores Bri and always enjoys their time together.</p>
               <p>Bri was an excellent caretaker for my child. She was patient and kind, and took my child's needs to heart. I wholeheartedly recommend her services.</p>
             </blockquote>
             <figcaption>Heather and Way Jeng <span>Past clients, connected since 2019</span></figcaption>
@@ -1229,15 +1363,15 @@
         <div class="faq-list">
           <details>
             <summary>What areas do you serve?</summary>
-            <p>IFC is based in Tacoma, Washington, and works with families in Tacoma and nearby Pierce County communities. Not sure whether you're in range? Reach out and we'll figure it out together.</p>
+            <p>IFC is based in Tacoma, Washington, and works with families in communities throughout Pierce County. Not sure whether you're in range? Reach out and we'll figure it out together.</p>
           </details>
           <details>
             <summary>Is IFC therapy or clinical treatment?</summary>
-            <p>No. IFC is not therapy, clinical treatment, crisis intervention, or a replacement for medical, mental health, or educational professionals. IFC provides practical, relationship-based family support that can help carry recommendations and everyday care into real life.</p>
+            <p>No. IFC is not therapy, clinical treatment, crisis intervention, or a replacement for medical or mental health professionals. IFC offers practical, relationship-based family support that can help carry recommendations, routines, and everyday care into real life.</p>
           </details>
           <details>
-            <summary>Do you work with families with higher support needs?</summary>
-            <p>Yes. This is central to our work. We work with families navigating complex needs. We move at the pace of trust and shape care around what helps your child and household feel more understood, steady, and supported.</p>
+            <summary>Do you support more complex family needs?</summary>
+            <p>Yes. This is central to our work. IFC works with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and higher-support seasons. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow from real life.</p>
           </details>
           <details>
             <summary>What does "adaptive" care mean?</summary>
@@ -1245,25 +1379,46 @@
           </details>
           <details>
             <summary>What ages do you work with?</summary>
-            <p>Because IFC supports the family as a whole, there is no strict age cutoff. Tell us about your children, your household, and what you're carrying. We'll talk together about what fits.</p>
+            <p>Birth through 18 is IFC's specialty, but our work is with whole families. Care may include caregivers, siblings, extended family, and the household as a whole. If you are wondering whether your situation fits, tell us about your children, your household, and what you're carrying. We'll talk together about what makes sense.</p>
           </details>
           <details class="anchor-target" id="support-example">
-            <summary>What might support look like in real life?</summary>
-            <p>It might look like coming alongside a single parent with two children during the after-school or evening stretch, when everyone is tired and the next transition is already coming. One child may be neurodivergent, one may need help with attention or big feelings, and the caregiver may need another steady adult in the room who can notice patterns, support regulation and communication, help the transition feel less overwhelming, and talk through what might make tomorrow go a little more smoothly. For another family, it might look like preparing for an IEP meeting, building a calmer morning rhythm, or sorting through what is and is not working at home.</p>
+            <summary>What does support look like?</summary>
+            <p>Support is shaped around your family's real life. It might begin during the after-school or evening stretch, when everyone is tired, the next transition is coming, and the household still needs care, dinner, regulation, and connection.</p>
+            <p>In those moments, I may be another steady adult with your children: playing, helping with transitions, supporting big feelings, noticing communication needs, or helping the evening move with less overwhelm.</p>
+            <p>As I get to know your family, support may also include the pieces around care: folding laundry, loading dishes, organizing a space that is not working, preparing for an IEP meeting, building a calmer morning rhythm, or talking through what keeps feeling hard at home.</p>
+            <p>I pay attention to patterns, stress points, communication, and what might help tomorrow feel a little smoother. Support should feel steady, respectful, and relieving, like someone is noticing what is heavy and helping you carry it.</p>
           </details>
           <details>
             <summary>How does scheduling work?</summary>
-            <p>Scheduling starts with a conversation about what your family needs: regular weekly care, help through a transition, breathing room during a hard season, or something in between. From there, we talk through what is realistic and sustainable.</p>
+            <p>Scheduling starts with a conversation about what your family needs: regular weekly care, support during mornings, after-school, evenings, or bedtime, help preparing for changes in school or family routines, breathing room during a hard season, or something in between. From there, we talk through what feels realistic, sustainable, and supportive for your household.</p>
           </details>
           <details>
             <summary>What are your rates?</summary>
-            <p>Rates depend on the shape of care your family needs. We'll talk through pricing openly in your first conversation. At this time, IFC is private pay only and does not accept insurance, subsidies, or third-party payment.</p>
+            <p>Rates depend on the shape of care your family needs. We'll talk through pricing openly in your first conversation, including what feels realistic and what funding paths may be worth exploring. At this time, IFC is private pay and does not bill insurance directly.</p>
           </details>
         </div>
       </div>
     </section>
 
   </main>
+
+  <div class="social-band">
+    <div class="social-links" aria-label="Interwoven Family Care social links">
+      <span>Follow Interwoven Family Care</span>
+      <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+        <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+        Substack
+      </a>
+      <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+        <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+        Facebook
+      </a>
+      <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+        <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
 
   <footer>
     <img src="assets/heart.png" alt="">
