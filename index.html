@@ -731,11 +731,14 @@
     }
 
     .payment-note h3 {
-      margin: 0 0 0.7rem;
+      margin: 0.7rem 0 1.2rem;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-size: 1.18rem;
-      color: var(--plum);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      line-height: 1.3;
+      color: var(--ink);
       text-align: center;
+      text-wrap: balance;
     }
 
     .payment-note p {
@@ -1270,7 +1273,8 @@
           </li>
         </ol>
         <div class="payment-note anchor-target" id="payment">
-          <h3>Paying for Care:<br>What Feels Realistic</h3>
+          <p class="eyebrow">Paying for Care</p>
+          <h3>What Feels Realistic</h3>
           <p>Interwoven Family Care is private pay right now, and cost is something we can talk through in the first conversation. You do not need a perfect plan before reaching out. We can talk about what kind of support would help, what feels realistic, and what options may be worth exploring.<br>We are learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
           <p>Talking through care also means talking through what is sustainable for your family. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and clear.</p>
         </div>
