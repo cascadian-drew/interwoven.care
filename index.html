@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interwoven Family Care - Adaptive In-Home Family Support in Tacoma, WA</title>
-  <meta name="description" content="Interwoven Family Care offers adaptive in-home family support in Tacoma, Washington, for routines, transitions, caregiver capacity, and practical care in daily life.">
+  <title>Interwoven Family Care - Adaptive In-Home Family Support in Pierce County, WA</title>
+  <meta name="description" content="Interwoven Family Care offers adaptive in-home family support in Tacoma and throughout Pierce County, Washington, for routines, transitions, caregiver capacity, and practical care in daily life.">
   <link rel="canonical" href="https://interwoven.care/">
   <link rel="icon" type="image/png" href="assets/heart.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/">
   <meta property="og:title" content="Interwoven Family Care">
-  <meta property="og:description" content="Adaptive in-home family support in Tacoma, Washington. Supporting the family as a whole.">
+  <meta property="og:description" content="Adaptive in-home family support in Tacoma and throughout Pierce County, Washington. Supporting the family as a whole.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -42,7 +42,14 @@
     body {
       margin: 0;
       color: var(--ink);
-      background-color: var(--ivory);
+      background:
+        linear-gradient(
+          180deg,
+          var(--ivory) 0%,
+          #F8F5EF 32%,
+          #F4F2EA 62%,
+          #F7F3EC 100%
+        );
       font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -57,11 +64,9 @@
         linear-gradient(
           180deg,
           rgba(246, 243, 238, 0) 0%,
-          rgba(246, 243, 238, 0) 34%,
-          rgba(63, 122, 115, 0.07) 54%,
-          rgba(122, 46, 79, 0.055) 70%,
-          rgba(122, 150, 43, 0.065) 88%,
-          rgba(246, 243, 238, 0.72) 100%
+          rgba(63, 122, 115, 0.035) 42%,
+          rgba(122, 46, 79, 0.03) 68%,
+          rgba(217, 161, 93, 0.035) 100%
         );
     }
 
@@ -712,9 +717,17 @@
     .payment-note {
       margin: 2.65rem auto 0;
       max-width: 42rem;
-      padding: 2.05rem 0 0;
-      border-top: 1px solid rgba(122, 46, 79, 0.16);
+      padding: 0;
       text-align: center;
+    }
+
+    .payment-note::before {
+      content: "";
+      display: block;
+      width: min(230px, 52vw);
+      height: 1px;
+      margin: 0 auto 2.05rem;
+      background: linear-gradient(to right, transparent, rgba(122, 150, 43, 0.5), transparent);
     }
 
     .payment-note h3 {
@@ -793,10 +806,7 @@
     .social-links .facebook { color: #336A64; }
     .social-links .substack { color: #9A622A; }
 
-    .social-band {
-      padding: 2.3rem 1.5rem 2.8rem;
-      background: rgba(246, 243, 238, 0.72);
-    }
+    .social-band { padding: 2.3rem 1.5rem 2.8rem; }
 
     .social-band .social-links {
       margin-top: 0;
@@ -887,12 +897,11 @@
     @media (max-width: 719px) {
       .about-grid { grid-template-columns: 1fr; }
       .section-mark { width: 96px; margin: 0 auto 1.4rem; }
-      .section-mark.between-sections { margin-top: 2rem; }
     }
 
     /* ---------- Kind Words ---------- */
 
-    #kind-words { background: rgba(217, 161, 93, 0.08); }
+    #kind-words { background: rgba(255, 253, 249, 0.24); }
 
     .quotes {
       margin-top: 2.2rem;
@@ -1081,8 +1090,8 @@
     "name": "Interwoven Family Care",
     "url": "https://interwoven.care/",
     "email": "bri@interwoven.care",
-    "description": "Adaptive in-home family support in Tacoma, Washington.",
-    "areaServed": "Tacoma, Washington"
+    "description": "Adaptive in-home family support in Tacoma and throughout Pierce County, Washington.",
+    "areaServed": "Pierce County, Washington"
   }
   </script>
 </head>
@@ -1132,7 +1141,7 @@
         <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
       </h1>
       <p class="lede rise d3">Adaptive in-home support for families carrying a lot.</p>
-      <p class="sub rise d3">Interwoven Family Care helps Tacoma-area families with routines, transitions, caregiver capacity, &amp; practical support in daily life.</p>
+      <p class="sub rise d3">Interwoven Family Care helps Tacoma-area families with routines, transitions, caregiver capacity, and practical support in daily life.</p>
       <ul class="hero-situations rise d4" aria-label="Common reasons families reach out">
         <li><a href="#philosophy">School or therapy concerns</a></li>
         <li><a href="#support-example">Neurodivergent family life</a></li>
@@ -1140,10 +1149,12 @@
         <li><a href="#about">Caregiver overwhelm</a></li>
       </ul>
       <div class="hero-actions rise d4">
-        <a class="btn btn-primary" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-Minute Call</a>
+        <a class="btn btn-primary" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-minute Call</a>
         <a class="btn btn-ghost" href="#offerings">Explore Services</a>
       </div>
     </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="fit">
       <div class="wrap" data-reveal>
@@ -1151,8 +1162,8 @@
         <h2>When daily life is hard to hold</h2>
         <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or therapy recommendation. You do not need the perfect words before we start.</p>
         <ul class="fit-list">
-          <li>You are looking for in-home family support that goes beyond just childcare.</li>
-          <li>Your family is adjusting after a diagnosis or concern related to autism, ADHD, development, sensory needs, school, or health.</li>
+          <li>You need support with the in-between parts of care: building and keeping routines, working through difficult transitions, and meeting daily needs that are hard to carry alone.</li>
+          <li>Your family is adjusting after a diagnosis or concern related to Autism, ADHD, development, sensory needs, school, or health.</li>
           <li>Mornings, evenings, bedtime, school drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</li>
           <li>You need another steady adult who can support children, siblings, routines, and caregiver capacity at the same time.</li>
           <li>Therapy strategies, IEP or 504 goals, behavior plans, or provider recommendations make sense on paper but are hard to carry into daily life.</li>
@@ -1162,6 +1173,8 @@
         </ul>
       </div>
     </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
@@ -1199,12 +1212,14 @@
             <p>This may include environments that make sense for neurodivergent children, higher-support needs, caregivers, siblings, and the people who live there.</p>
           </div>
         </div>
-        <p class="tailored">Every family brings a different mix of people, rhythms, needs, &amp; capacity. We begin there.</p>
+        <p class="tailored">Every family brings a different mix of people, rhythms, needs, and capacity. We begin there.</p>
         <div class="section-actions">
           <a class="btn btn-primary" href="#book">Talk Through What You Need</a>
         </div>
       </div>
     </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="philosophy">
       <div class="wrap" data-reveal>
@@ -1234,6 +1249,8 @@
       </div>
     </section>
 
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
     <section class="section" id="book">
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">How It Starts</p>
@@ -1253,15 +1270,14 @@
           </li>
         </ol>
         <div class="payment-note anchor-target" id="payment">
-          <h3>Paying for Care: What Feels Realistic</h3>
-          <p>Interwoven Family Care is private pay right now, and cost is part of the first conversation. We can talk openly about what kind of support would help, what feels realistic, and what options may be worth exploring.</p>
-          <p>IFC is looking into possible funding paths such as WA Cares, DSHS, FSA/HSA, DDA, CIIBS, Kinship Care, and other family support resources. If you already receive services or support, you are welcome to ask whether they may connect.</p>
-          <p>Talking through what you need also means talking through what you can afford and how. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and sustainable.</p>
+          <h3>Paying for Care:<br>What Feels Realistic</h3>
+          <p>Interwoven Family Care is private pay right now, and cost is something we can talk through in the first conversation. You do not need a perfect plan before reaching out. We can talk about what kind of support would help, what feels realistic, and what options may be worth exploring.<br>We are learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
+          <p>Talking through care also means talking through what is sustainable for your family. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and clear.</p>
         </div>
         <div class="start-contact">
-          <p>Ready to talk through what this could look like? Choose a low-pressure call, or send an email if writing feels easier.</p>
+          <p>Ready to talk through what this could look like?<br>Choose a low-pressure call, or send an email if writing feels easier.</p>
           <div class="contact-actions">
-            <a class="btn btn-call" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-Minute Call</a>
+            <a class="btn btn-call" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-minute Call</a>
             <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri</a>
           </div>
           <p class="book-note">Prefer email? Write to bri@interwoven.care. Prefer a quick conversation? Choose a phone time that works for you.</p>
@@ -1283,11 +1299,10 @@
       </div>
     </section>
 
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
     <section class="section" id="about">
       <div class="wrap" data-reveal>
-        <div class="section-mark">
-          <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
-        </div>
         <p class="eyebrow">About IFC</p>
         <h2>Built around real family life</h2>
         <div class="about-grid">
@@ -1314,6 +1329,8 @@
         </div>
       </div>
     </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="kind-words">
       <div class="wrap-wide" data-reveal>
@@ -1352,9 +1369,7 @@
       </div>
     </section>
 
-    <div class="section-mark between-sections" aria-hidden="true">
-      <img class="knot-placeholder" src="assets/heart.png" alt="" width="192" height="173">
-    </div>
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
     <section class="section" id="faqs">
       <div class="wrap" data-reveal>
@@ -1394,7 +1409,7 @@
           </details>
           <details>
             <summary>What are your rates?</summary>
-            <p>Rates depend on the shape of care your family needs. We'll talk through pricing openly in your first conversation, including what feels realistic and what funding paths may be worth exploring. At this time, IFC is private pay and does not bill insurance directly.</p>
+            <p>Rates depend on the shape of care your family needs. We'll talk through pricing openly in your first conversation, including what is affordable and what options may be worth exploring. At this time, IFC is private pay and does not bill insurance directly.</p>
           </details>
         </div>
       </div>
@@ -1422,7 +1437,7 @@
 
   <footer>
     <img src="assets/heart.png" alt="">
-    <div>&copy; 2026 Interwoven Family Care &middot; Tacoma, WA &middot; <a href="mailto:bri@interwoven.care">bri@interwoven.care</a></div>
+    <div>&copy; 2026 Interwoven Family Care, LLC &middot; Tacoma, WA &middot; <a href="mailto:bri@interwoven.care">bri@interwoven.care</a></div>
   </footer>
 
   <script>
