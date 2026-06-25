@@ -730,18 +730,7 @@
       background: linear-gradient(to right, transparent, rgba(122, 150, 43, 0.5), transparent);
     }
 
-    .payment-note h3 {
-      margin: 0.7rem 0 1.2rem;
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.5rem, 3.4vw, 2rem);
-      line-height: 1.3;
-      color: var(--ink);
-      text-align: center;
-      text-wrap: balance;
-    }
-
-    .payment-note p {
+    .payment-note p:not(.eyebrow) {
       margin: 0 auto;
       max-width: 39rem;
       font-size: 0.98rem;
@@ -750,7 +739,7 @@
       text-align: left;
     }
 
-    .payment-note p + p { margin-top: 0.75rem; }
+    .payment-note p:not(.eyebrow) + p { margin-top: 0.75rem; }
 
     .start-contact {
       margin: 2.45rem auto 0;
@@ -870,36 +859,8 @@
     .about-copy p { margin: 0 0 1.15rem; }
     .about-copy p:last-child { margin-bottom: 0; }
 
-    .section-mark {
-      width: 112px;
-      aspect-ratio: 1;
-      margin: 0 auto 1.6rem;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid rgba(122, 46, 79, 0.14);
-      background:
-        linear-gradient(135deg, rgba(122, 46, 79, 0.17), rgba(217, 161, 93, 0.2) 48%, rgba(63, 122, 115, 0.16));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .section-mark.between-sections {
-      margin-top: 2.4rem;
-      margin-bottom: 0;
-    }
-
-    .section-mark .knot-placeholder { width: 68px; opacity: 0.82; }
-
-    .section-mark .photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     @media (max-width: 719px) {
       .about-grid { grid-template-columns: 1fr; }
-      .section-mark { width: 96px; margin: 0 auto 1.4rem; }
     }
 
     /* ---------- Kind Words ---------- */
@@ -1274,7 +1235,7 @@
         </ol>
         <div class="payment-note anchor-target" id="payment">
           <p class="eyebrow">Paying for Care</p>
-          <h3>What Feels Realistic</h3>
+          <h2>What Feels Realistic</h2>
           <p>Interwoven Family Care is private pay right now, and cost is something we can talk through in the first conversation. You do not need a perfect plan before reaching out. We can talk about what kind of support would help, what feels realistic, and what options may be worth exploring.<br>We are learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
           <p>Talking through care also means talking through what is sustainable for your family. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and clear.</p>
         </div>
