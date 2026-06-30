@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Inquiry | Interwoven Family Care</title>
+  <meta name="description" content="Start a client inquiry with Interwoven Family Care in Tacoma, Washington. Share what your family is carrying and learn whether IFC may be a fit.">
+  <link rel="canonical" href="https://interwoven.care/client-inquiry/">
+  <link rel="icon" type="image/png" href="../assets/heart.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#F6F3EE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://interwoven.care/client-inquiry/">
+  <meta property="og:title" content="Client Inquiry | Interwoven Family Care">
+  <meta property="og:description" content="A first step for families wondering whether Interwoven Family Care may be a fit.">
+  <meta property="og:image" content="https://interwoven.care/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #336A64;
+      --deep-teal: #2B5A55;
+      --moss: #7A962B;
+      --copper: #D9A15D;
+      --plum: #7A2E4F;
+      --ivory: #F6F3EE;
+      --ink: #2B2B2B;
+      --nav-h: 3.6rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(
+          180deg,
+          var(--ivory) 0%,
+          #F8F5EF 32%,
+          #F4F2EA 62%,
+          #F7F3EC 100%
+        );
+      font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: rgba(63, 122, 115, 0.28); }
+    img { display: block; height: auto; }
+
+    main {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(246, 243, 238, 0) 0%,
+          rgba(63, 122, 115, 0.035) 42%,
+          rgba(122, 46, 79, 0.03) 68%,
+          rgba(217, 161, 93, 0.035) 100%
+        );
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0.5rem;
+      z-index: 100;
+      padding: 0.6em 1em;
+      background: var(--plum);
+      color: var(--ivory);
+      border-radius: 999px;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+    }
+
+    .skip-link:focus-visible { left: 0.5rem; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 243, 238, 0.88);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(43, 43, 43, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 68rem;
+      margin: 0 auto;
+      min-height: var(--nav-h);
+      padding: 0.4rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 1.04rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand img { width: 30px; }
+
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      position: relative;
+      padding: 0.35rem 0;
+      text-decoration: none;
+      color: rgba(43, 43, 43, 0.82);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--copper);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      padding: 0.72em 1.2em;
+      border-radius: 999px;
+      background: var(--teal);
+      color: var(--ivory);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 3px 12px rgba(63, 122, 115, 0.18);
+      transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-teal);
+      color: var(--ivory);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(63, 122, 115, 0.22);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--plum);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .nav-toggle {
+      display: none;
+      margin-left: auto;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 2px;
+      background: var(--ink);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+
+    .nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 880px) {
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1.25rem 1.1rem;
+        background: var(--ivory);
+        border-bottom: 1px solid rgba(43, 43, 43, 0.1);
+        box-shadow: 0 14px 28px rgba(43, 43, 43, 0.1);
+      }
+
+      .nav.open .nav-links { display: flex; }
+
+      .nav-links a:not(.nav-cta) {
+        padding: 0.7rem 0.2rem;
+        font-size: 1.05rem;
+      }
+
+      .nav-links a:not(.nav-cta)::after { display: none; }
+
+      .nav-cta {
+        margin-top: 0.7rem;
+        text-align: center;
+        padding: 0.7em 1.2em;
+        font-size: 1.05rem;
+      }
+    }
+
+    .hero {
+      min-height: min(34rem, calc(86svh - var(--nav-h)));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(3rem, 9vh, 5.5rem) 1.5rem;
+      background-image:
+        radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
+        radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
+    }
+
+    .crest { width: min(42vw, 170px); }
+
+    .eyebrow {
+      margin: 1.1rem 0 0;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.32em;
+      text-indent: 0.32em;
+      text-transform: uppercase;
+      color: var(--copper);
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    h1 {
+      margin: 0.7rem 0 0;
+      max-width: 52rem;
+      font-size: clamp(2.1rem, 6vw, 4rem);
+    }
+
+    .lede {
+      margin: 1rem 0 0;
+      max-width: 42rem;
+      color: var(--plum);
+      font-size: clamp(1.08rem, 2.6vw, 1.25rem);
+      line-height: 1.6;
+      text-wrap: balance;
+    }
+
+    .section {
+      padding: clamp(3.25rem, 8vh, 5.5rem) 1.5rem;
+    }
+
+    .wrap { max-width: 44rem; margin: 0 auto; }
+    .wrap-wide { max-width: 62rem; margin: 0 auto; }
+
+    h2 {
+      margin: 0.7rem 0 1.2rem;
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      text-align: center;
+    }
+
+    .section p,
+    .section li {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: rgba(43, 43, 43, 0.88);
+    }
+
+    .intro { text-align: center; text-wrap: balance; }
+
+    .knot-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      padding: 1.1rem 1.5rem;
+    }
+
+    .knot-divider::before,
+    .knot-divider::after {
+      content: "";
+      height: 1px;
+      width: min(110px, 22vw);
+    }
+
+    .knot-divider::before { background: linear-gradient(to left, rgba(122, 150, 43, 0.5), transparent); }
+    .knot-divider::after { background: linear-gradient(to right, rgba(122, 150, 43, 0.5), transparent); }
+    .knot-divider img { width: 26px; opacity: 0.9; }
+
+    .cards {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card,
+    .form-embed {
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
+        linear-gradient(90deg, rgba(63, 122, 115, 0.76), rgba(122, 46, 79, 0.34)) border-box;
+      border: 1px solid transparent;
+      border-top-width: 4px;
+      border-radius: 14px;
+      padding: 1.5rem 1.4rem 1.4rem;
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
+    }
+
+    .card:nth-child(2) {
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
+        linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(122, 150, 43, 0.36)) border-box;
+    }
+
+    .card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.14rem;
+    }
+
+    .card p,
+    .card ul {
+      margin: 0;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+    }
+
+    .card li + li { margin-top: 0.45rem; }
+
+    .crisis-note {
+      margin: 2rem auto 0;
+      max-width: 48rem;
+      padding: 1.2rem 1.35rem;
+      border-left: 4px solid var(--plum);
+      border-radius: 12px;
+      background: rgba(122, 46, 79, 0.075);
+    }
+
+    .crisis-note p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .start-panel {
+      margin-top: 1.7rem;
+      text-align: center;
+    }
+
+    .form-embed {
+      margin-top: 1.8rem;
+      min-height: 18rem;
+      display: flex;
+      justify-content: center;
+      border-style: solid;
+      text-align: center;
+    }
+
+    .form-embed p {
+      margin: 0;
+      max-width: 34rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      color: var(--plum);
+    }
+
+    .form-embed a { color: var(--plum); }
+
+    .form-embed iframe {
+      width: 100%;
+      max-width: 640px;
+      border: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      min-height: 3.05rem;
+      padding: 0.78em 1.45em;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.25;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--ivory);
+      border-color: var(--teal);
+      box-shadow: 0 4px 14px rgba(63, 122, 115, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-teal);
+      transform: translateY(-1.5px);
+      box-shadow: 0 7px 18px rgba(63, 122, 115, 0.26);
+    }
+
+    .note {
+      margin-top: 1rem;
+      font-size: 0.94rem;
+      color: rgba(43, 43, 43, 0.68);
+    }
+
+    .section p.note {
+      font-size: 0.94rem;
+      color: rgba(43, 43, 43, 0.68);
+    }
+
+    footer {
+      padding: 2rem 1rem 1.6rem;
+      border-top: 0;
+      background:
+        linear-gradient(180deg, rgba(63, 122, 115, 0.08), rgba(217, 161, 93, 0.1) 58%, rgba(255, 253, 249, 0.68));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: rgba(43, 43, 43, 0.6);
+      text-align: center;
+    }
+
+    footer img { width: 22px; opacity: 0.85; }
+    footer a { color: rgba(43, 43, 43, 0.75); }
+
+    @media (max-width: 719px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .btn:hover, .nav-cta { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="../assets/heart.png" alt="" width="192" height="173">
+        Interwoven Family Care
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#offerings">Services</a>
+        <a href="/#philosophy">Philosophy</a>
+        <a href="/#about">About IFC</a>
+        <a href="/#about-bri">About the Founder</a>
+        <a href="/#faqs">FAQs</a>
+        <a class="nav-cta" href="#start-client-inquiry">Start Client Inquiry</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
+      <p class="eyebrow">Client Inquiry</p>
+      <h1>Tell us a little about your family</h1>
+      <p class="lede">This inquiry is a simple way to reach out if your family is wondering whether Interwoven Family Care may be a good fit for practical, relationship-based support in daily life.</p>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="../assets/heart.png" alt=""></div>
+
+    <section class="section" aria-labelledby="about-inquiry">
+      <div class="wrap-wide">
+        <p class="eyebrow">Before You Start</p>
+        <h2 id="about-inquiry">What this inquiry is for</h2>
+        <p class="intro">The inquiry form helps Bri understand what kind of support you may be looking for, what your family is carrying right now, and what next step may make sense.</p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>This form is for</h3>
+            <ul>
+              <li>Sharing what daily life feels like right now.</li>
+              <li>Describing routines, transitions, care needs, or caregiver capacity you want support with.</li>
+              <li>Starting a low-pressure conversation about what kind of support may make sense.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>This form is not for</h3>
+            <ul>
+              <li>Emergency requests or crisis response.</li>
+              <li>A full intake form, service agreement, medical form, or guarantee of services.</li>
+              <li>Detailed medical, legal, custody, or crisis information.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="crisis-note" role="note" aria-label="Emergency and crisis note">
+          <p>If this is an emergency or someone may be in immediate danger, call 911. If you or someone in your family needs urgent mental health crisis support, call or text 988 for the Suicide &amp; Crisis Lifeline.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="../assets/heart.png" alt=""></div>
+
+    <section class="section" id="start-client-inquiry" aria-labelledby="start-heading">
+      <div class="wrap">
+        <p class="eyebrow">Start Client Inquiry</p>
+        <h2 id="start-heading">IFC Family Inquiry Form</h2>
+        <p class="intro">Inquiry responses are collected through Bri's Google Form, not stored by this website. Please do not include detailed medical, legal, custody, or crisis information here.</p>
+
+        <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="3049" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        </div>
+
+        <div class="start-panel">
+          <a class="btn btn-primary" href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">Email Bri With a Question</a>
+          <p class="note">This form and email are for non-urgent inquiries only.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="../assets/heart.png" alt="">
+    <div>&copy; 2026 Interwoven Family Care, LLC &middot; Tacoma, WA &middot; <a href="mailto:bri@interwoven.care">bri@interwoven.care</a></div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const toggle = nav.querySelector('.nav-toggle');
+    const links = nav.querySelectorAll('.nav-links a');
+
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
