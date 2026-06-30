@@ -33,6 +33,13 @@
       --nav-h: 3.6rem;
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
       --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+      --action-primary: var(--teal);
+      --action-primary-hover: var(--deep-teal);
+      --action-schedule: var(--plum);
+      --action-schedule-hover: #642640;
+      --action-secondary-bg: rgba(255, 253, 249, 0.8);
+      --action-secondary-border: rgba(122, 46, 79, 0.42);
+      --action-text-on-dark: #FFFDF9;
     }
 
     * { box-sizing: border-box; }
@@ -165,8 +172,8 @@
     .nav-cta {
       padding: 0.72em 1.2em;
       border-radius: 999px;
-      background: var(--teal);
-      color: #FFFDF9;
+      background: var(--action-primary);
+      color: var(--action-text-on-dark);
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
@@ -177,8 +184,8 @@
     }
 
     .nav-cta:hover {
-      background: var(--deep-teal);
-      color: #FFFDF9;
+      background: var(--action-primary-hover);
+      color: var(--action-text-on-dark);
       transform: translateY(-1px);
       box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.28), 0 5px 15px rgba(63, 122, 115, 0.22);
     }
@@ -520,22 +527,22 @@
     }
 
     .btn-primary {
-      background: var(--teal);
-      color: #FFFDF9;
-      border-color: var(--teal);
+      background: var(--action-primary);
+      color: var(--action-text-on-dark);
+      border-color: var(--action-primary);
       box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.34), 0 4px 14px rgba(63, 122, 115, 0.22);
     }
 
     .btn-primary:hover {
-      background: var(--deep-teal);
-      color: #FFFDF9;
+      background: var(--action-primary-hover);
+      color: var(--action-text-on-dark);
       transform: translateY(-1.5px);
       box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.28), 0 7px 18px rgba(63, 122, 115, 0.26);
     }
 
     .btn-secondary {
-      border-color: rgba(122, 46, 79, 0.42);
-      background: rgba(255, 253, 249, 0.8);
+      border-color: var(--action-secondary-border);
+      background: var(--action-secondary-bg);
       color: var(--ink);
       box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.72), 0 3px 10px rgba(43, 43, 43, 0.045);
     }
@@ -544,6 +551,21 @@
       border-color: var(--plum);
       background: rgba(122, 46, 79, 0.08);
       transform: translateY(-1.5px);
+    }
+
+    .btn-schedule {
+      border-color: var(--action-schedule);
+      background: var(--action-schedule);
+      color: var(--action-text-on-dark);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.3), 0 4px 14px rgba(122, 46, 79, 0.18);
+    }
+
+    .btn-schedule:hover {
+      background: var(--action-schedule-hover);
+      border-color: var(--action-schedule-hover);
+      color: var(--action-text-on-dark);
+      transform: translateY(-1.5px);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.26), 0 7px 18px rgba(122, 46, 79, 0.24);
     }
 
     .note {
@@ -687,7 +709,7 @@
         <div class="start-panel">
           <p>Questions before you start?</p>
           <div class="start-actions">
-            <a class="btn btn-primary" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Phone Call</a>
+            <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Phone Call</a>
             <a class="btn btn-secondary" href="mailto:Bri@interwoven.care?subject=Client%20Inquiry%20question">Send an E-mail</a>
           </div>
           <p class="note">This is for non-urgent inquiries only.</p>
