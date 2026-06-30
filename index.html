@@ -930,6 +930,25 @@
     .about-copy p { margin: 0 0 1.15rem; }
     .about-copy p:last-child { margin-bottom: 0; }
 
+    .founder-portrait {
+      margin: 0 auto 1.15rem;
+      width: min(68vw, 250px);
+      aspect-ratio: 4 / 5;
+      padding: 0.42rem;
+      border: 4px solid rgba(217, 161, 93, 0.68);
+      border-radius: 50%;
+      background: rgba(255, 253, 249, 0.84);
+      box-shadow: 0 8px 24px rgba(43, 43, 43, 0.08);
+    }
+
+    .founder-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 58% 42%;
+      border-radius: 50%;
+    }
+
     @media (max-width: 719px) {
       .about-grid { grid-template-columns: 1fr; }
     }
@@ -1315,10 +1334,9 @@
           <p>Ready to talk through what this could look like?<br>Start with the inquiry form, choose a low-pressure call, or send an email if writing feels easier.</p>
           <div class="contact-actions">
             <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
-            <a class="btn btn-call" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30-minute Call</a>
+            <a class="btn btn-call" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Book a 30</a>
             <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri</a>
           </div>
-          <p class="book-note">Prefer email? Write to bri@interwoven.care. Prefer a quick conversation? Choose a phone time that works for you.</p>
           <div class="social-links" aria-label="Interwoven Family Care social links">
             <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
               <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
@@ -1398,6 +1416,9 @@
 
     <section class="section" id="about-bri">
       <div class="wrap" data-reveal>
+        <div class="founder-portrait">
+          <img src="assets/bri-founder.jpg" alt="Brianna Waugh as a child" width="960" height="686">
+        </div>
         <p class="eyebrow">About the Founder</p>
         <h2>Meeting People Where They Are</h2>
         <p>I'm Brianna (Bri) Waugh, founder of Interwoven Family Care. I built this work after more than a decade alongside children, caregivers, and families in early childhood centers, in-home care, and community programs.</p>
