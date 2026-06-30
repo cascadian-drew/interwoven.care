@@ -251,18 +251,6 @@
 
     .crest { width: min(63vw, 270px); }
 
-    .eyebrow {
-      margin: 1.1rem 0 0;
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.32em;
-      text-indent: 0.32em;
-      text-transform: uppercase;
-      color: var(--copper);
-      text-align: center;
-    }
-
     h1, h2, h3 {
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
@@ -274,7 +262,7 @@
       margin: 0.55rem 0 0;
       max-width: 42rem;
       font-size: clamp(2.25rem, 5vw, 3.45rem);
-      color: var(--copper);
+      color: var(--plum);
     }
 
     .hero-subhead {
@@ -306,15 +294,6 @@
       text-wrap: balance;
     }
 
-    .lede {
-      margin: 1rem 0 0;
-      max-width: 42rem;
-      color: var(--plum);
-      font-size: clamp(1.08rem, 2.6vw, 1.25rem);
-      line-height: 1.6;
-      text-wrap: balance;
-    }
-
     .section {
       padding: clamp(1.8rem, 4.5vh, 3rem) 1.5rem;
     }
@@ -330,39 +309,12 @@
     .wrap { max-width: 44rem; margin: 0 auto; }
     .wrap-wide { max-width: 62rem; margin: 0 auto; }
 
-    h2 {
-      margin: 0.7rem 0 1.2rem;
-      font-size: clamp(1.5rem, 3.4vw, 2rem);
-      text-align: center;
-    }
-
     .section p,
     .section li {
       font-size: 1.04rem;
       line-height: 1.7;
       color: rgba(43, 43, 43, 0.88);
     }
-
-    .intro { text-align: center; text-wrap: balance; }
-
-    .knot-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.1rem;
-      padding: 1.1rem 1.5rem;
-    }
-
-    .knot-divider::before,
-    .knot-divider::after {
-      content: "";
-      height: 1px;
-      width: min(110px, 22vw);
-    }
-
-    .knot-divider::before { background: linear-gradient(to left, rgba(122, 150, 43, 0.5), transparent); }
-    .knot-divider::after { background: linear-gradient(to right, rgba(122, 150, 43, 0.5), transparent); }
-    .knot-divider img { width: 26px; opacity: 0.9; }
 
     .cards {
       margin-top: 0.65rem;
@@ -371,11 +323,10 @@
       gap: 1rem;
     }
 
-    .card,
-    .form-embed {
+    .card {
       background:
         linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
-        linear-gradient(90deg, rgba(63, 122, 115, 0.76), rgba(122, 46, 79, 0.34)) border-box;
+        linear-gradient(90deg, rgba(63, 122, 115, 0.78), rgba(122, 150, 43, 0.34)) border-box;
       border: 1px solid transparent;
       border-top-width: 4px;
       border-radius: 14px;
@@ -386,7 +337,7 @@
     .card:nth-child(2) {
       background:
         linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
-        linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(122, 150, 43, 0.36)) border-box;
+        linear-gradient(90deg, rgba(122, 46, 79, 0.64), rgba(217, 161, 93, 0.38)) border-box;
     }
 
     .card h3 {
@@ -394,16 +345,42 @@
       font-size: 1.14rem;
     }
 
+    .card:nth-child(1) h3 { color: var(--deep-teal); }
+    .card:nth-child(2) h3 { color: var(--plum); }
+
     .card p,
     .card ul {
       margin: 0;
     }
 
     .card ul {
-      padding-left: 1.2rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.63rem;
+      width: 0.52rem;
+      height: 0.52rem;
+      border-radius: 999px;
+      background: var(--moss);
+      box-shadow: 0 0 0 3px rgba(122, 150, 43, 0.12);
     }
 
     .card li + li { margin-top: 0.28rem; }
+
+    .card:nth-child(1) li:nth-child(2)::before { background: var(--teal); box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.13); }
+    .card:nth-child(1) li:nth-child(3)::before { background: var(--copper); box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.15); }
+    .card:nth-child(2) li::before { background: var(--plum); box-shadow: 0 0 0 3px rgba(122, 46, 79, 0.1); }
+    .card:nth-child(2) li:nth-child(2)::before { background: var(--copper); box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.15); }
 
     .crisis-note {
       margin: 1rem auto 0;
@@ -411,12 +388,49 @@
       padding: 0.9rem 1.1rem;
       border-left: 4px solid var(--plum);
       border-radius: 12px;
-      background: rgba(122, 46, 79, 0.075);
+      background: linear-gradient(90deg, rgba(122, 46, 79, 0.08), rgba(217, 161, 93, 0.055));
     }
 
     .crisis-note p {
       margin: 0;
       font-size: 0.98rem;
+    }
+
+    .quote-snippets {
+      margin: 0.9rem auto 0;
+      max-width: 56rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .quote-snippet {
+      margin: 0;
+      padding: 0.1rem 0 0.1rem 0.85rem;
+      border-left: 3px solid rgba(217, 161, 93, 0.78);
+      background: transparent;
+    }
+
+    .quote-snippet blockquote {
+      margin: 0;
+      font-style: italic;
+    }
+
+    .quote-snippet p {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: var(--plum);
+    }
+
+    .quote-snippet p + p { margin-top: 0.35rem; }
+
+    .quote-snippet figcaption {
+      margin-top: 0.45rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--plum);
     }
 
     .start-panel {
@@ -437,24 +451,23 @@
       min-height: 18rem;
       display: flex;
       justify-content: center;
-      border-style: solid;
+      padding: 0.85rem 0.7rem;
+      border: 1px solid transparent;
+      border-top-width: 6px;
+      border-radius: 14px;
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
+        linear-gradient(90deg, rgba(63, 122, 115, 0.84), rgba(122, 46, 79, 0.55), rgba(217, 161, 93, 0.64)) border-box;
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
       text-align: center;
     }
-
-    .form-embed p {
-      margin: 0;
-      max-width: 34rem;
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 600;
-      color: var(--plum);
-    }
-
-    .form-embed a { color: var(--plum); }
 
     .form-embed iframe {
       width: 100%;
       max-width: 640px;
       border: 0;
+      border-radius: 10px;
+      background: #fff;
     }
 
     .btn {
@@ -526,8 +539,19 @@
     footer a { color: rgba(43, 43, 43, 0.75); }
 
     @media (max-width: 719px) {
-      .cards { grid-template-columns: 1fr; }
+      .cards,
+      .quote-snippets { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
+
+      .form-embed {
+        padding: 0.55rem 0.35rem;
+        border-radius: 12px;
+      }
+
+      .form-embed iframe {
+        height: 4300px;
+        border-radius: 8px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -576,7 +600,7 @@
             <ul>
               <li>Sharing what life feels like right now.</li>
               <li>Describing needs or caregiver capacity you want support with.</li>
-              <li>Starting a conversation about what practical support looks like that is affordable for you.</li>
+              <li>Starting a conversation about practical support that fits your needs, schedule, and what feels realistic and affordable.</li>
             </ul>
           </div>
           <div class="card">
@@ -592,13 +616,29 @@
         <div class="crisis-note" role="note" aria-label="Emergency and crisis note">
           <p>If this is an emergency or someone may be in immediate danger, call 911. If you or someone in your family needs urgent mental health crisis support, call or text 988 for the Suicide &amp; Crisis Lifeline.</p>
         </div>
+
+        <div class="quote-snippets" aria-label="Kind words from families">
+          <figure class="quote-snippet">
+            <blockquote>
+              <p>She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
+            </blockquote>
+            <figcaption>- Jewel Spencer</figcaption>
+          </figure>
+          <figure class="quote-snippet">
+            <blockquote>
+              <p>She brings the same warmth to the whole family and is a true partner in care.</p>
+              <p>I highly recommend her to families seeking child care or support, especially families with added layers of needs.</p>
+            </blockquote>
+            <figcaption>- Heather Jeng</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
     <section class="section" id="start-client-inquiry" aria-label="Client Inquiry Form">
       <div class="wrap">
         <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="3049" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="3150" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         </div>
 
         <div class="start-panel">
