@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing Examples | Interwoven Family Care</title>
+  <meta name="description" content="Fictional pricing examples for Interwoven Family Care, showing what in-home family support in Tacoma and Pierce County can look like for routines, transitions, caregiver support, childcare and respite, advocacy preparation, and real home life.">
+  <link rel="canonical" href="https://interwoven.care/pricing-examples/">
+  <link rel="icon" type="image/png" href="../assets/heart.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#F6F3EE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://interwoven.care/pricing-examples/">
+  <meta property="og:title" content="Pricing Examples | Interwoven Family Care">
+  <meta property="og:description" content="Examples to help families picture what hands-on family consulting/coaching and adaptive in-home support may look like.">
+  <meta property="og:image" content="https://interwoven.care/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #336A64;
+      --deep-teal: #2B5A55;
+      --moss: #7A962B;
+      --copper: #D9A15D;
+      --plum: #7A2E4F;
+      --ivory: #F6F3EE;
+      --ink: #2B2B2B;
+      --nav-h: 3.6rem;
+      --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
+      --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+      --action-primary: var(--teal);
+      --action-primary-hover: var(--deep-teal);
+      --action-schedule: var(--plum);
+      --action-schedule-hover: #642640;
+      --action-secondary-bg: rgba(255, 253, 249, 0.8);
+      --action-secondary-border: rgba(122, 46, 79, 0.42);
+      --action-text-on-dark: #FFFDF9;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(
+          180deg,
+          var(--ivory) 0%,
+          #F8F5EF 32%,
+          #F4F2EA 62%,
+          #F7F3EC 100%
+        );
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3,
+    .brand,
+    .nav-links a:not(.nav-cta),
+    .nav-cta,
+    .btn,
+    .eyebrow,
+    .hero-subhead,
+    .example-price,
+    .example-meta,
+    .soft-note strong {
+      font-family: var(--font-brand);
+    }
+
+    ::selection { background: rgba(63, 122, 115, 0.28); }
+    img { display: block; height: auto; }
+
+    main {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(246, 243, 238, 0) 0%,
+          rgba(63, 122, 115, 0.035) 42%,
+          rgba(122, 46, 79, 0.03) 68%,
+          rgba(217, 161, 93, 0.035) 100%
+        );
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0.5rem;
+      z-index: 100;
+      padding: 0.6em 1em;
+      background: var(--plum);
+      color: var(--ivory);
+      border-radius: 999px;
+      font-family: "Quicksand", sans-serif;
+      text-decoration: none;
+    }
+
+    .skip-link:focus-visible { left: 0.5rem; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 243, 238, 0.88);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(43, 43, 43, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 68rem;
+      margin: 0 auto;
+      min-height: var(--nav-h);
+      padding: 0.4rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 1.04rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand img { width: 30px; }
+
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      position: relative;
+      padding: 0.35rem 0;
+      text-decoration: none;
+      color: rgba(43, 43, 43, 0.82);
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--copper);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      padding: 0.72em 1.2em;
+      border-radius: 999px;
+      background: var(--action-primary);
+      color: var(--action-text-on-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.34), 0 3px 12px rgba(63, 122, 115, 0.18);
+      transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--action-primary-hover);
+      color: var(--action-text-on-dark);
+      transform: translateY(-1px);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.28), 0 5px 15px rgba(63, 122, 115, 0.22);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--plum);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .nav-toggle {
+      display: none;
+      margin-left: auto;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 2px;
+      background: var(--ink);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+
+    .nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 880px) {
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1.25rem 1.1rem;
+        background: var(--ivory);
+        border-bottom: 1px solid rgba(43, 43, 43, 0.1);
+        box-shadow: 0 14px 28px rgba(43, 43, 43, 0.1);
+      }
+
+      .nav.open .nav-links { display: flex; }
+
+      .nav-links a:not(.nav-cta) {
+        padding: 0.7rem 0.2rem;
+        font-size: 1.05rem;
+      }
+
+      .nav-links a:not(.nav-cta)::after { display: none; }
+
+      .nav-cta {
+        margin-top: 0.7rem;
+        text-align: center;
+        padding: 0.7em 1.2em;
+        font-size: 1.05rem;
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(1.8rem, 4.6vh, 3.2rem) 1.5rem clamp(2rem, 5vh, 3.5rem);
+      background-image:
+        radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
+        radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
+    }
+
+    .crest { width: min(45vw, 190px); }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    h1 {
+      margin: 0.7rem 0 0;
+      max-width: 48rem;
+      font-size: clamp(2.35rem, 5vw, 3.6rem);
+      color: var(--plum);
+    }
+
+    .hero-subhead {
+      margin: 0.4rem auto 0;
+      max-width: 44rem;
+      font-weight: 700;
+      font-size: clamp(1.04rem, 2.2vw, 1.28rem);
+      line-height: 1.35;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    .hero-intro {
+      margin: 0.8rem auto 0;
+      max-width: 50rem;
+      font-size: clamp(1rem, 2.2vw, 1.08rem);
+      line-height: 1.62;
+      color: rgba(43, 43, 43, 0.86);
+      text-wrap: balance;
+    }
+
+    .hero-intro + .hero-intro { margin-top: 0.65rem; }
+
+    .hero-actions {
+      margin-top: 1.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .section {
+      padding: clamp(2.7rem, 7vh, 4.8rem) 1.5rem;
+    }
+
+    .wrap { max-width: 44rem; margin: 0 auto; }
+    .wrap-wide { max-width: 64rem; margin: 0 auto; }
+
+    .eyebrow {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.32em;
+      text-indent: 0.32em;
+      text-transform: uppercase;
+      color: var(--copper);
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0.7rem 0 1.15rem;
+      font-size: clamp(1.55rem, 3.4vw, 2.05rem);
+      text-align: center;
+    }
+
+    .section p,
+    .section li {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: rgba(43, 43, 43, 0.88);
+    }
+
+    .knot-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      padding: 1.05rem 1.5rem;
+    }
+
+    .knot-divider::before,
+    .knot-divider::after {
+      content: "";
+      height: 1px;
+      width: min(110px, 22vw);
+    }
+
+    .knot-divider::before { background: linear-gradient(to left, rgba(122, 150, 43, 0.5), transparent); }
+    .knot-divider::after { background: linear-gradient(to right, rgba(122, 150, 43, 0.5), transparent); }
+
+    .knot-divider img { width: 26px; opacity: 0.9; }
+
+    .soft-note {
+      margin: 0 auto;
+      max-width: 48rem;
+      padding: 1.15rem 1.25rem;
+      border-left: 4px solid var(--plum);
+      border-right: 4px solid rgba(217, 161, 93, 0.72);
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(122, 46, 79, 0.08), rgba(217, 161, 93, 0.055));
+    }
+
+    .soft-note p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .soft-note p + p { margin-top: 0.75rem; }
+    .soft-note strong { color: var(--plum); }
+
+    .example-list {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    .example-card {
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
+        var(--example-accent, linear-gradient(90deg, rgba(63, 122, 115, 0.78), rgba(122, 150, 43, 0.34))) border-box;
+      border: 1px solid transparent;
+      border-top-width: 4px;
+      border-radius: 14px;
+      padding: clamp(1.25rem, 3vw, 1.65rem);
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
+    }
+
+    .example-card:nth-child(2) { --example-accent: linear-gradient(90deg, rgba(122, 46, 79, 0.64), rgba(217, 161, 93, 0.38)); }
+    .example-card:nth-child(3) { --example-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.66), rgba(63, 122, 115, 0.34)); }
+    .example-card:nth-child(4) { --example-accent: linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(122, 46, 79, 0.28)); }
+
+    .example-card h3 {
+      margin: 0;
+      color: var(--plum);
+      font-size: clamp(1.25rem, 2.7vw, 1.6rem);
+    }
+
+    .example-kicker {
+      margin: 0 0 0.4rem;
+      color: rgba(43, 43, 43, 0.58);
+      font-family: var(--font-brand);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .example-card p {
+      margin: 0.8rem 0 0;
+    }
+
+    .example-card p:first-of-type { margin-top: 0.95rem; }
+
+    .example-meta {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(10rem, 0.55fr);
+      gap: 0.8rem;
+      align-items: stretch;
+    }
+
+    .example-structure,
+    .example-price {
+      padding: 0.82rem 0.9rem;
+      border-radius: 12px;
+      background: rgba(246, 243, 238, 0.72);
+      border: 1px solid rgba(43, 43, 43, 0.07);
+    }
+
+    .example-meta span {
+      display: block;
+      margin-bottom: 0.22rem;
+      color: rgba(43, 43, 43, 0.58);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .example-price strong {
+      color: var(--deep-teal);
+      font-size: clamp(1.45rem, 4vw, 1.9rem);
+      line-height: 1;
+    }
+
+    .included-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .included-grid div {
+      padding: 0.95rem 1rem;
+      border-radius: 12px;
+      background: rgba(255, 253, 249, 0.68);
+      border: 1px solid rgba(43, 43, 43, 0.065);
+    }
+
+    .included-grid h4 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-brand);
+      font-size: 0.98rem;
+      color: var(--deep-teal);
+    }
+
+    .included-grid div:last-child h4 { color: var(--plum); }
+
+    .included-grid p {
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.56;
+      color: rgba(43, 43, 43, 0.78);
+    }
+
+    .pricing-reminder {
+      margin-top: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(217, 161, 93, 0.44);
+      color: rgba(43, 43, 43, 0.72);
+      font-style: italic;
+    }
+
+    .pricing-reminder p {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .closing-copy p {
+      margin: 0 auto 0.85rem;
+      max-width: 43rem;
+      text-align: left;
+    }
+
+    .closing-copy p:last-child { margin-bottom: 0; }
+
+    .start-contact {
+      margin: 0 auto;
+      max-width: 48rem;
+      text-align: center;
+    }
+
+    .start-contact p {
+      margin: 0 auto;
+      max-width: 36rem;
+    }
+
+    .contact-actions {
+      margin-top: 1.65rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      min-height: 3.05rem;
+      padding: 0.78em 1.45em;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.25;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 5px 16px rgba(43, 43, 43, 0.1);
+    }
+
+    .btn-primary,
+    .btn-call {
+      border-color: var(--action-primary);
+      background: var(--action-primary);
+      color: var(--action-text-on-dark);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.34), 0 4px 14px rgba(63, 122, 115, 0.18);
+    }
+
+    .btn-primary:hover,
+    .btn-call:hover {
+      background: var(--action-primary-hover);
+      border-color: var(--action-primary-hover);
+      color: var(--action-text-on-dark);
+    }
+
+    .btn-email,
+    .btn-ghost {
+      border-color: var(--action-secondary-border);
+      background: var(--action-secondary-bg);
+      color: var(--ink);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.72), 0 3px 10px rgba(43, 43, 43, 0.045);
+    }
+
+    .btn-schedule {
+      border-color: var(--action-schedule);
+      background: var(--action-schedule);
+      color: var(--action-text-on-dark);
+      box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.3), 0 4px 14px rgba(122, 46, 79, 0.18);
+    }
+
+    .btn-schedule:hover {
+      background: var(--action-schedule-hover);
+      border-color: var(--action-schedule-hover);
+      color: var(--action-text-on-dark);
+    }
+
+    footer {
+      padding: 2rem 1rem 1.6rem;
+      border-top: 0;
+      background:
+        linear-gradient(180deg, rgba(63, 122, 115, 0.08), rgba(217, 161, 93, 0.1) 58%, rgba(255, 253, 249, 0.68));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: rgba(43, 43, 43, 0.6);
+      text-align: center;
+    }
+
+    footer img { width: 22px; opacity: 0.85; }
+    footer a { color: rgba(43, 43, 43, 0.75); }
+
+    @media (max-width: 719px) {
+      .example-meta,
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .btn:hover, .nav-cta { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="../assets/heart.png" alt="" width="192" height="173">
+        Interwoven Family Care
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#offerings">Services</a>
+        <a href="/#payment">Paying for Care</a>
+        <a href="/#about">About IFC</a>
+        <a href="/#faqs">FAQs</a>
+        <a class="nav-cta" href="/client-inquiry/">New Client Inquiry</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
+      <p class="eyebrow">Pricing Examples</p>
+      <h1>What Support Can Look Like</h1>
+      <p class="hero-subhead">Money conversations can feel tender, especially when your family is already carrying a lot.</p>
+      <p class="hero-intro">Interwoven Family Care offers hands-on family consulting/coaching and adaptive in-home support for routines, resources, childcare, and real life. Support does not always fit neatly into one package.</p>
+      <p class="hero-intro">Pricing is always talked through before support begins. These examples are not a menu, and they are not a promise that every family will fit one of these exact shapes. They are here because numbers can feel less scary when you can see the real-life support around them.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/client-inquiry/">Start With What Feels Hard</a>
+        <a class="btn btn-ghost" href="/#payment">Back to Paying for Care</a>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="../assets/heart.png" alt=""></div>
+
+    <section class="section" aria-label="A quick note before the examples">
+      <div class="wrap">
+        <div class="soft-note">
+          <p><strong>A quick note before the examples:</strong> these families are fictional. They are here to show possible shapes of support, not to label your family or box you into a service.</p>
+          <p>IFC is not therapy, clinical treatment, legal representation, special education representation, formal case management, or crisis support. Childcare and respite can be part of the support, but IFC is not just babysitting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Fictional pricing examples">
+      <div class="wrap-wide">
+        <p class="eyebrow">Examples</p>
+        <h2>Some Ways Support Might Take Shape</h2>
+        <div class="example-list">
+          <article class="example-card">
+            <p class="example-kicker">After-school / evening transitions</p>
+            <h3>The After-School Crash</h3>
+            <p>This family's hardest window is the stretch after school and work. Everyone is tired. One child needs space, one needs connection, dinner still has to happen, the backpack pile is somehow everywhere, and bedtime is already breathing down everyone's neck.</p>
+            <p>Support might look like Bri coming for a 3-hour block during that stretch: helping the children land, supporting transitions, noticing where the rhythm keeps getting stuck, helping with child-related cleanup, and talking with the caregiver about what could make tomorrow feel a little less impossible.</p>
+            <div class="example-meta">
+              <div class="example-structure"><span>Example structure</span>3 hours of in-home support</div>
+              <div class="example-price"><span>Example price</span><strong>$210</strong></div>
+            </div>
+            <div class="included-grid">
+              <div>
+                <h4>This may include</h4>
+                <p>Child-related care, transition support, regulation support, caregiver conversation, and practical next-step thinking.</p>
+              </div>
+              <div>
+                <h4>This does not include</h4>
+                <p>Therapy, clinical treatment, crisis support, or a formal behavior plan.</p>
+              </div>
+            </div>
+            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+          </article>
+
+          <article class="example-card">
+            <p class="example-kicker">Advocacy preparation</p>
+            <h3>Getting Ready for the School Meeting</h3>
+            <p>This caregiver has an IEP or 504 meeting coming up, and the notes, emails, worries, questions, and "wait, what do I even ask?" thoughts are all tangled together.</p>
+            <p>They do not need someone to take over. They need help slowing it down, sorting what matters, naming concerns clearly, and walking into the meeting with a little more steadiness.</p>
+            <p>Support might look like a 4-hour focused block for organizing notes, preparing questions, talking through priorities, and making a simple follow-up plan for after the meeting.</p>
+            <div class="example-meta">
+              <div class="example-structure"><span>Example structure</span>4 hours of focused support</div>
+              <div class="example-price"><span>Example price</span><strong>$280</strong></div>
+            </div>
+            <div class="included-grid">
+              <div>
+                <h4>This may include</h4>
+                <p>Planning time, note organization, caregiver conversation, and practical next steps before or after a school meeting.</p>
+              </div>
+              <div>
+                <h4>This does not include</h4>
+                <p>Legal advocacy, special education representation, formal case management, or speaking for the family in an official representative role.</p>
+              </div>
+            </div>
+            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+          </article>
+
+          <article class="example-card">
+            <p class="example-kicker">Routines, resources, and real home life</p>
+            <h3>Making Home Routines Work</h3>
+            <p>This family has tried the advice. They have heard "use a visual schedule," "make the routine predictable," "support transitions," and "build independence."</p>
+            <p>None of that is bad advice. It just does not magically install itself in the middle of real life.</p>
+            <p>Their child may be neurodivergent, sensory-sensitive, demand-sensitive, deeply feeling, easily overwhelmed, or simply having a hard time moving through the day. The family needs help figuring out what actually fits their home, their child, their energy, and their rhythm.</p>
+            <p>Support might look like Bri spending time in the home, noticing where routines get stuck, helping shape a calmer morning or bedtime rhythm, setting up child-accessible systems, thinking through sensory needs, and helping the family make recommendations more usable.</p>
+            <div class="example-meta">
+              <div class="example-structure"><span>Example structure</span>6 hours of focused in-home support</div>
+              <div class="example-price"><span>Example price</span><strong>$420</strong></div>
+            </div>
+            <div class="included-grid">
+              <div>
+                <h4>This may include</h4>
+                <p>In-home observation, routine support, environment support, caregiver conversation, and practical implementation help.</p>
+              </div>
+              <div>
+                <h4>This does not include</h4>
+                <p>Occupational therapy, mental health treatment, diagnostic assessment, or clinical recommendations.</p>
+              </div>
+            </div>
+            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+          </article>
+
+          <article class="example-card">
+            <p class="example-kicker">Childcare, respite, and steadiness</p>
+            <h3>Relief and Household Steadiness</h3>
+            <p>This caregiver is stretched thin. Not in a cute "busy season" way. In a "I cannot keep being the only thing holding this whole rhythm together" way.</p>
+            <p>The family needs breathing room, but they also need the day to keep moving. Children still need care. Transitions still happen. Snacks, cleanup, feelings, laundry piles, appointments, and bedtime do not politely pause just because the caregiver is tired.</p>
+            <p>Support might look like 10 hours of short-term in-home support spread across the week or month. Bri may support the children, help with transitions, offer respite, notice what is making the day harder, and help with child-related practical tasks that keep the family rhythm from fully tipping over.</p>
+            <div class="example-meta">
+              <div class="example-structure"><span>Example structure</span>10 hours of short-term in-home support</div>
+              <div class="example-price"><span>Example price</span><strong>$700</strong></div>
+            </div>
+            <div class="included-grid">
+              <div>
+                <h4>This may include</h4>
+                <p>Child-related care, respite, routine support, transition support, caregiver check-ins, and practical help connected to the family's daily rhythm.</p>
+              </div>
+              <div>
+                <h4>This does not include</h4>
+                <p>Housekeeping as a stand-alone service, medical care, crisis support, or clinical treatment.</p>
+              </div>
+            </div>
+            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="../assets/heart.png" alt=""></div>
+
+    <section class="section">
+      <div class="wrap closing-copy">
+        <p class="eyebrow">How Pricing Works</p>
+        <h2>Start with what feels hard</h2>
+        <p>Every family brings a different mix of people, needs, schedules, capacity, and support goals. These examples are here to make pricing easier to picture, not to pressure you into choosing the "right" option.</p>
+        <p>Interwoven Family Care is private pay right now. If you already receive services or supports, you are welcome to ask whether there may be a connection worth exploring.</p>
+        <p>The first conversation is not a test. You do not need a polished explanation, a perfect plan, or the right service name. Start with what feels hard. We'll talk through what support fits.</p>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="../assets/heart.png" alt=""></div>
+
+    <section class="section">
+      <div class="start-contact">
+        <p class="eyebrow">Ready to Talk?</p>
+        <h2>Tell Bri what is hard right now</h2>
+        <p>If this sounds like the kind of support your family may need, you can start with the inquiry form, schedule a low-pressure call, or send an email if writing feels easier.</p>
+        <div class="contact-actions">
+          <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
+          <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
+          <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri@interwoven.care</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="../assets/heart.png" alt="">
+    <div>&copy; 2026 Interwoven Family Care, LLC &middot; Tacoma, WA &middot; <a href="mailto:bri@interwoven.care">bri@interwoven.care</a></div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const toggle = nav.querySelector('.nav-toggle');
+    const links = nav.querySelectorAll('.nav-links a');
+
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
