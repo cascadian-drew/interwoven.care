@@ -380,7 +380,7 @@
     .soft-note {
       margin: 0 auto;
       max-width: 48rem;
-      padding: 1.15rem 1.25rem;
+      padding: 0.75rem 1rem;
       border-left: 4px solid var(--plum);
       border-right: 4px solid rgba(217, 161, 93, 0.72);
       border-radius: 12px;
@@ -389,32 +389,33 @@
 
     .soft-note p {
       margin: 0;
-      font-size: 1rem;
+      font-size: 0.84rem;
+      line-height: 1.38;
     }
 
-    .soft-note p + p { margin-top: 0.75rem; }
+    .soft-note p + p { margin-top: 0.35rem; }
     .soft-note strong { color: var(--plum); }
 
     .soft-note .scope-note {
-      font-size: 0.92rem;
-      line-height: 1.58;
+      font-size: 0.78rem;
+      line-height: 1.35;
       color: rgba(43, 43, 43, 0.74);
     }
 
     .care-thread-list {
-      margin: 1.2rem auto 0;
+      margin: 0.5rem auto 0;
       padding: 0;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem 0.95rem;
+      gap: 0.28rem 0.7rem;
       list-style: none;
     }
 
     .care-thread-list li {
       position: relative;
-      padding-left: 1.4rem;
-      font-size: 0.97rem;
-      line-height: 1.5;
+      padding-left: 1.05rem;
+      font-size: 0.8rem;
+      line-height: 1.28;
       color: rgba(43, 43, 43, 0.82);
     }
 
@@ -422,9 +423,9 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 0.45rem;
-      width: 0.56rem;
-      height: 0.56rem;
+      top: 0.34rem;
+      width: 0.42rem;
+      height: 0.42rem;
       border-radius: 999px;
       background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%);
       box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.12);
@@ -560,16 +561,13 @@
       color: rgba(43, 43, 43, 0.78);
     }
 
-    .pricing-reminder {
-      margin-top: 1rem;
-      padding-top: 0.9rem;
+    .pricing-final-note {
+      margin: 1.25rem auto 0;
+      max-width: 36rem;
+      padding-top: 0.95rem;
       border-top: 1px solid rgba(217, 161, 93, 0.44);
       color: rgba(43, 43, 43, 0.72);
       font-style: italic;
-    }
-
-    .pricing-reminder p {
-      margin: 0;
       font-size: 0.96rem;
     }
 
@@ -727,7 +725,7 @@
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
       <h1>How Pricing Works</h1>
       <p class="hero-subhead">What Support Can Look Like</p>
-      <p class="hero-intro">Pricing is always talked through before support begins. These examples are not a menu but they are based upon actual pricing structure used by IFC.</p>
+      <p class="hero-intro">These examples are not a menu but they are based upon actual pricing structure used by IFC.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry Form</a>
         <a class="btn btn-ghost" href="/#about">Back to About IFC</a>
@@ -746,7 +744,7 @@
       <div class="wrap">
         <div class="soft-note">
           <p><strong>A quick note before the examples:</strong> these fictional families are here to show you what support can look like and an approximate price point.</p>
-          <p class="scope-note">IFC is not therapy, clinical treatment, legal representation, special education representation, formal case management, or crisis support.</p>
+          <p class="scope-note">IFC does not offer medical care, therapy or clinical treatment, crisis support, legal representation, special education representation, formal case management, or stand-alone housekeeping.</p>
           <p>Depending on the family, care may include any of these or more:</p>
           <ul class="care-thread-list">
             <li>Childcare or child-related care</li>
@@ -787,7 +785,6 @@
                 <p>Therapy, clinical treatment, crisis support, or a formal behavior plan.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -810,7 +807,6 @@
                 <p>Legal advocacy, special education representation, formal case management, or speaking for the family in an official representative role.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -834,7 +830,6 @@
                 <p>Occupational therapy, mental health treatment, diagnostic assessment, or clinical recommendations.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -857,7 +852,6 @@
                 <p>Housekeeping as a stand-alone service, medical care, crisis support, or clinical treatment.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
         </div>
       </div>
@@ -868,6 +862,7 @@
         <p class="eyebrow">Ready to Talk?</p>
         <h2>Tell Bri what is hard right now</h2>
         <p>If this sounds like the kind of support your family may need, you can start with the inquiry form, schedule a low-pressure call, or send an email if writing feels easier.</p>
+        <p class="pricing-final-note">Pricing is always talked through before support begins.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
           <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
