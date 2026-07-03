@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interwoven Family Care - In-Home Family Support in Tacoma & Pierce County</title>
-  <meta name="description" content="Interwoven Family Care offers hands-on family consulting/coaching and adaptive in-home support in Tacoma and Pierce County for routines, transitions, childcare and respite, caregiver capacity, and real life.">
+  <meta name="description" content="Interwoven Family Care offers hands-on family coaching and adaptive in-home support in Tacoma and Pierce County for routines, transitions, respite care, local resources, and practical family support.">
   <link rel="canonical" href="https://interwoven.care/">
   <link rel="icon" type="image/png" href="assets/heart.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/">
   <meta property="og:title" content="Interwoven Family Care">
-  <meta property="og:description" content="Hands-on family consulting/coaching and adaptive in-home support for routines, transitions, childcare and respite, caregiver capacity, and real life.">
+  <meta property="og:description" content="Hands-on family coaching and adaptive in-home support for routines, transitions, respite care, local resources, and practical family support.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -244,11 +244,11 @@
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (min-width: 881px) and (max-width: 1080px) {
+    @media (min-width: 1021px) and (max-width: 1080px) {
       .nav-links { gap: 1.05rem; }
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 1020px) {
       .nav-toggle { display: block; }
 
       .nav-links {
@@ -704,12 +704,44 @@
     .card p { margin: 0 0 0.85rem; font-size: 0.97rem; line-height: 1.65; color: rgba(43, 43, 43, 0.8); }
     .card p:last-child { margin-bottom: 0; }
 
-    .tailored {
+    .quote-cycle {
       margin: 2.1rem auto 0;
-      max-width: 38rem;
+      max-width: 42rem;
+      min-height: 8.4rem;
       text-align: center;
+    }
+
+    .quote-cycle blockquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    .quote-cycle p {
+      margin: 0;
       font-style: italic;
-      color: rgba(43, 43, 43, 0.72);
+      font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+      line-height: 1.55;
+      color: var(--deep-teal);
+      text-wrap: balance;
+    }
+
+    .quote-cycle figcaption {
+      margin-top: 0.65rem;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: var(--plum);
+      text-wrap: balance;
+    }
+
+    .quote-cycle figcaption span {
+      display: block;
+    }
+
+    .quote-cycle figcaption span + span {
+      font-weight: 600;
+      color: var(--teal);
     }
 
     .section-actions {
@@ -741,6 +773,8 @@
       max-width: 48rem;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(3, auto);
+      grid-auto-flow: column;
       gap: 1.05rem 1.8rem;
       list-style: none;
     }
@@ -769,8 +803,6 @@
     .fit-list li:nth-child(4)::before { background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
     .fit-list li:nth-child(5)::before { background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 58%, #3F5013 100%); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
     .fit-list li:nth-child(6)::before { background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
-    .fit-list li:nth-child(7)::before { background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 58%, #3F5013 100%); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
-    .fit-list li:nth-child(8)::before { background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 58%, #8D5A27 100%); box-shadow: 0 0 0 4px rgba(217, 161, 93, 0.15); }
 
     .steps {
       margin: 2rem auto 0;
@@ -928,6 +960,11 @@
       .fit-list,
       .steps {
         grid-template-columns: 1fr;
+      }
+
+      .fit-list {
+        grid-template-rows: none;
+        grid-auto-flow: row;
       }
     }
 
@@ -1267,6 +1304,7 @@
       <div class="nav-links" id="nav-links">
         <a href="#offerings">Services</a>
         <a href="#philosophy">Philosophy</a>
+        <a href="/pricing-examples/">Pricing</a>
         <a href="#about">About IFC</a>
         <a href="#about-bri">About the Founder</a>
         <a href="#faqs">FAQs</a>
@@ -1277,7 +1315,7 @@
 
   <main id="main">
     <div class="announcement">
-      Summer family support spots are open in Tacoma and nearby Pierce County communities. <a href="/client-inquiry/">New Client Inquiry</a>.
+      Summer family support spots are open in Tacoma and nearby Pierce County communities.
     </div>
 
     <section class="hero" id="top">
@@ -1286,9 +1324,9 @@
         <span class="sr-only">Interwoven Family Care</span>
         <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
       </h1>
-      <p class="lede rise d3">Adaptive in-home support for families carrying a lot.</p>
+      <p class="lede rise d3">Adaptive in-home practical support and coaching for all families.</p>
       <p class="hero-quote rise d4">"I highly recommend her to families seeking child care or support, especially families with added layers of needs."<span>- Heather Jeng</span></p>
-      <p class="sub rise d3">Interwoven Family Care offers hands-on family consulting/coaching and adaptive in-home support for families with children and teens across Pierce County: routines, transitions, childcare and respite, resources, caregiver capacity, and the work of carrying support into real life.</p>
+      <p class="sub rise d3">Interwoven Family Care offers hands-on family coaching and adaptive in-home support for families with children and teens across Pierce County. IFC offers help with routines, transitions, respite care, local resources, and other practical support you may need.</p>
       <ul class="hero-situations rise d4" aria-label="Common reasons families reach out">
         <li><a href="#philosophy">School or therapy concerns</a></li>
         <li><a href="#support-example">Neurodivergent family life</a></li>
@@ -1306,16 +1344,14 @@
     <section class="section" id="fit">
       <div class="wrap" data-reveal>
         <h2>When daily life is hard to hold</h2>
-        <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or therapy recommendation. You do not need the perfect words before we start.</p>
+        <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or support recommendation. You do not need the perfect words before reaching out.</p>
         <ul class="fit-list">
-          <li>You need support with the in-between parts of care: building and keeping routines, working through difficult transitions, and meeting daily needs that are hard to carry alone.</li>
-          <li>You need another steady adult who can support children, siblings, routines, and caregiver capacity at the same time.</li>
-          <li>Your family is adjusting after a diagnosis or concern related to Autism, ADHD, development, sensory needs, school, or health.</li>
-          <li>Your child needs care shaped around regulation, communication, sensory needs, big feelings, independence, and your family's real rhythm.</li>
-          <li>Mornings, evenings, bedtime, school drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</li>
-          <li>Therapy strategies, IEP or 504 goals, behavior plans, or provider recommendations make sense on paper but are hard to carry into daily life.</li>
-          <li>You need practical help, breathing room, or respite without feeling judged, managed, or misunderstood.</li>
+          <li>Mornings, evenings, bedtime, drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</li>
+          <li>You need another steady adult who can help support your children, home routines, and your capacity at the same time.</li>
+          <li>Your family is adjusting after a diagnosis/concern related to health, sensory needs, Autism, ADHD, development, or school.</li>
+          <li>Your child needs care that is as unique as your family is. Shaped around regulation, communication, sensory needs, scaffolding, and your rhythm.</li>
           <li>You are navigating IEP meetings, 504 plans, referrals, waitlists, appointments, resources, or advocacy decisions.</li>
+          <li>You need real, practical help. You need breathing room, respite without feeling judged, managed, or misunderstood. You deserve to be heard.</li>
         </ul>
       </div>
     </section>
@@ -1326,38 +1362,46 @@
       <div class="wrap-wide" data-reveal>
         <h2>Ways we support you</h2>
         <div class="cards">
-          <div class="card">
-            <h3>Family Support</h3>
-            <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
-            <p>This may include caregiver support, childcare, problem-solving, emotional steadiness, and a trusted sounding board as you navigate everyday life with children who need more individualized support.</p>
+          <div class="card anchor-target" id="implementation-resources">
+            <h3>Implementation &amp; Resources</h3>
+            <p>Turning therapy strategies, provider recommendations, and school ideas into practical next steps at home. Providing many local and trusted resources and connections.</p>
+            <p>We focus on solutions that fit your real life, capacity, household rhythm, and circumstances.</p>
           </div>
           <div class="card anchor-target" id="routines-transitions">
             <h3>Routines &amp; Transitions</h3>
             <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
-            <p>This may include emotional regulation, sensory needs, skill-building, scaffolding independence, and practical strategies that help daily life feel steadier and more manageable.</p>
+            <p>This may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help daily life feel steadier and more manageable.</p>
+          </div>
+          <div class="card">
+            <h3>Family Support</h3>
+            <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
+            <p>This may include caregiver/parent support, childcare, immediate problem-solving, and a trusted sounding board that is not only knowledgeable about local resources but active in the local community.</p>
           </div>
           <div class="card anchor-target" id="breathing-room">
             <h3>Breathing Room</h3>
-            <p>Sometimes help is having another capable adult in the room during the parts of the week that take the most out of everyone.</p>
-            <p>Practical support that reduces caregiver overwhelm, creates capacity, and gives your family more room to recover, connect, and reset.</p>
-          </div>
-          <div class="card">
-            <h3>Advocacy Support</h3>
-            <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, and service systems while carrying family life is harder than it needs to be.</p>
-            <p>Advocacy support includes meeting preparation, priority planning, and building confidence as you continue to advocate for your child and family.</p>
+            <p>Sometimes help is having another capable adult in the house during the parts of the week that take the most out of everyone, especially you.</p>
+            <p>Practical support that reduces overwhelm and gives your family more room to recover, connect, and reset as a family.</p>
           </div>
           <div class="card">
             <h3>Environment Support</h3>
-            <p>Shaping indoor and outdoor spaces so daily routines, regulation, independence, and transitions have less friction.</p>
-            <p>This may include environments that make sense for neurodivergent children, higher-support needs, caregivers, siblings, and the people who live there.</p>
+            <p>This looks like you telling me what is not working for you and letting me observe so I can with thoughtful perspective support you in shaping your indoor/outdoor spaces so your home has less friction.</p>
+            <p>This may include scaffolding your child's independence in their bathrooms, their bedrooms, or just helping develop an engaging play environment while holding the needs of anyone who lives there centered.</p>
           </div>
-          <div class="card anchor-target" id="implementation-resources">
-            <h3>Implementation &amp; Resources</h3>
-            <p>Turning therapy strategies, provider recommendations, school ideas, and resource lists into practical next steps at home.</p>
-            <p>We focus on solutions that fit your real life, capacity, household rhythm, and circumstances.</p>
+          <div class="card">
+            <h3>Advocacy Support</h3>
+            <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, and various systems while carrying family life is a lot.</p>
+            <p>Our advocacy support includes meeting preparation, priority planning, and confidence building for you as you continue to advocate for your family.</p>
           </div>
         </div>
-        <p class="tailored">Every family brings a different mix of people, rhythms, needs, and capacity.<br>We begin there.</p>
+        <figure class="quote-cycle" data-quote-cycle aria-live="polite">
+          <blockquote>
+            <p data-quote-text>"All human beings are born free and equal in dignity and rights."</p>
+          </blockquote>
+          <figcaption>
+            <span data-quote-author>Universal Declaration of Human Rights</span>
+            <span data-quote-source>Article 1</span>
+          </figcaption>
+        </figure>
         <div class="section-actions">
           <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry</a>
         </div>
@@ -1370,25 +1414,25 @@
       <div class="wrap" data-reveal>
         <p class="eyebrow">Our Approach</p>
         <h2>Care That Starts With Understanding</h2>
-        <p class="pullquote">Childcare is only one thread in the larger weave of family support, not the whole story.</p>
+        <p class="pullquote">Childcare is only one thread in the larger weave of family support.</p>
         <p>Families are not a collection of separate needs. They are whole systems shaped by relationships, routines, values, care, stress, and capacity.</p>
-        <p>Interwoven Family Care begins by understanding the whole picture, then building care that fits the family in front of us.</p>
+        <p>Interwoven Family Care begins by understanding the whole picture and then building care that fits your real family.</p>
         <div class="values">
           <div>
             <h3>Whole-Family Lens</h3>
-            <p>Care considers children, caregivers, routines, relationships, and the household as a connected whole.</p>
+            <p>Care that considers you, your children, your routines, relationships, and the household as a connected whole.</p>
           </div>
           <div>
             <h3>Adaptive by Design</h3>
-            <p>Care changes as your family's season, needs, and circumstances change.</p>
+            <p>Care that changes as your family's needs and circumstances change.</p>
           </div>
           <div>
             <h3>Rooted in Relationship</h3>
-            <p>Trust comes first. Real support is built through consistency, curiosity, and respect.</p>
+            <p>Trust comes first. Real support is built through consistency, curiosity, and respect. That is part of the core of IFC.</p>
           </div>
           <div>
             <h3>Community through Care</h3>
-            <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help families thrive.</p>
+            <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help you thrive. IFC can help you navigate and find support in your community.</p>
           </div>
         </div>
       </div>
@@ -1609,6 +1653,101 @@
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }));
+
+    const quoteCycle = document.querySelector('[data-quote-cycle]');
+
+    if (quoteCycle) {
+      const quoteText = quoteCycle.querySelector('[data-quote-text]');
+      const quoteAuthor = quoteCycle.querySelector('[data-quote-author]');
+      const quoteSource = quoteCycle.querySelector('[data-quote-source]');
+      const quoteStorageKey = 'ifcQuoteCycleV1';
+      const quoteInterval = 6 * 60 * 60 * 1000;
+      const getQuoteSlot = () => Math.floor(Date.now() / quoteInterval);
+      const quotes = [
+        {
+          text: '"All human beings are born free and equal in dignity and rights."',
+          author: 'Universal Declaration of Human Rights',
+          source: 'Article 1'
+        },
+        {
+          text: '"Where, after all, do universal human rights begin? In small places, close to home."',
+          author: 'Eleanor Roosevelt',
+          source: '"In Your Hands" remarks, 1958'
+        },
+        {
+          text: '"True belonging doesn\'t require you to change who you are; it requires you to be who you are."',
+          author: 'Bren\u00e9 Brown',
+          source: 'Braving the Wilderness, 2017'
+        },
+        {
+          text: '"The curious paradox is that when I accept myself just as I am, then I can change."',
+          author: 'Carl Rogers',
+          source: 'On Becoming a Person, 1961'
+        }
+      ];
+
+      const shuffleQuoteIndexes = previousIndex => {
+        const indexes = quotes.map((_, index) => index);
+        for (let i = indexes.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
+        }
+        if (indexes.length > 1 && indexes[0] === previousIndex) {
+          [indexes[0], indexes[1]] = [indexes[1], indexes[0]];
+        }
+        return indexes;
+      };
+
+      const readQuoteState = () => {
+        try {
+          return JSON.parse(localStorage.getItem(quoteStorageKey)) || {};
+        } catch {
+          return {};
+        }
+      };
+
+      const writeQuoteState = state => {
+        try {
+          localStorage.setItem(quoteStorageKey, JSON.stringify(state));
+        } catch {
+          return false;
+        }
+        return true;
+      };
+
+      const isValidIndex = index => Number.isInteger(index) && index >= 0 && index < quotes.length;
+      const renderQuote = index => {
+        quoteText.textContent = quotes[index].text;
+        quoteAuthor.textContent = quotes[index].author;
+        quoteSource.textContent = quotes[index].source;
+      };
+
+      const selectQuoteForCurrentSlot = () => {
+        const currentSlot = getQuoteSlot();
+        const state = readQuoteState();
+        let selectedIndex = isValidIndex(state.lastIndex) ? state.lastIndex : 0;
+        let queue = Array.isArray(state.queue) ? state.queue.filter(isValidIndex) : [];
+
+        if (state.slot !== currentSlot || !isValidIndex(state.lastIndex)) {
+          if (!queue.length) queue = shuffleQuoteIndexes(state.lastIndex);
+          selectedIndex = queue.shift();
+          writeQuoteState({ slot: currentSlot, lastIndex: selectedIndex, queue });
+        }
+
+        renderQuote(selectedIndex);
+      };
+
+      const scheduleQuoteRefresh = () => {
+        const nextSlotTime = (getQuoteSlot() + 1) * quoteInterval;
+        window.setTimeout(() => {
+          selectQuoteForCurrentSlot();
+          scheduleQuoteRefresh();
+        }, Math.max(1000, nextSlotTime - Date.now() + 1000));
+      };
+
+      selectQuoteForCurrentSlot();
+      scheduleQuoteRefresh();
+    }
 
     const openLinkedDetails = () => {
       if (!location.hash) return;
