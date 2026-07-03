@@ -380,6 +380,45 @@
     .soft-note p + p { margin-top: 0.75rem; }
     .soft-note strong { color: var(--plum); }
 
+    .care-thread-list {
+      margin: 1.2rem auto 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem 0.95rem;
+      list-style: none;
+    }
+
+    .care-thread-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      font-size: 0.97rem;
+      line-height: 1.5;
+      color: rgba(43, 43, 43, 0.82);
+    }
+
+    .care-thread-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 0.56rem;
+      height: 0.56rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%);
+      box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.12);
+    }
+
+    .care-thread-list li:nth-child(2n)::before {
+      background: radial-gradient(circle at 35% 30%, rgba(216, 154, 179, 0.95), var(--plum) 58%, #4B1830 100%);
+      box-shadow: 0 0 0 3px rgba(122, 46, 79, 0.1);
+    }
+
+    .care-thread-list li:nth-child(3n)::before {
+      background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 58%, #8D5A27 100%);
+      box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.14);
+    }
+
     .example-list {
       margin-top: 2rem;
       display: grid;
@@ -426,17 +465,32 @@
     .example-meta {
       margin-top: 1rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(10rem, 0.55fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.8rem;
       align-items: stretch;
     }
 
     .example-structure,
     .example-price {
-      padding: 0.82rem 0.9rem;
+      min-height: 6.1rem;
+      padding: 0.95rem 1rem;
       border-radius: 12px;
       background: rgba(246, 243, 238, 0.72);
       border: 1px solid rgba(43, 43, 43, 0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .example-structure {
+      background: rgba(217, 161, 93, 0.12);
+      border-color: rgba(217, 161, 93, 0.28);
+    }
+
+    .example-price {
+      background: rgba(63, 122, 115, 0.1);
+      border-color: rgba(63, 122, 115, 0.24);
     }
 
     .example-meta span {
@@ -451,7 +505,7 @@
 
     .example-price strong {
       color: var(--deep-teal);
-      font-size: clamp(1.45rem, 4vw, 1.9rem);
+      font-size: clamp(1.65rem, 4vw, 2.1rem);
       line-height: 1;
     }
 
@@ -599,7 +653,8 @@
 
     @media (max-width: 719px) {
       .example-meta,
-      .included-grid {
+      .included-grid,
+      .care-thread-list {
         grid-template-columns: 1fr;
       }
 
@@ -644,7 +699,7 @@
       <p class="eyebrow">Pricing Examples</p>
       <h1>What Support Can Look Like</h1>
       <p class="hero-subhead">Money conversations can feel tender, especially when your family is already carrying a lot.</p>
-      <p class="hero-intro">Interwoven Family Care offers hands-on family consulting/coaching and adaptive in-home support for routines, resources, childcare, and real life. Support does not always fit neatly into one package.</p>
+      <p class="hero-intro">Interwoven Family Care offers hands-on family consulting/coaching and adaptive in-home support for routines, resources, childcare, and real life. Some families need help during the after-school crash. Some need respite care or another steady adult in the room. Some need help getting ready for a school meeting. Some need help turning good advice into something that actually works at home.</p>
       <p class="hero-intro">Pricing is always talked through before support begins. These examples are not a menu, and they are not a promise that every family will fit one of these exact shapes. They are here because numbers can feel less scary when you can see the real-life support around them.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/client-inquiry/">Start With What Feels Hard</a>
@@ -659,6 +714,18 @@
         <div class="soft-note">
           <p><strong>A quick note before the examples:</strong> these families are fictional. They are here to show possible shapes of support, not to label your family or box you into a service.</p>
           <p>IFC is not therapy, clinical treatment, legal representation, special education representation, formal case management, or crisis support. Childcare and respite can be part of the support, but IFC is not just babysitting.</p>
+          <p>Depending on the family, care may include one thread or several:</p>
+          <ul class="care-thread-list">
+            <li>Childcare or child-related care</li>
+            <li>Relief and respite care</li>
+            <li>Routines and transitions</li>
+            <li>Caregiver support and breathing room</li>
+            <li>Advocacy preparation</li>
+            <li>Resource navigation</li>
+            <li>Environment support</li>
+            <li>Implementation help for recommendations</li>
+          </ul>
+          <p>Not every family needs all of this. We name the right shape together.</p>
         </div>
       </div>
     </section>
@@ -687,7 +754,7 @@
                 <p>Therapy, clinical treatment, crisis support, or a formal behavior plan.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -710,7 +777,7 @@
                 <p>Legal advocacy, special education representation, formal case management, or speaking for the family in an official representative role.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -734,7 +801,7 @@
                 <p>Occupational therapy, mental health treatment, diagnostic assessment, or clinical recommendations.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
 
           <article class="example-card">
@@ -757,7 +824,7 @@
                 <p>Housekeeping as a stand-alone service, medical care, crisis support, or clinical treatment.</p>
               </div>
             </div>
-            <div class="pricing-reminder"><p>Pricing is always discussed before support begins.</p></div>
+            <div class="pricing-reminder"><p>Pricing is always talked through before support begins.</p></div>
           </article>
         </div>
       </div>
