@@ -871,7 +871,7 @@
       background: linear-gradient(to right, transparent, rgba(122, 150, 43, 0.5), transparent);
     }
 
-    .payment-note p:not(.eyebrow) {
+    .payment-note p:not(.eyebrow):not(.payment-subhead) {
       margin: 0 auto;
       max-width: 39rem;
       font-size: 0.98rem;
@@ -880,12 +880,26 @@
       text-align: left;
     }
 
-    .payment-note p:not(.eyebrow) + p { margin-top: 0.75rem; }
+    .payment-note p:not(.eyebrow):not(.payment-subhead) + p:not(.payment-subhead) { margin-top: 0.75rem; }
+
+    .payment-subhead {
+      margin: -0.35rem 0 0;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: var(--plum);
+      text-align: center;
+    }
 
     .payment-actions {
       margin: 1.25rem auto 1.35rem;
       display: flex;
       justify-content: center;
+    }
+
+    .payment-subhead + p {
+      margin-top: 1.2rem;
     }
 
     .start-contact {
@@ -1432,7 +1446,7 @@
           </div>
           <div>
             <h3>Community through Care</h3>
-            <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help you thrive. IFC can help you navigate and find support in your community.</p>
+            <p>Meaningful care includes connection, belonging, and access to the people, resources, and relationships that help you thrive. IFC can help you navigate and find support in your community. Families are not meant to do this alone.</p>
           </div>
         </div>
       </div>
@@ -1445,29 +1459,31 @@
         <p class="eyebrow">How We Start</p>
         <ol class="steps">
           <li>
-            <h3>Reach out</h3>
-            <p>Send an email or choose a 30-minute phone call slot with a little about your family and what life feels like right now.</p>
+            <h3>Reach Out</h3>
+            <p>Send an email, schedule a 30 minute call, or fill out an inquiry form and let's go from there.</p>
           </li>
           <li>
-            <h3>Talk to Bri directly</h3>
-            <p>You can start with what feels hardest, what is already working, what you have tried, or what you wish felt easier.</p>
+            <h3>Have a Conversation</h3>
+            <p>You can start with whatever feels hardest, what is already working, what you have tried, or just what you wish felt easier.</p>
           </li>
           <li>
-            <h3>Choose your own adventure</h3>
-            <p>Together, we talk through care that fits your needs, schedule, capacity, and real household rhythm.</p>
+            <h3>Choose Your own Adventure</h3>
+            <p>Now we can look at both your needs and services offered and figure out together what would best help you.</p>
           </li>
         </ol>
         <div class="payment-note anchor-target" id="payment">
-          <p class="eyebrow">Paying for Care</p>
           <h2>An open and honest conversation</h2>
+          <p class="payment-subhead">Cost of Care</p>
+          <p>Interwoven Family Care is private pay at this time. Cost is something we can talk through as soon as you want. You do not need a perfect plan before reaching out. We can talk about what would help, what feels realistic, and what options are worth exploring.</p>
+          <p>IFC is learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
+          <p>Talking through care also means talking through what is sustainable for your family. That includes financially.</p>
+          <p>The goal is to work with families openly in a way that is honest, practical, and clear.</p>
           <div class="payment-actions">
             <a class="btn btn-ghost" href="/pricing-examples/">See Pricing Examples</a>
           </div>
-          <p>Interwoven Family Care is private pay right now, and cost is something we can talk through in the first conversation. You do not need a perfect plan before reaching out. We can talk about what kind of support would help, what feels realistic, and what options may be worth exploring.<br>We are learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
-          <p>Talking through care also means talking through what is sustainable for your family. IFC is still growing, and the goal is to work with families in a way that is honest, practical, and clear.</p>
         </div>
         <div class="start-contact">
-          <p>Ready to talk through what this could look like?<br>Start with the inquiry form, choose a low-pressure call, or send an email if writing feels easier.</p>
+          <p><strong>Feeling ready?</strong><br>Start with the inquiry form, schedule a call, or send an email.</p>
           <div class="contact-actions">
             <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
             <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
