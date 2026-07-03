@@ -402,12 +402,17 @@
       color: rgba(43, 43, 43, 0.74);
     }
 
+    .soft-note .care-thread-note {
+      color: var(--plum);
+      font-weight: 700;
+    }
+
     .care-thread-list {
-      margin: 0.5rem auto 0;
+      margin: 0.55rem auto 0;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.28rem 0.7rem;
+      grid-template-columns: repeat(2, minmax(12rem, 1fr));
+      gap: 0.36rem 1rem;
       list-style: none;
     }
 
@@ -415,7 +420,7 @@
       position: relative;
       padding-left: 1.05rem;
       font-size: 0.8rem;
-      line-height: 1.28;
+      line-height: 1.35;
       color: rgba(43, 43, 43, 0.82);
     }
 
@@ -746,6 +751,7 @@
           <p><strong>A quick note before the examples:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
           <p class="scope-note">IFC does not offer medical care, therapy or clinical treatment, crisis support, legal representation, special education representation, formal case management, or stand-alone housekeeping.</p>
           <p>Depending on the family, care may include any of these or more:</p>
+          <p class="care-thread-note">Not every family needs all of this.</p>
           <ul class="care-thread-list">
             <li>Childcare or child-related care</li>
             <li>Relief and respite care</li>
@@ -756,15 +762,13 @@
             <li>Implementation help for recommendations</li>
             <li>Environment support</li>
           </ul>
-          <p>Not every family needs all of this.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-examples" aria-label="Fictional pricing examples">
+    <section class="section section-examples" aria-label="Some ways support can look">
       <div class="wrap-wide">
-        <p class="eyebrow">Example Families</p>
-        <h2>Some Ways Support Might Take Shape</h2>
+        <h2>Some Ways Support Can Look</h2>
         <div class="example-list">
           <article class="example-card">
             <p class="example-kicker">After-school / evening transitions</p>
