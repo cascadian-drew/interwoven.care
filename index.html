@@ -540,7 +540,7 @@
       padding: clamp(3.25rem, 8vh, 5.5rem) 1.5rem;
     }
 
-    #fit {
+    #offerings {
       padding-top: clamp(1.4rem, 3.5vh, 2.4rem);
     }
 
@@ -669,16 +669,39 @@
       gap: 1.4rem;
     }
 
-    .card {
+    .flip-card {
+      display: grid;
+      min-height: 18rem;
+      border-radius: 14px;
+      cursor: pointer;
+      outline: none;
+      perspective: 1000px;
+    }
+
+    .flip-card:focus-visible .card-face {
+      outline: 3px solid rgba(122, 46, 79, 0.34);
+      outline-offset: 4px;
+    }
+
+    .card-face {
+      grid-area: 1 / 1;
       background: rgba(255, 253, 249, 0.88);
       border: 1px solid rgba(43, 43, 43, 0.075);
       border-top: 4px solid var(--teal);
       border-radius: 14px;
       padding: 1.5rem 1.4rem 1.4rem;
       box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: transform 520ms ease, box-shadow 180ms ease;
     }
 
-    .cards .card {
+    .flip-card:hover .card-face,
+    .flip-card:focus-visible .card-face {
+      box-shadow: 0 7px 20px rgba(43, 43, 43, 0.085);
+    }
+
+    .cards .card-face {
       border-top-color: transparent;
       background:
         linear-gradient(rgba(255, 253, 249, 0.9), rgba(255, 253, 249, 0.9)) padding-box,
@@ -686,14 +709,14 @@
       border-top-width: 4px;
     }
 
-    .cards .card:nth-child(1) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.82), rgba(122, 150, 43, 0.34)); --card-heading: var(--deep-teal); }
-    .cards .card:nth-child(2) { --card-accent: linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(217, 161, 93, 0.36)); --card-heading: var(--plum); }
-    .cards .card:nth-child(3) { --card-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.66), rgba(63, 122, 115, 0.34)); --card-heading: var(--deep-teal); }
-    .cards .card:nth-child(4) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.78), rgba(122, 46, 79, 0.28)); --card-heading: var(--deep-teal); }
-    .cards .card:nth-child(5) { --card-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.62), rgba(217, 161, 93, 0.34)); --card-heading: var(--moss); }
-    .cards .card:nth-child(6) { --card-accent: linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(122, 46, 79, 0.28)); --card-heading: var(--plum); }
+    .flip-card:nth-child(1) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.82), rgba(122, 150, 43, 0.34)); --card-heading: var(--deep-teal); }
+    .flip-card:nth-child(2) { --card-accent: linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(217, 161, 93, 0.36)); --card-heading: var(--plum); }
+    .flip-card:nth-child(3) { --card-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.66), rgba(63, 122, 115, 0.34)); --card-heading: var(--deep-teal); }
+    .flip-card:nth-child(4) { --card-accent: linear-gradient(90deg, rgba(63, 122, 115, 0.78), rgba(122, 46, 79, 0.28)); --card-heading: var(--deep-teal); }
+    .flip-card:nth-child(5) { --card-accent: linear-gradient(90deg, rgba(122, 150, 43, 0.62), rgba(217, 161, 93, 0.34)); --card-heading: var(--moss); }
+    .flip-card:nth-child(6) { --card-accent: linear-gradient(90deg, rgba(217, 161, 93, 0.78), rgba(122, 46, 79, 0.28)); --card-heading: var(--plum); }
 
-    .card h3 {
+    .card-face h3 {
       margin: 0 0 0.55rem;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
@@ -701,8 +724,42 @@
       color: var(--card-heading, var(--ink));
     }
 
-    .card p { margin: 0 0 0.85rem; font-size: 0.97rem; line-height: 1.65; color: rgba(43, 43, 43, 0.8); }
-    .card p:last-child { margin-bottom: 0; }
+    .card-face p { margin: 0 0 0.85rem; font-size: 0.97rem; line-height: 1.65; color: rgba(43, 43, 43, 0.8); }
+    .card-face p:last-child { margin-bottom: 0; }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card.is-flipped .card-front {
+      transform: rotateY(-180deg);
+    }
+
+    .flip-card.is-flipped .card-back {
+      transform: rotateY(0);
+    }
+
+    .card-kicker,
+    .card-cue {
+      display: block;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .card-kicker {
+      margin-bottom: 0.45rem;
+      font-size: 0.84rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--plum);
+    }
+
+    .card-cue {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: rgba(122, 46, 79, 0.78);
+    }
 
     .quote-cycle {
       margin: 2.1rem auto 0;
@@ -750,13 +807,30 @@
       justify-content: center;
     }
 
-    /* ---------- Fit + Steps ---------- */
+    /* ---------- Support + Steps ---------- */
 
     .fit-intro {
       margin: -0.25rem auto 0;
       max-width: 38rem;
       text-align: center;
       text-wrap: balance;
+    }
+
+    .support-bridge {
+      margin: 1.75rem auto 0;
+      max-width: 43rem;
+    }
+
+    .support-bridge p {
+      margin: 0 auto 0.85rem;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: rgba(43, 43, 43, 0.82);
+      text-align: left;
+    }
+
+    .support-bridge p:last-child {
+      margin-bottom: 0;
     }
 
     #philosophy .pullquote { margin-bottom: 0.75rem; }
@@ -767,42 +841,9 @@
 
     #philosophy .values { margin-top: 1.75rem; }
 
-    .fit-list {
-      margin: 2rem auto 0;
-      padding: 0;
-      max-width: 48rem;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(3, auto);
-      grid-auto-flow: column;
-      gap: 1.05rem 1.8rem;
-      list-style: none;
+    .offerings-heading {
+      margin-top: -0.35rem;
     }
-
-    .fit-list li {
-      position: relative;
-      padding: 0 0 0 1.6rem;
-      color: rgba(43, 43, 43, 0.86);
-      line-height: 1.65;
-    }
-
-    .fit-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55rem;
-      width: 0.62rem;
-      height: 0.62rem;
-      border-radius: 999px;
-      background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 58%, #3F5013 100%);
-      box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12);
-    }
-
-    .fit-list li:nth-child(2)::before { background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
-    .fit-list li:nth-child(3)::before { background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 58%, #3F5013 100%); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
-    .fit-list li:nth-child(4)::before { background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
-    .fit-list li:nth-child(5)::before { background: radial-gradient(circle at 35% 30%, rgba(214, 229, 138, 0.95), var(--moss) 58%, #3F5013 100%); box-shadow: 0 0 0 4px rgba(122, 150, 43, 0.12); }
-    .fit-list li:nth-child(6)::before { background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%); box-shadow: 0 0 0 4px rgba(63, 122, 115, 0.13); }
 
     .steps {
       margin: 2rem auto 0;
@@ -871,7 +912,7 @@
       background: linear-gradient(to right, transparent, rgba(122, 150, 43, 0.5), transparent);
     }
 
-    .payment-note p:not(.eyebrow):not(.payment-subhead) {
+    .payment-note p:not(.eyebrow):not(.payment-kicker) {
       margin: 0 auto;
       max-width: 39rem;
       font-size: 0.98rem;
@@ -880,16 +921,20 @@
       text-align: left;
     }
 
-    .payment-note p:not(.eyebrow):not(.payment-subhead) + p:not(.payment-subhead) { margin-top: 0.75rem; }
+    .payment-note p:not(.eyebrow):not(.payment-kicker) + p:not(.payment-kicker) { margin-top: 0.75rem; }
 
-    .payment-subhead {
-      margin: -0.35rem 0 0;
+    .payment-kicker {
+      margin: 0 0 -0.1rem;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       line-height: 1.4;
       color: var(--plum);
       text-align: center;
+    }
+
+    .payment-note h2 {
+      margin-top: 0.4rem;
     }
 
     .payment-actions {
@@ -898,7 +943,7 @@
       justify-content: center;
     }
 
-    .payment-subhead + p {
+    .payment-note h2 + p {
       margin-top: 1.2rem;
     }
 
@@ -971,14 +1016,8 @@
     }
 
     @media (max-width: 719px) {
-      .fit-list,
       .steps {
         grid-template-columns: 1fr;
-      }
-
-      .fit-list {
-        grid-template-rows: none;
-        grid-auto-flow: row;
       }
     }
 
@@ -1277,6 +1316,7 @@
       .rise { animation: none; opacity: 1; transform: none; }
       .js [data-reveal] { opacity: 1; transform: none; transition: none; }
       .btn, .btn:hover, .nav-cta { transition: none; transform: none; }
+      .card-face { transition: none; }
     }
   </style>
 
@@ -1329,7 +1369,8 @@
 
   <main id="main">
     <div class="announcement">
-      Summer family support spots are open in Tacoma and nearby Pierce County communities.
+      Now welcoming new family support conversations in Tacoma and nearby Pierce County.<br>
+      If daily life feels hard to manage, start here.
     </div>
 
     <section class="hero" id="top">
@@ -1355,55 +1396,93 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
-    <section class="section" id="fit">
-      <div class="wrap" data-reveal>
-        <h2>When daily life is hard to hold</h2>
-        <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or support recommendation. You do not need the perfect words before reaching out.</p>
-        <ul class="fit-list">
-          <li>Mornings, evenings, bedtime, drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</li>
-          <li>You need another steady adult who can help support your children, home routines, and your capacity at the same time.</li>
-          <li>Your family is adjusting after a diagnosis/concern related to health, sensory needs, Autism, ADHD, development, or school.</li>
-          <li>Your child needs care that is as unique as your family is. Shaped around regulation, communication, sensory needs, scaffolding, and your rhythm.</li>
-          <li>You are navigating IEP meetings, 504 plans, referrals, waitlists, appointments, resources, or advocacy decisions.</li>
-          <li>You need real, practical help. You need breathing room, respite without feeling judged, managed, or misunderstood. You deserve to be heard.</li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
         <h2>Ways we support you</h2>
+        <h2 class="offerings-heading">When daily life is hard to hold</h2>
+        <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or support recommendation. You do not need the perfect words before reaching out.</p>
+        <div class="support-bridge">
+          <p>Interwoven Family Care is for the space between advice and real life: the part where a family has recommendations, appointments, plans, and good intentions, but still needs help making the next day feel possible.</p>
+          <p>You do not have to untangle all of it before reaching out. Part of the work is sitting with the tangle as it is, finding the separate threads, and untangling to make help real. Support begins with understanding what daily life is actually asking of your family.</p>
+        </div>
         <div class="cards">
-          <div class="card anchor-target" id="implementation-resources">
-            <h3>Implementation &amp; Resources</h3>
-            <p>Turning therapy strategies, provider recommendations, and school ideas into practical next steps at home. Providing many local and trusted resources and connections.</p>
-            <p>We focus on solutions that fit your real life, capacity, household rhythm, and circumstances.</p>
+          <div class="flip-card anchor-target" id="implementation-resources" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Implementation &amp; Resources</h3>
+              <p>Turning therapy strategies, provider recommendations, and school ideas into practical next steps at home. Providing local and trusted resources and connections.</p>
+              <p>We focus on solutions that fit your real life, capacity, household rhythm, and circumstances.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>You have recommendations, referrals, appointments, resources, or school/provider ideas, but need help making sense of them and turning them into something usable this week.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
-          <div class="card anchor-target" id="routines-transitions">
-            <h3>Routines &amp; Transitions</h3>
-            <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
-            <p>This may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help daily life feel steadier and more manageable.</p>
+          <div class="flip-card anchor-target" id="routines-transitions" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Routines &amp; Transitions</h3>
+              <p>Bedtime. Mornings. Leaving the house. Sometimes the smallest parts of the day take the most energy.</p>
+              <p>This may include emotional regulation, skill-building, scaffolding independence, and practical strategies that help daily life feel steadier and more manageable.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>Mornings, evenings, bedtime, drop-off, appointments, or leaving the house have become some of the hardest parts of the day.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Family Support</h3>
-            <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
-            <p>This may include caregiver/parent support, childcare, immediate problem-solving, and a trusted sounding board that is not only knowledgeable about local resources but active in the local community.</p>
+          <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Family Support</h3>
+              <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
+              <p>This may include caregiver/parent support, childcare, immediate problem-solving, and a trusted sounding board that is knowledgeable about local resources and active in the local community.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>Your family needs real, practical help, individualized care, and support that understands the whole picture without making you feel judged, managed, or misunderstood.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
-          <div class="card anchor-target" id="breathing-room">
-            <h3>Breathing Room</h3>
-            <p>Sometimes help is having another capable adult in the house during the parts of the week that take the most out of everyone, especially you.</p>
-            <p>Practical support that reduces overwhelm and gives your family more room to recover, connect, and reset as a family.</p>
+          <div class="flip-card anchor-target" id="breathing-room" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Breathing Room</h3>
+              <p>Sometimes help is having another capable adult in the house during the parts of the week that take the most out of everyone, especially you.</p>
+              <p>Practical support that reduces overwhelm and gives your family more room to recover, connect, and reset as a family.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>You need another steady adult who can support your children, home routines, and your capacity at the same time.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Environment Support</h3>
-            <p>Tell me what is not working, let me observe, and I can help shape indoor and outdoor spaces with less friction, from scaffolding independence in bathrooms or bedrooms to developing an engaging play environment that keeps everyone who lives there centered.</p>
+          <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Environment Support</h3>
+              <p>Tell me what is not working, let me observe, and I can help shape indoor and outdoor spaces with less friction.</p>
+              <p>This can include scaffolding independence in bathrooms or bedrooms, or developing an engaging play environment that keeps everyone who lives there centered.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>Your child needs care that is shaped around regulation, communication, sensory needs, scaffolding, independence, and your family's rhythm.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Advocacy Support</h3>
-            <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, and various systems while carrying family life is a lot.</p>
-            <p>Our advocacy support includes meeting preparation, priority planning, and confidence building for you as you continue to advocate for your family.</p>
+          <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+            <div class="card-face card-front">
+              <h3>Advocacy Support</h3>
+              <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, and various systems while carrying family life is a lot.</p>
+              <p>Our advocacy support includes meeting preparation, priority planning, and confidence building for you as you continue to advocate for your family.</p>
+              <span class="card-cue">Tap to see real-life fit</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <span class="card-kicker">You might be here because</span>
+              <p>You are navigating IEP meetings, 504 plans, referrals, waitlists, appointments, resources, or advocacy decisions and want to feel more prepared.</p>
+              <span class="card-cue">Tap to return to support type</span>
+            </div>
           </div>
         </div>
         <figure class="quote-cycle" data-quote-cycle aria-live="polite">
@@ -1471,8 +1550,8 @@
           </li>
         </ol>
         <div class="payment-note anchor-target" id="payment">
-          <h2>An open and honest conversation</h2>
-          <p class="payment-subhead">Cost of Care</p>
+          <p class="payment-kicker">An open and honest conversation</p>
+          <h2>Cost of Care</h2>
           <p>Interwoven Family Care is private pay at this time. Cost is something we can talk through as soon as you want. You do not need a perfect plan before reaching out. We can talk about what would help, what feels realistic, and what options are worth exploring.</p>
           <p>IFC is learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
           <p>Talking through care also means talking through what is sustainable for your family. That includes financially.</p>
@@ -1775,6 +1854,24 @@
 
     window.addEventListener('hashchange', openLinkedDetails);
     openLinkedDetails();
+
+    document.querySelectorAll('.flip-card').forEach(card => {
+      const front = card.querySelector('.card-front');
+      const back = card.querySelector('.card-back');
+      const toggleCard = () => {
+        const flipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+        if (front) front.setAttribute('aria-hidden', flipped ? 'true' : 'false');
+        if (back) back.setAttribute('aria-hidden', flipped ? 'false' : 'true');
+      };
+
+      card.addEventListener('click', toggleCard);
+      card.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        toggleCard();
+      });
+    });
 
     const revealer = new IntersectionObserver(entries => {
       entries.forEach(e => {
