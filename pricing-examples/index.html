@@ -583,12 +583,17 @@
       background: rgba(246, 243, 238, 0.62);
     }
 
-    .coaching-examples h4,
-    .expanded-support h3,
-    .coaching-boundary h3 {
+    .coaching-examples h4 {
       margin: 0 0 0.65rem;
       color: var(--deep-teal);
       font-size: 1.05rem;
+    }
+
+    .expanded-support h2,
+    .coaching-boundary h2 {
+      margin: 0 0 0.65rem;
+      color: var(--deep-teal);
+      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
     }
 
     .coaching-examples ul {
@@ -643,11 +648,17 @@
       font-style: italic;
     }
 
+    .coaching-scope,
     .expanded-support,
     .coaching-boundary {
       margin-top: 1rem;
       padding: 0.95rem 1.05rem;
       border-radius: 10px;
+    }
+
+    .coaching-scope {
+      border-left: 4px solid var(--plum);
+      background: rgba(122, 46, 79, 0.06);
     }
 
     .expanded-support {
@@ -660,6 +671,7 @@
       background: rgba(122, 46, 79, 0.06);
     }
 
+    .coaching-scope p,
     .expanded-support p,
     .coaching-boundary p {
       margin: 0;
@@ -667,13 +679,21 @@
       line-height: 1.5;
     }
 
+    .coaching-scope p + p,
     .coaching-boundary p + p {
       margin-top: 0.65rem;
     }
 
-    .coaching-action {
-      margin-top: 1.3rem;
-      text-align: center;
+    .section-custom,
+    .section-scope {
+      padding-top: clamp(1.4rem, 3.5vh, 2.2rem);
+      padding-bottom: clamp(1.4rem, 3.5vh, 2.2rem);
+    }
+
+    .section-custom .expanded-support,
+    .section-scope .coaching-boundary {
+      max-width: 56rem;
+      margin: 0 auto;
     }
 
     .section-examples .wrap-wide {
@@ -1439,6 +1459,26 @@
       </div>
     </section>
 
+    <section class="section section-note" aria-label="What IFC support may include">
+      <div class="wrap">
+        <div class="soft-note">
+          <p><strong>What IFC support may include:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
+          <p>Depending on the family, care may include any of these or more:</p>
+          <p class="care-thread-note">Not every family needs all of this.</p>
+          <ul class="care-thread-list">
+            <li>Childcare or child-related care</li>
+            <li>Relief and respite care</li>
+            <li>Routines and transition help</li>
+            <li>Advocacy preparation</li>
+            <li>Caregiver support and breathing room</li>
+            <li>Resource navigation</li>
+            <li>Implementation &amp; Resource Support</li>
+            <li>Environment support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-in-home" aria-labelledby="in-home-support-heading">
       <div class="wrap-wide">
         <p class="eyebrow">Core Support</p>
@@ -1464,26 +1504,6 @@
         </div>
 
         <p class="in-home-budget">In-home support can be shaped within client schedules, weekly caps, or agreed budgets. The exact blend and cost are talked through before support begins; no new in-home rate is being introduced here.</p>
-      </div>
-    </section>
-
-    <section class="section section-note" aria-label="A quick note before the examples">
-      <div class="wrap">
-        <div class="soft-note">
-          <p><strong>A quick note before the examples:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
-          <p>Depending on the family, care may include any of these or more:</p>
-          <p class="care-thread-note">Not every family needs all of this.</p>
-          <ul class="care-thread-list">
-            <li>Childcare or child-related care</li>
-            <li>Relief and respite care</li>
-            <li>Routines and transition help</li>
-            <li>Advocacy preparation</li>
-            <li>Caregiver support and breathing room</li>
-            <li>Resource navigation</li>
-            <li>Implementation &amp; Resources</li>
-            <li>Environment support</li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -1577,7 +1597,7 @@
         <h2 id="focused-ways-heading">Focused Ways to Begin</h2>
         <div class="focused-intro">
           <p>Some families need hands-on support inside the home. Others need protected time to slow something down, think it through, and decide what may actually help.</p>
-          <p>These focused virtual coaching offers have a clear rate and scope.</p>
+          <p>These virtual coaching offers have a clear rate and scope.</p>
         </div>
 
         <article class="coaching-panel" aria-labelledby="virtual-family-coaching-heading">
@@ -1589,9 +1609,9 @@
             <h4 id="coaching-examples-heading">This might look like:</h4>
             <ul>
               <li>Bedtime takes two exhausting hours, and every suggestion seems to create another fight.</li>
-              <li>A school or provider meeting is approaching, and scattered notes need to become clear concerns and questions.</li>
-              <li>A child wants more independence, but the bedroom, bathroom, or morning setup still requires adult help at every step.</li>
-              <li>Professional recommendations make sense on paper but still do not fit the family&rsquo;s schedule, home, or caregiver capacity.</li>
+              <li>A school or provider meeting is approaching, and your notes are everywhere. You need help identifying what you most need to ask and say.</li>
+              <li>Your child wants more independence, but the bedroom, bathroom, or morning setup still requires adult help at every step.</li>
+              <li>You received recommendations from a professional, but they do not seem possible within your actual schedule, home, or family capacity.</li>
             </ul>
           </section>
 
@@ -1620,7 +1640,7 @@
                 <li>Supporting more independence within a routine</li>
                 <li>Preparing for and debriefing a school or provider meeting</li>
                 <li>Making professional recommendations more usable at home</li>
-                <li>Working through a connected family pressure point as support is tested</li>
+                <li>Working through one connected family pressure point that may change as support is tested</li>
               </ul>
               <p><strong>The series includes:</strong></p>
               <ul>
@@ -1634,21 +1654,29 @@
             </article>
           </div>
 
-          <section class="expanded-support" aria-labelledby="expanded-support-heading">
-            <h3 id="expanded-support-heading">Custom or Expanded Support</h3>
-            <p>More involved advocacy preparation, environment planning, resource work, or blended virtual and in-home support may be scoped separately. Expanded work does not have a new public rate in this offer.</p>
-          </section>
-
-          <section class="coaching-boundary" aria-labelledby="more-support-heading">
-            <h3 id="more-support-heading">When More Support Is Needed</h3>
+          <aside class="coaching-scope" aria-label="Virtual family coaching scope">
             <p>Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session or series.</p>
-            <p>Virtual family coaching is practical family support. It is not therapy, clinical treatment, medical care, legal advice or representation, special education representation, formal case management, or crisis support.</p>
-          </section>
-
-          <div class="coaching-action">
-            <a class="btn btn-primary" href="/client-inquiry/">Start a Conversation</a>
-          </div>
+            <p>More involved advocacy preparation, environment planning, resource work, or blended virtual and in-home support may be scoped separately.</p>
+          </aside>
         </article>
+      </div>
+    </section>
+
+    <section class="section section-custom" aria-labelledby="expanded-support-heading">
+      <div class="wrap">
+        <div class="expanded-support">
+          <h2 id="expanded-support-heading">Custom or Expanded Support</h2>
+          <p>Expanded work is shaped around the family rather than added automatically to a coaching offer. Scope and cost are talked through before that support begins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-scope" aria-labelledby="general-scope-heading">
+      <div class="wrap">
+        <div class="coaching-boundary">
+          <h2 id="general-scope-heading">IFC Scope</h2>
+          <p>Interwoven Family Care provides practical family coaching and adaptive support. IFC does not provide therapy, clinical treatment, medical care, legal advice or representation, special education representation, formal case management, or crisis response.</p>
+        </div>
       </div>
     </section>
 
@@ -1719,7 +1747,7 @@
         exampleEstimate: "$150/week"
       },
       recommendations: {
-        title: "Implementation & Resources",
+        title: "Making Recommendations Work",
         body: [
           "You have heard “use a visual schedule,” “make the routine predictable,” and “build independence,” and none of that is bad advice. It just does not magically install itself in the middle of real life.",
           "Your child may be neurodivergent, sensory-sensitive, demand-sensitive, easily overwhelmed, or having a hard time moving through the day. Your family needs help figuring out what actually fits.",
