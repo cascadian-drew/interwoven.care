@@ -1826,6 +1826,25 @@
         closeExample();
       }
     });
+
+    function scrollToLinkedSection() {
+      if (!window.location.hash) return;
+
+      const target = document.getElementById(
+        decodeURIComponent(window.location.hash.slice(1))
+      );
+
+      if (!target) return;
+
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ block: 'start' });
+        });
+      });
+    }
+
+    window.addEventListener('load', scrollToLinkedSection);
+    window.addEventListener('hashchange', scrollToLinkedSection);
   </script>
 </body>
 </html>
