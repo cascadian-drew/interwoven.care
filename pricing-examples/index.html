@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How Pricing Works | Interwoven Family Care™</title>
-  <meta name="description" content="How pricing works for Interwoven Family Care™, including a clear $120 rate for a 60-minute virtual family coaching session and examples of adaptive in-home support.">
+  <meta name="description" content="How pricing works for Interwoven Family Care™, with adaptive in-home family support first and focused virtual family coaching offers at $120 and $345.">
   <link rel="canonical" href="https://interwoven.care/pricing-examples/">
   <link rel="icon" type="image/png" href="../assets/heart.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/pricing-examples/">
   <meta property="og:title" content="How Pricing Works | Interwoven Family Care™">
-  <meta property="og:description" content="Virtual family coaching at a clear rate, plus examples to help families picture adaptive in-home support.">
+  <meta property="og:description" content="Adaptive in-home family support, childcare and relief care, custom blended support, and focused virtual family coaching offers.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -450,9 +450,106 @@
       box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.14);
     }
 
-    .section-coaching {
+    .section-in-home {
       padding-top: clamp(1.2rem, 3vh, 2rem);
       padding-bottom: clamp(1.8rem, 4.5vh, 3rem);
+    }
+
+    .section-intro {
+      margin: 0 auto;
+      max-width: 48rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .in-home-grid {
+      margin-top: 1.45rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .in-home-card,
+    .coaching-offer {
+      padding: 1.15rem 1.2rem;
+      border: 1px solid transparent;
+      border-top-width: 4px;
+      border-radius: 14px;
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
+        linear-gradient(90deg, rgba(63, 122, 115, 0.8), rgba(122, 150, 43, 0.34)) border-box;
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
+    }
+
+    .in-home-card:nth-child(2),
+    .coaching-offer:nth-child(2) {
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
+        linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(217, 161, 93, 0.42)) border-box;
+    }
+
+    .in-home-card:nth-child(3) {
+      background:
+        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
+        linear-gradient(90deg, rgba(122, 150, 43, 0.68), rgba(63, 122, 115, 0.36)) border-box;
+    }
+
+    .in-home-card h3,
+    .coaching-offer h4 {
+      margin: 0 0 0.6rem;
+      color: var(--deep-teal);
+      font-size: 1.08rem;
+    }
+
+    .in-home-card:nth-child(2) h3,
+    .coaching-offer:nth-child(2) h4 {
+      color: var(--plum);
+    }
+
+    .in-home-card p,
+    .in-home-card li,
+    .coaching-offer p,
+    .coaching-offer li {
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .in-home-card p {
+      margin: 0;
+    }
+
+    .in-home-card p + p {
+      margin-top: 0.7rem;
+    }
+
+    .in-home-budget {
+      margin: 1.15rem auto 0;
+      max-width: 48rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--copper);
+      border-radius: 10px;
+      background: rgba(217, 161, 93, 0.075);
+      font-size: 0.92rem !important;
+      line-height: 1.5 !important;
+    }
+
+    .section-coaching {
+      padding-top: clamp(2rem, 5vh, 3.4rem);
+      padding-bottom: clamp(1.8rem, 4.5vh, 3rem);
+    }
+
+    .focused-intro {
+      margin: 0 auto 1.35rem;
+      max-width: 48rem;
+      text-align: center;
+    }
+
+    .focused-intro p {
+      margin: 0;
+    }
+
+    .focused-intro p + p {
+      margin-top: 0.65rem;
     }
 
     .coaching-panel {
@@ -466,91 +563,107 @@
       box-shadow: 0 6px 22px rgba(43, 43, 43, 0.07);
     }
 
-    .coaching-panel h2 {
-      margin-bottom: 0.45rem;
+    .coaching-panel > h3 {
+      margin: 0;
       color: var(--plum);
-    }
-
-    .coaching-panel > p {
-      margin: 0.7rem auto 0;
-      max-width: 42rem;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
       text-align: center;
     }
 
-    .coaching-panel .coaching-price {
-      margin-top: 0;
-      font-family: var(--font-brand);
-      font-weight: 700;
-      font-size: clamp(1.15rem, 2.5vw, 1.35rem);
-      color: var(--deep-teal);
+    .coaching-panel > p {
+      margin: 0.65rem auto 0;
+      max-width: 44rem;
+      text-align: center;
     }
 
-    .coaching-columns {
-      margin-top: 1.4rem;
+    .coaching-examples {
+      margin-top: 1.25rem;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      background: rgba(246, 243, 238, 0.62);
+    }
+
+    .coaching-examples h4 {
+      margin: 0 0 0.65rem;
+      color: var(--deep-teal);
+      font-size: 1.05rem;
+    }
+
+    .coaching-examples ul {
+      margin: 0;
+      padding-left: 1.2rem;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem 1.3rem;
+    }
+
+    .coaching-examples li {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .coaching-offers {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
       gap: 1rem;
     }
 
-    .coaching-columns section {
-      padding: 1.05rem 1.1rem;
-      border: 1px solid rgba(63, 122, 115, 0.16);
-      border-radius: 12px;
-      background: rgba(246, 243, 238, 0.56);
+    .offer-price {
+      margin: 0 0 0.7rem;
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: 1.08rem !important;
+      color: var(--plum) !important;
     }
 
-    .coaching-columns section:nth-child(2) {
-      border-color: rgba(122, 46, 79, 0.16);
-    }
-
-    .coaching-columns h3 {
-      margin: 0 0 0.65rem;
-      font-size: 1.04rem;
-      color: var(--deep-teal);
-    }
-
-    .coaching-columns section:nth-child(2) h3 {
-      color: var(--plum);
-    }
-
-    .coaching-columns ul {
+    .coaching-offer > p {
       margin: 0;
+    }
+
+    .coaching-offer > p + p,
+    .coaching-offer ul + p {
+      margin-top: 0.75rem;
+    }
+
+    .coaching-offer ul {
+      margin: 0.55rem 0 0;
       padding-left: 1.2rem;
     }
 
-    .coaching-columns li {
-      font-size: 0.94rem;
-      line-height: 1.5;
+    .coaching-offer li + li {
+      margin-top: 0.3rem;
     }
 
-    .coaching-columns li + li {
-      margin-top: 0.35rem;
+    .offer-note {
+      color: rgba(43, 43, 43, 0.76) !important;
+      font-style: italic;
     }
 
-    .coaching-panel .coaching-boundary,
-    .coaching-panel .coaching-scope {
-      max-width: 48rem;
-      padding: 0.85rem 1rem;
+    .offer-meaning {
+      margin-bottom: 0.35rem !important;
+      color: var(--deep-teal) !important;
+      font-family: var(--font-brand);
+      font-weight: 700;
+    }
+
+    .coaching-scope {
+      margin-top: 1rem;
+      padding: 0.95rem 1.05rem;
       border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      text-align: left;
-    }
-
-    .coaching-panel .coaching-boundary {
-      margin-top: 1.15rem;
-      border-left: 4px solid var(--copper);
-      background: rgba(217, 161, 93, 0.08);
-    }
-
-    .coaching-panel .coaching-scope {
       border-left: 4px solid var(--plum);
       background: rgba(122, 46, 79, 0.06);
     }
 
-    .coaching-action {
-      margin-top: 1.3rem;
-      text-align: center;
+    .coaching-scope p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .coaching-scope p + p {
+      margin-top: 0.65rem;
     }
 
     .section-examples .wrap-wide {
@@ -1169,7 +1282,9 @@
         grid-template-columns: 1fr;
       }
 
-      .coaching-columns {
+      .in-home-grid,
+      .coaching-offers,
+      .coaching-examples ul {
         grid-template-columns: 1fr;
       }
 
@@ -1309,58 +1424,14 @@
       <div class="wrap closing-copy">
         <h2>What feels the hardest?</h2>
         <p>You do not need to know the right service before reaching out. Start with what feels hard, and we can talk through what kind of support may fit.</p>
-        <p>The introductory conversation is a brief opportunity to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit.</p>
-        <p>It is separate from a virtual family coaching session. Coaching provides protected time for deeper reflection, collaborative problem-solving, planning, and practical next steps.</p>
+        <p>The introductory conversation is a brief chance to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit. A paid coaching session gives us a full hour to look closely at one concern, talk through what has already happened, and choose what to try next.</p>
       </div>
     </section>
 
-    <section class="section section-coaching anchor-target" id="virtual-family-coaching" aria-labelledby="virtual-family-coaching-heading">
-      <div class="wrap-wide">
-        <article class="coaching-panel">
-          <p class="eyebrow">A place to think it through</p>
-          <h2 id="virtual-family-coaching-heading">Virtual Family Coaching</h2>
-          <p class="coaching-price">60-minute virtual session &middot; $120</p>
-          <p>A focused coaching session for one primary part of family life that feels stuck, confusing, or harder to carry alone.</p>
-
-          <div class="coaching-columns">
-            <section aria-labelledby="coaching-may-help-heading">
-              <h3 id="coaching-may-help-heading">Virtual family coaching may help with:</h3>
-              <ul>
-                <li>Routines and transitions</li>
-                <li>Caregiver problem-solving</li>
-                <li>Preparing questions for a school or provider conversation</li>
-                <li>Making recommendations more usable at home</li>
-                <li>A focused home-environment or independence question</li>
-                <li>Sorting through competing priorities</li>
-                <li>Deciding what to try next&mdash;and what can wait</li>
-              </ul>
-            </section>
-            <section aria-labelledby="coaching-includes-heading">
-              <h3 id="coaching-includes-heading">Your session includes:</h3>
-              <ul>
-                <li>Short pre-session questions</li>
-                <li>One 60-minute virtual session</li>
-                <li>One primary area of focus</li>
-                <li>Collaborative reflection and practical planning</li>
-                <li>A brief follow-up note with agreed next steps</li>
-              </ul>
-            </section>
-          </div>
-
-          <p class="coaching-boundary">Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session. Additional support can be scoped separately when appropriate.</p>
-          <p class="coaching-scope">Virtual family coaching is practical family support. It is not therapy, clinical treatment, medical care, legal advice or representation, special education legal representation, formal case management, or crisis response.</p>
-          <div class="coaching-action">
-            <a class="btn btn-primary" href="/client-inquiry/">Start a Conversation</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-note" aria-label="A quick note before the examples">
+    <section class="section section-note" aria-label="What IFC support may include">
       <div class="wrap">
         <div class="soft-note">
-          <p><strong>A quick note before the examples:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
-          <p class="scope-note">IFC is not therapy, clinical treatment, legal representation, special education representation, formal case management, medical care, or crisis support.</p>
+          <p><strong>What IFC support may include:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
           <p>Depending on the family, care may include any of these or more:</p>
           <p class="care-thread-note">Not every family needs all of this.</p>
           <ul class="care-thread-list">
@@ -1368,18 +1439,46 @@
             <li>Relief and respite care</li>
             <li>Routines and transition help</li>
             <li>Advocacy preparation</li>
-            <li>Caregiver/parent support and breathing room</li>
+            <li>Caregiver support and breathing room</li>
             <li>Resource navigation</li>
-            <li>Implementation &amp; Resources</li>
+            <li>Making Recommendations Work</li>
             <li>Environment support</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-examples" aria-label="Some ways support can look">
+    <section class="section section-in-home" aria-labelledby="in-home-support-heading">
       <div class="wrap-wide">
-        <h2>Some Ways Support Can Look</h2>
+        <p class="eyebrow">Core Support</p>
+        <h2 id="in-home-support-heading">Adaptive In-Home Family Support</h2>
+        <p class="section-intro">IFC&rsquo;s core work happens alongside families in real life. Support may combine childcare or relief care, caregiver partnership, routines and transitions, practical environment adjustments, and light coaching woven into the visit.</p>
+
+        <div class="in-home-grid">
+          <article class="in-home-card">
+            <h3>Childcare &amp; Relief Care</h3>
+            <p>A caregiver may need several hours to attend an appointment, complete work, or rest while knowing their child is with someone who understands their needs.</p>
+            <p>Care can include play, meals, transitions, outings, regulation support, and the practical work that helps the family day keep moving.</p>
+          </article>
+          <article class="in-home-card">
+            <h3>Routines, Environments &amp; Caregiver Partnership</h3>
+            <p>A family may want childcare while mornings or after-school transitions also need support, or a routine may keep depending on one exhausted caregiver remembering and managing every step.</p>
+            <p>Visits can include modeling, scaffolding, practical environment adjustments, and noticing what makes a routine easier to carry.</p>
+          </article>
+          <article class="in-home-card">
+            <h3>Ongoing or Custom Blended Support</h3>
+            <p>Some families need a steady blend of care, family coaching, home-environment support, advocacy preparation, and help making recommendations usable in daily life.</p>
+            <p>The shape of support can adjust as the family notices what helps, what does not, and what needs to change next.</p>
+          </article>
+        </div>
+
+        <p class="in-home-budget">In-home support can be shaped within client schedules, weekly caps, or agreed budgets. The exact blend and cost are talked through before support begins; no new in-home rate is being introduced here.</p>
+      </div>
+    </section>
+
+    <section class="section section-examples" aria-label="Adaptive in-home support examples">
+      <div class="wrap-wide">
+        <h2>Adaptive In-Home Support in Real Life</h2>
         <div class="thread-map" aria-label="Support example choices">
           <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
@@ -1461,12 +1560,90 @@
       </div>
     </section>
 
+    <section class="section section-coaching anchor-target" id="virtual-family-coaching" aria-labelledby="focused-ways-heading">
+      <div class="wrap-wide">
+        <p class="eyebrow">Protected Time to Think</p>
+        <h2 id="focused-ways-heading">Focused Ways to Begin</h2>
+        <div class="focused-intro">
+          <p>Some families need hands-on support inside the home. Others need protected time to slow something down, think it through, and decide what may actually help.</p>
+          <p>These virtual coaching offers have a clear rate and scope.</p>
+        </div>
+
+        <article class="coaching-panel" aria-labelledby="virtual-family-coaching-heading">
+          <h3 id="virtual-family-coaching-heading">Virtual Family Coaching</h3>
+          <p>Practical, collaborative support for caregivers working through one connected part of family life.</p>
+          <p>You do not need to arrive with a perfectly named problem or a finished plan. Start with what feels hard.</p>
+
+          <section class="coaching-examples" aria-labelledby="coaching-examples-heading">
+            <h4 id="coaching-examples-heading">This might look like:</h4>
+            <ul>
+              <li>Bedtime takes two exhausting hours, and every suggestion seems to create another fight.</li>
+              <li>A school or provider meeting is approaching, and your notes are everywhere. You need help identifying what you most need to ask and say.</li>
+              <li>Your child wants more independence, but the bedroom, bathroom, or morning setup still requires adult help at every step.</li>
+              <li>You received recommendations from a professional, but they do not seem possible within your actual schedule, home, or family capacity.</li>
+            </ul>
+          </section>
+
+          <div class="coaching-offers">
+            <article class="coaching-offer">
+              <h4>One Focused Session</h4>
+              <p class="offer-meaning">Help me think through this.</p>
+              <p class="offer-price">60 minutes &middot; $120</p>
+              <p>A focused coaching session for one primary part of family life that feels stuck, confusing, or harder to carry alone.</p>
+              <p><strong>Includes:</strong></p>
+              <ul>
+                <li>Short pre-session questions</li>
+                <li>One 60-minute virtual session</li>
+                <li>One primary area of focus</li>
+                <li>Conversation about what has already happened</li>
+                <li>Practical planning</li>
+                <li>A brief follow-up note with agreed next steps</li>
+              </ul>
+              <p><strong>May help with:</strong></p>
+              <ul>
+                <li>Routines and transitions</li>
+                <li>Caregiver problem-solving</li>
+                <li>Preparing questions for a school or provider conversation</li>
+                <li>Making recommendations more usable at home</li>
+                <li>A focused home-environment or independence question</li>
+                <li>Sorting through competing priorities</li>
+                <li>Deciding what to try next and what can wait</li>
+              </ul>
+            </article>
+
+            <article class="coaching-offer">
+              <h4>Three-Session Family Coaching Series</h4>
+              <p class="offer-meaning">Help me try this, notice what happens, and adjust.</p>
+              <p class="offer-price">Three 60-minute sessions &middot; $345</p>
+              <p class="offer-note">The sessions are generally used within eight weeks.</p>
+              <p>This series is for one connected family concern that needs more than one conversation. It creates time to choose something to try, notice what happens in real life, and make adjustments together.</p>
+              <p><strong>The series includes:</strong></p>
+              <ul>
+                <li>Three 60-minute virtual coaching sessions</li>
+                <li>One connected area of focus</li>
+                <li>Brief follow-up notes after each session</li>
+                <li>Time between sessions to try agreed next steps</li>
+                <li>Adjustments based on what the family notices</li>
+                <li>A final summary of what was tried, what seemed helpful, and possible next steps</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="coaching-scope" aria-label="Virtual family coaching scope">
+            <p>Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session or series. Additional support may be scoped separately when appropriate.</p>
+            <p>The three-session series is not a subscription, ongoing unlimited support, or ongoing messaging access.</p>
+            <p>Virtual Family Coaching is practical family support. It is not therapy, clinical treatment, medical care, legal advice or representation, special-education legal representation, formal case management, or crisis response.</p>
+          </aside>
+        </article>
+      </div>
+    </section>
+
     <section class="section">
       <div class="start-contact">
         <p class="eyebrow">Ready to Talk?</p>
         <h2>Tell Bri what is hard right now</h2>
         <p>If this sounds like the kind of support your family may need, you can start with the inquiry form, schedule a low-pressure call, or send an email if writing feels easier.</p>
-        <p class="pricing-final-note">Pricing and scope are confirmed before support begins. Virtual family coaching is $120 for a 60-minute session.</p>
+        <p class="pricing-final-note">Pricing and scope are confirmed before support begins. Virtual Family Coaching is $120 for one 60-minute session or $345 for the three-session series.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
           <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
@@ -1528,7 +1705,7 @@
         exampleEstimate: "$150/week"
       },
       recommendations: {
-        title: "Implementation & Resources",
+        title: "Making Recommendations Work",
         body: [
           "You have heard “use a visual schedule,” “make the routine predictable,” and “build independence,” and none of that is bad advice. It just does not magically install itself in the middle of real life.",
           "Your child may be neurodivergent, sensory-sensitive, demand-sensitive, easily overwhelmed, or having a hard time moving through the day. Your family needs help figuring out what actually fits.",
