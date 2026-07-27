@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interwoven Family Care™ - In-Home Family Support in Tacoma & Pierce County</title>
-  <meta name="description" content="Interwoven Family Care™ offers family coaching and adaptive in-home support in Tacoma and Pierce County, with focused virtual family coaching available.">
+  <meta name="description" content="Interwoven Family Care™ offers family coaching and adaptive in-home support in Tacoma and nearby Pierce County, with focused virtual family coaching available.">
   <link rel="canonical" href="https://interwoven.care/">
   <link rel="icon" type="image/png" href="assets/heart.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -390,15 +390,72 @@
       color: var(--plum);
       text-align: center;
       text-wrap: balance;
+      display: grid;
+      justify-items: center;
+      gap: 0.18rem;
     }
 
-    .announcement a {
+    .announcement p {
+      margin: 0;
+    }
+
+    .announcement-main {
+      font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+    }
+
+    .announcement-support {
+      font-weight: 600;
+      color: rgba(43, 43, 43, 0.78);
+    }
+
+    .announcement-offer-row {
+      margin-top: 0.18rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem 0.75rem;
+    }
+
+    .announcement-offer {
+      font-size: 0.9rem;
+      letter-spacing: 0.015em;
+    }
+
+    .announcement-offer-details {
+      white-space: nowrap;
+    }
+
+    .announcement-cta {
+      padding: 0.34rem 0.72rem;
+      border: 1px solid rgba(122, 46, 79, 0.36);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.74);
       color: var(--plum);
       text-decoration-thickness: 2px;
       text-underline-offset: 0.18em;
     }
 
+    .announcement-cta:focus-visible {
+      outline: 3px solid rgba(63, 122, 115, 0.7);
+      outline-offset: 3px;
+    }
+
     @media (max-width: 720px) {
+      .announcement {
+        padding: 0.72rem 1rem 0.78rem;
+        gap: 0.28rem;
+      }
+
+      .announcement-main,
+      .announcement-support {
+        max-width: 34rem;
+      }
+
+      .announcement-offer-row {
+        gap: 0.5rem 0.65rem;
+      }
+
       .hero-situations {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1394,7 +1451,7 @@
     "name": "Interwoven Family Care™",
     "url": "https://interwoven.care/",
     "email": "bri@interwoven.care",
-    "description": "Family coaching and adaptive in-home support in Tacoma and Pierce County, with focused virtual family coaching available.",
+    "description": "Family coaching and adaptive in-home support in Tacoma and nearby Pierce County, with focused virtual family coaching available.",
     "areaServed": "Pierce County, Washington"
   }
   </script>
@@ -1435,9 +1492,13 @@
   </nav>
 
   <main id="main">
-    <div class="announcement">
-      Now welcoming new family support conversations in Tacoma and nearby Pierce County.<br>
-      If daily life feels hard to manage, start here.
+    <div class="announcement" aria-label="Fall Virtual Family Coaching">
+      <p class="announcement-main">Fall means new routines, shifting schedules, and different family needs.</p>
+      <p class="announcement-support">Book an hour to think it through and find a next step that fits.</p>
+      <div class="announcement-offer-row">
+        <p class="announcement-offer">Virtual Family Coaching &middot; <span class="announcement-offer-details">60 minutes &middot; $120</span></p>
+        <a class="announcement-cta" href="/pricing-examples/#virtual-family-coaching">View Coaching Sessions</a>
+      </div>
     </div>
 
     <section class="hero" id="top">
@@ -1448,7 +1509,7 @@
       </h1>
       <p class="lede rise d3">Family coaching and adaptive in-home support for routines, resources, childcare, and real life.</p>
       <p class="hero-quote rise d4">"I highly recommend her to families seeking child care or support, especially families with added layers of needs."<span>- Heather Jeng</span></p>
-      <p class="sub rise d3">In-home support across Tacoma and Pierce County, with virtual coaching available.</p>
+      <p class="sub rise d3">In-home support in Tacoma and nearby Pierce County, with virtual coaching available.</p>
       <ul class="hero-situations rise d4" aria-label="Common reasons families reach out">
         <li><a href="#philosophy">School or support concerns</a></li>
         <li><a href="#support-example">Neurodivergent family life</a></li>
@@ -1466,17 +1527,17 @@
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow offerings-heading">Ways we support you</p>
-        <h2>When daily life is hard to hold</h2>
+        <h2>When daily life feels like too much</h2>
         <p class="fit-intro">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or good advice. You do not need the perfect words before reaching out.</p>
         <div class="support-bridge">
           <p>Interwoven Family Care™ is for the space between advice and real life: the part where a family has recommendations, appointments, plans, and good intentions, but still needs help making the next day feel possible.</p>
-          <p>When you are here, you do not have to untangle it alone. Together, we can sit with the tangle as is, find the threads that matter most, and move at your family&rsquo;s pace so help is tangible.</p>
+          <p>When you are here, you do not have to untangle it alone. Together, we can sit with the tangle as is, find the threads that matter most, and turn what we notice into a next step that makes sense for your family.</p>
         </div>
         <div class="cards">
           <div class="flip-card anchor-target" id="implementation-resources" role="button" tabindex="0" aria-pressed="false">
             <div class="card-face card-front">
-              <h3>Making It Work</h3>
-              <span class="card-subtitle">Implementation &amp; Resource Support</span>
+              <span class="card-kicker">From Advice to Home</span>
+              <h3>Making Recommendations Work</h3>
               <p>Taking therapy strategies, provider recommendations, school ideas, and other good advice, then turning them into practical actions at home. We can also help connect you with local, trusted resources and community supports.</p>
               <span class="card-cue">real-life fit &#8631;</span>
             </div>
@@ -1559,22 +1620,22 @@
             <div class="card-face card-front">
               <span class="card-kicker">A place to think it through</span>
               <h3>Virtual Family Coaching</h3>
-              <p>Focused online support when one part of family life feels stuck, confusing, or difficult to carry alone.</p>
-              <p>Bedtime may have become a nightly battle, a school meeting may be approaching, or professional recommendations may still feel impossible to use at home.</p>
-              <p class="card-price">60-minute sessions begin at $120.</p>
-              <a class="card-link" href="/pricing-examples/#virtual-family-coaching">Explore Virtual Family Coaching</a>
+              <p>Focused online support for a routine, transition, school or provider concern, home-environment question, or advice that still needs to become usable in real life.</p>
+              <p class="card-price">60 minutes &middot; $120</p>
+              <p class="card-price">Three-session series &middot; $345</p>
+              <a class="card-link" href="/pricing-examples/#virtual-family-coaching">View Coaching Sessions</a>
             </div>
           </article>
           <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
             <div class="card-face card-front">
               <span class="card-kicker">Support That Fits</span>
-              <h3>Practical Support Planning</h3>
-              <p>Support can include identifying goals, noticing pressure points, considering routines and communication preferences, and shaping practical next steps around the family&rsquo;s real life.</p>
+              <h3>Family Support Planning</h3>
+              <p>We look at what is happening across routines, relationships, communication, environment, and caregiver capacity, then shape practical next steps around your family&rsquo;s real life.</p>
               <span class="card-cue">real-life fit &#8631;</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
               <span class="card-kicker">When the plan needs to match the family</span>
-              <p>Your family may need support that is clear enough to follow, flexible enough to change, and grounded enough to be useful in real life.</p>
+              <p>A support plan should be easy to follow and able to change when your family&rsquo;s needs change.</p>
               <span class="card-cue">turn over &#8631;</span>
             </div>
           </div>
@@ -1601,7 +1662,7 @@
         <p class="eyebrow">Our Approach</p>
         <h2>Care Starts with Understanding</h2>
         <p class="pullquote">Childcare is only one thread in the larger weave of family support.</p>
-        <p>Families are whole systems shaped by relationships, routines, values, care, stress, and capacity. We begin by understanding the whole picture and then building care that fits your real family.</p>
+        <p>Families are whole systems. A hard morning can shape the whole afternoon. A caregiver&rsquo;s exhaustion, a child&rsquo;s sensory needs, the home setup, the schedule, and the relationships around them all affect what is possible.</p>
         <div class="values">
           <div>
             <h3>Whole-Family Lens</h3>
@@ -1763,7 +1824,7 @@
         <div class="faq-list">
           <details>
             <summary>Do you support more complex family needs?</summary>
-            <p>Yes. This is central to our work. We work with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and more. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow from real life.</p>
+            <p>Yes. This is central to our work. We work with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and more. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow with real life.</p>
           </details>
           <details class="anchor-target" id="support-example">
             <summary>What does support look like?</summary>
@@ -1773,7 +1834,7 @@
           </details>
           <details>
             <summary>What does "adaptive" care mean?</summary>
-            <p>Adaptive care means the shape of our work follows the shape of your life. We do not ask families to fit into a box. We build care around your real situation and adjust as your needs change.</p>
+            <p>Adaptive care changes with your family&rsquo;s needs, schedule, and capacity. We do not ask families to fit into a box. We build care around your real situation and adjust as your needs change.</p>
           </details>
           <details>
             <summary>What ages do you work with?</summary>

@@ -589,13 +589,6 @@
       font-size: 1.05rem;
     }
 
-    .expanded-support h2,
-    .coaching-boundary h2 {
-      margin: 0 0 0.65rem;
-      color: var(--deep-teal);
-      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
-    }
-
     .coaching-examples ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -613,7 +606,7 @@
       margin-top: 1.2rem;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: start;
+      align-items: stretch;
       gap: 1rem;
     }
 
@@ -648,52 +641,29 @@
       font-style: italic;
     }
 
-    .coaching-scope,
-    .expanded-support,
-    .coaching-boundary {
-      margin-top: 1rem;
-      padding: 0.95rem 1.05rem;
-      border-radius: 10px;
+    .offer-meaning {
+      margin-bottom: 0.35rem !important;
+      color: var(--deep-teal) !important;
+      font-family: var(--font-brand);
+      font-weight: 700;
     }
 
     .coaching-scope {
+      margin-top: 1rem;
+      padding: 0.95rem 1.05rem;
+      border-radius: 10px;
       border-left: 4px solid var(--plum);
       background: rgba(122, 46, 79, 0.06);
     }
 
-    .expanded-support {
-      border-left: 4px solid var(--copper);
-      background: rgba(217, 161, 93, 0.08);
-    }
-
-    .coaching-boundary {
-      border-left: 4px solid var(--plum);
-      background: rgba(122, 46, 79, 0.06);
-    }
-
-    .coaching-scope p,
-    .expanded-support p,
-    .coaching-boundary p {
+    .coaching-scope p {
       margin: 0;
       font-size: 0.9rem;
       line-height: 1.5;
     }
 
-    .coaching-scope p + p,
-    .coaching-boundary p + p {
+    .coaching-scope p + p {
       margin-top: 0.65rem;
-    }
-
-    .section-custom,
-    .section-scope {
-      padding-top: clamp(1.4rem, 3.5vh, 2.2rem);
-      padding-bottom: clamp(1.4rem, 3.5vh, 2.2rem);
-    }
-
-    .section-custom .expanded-support,
-    .section-scope .coaching-boundary {
-      max-width: 56rem;
-      margin: 0 auto;
     }
 
     .section-examples .wrap-wide {
@@ -1454,8 +1424,7 @@
       <div class="wrap closing-copy">
         <h2>What feels the hardest?</h2>
         <p>You do not need to know the right service before reaching out. Start with what feels hard, and we can talk through what kind of support may fit.</p>
-        <p>The introductory conversation is a brief opportunity to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit.</p>
-        <p>It is separate from a virtual family coaching session. Coaching provides protected time for deeper reflection, collaborative problem-solving, planning, and practical next steps.</p>
+        <p>The introductory conversation is a brief chance to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit. A paid coaching session gives us a full hour to look closely at one concern, talk through what has already happened, and choose what to try next.</p>
       </div>
     </section>
 
@@ -1472,7 +1441,7 @@
             <li>Advocacy preparation</li>
             <li>Caregiver support and breathing room</li>
             <li>Resource navigation</li>
-            <li>Implementation &amp; Resource Support</li>
+            <li>Making Recommendations Work</li>
             <li>Environment support</li>
           </ul>
         </div>
@@ -1618,65 +1587,54 @@
           <div class="coaching-offers">
             <article class="coaching-offer">
               <h4>One Focused Session</h4>
+              <p class="offer-meaning">Help me think through this.</p>
               <p class="offer-price">60 minutes &middot; $120</p>
-              <p>A focused session can help when one primary part of family life needs attention, reflection, or a practical next step.</p>
+              <p>A focused coaching session for one primary part of family life that feels stuck, confusing, or harder to carry alone.</p>
+              <p><strong>Includes:</strong></p>
               <ul>
                 <li>Short pre-session questions</li>
                 <li>One 60-minute virtual session</li>
                 <li>One primary area of focus</li>
-                <li>Collaborative reflection and practical planning</li>
-                <li>A brief follow-up note with the next steps the family chose</li>
+                <li>Conversation about what has already happened</li>
+                <li>Practical planning</li>
+                <li>A brief follow-up note with agreed next steps</li>
               </ul>
-              <p class="offer-note">A focused session may be enough when you need to prepare for one conversation, rethink one routine, examine one environmental barrier, or decide what deserves attention first.</p>
+              <p><strong>May help with:</strong></p>
+              <ul>
+                <li>Routines and transitions</li>
+                <li>Caregiver problem-solving</li>
+                <li>Preparing questions for a school or provider conversation</li>
+                <li>Making recommendations more usable at home</li>
+                <li>A focused home-environment or independence question</li>
+                <li>Sorting through competing priorities</li>
+                <li>Deciding what to try next and what can wait</li>
+              </ul>
             </article>
 
             <article class="coaching-offer">
               <h4>Three-Session Family Coaching Series</h4>
+              <p class="offer-meaning">Help me try this, notice what happens, and adjust.</p>
               <p class="offer-price">Three 60-minute sessions &middot; $345</p>
-              <p>Some things need more than one good conversation. The series creates room to understand what is happening, try something in real life, and adjust based on what the family notices.</p>
-              <p><strong>This may support:</strong></p>
-              <ul>
-                <li>Rebuilding an after-school or bedtime rhythm</li>
-                <li>Supporting more independence within a routine</li>
-                <li>Preparing for and debriefing a school or provider meeting</li>
-                <li>Making professional recommendations more usable at home</li>
-                <li>Working through one connected family pressure point that may change as support is tested</li>
-              </ul>
+              <p class="offer-note">The sessions are generally used within eight weeks.</p>
+              <p>This series is for one connected family concern that needs more than one conversation. It creates time to choose something to try, notice what happens in real life, and make adjustments together.</p>
               <p><strong>The series includes:</strong></p>
               <ul>
                 <li>Three 60-minute virtual coaching sessions</li>
                 <li>One connected area of focus</li>
                 <li>Brief follow-up notes after each session</li>
-                <li>Collaborative adjustments based on what the family notices</li>
-                <li>A final summary of what helped and what may come next</li>
+                <li>Time between sessions to try agreed next steps</li>
+                <li>Adjustments based on what the family notices</li>
+                <li>A final summary of what was tried, what seemed helpful, and possible next steps</li>
               </ul>
-              <p class="offer-note">Sessions should generally be used within eight weeks so the support remains connected and useful.</p>
             </article>
           </div>
 
           <aside class="coaching-scope" aria-label="Virtual family coaching scope">
-            <p>Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session or series.</p>
-            <p>More involved advocacy preparation, environment planning, resource work, or blended virtual and in-home support may be scoped separately.</p>
+            <p>Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session or series. Additional support may be scoped separately when appropriate.</p>
+            <p>The three-session series is not a subscription, ongoing unlimited support, or ongoing messaging access.</p>
+            <p>Virtual Family Coaching is practical family support. It is not therapy, clinical treatment, medical care, legal advice or representation, special-education legal representation, formal case management, or crisis response.</p>
           </aside>
         </article>
-      </div>
-    </section>
-
-    <section class="section section-custom" aria-labelledby="expanded-support-heading">
-      <div class="wrap">
-        <div class="expanded-support">
-          <h2 id="expanded-support-heading">Custom or Expanded Support</h2>
-          <p>Expanded work is shaped around the family rather than added automatically to a coaching offer. Scope and cost are talked through before that support begins.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-scope" aria-labelledby="general-scope-heading">
-      <div class="wrap">
-        <div class="coaching-boundary">
-          <h2 id="general-scope-heading">IFC Scope</h2>
-          <p>Interwoven Family Care provides practical family coaching and adaptive support. IFC does not provide therapy, clinical treatment, medical care, legal advice or representation, special education representation, formal case management, or crisis response.</p>
-        </div>
       </div>
     </section>
 
@@ -1685,7 +1643,7 @@
         <p class="eyebrow">Ready to Talk?</p>
         <h2>Tell Bri what is hard right now</h2>
         <p>If this sounds like the kind of support your family may need, you can start with the inquiry form, schedule a low-pressure call, or send an email if writing feels easier.</p>
-        <p class="pricing-final-note">Pricing and scope are confirmed before support begins. One Focused Session is 60 minutes for $120; the Three-Session Family Coaching Series is three 60-minute sessions for $345.</p>
+        <p class="pricing-final-note">Pricing and scope are confirmed before support begins. Virtual Family Coaching is $120 for one 60-minute session or $345 for the three-session series.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
           <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
