@@ -32,6 +32,12 @@
       --ink: #2B2B2B;
       --sunlit-moss: #9CA78C;
       --nav-h: 3.6rem;
+      --space-section: clamp(3rem, 7vh, 5rem);
+      --space-section-compact: clamp(2.2rem, 5vh, 3.4rem);
+      --space-divider: clamp(0.55rem, 1.5vh, 0.9rem);
+      --space-heading-intro: 0.9rem;
+      --space-intro-content: clamp(1.45rem, 3vh, 2.15rem);
+      --space-section-tail: clamp(1.4rem, 3vh, 2.25rem);
       --font-display: Georgia, "Times New Roman", serif;
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
       --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
@@ -1521,6 +1527,24 @@
       .map-node, .story-panel { transition: none; }
       .btn, .btn:hover, .nav-cta { transition: none; transform: none; }
     }
+    /* Shared public-page spacing rhythm */
+    .section {
+      padding-block: var(--space-section);
+    }
+
+    .section-tight,
+    .section-note,
+    .section-in-home {
+      padding-block: var(--space-section-compact);
+    }
+
+    .section h2 {
+      margin-bottom: var(--space-heading-intro);
+    }
+
+    .section-intro {
+      margin-bottom: var(--space-intro-content);
+    }
   </style>
 </head>
 <body>
@@ -1556,6 +1580,92 @@
       <div class="hero-actions">
         <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry</a>
         <a class="btn btn-ghost" href="/#about">Back to About IFC</a>
+      </div>
+    </section>
+
+    <section class="section section-examples" aria-label="Examples of support">
+      <div class="wrap-wide">
+        <p class="eyebrow">Examples of Support</p>
+        <h2>What Support Can Look Like</h2>
+        <p class="section-intro">These fictional examples show how a family might use the standard options on this page. They are examples, not separate services.</p>
+        <div class="thread-map" aria-label="Support example choices">
+          <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
+            <path class="branch-shadow line-option-b" d="M13 62 C25 56, 31 64, 42 58 C51 52, 59 54, 67 62 C76 70, 84 64, 90 67"></path>
+            <path class="branch-shadow line-option-d" d="M44 15 C47 28, 52 37, 49 49 C46 61, 38 69, 36 85"></path>
+            <path class="branch-shadow line-option-d" d="M15 35 C18 48, 17 58, 13 66 C9 76, 20 86, 35 86 C47 87, 56 84, 63 86 C76 90, 85 80, 82 66 C79 52, 83 43, 90 37"></path>
+            <path class="thread-vine line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
+            <path class="thread-vine line-option-b" d="M13 62 C25 56, 31 64, 42 58 C51 52, 59 54, 67 62 C76 70, 84 64, 90 67"></path>
+            <path class="thread-vine line-option-d" d="M44 15 C47 28, 52 37, 49 49 C46 61, 38 69, 36 85"></path>
+            <path class="thread-vine line-option-d" d="M15 35 C18 48, 17 58, 13 66 C9 76, 20 86, 35 86 C47 87, 56 84, 63 86 C76 90, 85 80, 82 66 C79 52, 83 43, 90 37"></path>
+            <path class="thread-tendril line-option-d" d="M25 38 C35 42, 42 43, 50 50 C58 57, 67 56, 76 60"></path>
+            <path class="thread-tendril line-gold" d="M25 67 C36 61, 44 60, 52 52 C60 44, 66 39, 74 36"></path>
+            <path class="thread-tendril line-option-b" d="M47 25 C54 34, 54 44, 51 52 C48 61, 53 72, 61 82"></path>
+            <path class="knot-loop line-option-d" d="M47.2 49.6 C45.3 47.6, 47.1 45.5, 50.4 46.5 C53.4 47.4, 54.4 50, 51.9 51.8 C49.2 53.7, 45.5 52.2, 47.2 49.6"></path>
+            <path class="knot-loop line-gold" d="M52.7 50.4 C54.6 52.4, 52.8 54.5, 49.5 53.5 C46.5 52.6, 45.5 50, 48 48.2 C50.7 46.3, 54.4 47.8, 52.7 50.4"></path>
+            <ellipse class="vine-leaf plum" cx="24" cy="37" rx="1.22" ry="0.58" transform="rotate(24 24 37)"></ellipse>
+            <ellipse class="vine-leaf" cx="40" cy="38" rx="1.22" ry="0.58" transform="rotate(52 40 38)"></ellipse>
+            <ellipse class="vine-leaf gold" cx="64" cy="38" rx="1.2" ry="0.56" transform="rotate(-44 64 38)"></ellipse>
+            <ellipse class="vine-leaf" cx="76" cy="60" rx="1.22" ry="0.58" transform="rotate(22 76 60)"></ellipse>
+            <ellipse class="vine-leaf plum" cx="61" cy="82" rx="1.12" ry="0.54" transform="rotate(64 61 82)"></ellipse>
+            <ellipse class="vine-leaf gold" cx="36" cy="85" rx="1.1" ry="0.52" transform="rotate(-58 36 85)"></ellipse>
+            <ellipse class="vine-leaf plum" cx="25" cy="67" rx="1.18" ry="0.56" transform="rotate(-22 25 67)"></ellipse>
+            <path class="botanical-stem" d="M14 33 C11 27, 12 22, 16 18"></path>
+            <ellipse class="botanical-leaf" cx="13.2" cy="25.6" rx="1.25" ry="0.48" transform="rotate(-52 13.2 25.6)"></ellipse>
+            <ellipse class="botanical-leaf" cx="16.9" cy="20.4" rx="1.25" ry="0.48" transform="rotate(22 16.9 20.4)"></ellipse>
+            <circle class="botanical-bud" cx="12.4" cy="21.5" r="0.5"></circle>
+            <circle class="botanical-bud" cx="15.6" cy="17.9" r="0.48"></circle>
+            <path class="botanical-stem" d="M90 37 C91 31, 94 28, 97 24"></path>
+            <ellipse class="botanical-leaf" cx="92.1" cy="31.9" rx="1.18" ry="0.46" transform="rotate(-38 92.1 31.9)"></ellipse>
+            <ellipse class="botanical-leaf" cx="96" cy="25.8" rx="1.24" ry="0.48" transform="rotate(-16 96 25.8)"></ellipse>
+            <path class="botanical-stem" d="M82 66 C89 65, 93 68, 96 74"></path>
+            <ellipse class="botanical-leaf" cx="89.6" cy="66.4" rx="1.22" ry="0.48" transform="rotate(20 89.6 66.4)"></ellipse>
+            <ellipse class="botanical-leaf" cx="94.2" cy="72.2" rx="1.25" ry="0.48" transform="rotate(56 94.2 72.2)"></ellipse>
+            <path class="botanical-stem" d="M63 86 C59 89, 56 92, 55 96"></path>
+            <ellipse class="botanical-leaf" cx="59.4" cy="89.4" rx="1.22" ry="0.48" transform="rotate(-32 59.4 89.4)"></ellipse>
+            <ellipse class="botanical-leaf" cx="55.6" cy="94" rx="1.18" ry="0.46" transform="rotate(-70 55.6 94)"></ellipse>
+            <path class="botanical-stem" d="M35 86 C29 88, 24 86, 19 82"></path>
+            <ellipse class="botanical-leaf" cx="29.2" cy="86.9" rx="1.2" ry="0.46" transform="rotate(166 29.2 86.9)"></ellipse>
+            <circle class="botanical-bud gold" cx="23.4" cy="84.8" r="0.52"></circle>
+            <circle class="botanical-bud gold" cx="20.2" cy="82.5" r="0.48"></circle>
+            <path class="vine-wrap line-option-b" d="M38.7 37.2 C39.9 38.5, 39.7 40.1, 38.5 41.1 C37.3 40, 37.2 38.2, 38.7 37.2"></path>
+            <path class="vine-wrap line-gold" d="M74.1 35.2 C75.3 36.4, 75.1 38, 73.9 39 C72.7 37.8, 72.8 36.2, 74.1 35.2"></path>
+            <path class="vine-wrap line-option-d" d="M66.9 60.4 C68.2 61.5, 68.1 63.2, 66.8 64.2 C65.6 63.1, 65.6 61.4, 66.9 60.4"></path>
+          </svg>
+
+          <div class="center-card">
+            <span>Start with what feels hard</span>
+          </div>
+
+          <button class="map-node node-after-school" type="button" data-example="after-school" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">After-School</span><span class="line">Care</span></span>
+          </button>
+          <button class="map-node node-respite" type="button" data-example="respite" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Respite</span><span class="line">Childcare</span></span>
+          </button>
+          <button class="map-node node-backup" type="button" data-example="backup" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
+          </button>
+          <button class="map-node node-recommendations" type="button" data-example="recommendations" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Making</span><span class="line">Recommendations</span><span class="line">Work</span></span>
+          </button>
+          <button class="map-node node-advocacy" type="button" data-example="advocacy" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
+          </button>
+          <button class="map-node node-summer" type="button" data-example="summer" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Summer</span><span class="line">Care</span></span>
+          </button>
+          <button class="map-node node-drop-in" type="button" data-example="drop-in" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+            <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>
+          </button>
+
+          <article class="story-panel" id="example-story" role="dialog" aria-modal="true" aria-live="polite" aria-hidden="true" aria-labelledby="story-title">
+            <button class="story-back" type="button" id="story-back" aria-label="Close support example">&times;</button>
+            <h3 id="story-title">Support example</h3>
+            <div class="story-intro" id="story-intro"></div>
+            <div class="story-copy" id="story-copy"></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1738,92 +1848,6 @@
               <li>What would require a new quote</li>
             </ul>
             <p>Custom Support never includes unlimited access.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-examples" aria-label="Examples of support">
-      <div class="wrap-wide">
-        <p class="eyebrow">Examples of Support</p>
-        <h2>What Support Can Look Like</h2>
-        <p class="section-intro">These fictional examples show how a family might use the standard options above. They are examples, not separate services.</p>
-        <div class="thread-map" aria-label="Support example choices">
-          <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
-            <path class="branch-shadow line-option-b" d="M13 62 C25 56, 31 64, 42 58 C51 52, 59 54, 67 62 C76 70, 84 64, 90 67"></path>
-            <path class="branch-shadow line-option-d" d="M44 15 C47 28, 52 37, 49 49 C46 61, 38 69, 36 85"></path>
-            <path class="branch-shadow line-option-d" d="M15 35 C18 48, 17 58, 13 66 C9 76, 20 86, 35 86 C47 87, 56 84, 63 86 C76 90, 85 80, 82 66 C79 52, 83 43, 90 37"></path>
-            <path class="thread-vine line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
-            <path class="thread-vine line-option-b" d="M13 62 C25 56, 31 64, 42 58 C51 52, 59 54, 67 62 C76 70, 84 64, 90 67"></path>
-            <path class="thread-vine line-option-d" d="M44 15 C47 28, 52 37, 49 49 C46 61, 38 69, 36 85"></path>
-            <path class="thread-vine line-option-d" d="M15 35 C18 48, 17 58, 13 66 C9 76, 20 86, 35 86 C47 87, 56 84, 63 86 C76 90, 85 80, 82 66 C79 52, 83 43, 90 37"></path>
-            <path class="thread-tendril line-option-d" d="M25 38 C35 42, 42 43, 50 50 C58 57, 67 56, 76 60"></path>
-            <path class="thread-tendril line-gold" d="M25 67 C36 61, 44 60, 52 52 C60 44, 66 39, 74 36"></path>
-            <path class="thread-tendril line-option-b" d="M47 25 C54 34, 54 44, 51 52 C48 61, 53 72, 61 82"></path>
-            <path class="knot-loop line-option-d" d="M47.2 49.6 C45.3 47.6, 47.1 45.5, 50.4 46.5 C53.4 47.4, 54.4 50, 51.9 51.8 C49.2 53.7, 45.5 52.2, 47.2 49.6"></path>
-            <path class="knot-loop line-gold" d="M52.7 50.4 C54.6 52.4, 52.8 54.5, 49.5 53.5 C46.5 52.6, 45.5 50, 48 48.2 C50.7 46.3, 54.4 47.8, 52.7 50.4"></path>
-            <ellipse class="vine-leaf plum" cx="24" cy="37" rx="1.22" ry="0.58" transform="rotate(24 24 37)"></ellipse>
-            <ellipse class="vine-leaf" cx="40" cy="38" rx="1.22" ry="0.58" transform="rotate(52 40 38)"></ellipse>
-            <ellipse class="vine-leaf gold" cx="64" cy="38" rx="1.2" ry="0.56" transform="rotate(-44 64 38)"></ellipse>
-            <ellipse class="vine-leaf" cx="76" cy="60" rx="1.22" ry="0.58" transform="rotate(22 76 60)"></ellipse>
-            <ellipse class="vine-leaf plum" cx="61" cy="82" rx="1.12" ry="0.54" transform="rotate(64 61 82)"></ellipse>
-            <ellipse class="vine-leaf gold" cx="36" cy="85" rx="1.1" ry="0.52" transform="rotate(-58 36 85)"></ellipse>
-            <ellipse class="vine-leaf plum" cx="25" cy="67" rx="1.18" ry="0.56" transform="rotate(-22 25 67)"></ellipse>
-            <path class="botanical-stem" d="M14 33 C11 27, 12 22, 16 18"></path>
-            <ellipse class="botanical-leaf" cx="13.2" cy="25.6" rx="1.25" ry="0.48" transform="rotate(-52 13.2 25.6)"></ellipse>
-            <ellipse class="botanical-leaf" cx="16.9" cy="20.4" rx="1.25" ry="0.48" transform="rotate(22 16.9 20.4)"></ellipse>
-            <circle class="botanical-bud" cx="12.4" cy="21.5" r="0.5"></circle>
-            <circle class="botanical-bud" cx="15.6" cy="17.9" r="0.48"></circle>
-            <path class="botanical-stem" d="M90 37 C91 31, 94 28, 97 24"></path>
-            <ellipse class="botanical-leaf" cx="92.1" cy="31.9" rx="1.18" ry="0.46" transform="rotate(-38 92.1 31.9)"></ellipse>
-            <ellipse class="botanical-leaf" cx="96" cy="25.8" rx="1.24" ry="0.48" transform="rotate(-16 96 25.8)"></ellipse>
-            <path class="botanical-stem" d="M82 66 C89 65, 93 68, 96 74"></path>
-            <ellipse class="botanical-leaf" cx="89.6" cy="66.4" rx="1.22" ry="0.48" transform="rotate(20 89.6 66.4)"></ellipse>
-            <ellipse class="botanical-leaf" cx="94.2" cy="72.2" rx="1.25" ry="0.48" transform="rotate(56 94.2 72.2)"></ellipse>
-            <path class="botanical-stem" d="M63 86 C59 89, 56 92, 55 96"></path>
-            <ellipse class="botanical-leaf" cx="59.4" cy="89.4" rx="1.22" ry="0.48" transform="rotate(-32 59.4 89.4)"></ellipse>
-            <ellipse class="botanical-leaf" cx="55.6" cy="94" rx="1.18" ry="0.46" transform="rotate(-70 55.6 94)"></ellipse>
-            <path class="botanical-stem" d="M35 86 C29 88, 24 86, 19 82"></path>
-            <ellipse class="botanical-leaf" cx="29.2" cy="86.9" rx="1.2" ry="0.46" transform="rotate(166 29.2 86.9)"></ellipse>
-            <circle class="botanical-bud gold" cx="23.4" cy="84.8" r="0.52"></circle>
-            <circle class="botanical-bud gold" cx="20.2" cy="82.5" r="0.48"></circle>
-            <path class="vine-wrap line-option-b" d="M38.7 37.2 C39.9 38.5, 39.7 40.1, 38.5 41.1 C37.3 40, 37.2 38.2, 38.7 37.2"></path>
-            <path class="vine-wrap line-gold" d="M74.1 35.2 C75.3 36.4, 75.1 38, 73.9 39 C72.7 37.8, 72.8 36.2, 74.1 35.2"></path>
-            <path class="vine-wrap line-option-d" d="M66.9 60.4 C68.2 61.5, 68.1 63.2, 66.8 64.2 C65.6 63.1, 65.6 61.4, 66.9 60.4"></path>
-          </svg>
-
-          <div class="center-card">
-            <span>Start with what feels hard</span>
-          </div>
-
-          <button class="map-node node-after-school" type="button" data-example="after-school" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">After-School</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-respite" type="button" data-example="respite" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Respite</span><span class="line">Childcare</span></span>
-          </button>
-          <button class="map-node node-backup" type="button" data-example="backup" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-recommendations" type="button" data-example="recommendations" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Making</span><span class="line">Recommendations</span><span class="line">Work</span></span>
-          </button>
-          <button class="map-node node-advocacy" type="button" data-example="advocacy" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
-          </button>
-          <button class="map-node node-summer" type="button" data-example="summer" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Summer</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-drop-in" type="button" data-example="drop-in" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>
-          </button>
-
-          <article class="story-panel" id="example-story" role="dialog" aria-modal="true" aria-live="polite" aria-hidden="true" aria-labelledby="story-title">
-            <button class="story-back" type="button" id="story-back" aria-label="Close support example">&times;</button>
-            <h3 id="story-title">Support example</h3>
-            <div class="story-intro" id="story-intro"></div>
-            <div class="story-copy" id="story-copy"></div>
           </article>
         </div>
       </div>

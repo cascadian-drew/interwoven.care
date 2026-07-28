@@ -32,6 +32,12 @@
       --ink: #2B2B2B;
       --sunlit-moss: #9CA78C;
       --nav-h: 3.6rem;
+      --space-section: clamp(3rem, 7vh, 5rem);
+      --space-section-compact: clamp(2.2rem, 5vh, 3.4rem);
+      --space-divider: clamp(0.55rem, 1.5vh, 0.9rem);
+      --space-heading-intro: 0.9rem;
+      --space-intro-content: clamp(1.45rem, 3vh, 2.15rem);
+      --space-section-tail: clamp(1.4rem, 3vh, 2.25rem);
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
       --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
       --action-primary: var(--teal);
@@ -627,6 +633,14 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .btn, .btn:hover, .nav-cta { transition: none; transform: none; }
+    }
+    /* Shared public-page spacing rhythm */
+    .section {
+      padding-block: var(--space-section);
+    }
+
+    .section h2 {
+      margin-bottom: var(--space-heading-intro);
     }
   </style>
 </head>
