@@ -179,6 +179,20 @@
 
     .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
 
+    .nav-links a.nav-inquiry {
+      font-weight: 700;
+    }
+
+    .nav-links a.nav-inquiry::after {
+      background: var(--teal);
+      transform: scaleX(0.36);
+    }
+
+    .nav-links a.nav-inquiry:hover::after,
+    .nav-links a.nav-inquiry[aria-current]::after {
+      transform: scaleX(1);
+    }
+
     .nav-cta {
       padding: 0.72em 1.2em;
       border-radius: 999px;
@@ -256,6 +270,11 @@
       }
 
       .nav-links a:not(.nav-cta)::after { display: none; }
+
+      .nav-links a.nav-inquiry {
+        padding-left: 0.75rem;
+        box-shadow: inset 3px 0 0 rgba(51, 106, 100, 0.62);
+      }
 
       .nav-cta {
         margin-top: 0.7rem;
@@ -642,6 +661,27 @@
     .section h2 {
       margin-bottom: var(--space-heading-intro);
     }
+
+    .section.inquiry-action,
+    .section.inquiry-details {
+      padding-bottom: var(--space-section-compact);
+    }
+
+    .section.inquiry-details,
+    .section.inquiry-form {
+      padding-top: var(--space-section-compact);
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --space-section: clamp(2.5rem, 10vw, 3.25rem);
+        --space-section-compact: clamp(1.9rem, 7.5vw, 2.5rem);
+        --space-divider: 0.55rem;
+        --space-heading-intro: 0.75rem;
+        --space-intro-content: clamp(1.2rem, 5vw, 1.55rem);
+        --space-section-tail: clamp(1.25rem, 5vw, 1.65rem);
+      }
+    }
   </style>
 </head>
 <body>
@@ -663,7 +703,7 @@
         <a href="/#faqs">FAQs</a>
         <a href="/#about-bri">About Bri</a>
         <a href="/#about">About IFC</a>
-        <a href="/client-inquiry/" aria-current="page">New Client Inquiry</a>
+        <a class="nav-inquiry" href="/client-inquiry/" aria-current="page">New Client Inquiry</a>
       </div>
     </div>
   </nav>
@@ -677,7 +717,14 @@
       <p class="hero-note">Responses are collected through Google Forms.<br>Please do not include detailed medical, legal, custody, or crisis information here.</p>
     </section>
 
-    <section class="section" aria-label="Inquiry details">
+    <section class="section inquiry-action" id="start-client-inquiry" aria-label="Start the client inquiry">
+      <div class="wrap">
+        <p class="form-link"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener" aria-label="Open Inquiry Form (opens in a new tab)">Open Inquiry Form</a></p>
+        <p class="form-guidance">Begin by describing what feels hard in your own words. If you are unsure which kind of support fits, choose &ldquo;Not sure yet, but we need support.&rdquo; We can talk through the service options afterward.</p>
+      </div>
+    </section>
+
+    <section class="section inquiry-details" aria-label="Inquiry details">
       <div class="wrap-wide">
         <div class="cards">
           <div class="card">
@@ -719,10 +766,8 @@
       </div>
     </section>
 
-    <section class="section" id="start-client-inquiry" aria-label="Client Inquiry Form">
+    <section class="section inquiry-form" aria-label="Client Inquiry Form">
       <div class="wrap">
-        <p class="form-link"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener" aria-label="Open Inquiry Form (opens in a new tab)">Open Inquiry Form</a></p>
-        <p class="form-guidance">Begin by describing what feels hard in your own words. If you are unsure which kind of support fits, choose &ldquo;Not sure yet, but we need support.&rdquo; We can talk through the service options afterward.</p>
         <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
           <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="4524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>

@@ -207,6 +207,20 @@
     .nav-links a:not(.nav-cta).active::after,
     .nav-links a:not(.nav-cta)[aria-current]::after { transform: scaleX(1); }
 
+    .nav-links a.nav-inquiry {
+      font-weight: 700;
+    }
+
+    .nav-links a.nav-inquiry::after {
+      background: var(--teal);
+      transform: scaleX(0.36);
+    }
+
+    .nav-links a.nav-inquiry:hover::after,
+    .nav-links a.nav-inquiry[aria-current]::after {
+      transform: scaleX(1);
+    }
+
     .nav-cta {
       padding: 0.72em 1.2em;
       border-radius: 999px;
@@ -294,6 +308,11 @@
         box-shadow: inset 3px 0 0 var(--plum);
       }
 
+      .nav-links a.nav-inquiry {
+        padding-left: 0.75rem;
+        box-shadow: inset 3px 0 0 rgba(51, 106, 100, 0.62);
+      }
+
       .nav-cta {
         margin-top: 0.7rem;
         text-align: center;
@@ -305,41 +324,41 @@
     /* ---------- Hero ---------- */
 
     .hero {
-      min-height: calc(92svh - var(--nav-h));
+      min-height: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      padding: clamp(1.5rem, 4vh, 3.5rem) 1.5rem;
+      padding: clamp(1rem, 2.4vh, 1.5rem) 1.5rem clamp(1.1rem, 2.6vh, 1.6rem);
       background-image:
         radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
-    .crest { width: min(63vw, 270px); }
+    .crest { width: min(63vw, 19vh, 170px); }
 
     .wordmark {
-      width: min(88vw, 56vh, 540px);
-      margin-top: clamp(0.7rem, 2vh, 2rem);
+      width: min(88vw, 42vh, 420px);
+      margin-top: clamp(0.35rem, 1vh, 0.65rem);
     }
 
     .lede {
-      margin: clamp(0.9rem, 2.2vh, 1.5rem) 0 0;
+      margin: clamp(0.55rem, 1.2vh, 0.75rem) 0 0;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
-      font-size: clamp(1.22rem, 2.8vw, 1.55rem);
+      font-size: clamp(1.15rem, 2.4vw, 1.42rem);
       line-height: 1.35;
       text-wrap: balance;
-      max-width: 40rem;
+      max-width: 44rem;
       color: var(--ink);
     }
 
     .sub {
-      margin: 0.82rem 0 0;
+      margin: 0.55rem 0 0;
       max-width: 54rem;
       font-size: clamp(1rem, 1.9vw, 1.12rem);
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--ink);
       text-wrap: balance;
     }
@@ -483,7 +502,7 @@
     }
 
     .hero-actions {
-      margin-top: clamp(1.4rem, 3.2vh, 2.4rem);
+      margin-top: clamp(0.7rem, 1.5vh, 0.95rem);
       display: flex;
       flex-wrap: nowrap;
       justify-content: center;
@@ -499,16 +518,16 @@
     }
 
     .hero-quote {
-      margin: 0.75rem auto 0;
-      max-width: 38rem;
-      padding: 0.65rem 0;
+      margin: clamp(0.5rem, 1.1vh, 0.7rem) auto 0;
+      max-width: 46rem;
+      padding: 0.45rem 0;
       border-top: 1px solid rgba(217, 161, 93, 0.56);
       border-bottom: 1px solid rgba(217, 161, 93, 0.56);
       border-radius: 0;
       background: transparent;
       font-style: italic;
       font-size: clamp(0.88rem, 1.9vw, 0.98rem);
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--plum);
       text-align: center;
       text-wrap: balance;
@@ -516,8 +535,8 @@
     }
 
     .hero-quote span {
-      display: block;
-      margin-top: 0.22rem;
+      display: inline;
+      margin-left: 0.28rem;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-style: normal;
       font-weight: 700;
@@ -1049,6 +1068,108 @@
       margin-top: 1.6rem;
       display: flex;
       justify-content: center;
+    }
+
+    /* ---------- Three paths into support ---------- */
+
+    .section.path-overview {
+      padding-top: var(--space-section-compact);
+      padding-bottom: var(--space-section-compact);
+    }
+
+    .path-intro {
+      max-width: 42rem;
+      margin: 0 auto;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .path-grid {
+      margin-top: var(--space-intro-content);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .path-card {
+      --path-color: var(--teal);
+      display: flex;
+      min-height: 18rem;
+      padding: 1.4rem 1.35rem 1.3rem;
+      flex-direction: column;
+      border: 1px solid rgba(43, 43, 43, 0.1);
+      border-top: 5px solid var(--path-color);
+      border-radius: 18px 14px 20px 13px;
+      background: rgba(255, 253, 249, 0.86);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 253, 249, 0.6),
+        0 8px 24px rgba(43, 43, 43, 0.07);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .path-card:nth-child(2) {
+      --path-color: var(--plum);
+      border-radius: 13px 21px 14px 19px;
+    }
+
+    .path-card:nth-child(3) {
+      --path-color: var(--moss);
+      border-radius: 20px 12px 17px 15px;
+    }
+
+    .path-card:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 253, 249, 0.68),
+        0 13px 30px rgba(43, 43, 43, 0.11);
+    }
+
+    .path-kicker {
+      color: var(--path-color);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .path-card h3 {
+      margin: 0.7rem 0 0;
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-size: clamp(1.05rem, 1.7vw, 1.18rem);
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+
+    .path-card p {
+      margin: 0.75rem 0 1rem;
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: rgba(43, 43, 43, 0.8);
+    }
+
+    .path-link {
+      margin-top: auto;
+      color: var(--path-color);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      .path-grid {
+        grid-template-columns: 1fr;
+        max-width: 36rem;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .path-card {
+        min-height: 0;
+      }
     }
 
     /* ---------- Support + Steps ---------- */
@@ -2778,6 +2899,10 @@
       padding-block: var(--space-divider);
     }
 
+    .knot-divider + .section {
+      padding-top: var(--space-section-compact);
+    }
+
     #offerings {
       padding-top: var(--space-section);
       padding-bottom: var(--space-section-compact);
@@ -2964,6 +3089,17 @@
     .quote-cycle {
       min-height: 0;
       margin-top: var(--space-section-tail);
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --space-section: clamp(2.5rem, 10vw, 3.25rem);
+        --space-section-compact: clamp(1.9rem, 7.5vw, 2.5rem);
+        --space-divider: 0.55rem;
+        --space-heading-intro: 0.75rem;
+        --space-intro-content: clamp(1.2rem, 5vw, 1.55rem);
+        --space-section-tail: clamp(1.25rem, 5vw, 1.65rem);
+      }
     }
 
     #payment .payment-note {
@@ -3230,12 +3366,12 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="/#offerings">Services</a>
+        <a href="/#about">About IFC</a>
         <a href="/#philosophy">Philosophy</a>
         <a href="/pricing-examples/">Pricing</a>
         <a href="/#faqs">FAQs</a>
         <a href="/#about-bri">About Bri</a>
-        <a href="/#about">About IFC</a>
-        <a href="/client-inquiry/">New Client Inquiry</a>
+        <a class="nav-inquiry" href="/client-inquiry/">New Client Inquiry</a>
       </div>
     </div>
   </nav>
@@ -3262,30 +3398,29 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
-    <section class="section" id="about">
-      <div class="wrap" data-reveal>
-        <p class="eyebrow">About IFC</p>
-        <h2>Built around real family life</h2>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
-            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what you already do well, and building from there.</p>
-            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
-            <p>The goal is less stress and more room for you to enjoy time with your family.</p>
-          </div>
-        </div>
-        <div class="social-links" aria-label="Interwoven Family Care social links">
-          <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
-            <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
-            Substack
+    <section class="section path-overview" id="what-feels-hard">
+      <div class="wrap-wide" data-reveal>
+        <p class="eyebrow">Start With Real Life</p>
+        <h2>What feels hard right now?</h2>
+        <p class="path-intro">You do not need to know which service to ask for. Start with the part of family life that keeps taking more than you have to give.</p>
+        <div class="path-grid">
+          <a class="path-card" href="#offerings">
+            <span class="path-kicker">Advice into action</span>
+            <h3>I have recommendations, but making them work at home is another thing.</h3>
+            <p>We can turn good advice, school ideas, provider recommendations, or a diagnosis into practical next steps that fit your household.</p>
+            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
           </a>
-          <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
-            <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
-            Facebook
+          <a class="path-card" href="#offerings">
+            <span class="path-kicker">Stuck parts of the day</span>
+            <h3>Our routines, transitions, or home setup keep creating friction.</h3>
+            <p>We can look closely at where the day gets stuck and shape small changes around your family&rsquo;s rhythm, needs, and capacity.</p>
+            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
           </a>
-          <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
-            <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
-            Instagram
+          <a class="path-card" href="#offerings">
+            <span class="path-kicker">More support, less strain</span>
+            <h3>We need breathing room, another capable adult, or simply a place to begin.</h3>
+            <p>We can help with in-home support, respite, focused coaching, practical planning, or figuring out together what would help most.</p>
+            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
           </a>
         </div>
       </div>
@@ -3295,8 +3430,8 @@
 
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow offerings-heading">Ways We Support You</p>
-        <h2>When Daily Life Feels Like Too Much</h2>
+        <p class="eyebrow offerings-heading">Support That Fits</p>
+        <h2>Ways We Support You</h2>
         <p class="fit-intro"><span class="fit-intro-reduced">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or good advice.</span><span class="fit-intro-standard">You do not need the perfect words before reaching out.</span></p>
         <div class="support-bridge">
           <p>Interwoven Family Care™ is for what comes after the advice, when you don&rsquo;t have room for one more thing but life keeps asking of you anyway. We help you make recommendations work, get ready to speak up in appointments, figure out where to begin, and get the support that makes a difference. You don&rsquo;t have to figure out how to make it work alone.</p>
@@ -3374,9 +3509,40 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
+    <section class="section" id="about">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">About IFC</p>
+        <h2>Built around real family life</h2>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
+            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what you already do well, and building from there.</p>
+            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
+            <p>The goal is less stress and more room for you to enjoy time with your family.</p>
+          </div>
+        </div>
+        <div class="social-links" aria-label="Interwoven Family Care social links">
+          <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+            <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+            Substack
+          </a>
+          <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+            <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+            Facebook
+          </a>
+          <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+            <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
     <section class="section" id="philosophy">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Our Approach</p>
+        <p class="eyebrow">Deeper Philosophy</p>
         <h2>Care Starts With Understanding</h2>
         <p class="approach-intro">Childcare is one thread in the larger tapestry of family support. Families are whole systems. A hard morning can shape the whole day. Your exhaustion, your child&rsquo;s needs, your home setup, your schedule, and your relationships all shape what is possible.</p>
 
@@ -3497,7 +3663,7 @@
 
     <section class="section" id="kind-words">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Kind Words</p>
+        <p class="eyebrow">Trust &amp; Experience</p>
         <h2>Built on Trust</h2>
         <div class="quotes quotes-pair">
           <figure class="quote-card">
