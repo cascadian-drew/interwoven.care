@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Client Inquiry | Interwoven Family Care™</title>
-  <meta name="description" content="Start a conversation with Interwoven Family Care™ about virtual family coaching or adaptive in-home support in Tacoma and Pierce County.">
+  <meta name="description" content="Start a conversation with Interwoven Family Care™ about virtual family coaching or adaptive in-home support in Tacoma and nearby Pierce County.">
   <link rel="canonical" href="https://interwoven.care/client-inquiry/">
   <link rel="icon" type="image/png" href="../assets/heart.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -30,6 +30,7 @@
       --plum: #7A2E4F;
       --ivory: #F6F3EE;
       --ink: #2B2B2B;
+      --sunlit-moss: #9CA78C;
       --nav-h: 3.6rem;
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
       --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
@@ -105,7 +106,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(246, 243, 238, 0.88);
+      background: var(--sunlit-moss);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(43, 43, 43, 0.08);
@@ -133,7 +134,10 @@
       letter-spacing: 0.01em;
     }
 
-    .brand img { width: 30px; }
+    .brand img {
+      width: 30px;
+      filter: brightness(0.86) saturate(1.12);
+    }
 
     .nav-links {
       margin-left: auto;
@@ -146,7 +150,7 @@
       position: relative;
       padding: 0.35rem 0;
       text-decoration: none;
-      color: rgba(43, 43, 43, 0.82);
+      color: var(--ink);
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
@@ -220,7 +224,7 @@
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (max-width: 880px) {
+    @media (max-width: 1020px) {
       .nav-toggle { display: block; }
 
       .nav-links {
@@ -233,7 +237,7 @@
         align-items: stretch;
         gap: 0;
         padding: 0.5rem 1.25rem 1.1rem;
-        background: var(--ivory);
+        background: var(--sunlit-moss);
         border-bottom: 1px solid rgba(43, 43, 43, 0.1);
         box-shadow: 0 14px 28px rgba(43, 43, 43, 0.1);
       }
@@ -616,7 +620,6 @@
       }
 
       .form-embed iframe {
-        height: 4300px;
         border-radius: 8px;
       }
     }
@@ -642,11 +645,11 @@
       <div class="nav-links" id="nav-links">
         <a href="/#offerings">Services</a>
         <a href="/#philosophy">Philosophy</a>
-        <a href="/#payment">Pricing</a>
-        <a href="/#about">About IFC</a>
-        <a href="/#about-bri">About the Founder</a>
+        <a href="/pricing-examples/">Pricing</a>
         <a href="/#faqs">FAQs</a>
-        <a class="nav-cta" href="/client-inquiry/">New Client Inquiry</a>
+        <a href="/#about-bri">About Bri</a>
+        <a href="/#about">About IFC</a>
+        <a class="nav-cta" href="/client-inquiry/" aria-current="page">New Client Inquiry</a>
       </div>
     </div>
   </nav>
@@ -655,7 +658,7 @@
     <section class="hero">
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
       <h1>Client Inquiry</h1>
-      <p class="hero-subhead">Tell us about yourself</p>
+      <p class="hero-subhead">Start with what feels hard</p>
       <p class="hero-intro">You do not need to know the right service before reaching out. Start with what feels hard. This form helps us understand what kind of support may fit your family, what feels realistic, and what next steps might make sense.</p>
       <p class="hero-note">Responses are collected through Google Forms.<br>Please do not include detailed medical, legal, custody, or crisis information here.</p>
     </section>
@@ -704,17 +707,17 @@
 
     <section class="section" id="start-client-inquiry" aria-label="Client Inquiry Form">
       <div class="wrap">
-        <p class="form-link"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener">Open Inquiry Form</a></p>
-        <p class="form-guidance">Begin by describing what feels hard in your own words. If you are unsure which kind of support fits, choose &ldquo;I am not sure yet.&rdquo; The service shape can be discussed afterward.</p>
+        <p class="form-link"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener" aria-label="Open Inquiry Form (opens in a new tab)">Open Inquiry Form</a></p>
+        <p class="form-guidance">Begin by describing what feels hard in your own words. If you are unsure which kind of support fits, choose &ldquo;Not sure yet, but we need support.&rdquo; We can talk through the service options afterward.</p>
         <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
-          <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="3150" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="4524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
 
         <div class="start-panel">
           <p><strong>Questions before you start?</strong><br>The introductory conversation is a brief chance to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit. A paid coaching session gives us a full hour to look closely at one concern, talk through what has already happened, and choose what to try next.</p>
           <div class="start-actions">
             <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule an Introductory Conversation</a>
-            <a class="btn btn-secondary" href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">Email Bri</a>
+            <a class="btn btn-secondary" href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">Email Interwoven Family Care</a>
           </div>
           <p class="note">This is for non-urgent inquiries only.</p>
         </div>
@@ -732,16 +735,25 @@
     const toggle = nav.querySelector('.nav-toggle');
     const links = nav.querySelectorAll('.nav-links a');
 
+    const closeNavigation = (returnFocus = false) => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+    };
+
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
     links.forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => closeNavigation());
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        closeNavigation(true);
+      }
     });
   </script>
 </body>

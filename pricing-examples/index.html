@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How Pricing Works | Interwoven Family Care™</title>
-  <meta name="description" content="How pricing works for Interwoven Family Care™, with adaptive in-home family support first and focused virtual family coaching offers at $120 and $345.">
+  <title>Pricing &amp; Support Options | Interwoven Family Care™</title>
+  <meta name="description" content="Pricing and support options from Interwoven Family Care™, including virtual coaching and in-home family support in Tacoma and nearby Pierce County.">
   <link rel="canonical" href="https://interwoven.care/pricing-examples/">
   <link rel="icon" type="image/png" href="../assets/heart.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -12,14 +12,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/pricing-examples/">
-  <meta property="og:title" content="How Pricing Works | Interwoven Family Care™">
-  <meta property="og:description" content="Adaptive in-home family support, childcare and relief care, custom blended support, and focused virtual family coaching offers.">
+  <meta property="og:title" content="Pricing &amp; Support Options | Interwoven Family Care™">
+  <meta property="og:description" content="Clear prices and limits for virtual coaching, in-home family support, advocacy preparation, and home-environment consultation.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -30,6 +30,7 @@
       --plum: #7A2E4F;
       --ivory: #F6F3EE;
       --ink: #2B2B2B;
+      --sunlit-moss: #9CA78C;
       --nav-h: 3.6rem;
       --font-display: Georgia, "Times New Roman", serif;
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
@@ -108,7 +109,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(246, 243, 238, 0.88);
+      background: var(--sunlit-moss);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(43, 43, 43, 0.08);
@@ -135,7 +136,10 @@
       letter-spacing: 0.01em;
     }
 
-    .brand img { width: 30px; }
+    .brand img {
+      width: 30px;
+      filter: brightness(0.86) saturate(1.12);
+    }
 
     .nav-links {
       margin-left: auto;
@@ -148,7 +152,7 @@
       position: relative;
       padding: 0.35rem 0;
       text-decoration: none;
-      color: rgba(43, 43, 43, 0.82);
+      color: var(--ink);
       font-weight: 600;
       font-size: 0.95rem;
       white-space: nowrap;
@@ -168,7 +172,11 @@
       transition: transform 180ms ease;
     }
 
-    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+    .nav-links a:not(.nav-cta):hover,
+    .nav-links a:not(.nav-cta)[aria-current] { color: var(--ink); }
+
+    .nav-links a:not(.nav-cta):hover::after,
+    .nav-links a:not(.nav-cta)[aria-current]::after { transform: scaleX(1); }
 
     .nav-cta {
       padding: 0.72em 1.2em;
@@ -220,7 +228,7 @@
     .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (max-width: 880px) {
+    @media (max-width: 1020px) {
       .nav-toggle { display: block; }
 
       .nav-links {
@@ -233,7 +241,7 @@
         align-items: stretch;
         gap: 0;
         padding: 0.5rem 1.25rem 1.1rem;
-        background: var(--ivory);
+        background: var(--sunlit-moss);
         border-bottom: 1px solid rgba(43, 43, 43, 0.1);
         box-shadow: 0 14px 28px rgba(43, 43, 43, 0.1);
       }
@@ -246,6 +254,11 @@
       }
 
       .nav-links a:not(.nav-cta)::after { display: none; }
+
+      .nav-links a:not(.nav-cta)[aria-current] {
+        padding-left: 0.75rem;
+        box-shadow: inset 3px 0 0 var(--plum);
+      }
 
       .nav-cta {
         margin-top: 0.7rem;
@@ -1377,6 +1390,132 @@
       }
     }
 
+    /* ---------- Standard pricing groups ---------- */
+
+    .pricing-group {
+      scroll-margin-top: calc(var(--nav-h) + 1rem);
+    }
+
+    .pricing-option-grid {
+      margin-top: 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .pricing-option-grid-single {
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-option {
+      padding: 1.35rem;
+      border: 1px solid rgba(43, 43, 43, 0.08);
+      border-top: 4px solid var(--teal);
+      border-radius: 14px;
+      background: rgba(255, 253, 249, 0.9);
+      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
+    }
+
+    .pricing-option:nth-child(2) {
+      border-top-color: var(--plum);
+    }
+
+    .pricing-option:nth-child(3) {
+      border-top-color: var(--copper);
+    }
+
+    .pricing-option:nth-child(4) {
+      border-top-color: var(--moss);
+    }
+
+    .pricing-option-wide {
+      grid-column: 1 / -1;
+    }
+
+    .pricing-option h3 {
+      margin: 0 0 0.45rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .pricing-option h4 {
+      margin: 1rem 0 0.35rem;
+      color: var(--plum);
+      font-family: var(--font-brand);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .pricing-option p {
+      margin: 0.7rem 0 0;
+      line-height: 1.6;
+    }
+
+    .pricing-option .standard-price {
+      margin: 0;
+      color: var(--plum);
+      font-family: var(--font-brand);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .pricing-option ul {
+      margin: 0.35rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .pricing-option li {
+      margin: 0.32rem 0;
+      line-height: 1.5;
+    }
+
+    .custom-quote-list {
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    .section-examples .section-intro {
+      max-width: 44rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .node-recommendations .node-title {
+      font-size: clamp(0.58rem, 1.1vw, 0.78rem);
+    }
+
+    @media (max-width: 980px) {
+      .pricing-option-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pricing-option-wide {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pricing-option-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-option-wide {
+        grid-column: auto;
+      }
+
+      .custom-quote-list {
+        columns: 1;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .map-node, .story-panel { transition: none; }
@@ -1399,10 +1538,10 @@
       <div class="nav-links" id="nav-links">
         <a href="/#offerings">Services</a>
         <a href="/#philosophy">Philosophy</a>
-        <a href="/#payment">Pricing</a>
-        <a href="/#about">About IFC</a>
-        <a href="/#about-bri">About the Founder</a>
+        <a href="/pricing-examples/" aria-current="page">Pricing</a>
         <a href="/#faqs">FAQs</a>
+        <a href="/#about-bri">About Bri</a>
+        <a href="/#about">About IFC</a>
         <a class="nav-cta" href="/client-inquiry/">New Client Inquiry</a>
       </div>
     </div>
@@ -1411,74 +1550,204 @@
   <main id="main">
     <section class="hero">
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
-      <h1>How Pricing Works</h1>
-      <p class="hero-subhead">What Support Can Look Like</p>
-      <p class="hero-intro">Many IFC services are shaped around each family rather than sold as preset packages. Some focused services, including virtual family coaching, have a clear rate and scope.</p>
+      <h1>Pricing &amp; Support Options</h1>
+      <p class="hero-subhead">Start with what feels hard</p>
+      <p class="hero-intro">You do not need to know which option fits before reaching out. Start with what feels hard. Interwoven Family Care will talk through what may help and what it will cost before anything begins.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry</a>
         <a class="btn btn-ghost" href="/#about">Back to About IFC</a>
       </div>
     </section>
 
-    <section class="section section-tight">
-      <div class="wrap closing-copy">
-        <h2>What feels the hardest?</h2>
-        <p>You do not need to know the right service before reaching out. Start with what feels hard, and we can talk through what kind of support may fit.</p>
-        <p>The introductory conversation is a brief chance to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit. A paid coaching session gives us a full hour to look closely at one concern, talk through what has already happened, and choose what to try next.</p>
-      </div>
-    </section>
+    <section class="section section-tight pricing-group" aria-labelledby="conversation-heading">
+      <div class="wrap-wide">
+        <p class="eyebrow">Start Here</p>
+        <h2 id="conversation-heading">Start with a Conversation</h2>
+        <div class="pricing-option-grid">
+          <article class="pricing-option">
+            <h3>Free Introductory Conversation</h3>
+            <p class="standard-price">Free &middot; up to 30 minutes</p>
+            <p>A first conversation about what is going on, whether Interwoven Family Care may be a good fit, and what the next step could be.</p>
+            <p>Detailed planning, research, document review, and coaching are paid services.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>One free introductory conversation per household before paid support begins.</li>
+              <li>Another free conversation happens only when IFC requests it.</li>
+            </ul>
+          </article>
 
-    <section class="section section-note" aria-label="What IFC support may include">
-      <div class="wrap">
-        <div class="soft-note">
-          <p><strong>What IFC support may include:</strong> these example families are fictional, but the kinds of needs are real. They are here to help you picture what support can look like and what an approximate price point might be.</p>
-          <p>Depending on the family, care may include any of these or more:</p>
-          <p class="care-thread-note">Not every family needs all of this.</p>
-          <ul class="care-thread-list">
-            <li>Childcare or child-related care</li>
-            <li>Relief and respite care</li>
-            <li>Routines and transition help</li>
-            <li>Advocacy preparation</li>
-            <li>Caregiver support and breathing room</li>
-            <li>Resource navigation</li>
-            <li>Making Recommendations Work</li>
-            <li>Environment support</li>
-          </ul>
+          <article class="pricing-option anchor-target" id="virtual-family-coaching">
+            <h3>Virtual Family Coaching</h3>
+            <p class="standard-price">$120 &middot; 60 minutes</p>
+            <p>One focused conversation about something that feels stuck. This could be a routine, transition, caregiving question, school meeting, resource decision, or recommendation you are trying to use at home.</p>
+            <p>Includes a short written follow-up.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>One main focus per session.</li>
+              <li>Up to three individual sessions per family in one month before IFC reviews whether another option would fit better.</li>
+            </ul>
+          </article>
+
+          <article class="pricing-option">
+            <h3>Three Virtual Sessions</h3>
+            <p class="standard-price">$345</p>
+            <p>Three 60-minute sessions for something that needs more than one conversation.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>Sessions are generally used within eight weeks.</li>
+              <li>One connected area of focus.</li>
+              <li>One active three-session series per family at a time.</li>
+              <li>Another series begins only after a review of what is still needed.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-in-home" aria-labelledby="in-home-support-heading">
+    <section class="section section-note pricing-group" aria-labelledby="in-home-support-heading">
       <div class="wrap-wide">
-        <p class="eyebrow">Core Support</p>
-        <h2 id="in-home-support-heading">Adaptive In-Home Family Support</h2>
-        <p class="section-intro">IFC&rsquo;s core work happens alongside families in real life. Support may combine childcare or relief care, caregiver partnership, routines and transitions, practical environment adjustments, and light coaching woven into the visit.</p>
+        <p class="eyebrow">In the Home</p>
+        <h2 id="in-home-support-heading">In-Home Support</h2>
+        <div class="pricing-option-grid">
+          <article class="pricing-option">
+            <h3>Care-First Support</h3>
+            <p class="standard-price">$40 per hour &middot; three-hour minimum</p>
+            <p>For appointments, work, rest, or time to catch your breath. Care-First Support is focused on practical, in-home care.</p>
+            <p>Planning, coaching, research, and written recaps are part of other support options.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>Generally three to six hours per booking.</li>
+              <li>Up to 12 Care-First hours per family each month.</li>
+              <li>Generally for up to three children.</li>
+              <li>Availability is limited.</li>
+              <li>Care-First Support is intended for occasional care and relief rather than an ongoing nanny schedule.</li>
+            </ul>
+          </article>
 
-        <div class="in-home-grid">
-          <article class="in-home-card">
-            <h3>Childcare &amp; Relief Care</h3>
-            <p>A caregiver may need several hours to attend an appointment, complete work, or rest while knowing their child is with someone who understands their needs.</p>
-            <p>Care can include play, meals, transitions, outings, regulation support, and the practical work that helps the family day keep moving.</p>
+          <article class="pricing-option">
+            <h3>Focused In-Home Visit</h3>
+            <p class="standard-price">$225 &middot; two hours</p>
+            <p>For one part of family life that needs a closer look. Interwoven Family Care comes to the home, looks at what is happening, talks it through with the family, and helps identify practical next steps.</p>
+            <p>Includes brief preparation and a short written recap.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>One main issue, routine, transition, room, or question.</li>
+              <li>One two-hour visit.</li>
+              <li>Additional observation or adjustment requires another agreed service.</li>
+            </ul>
           </article>
-          <article class="in-home-card">
-            <h3>Routines, Environments &amp; Caregiver Partnership</h3>
-            <p>A family may want childcare while mornings or after-school transitions also need support, or a routine may keep depending on one exhausted caregiver remembering and managing every step.</p>
-            <p>Visits can include modeling, scaffolding, practical environment adjustments, and noticing what makes a routine easier to carry.</p>
-          </article>
-          <article class="in-home-card">
-            <h3>Ongoing or Custom Blended Support</h3>
-            <p>Some families need a steady blend of care, family coaching, home-environment support, advocacy preparation, and help making recommendations usable in daily life.</p>
-            <p>The shape of support can adjust as the family notices what helps, what does not, and what needs to change next.</p>
+
+          <article class="pricing-option">
+            <h3>Focused Family Support</h3>
+            <p class="standard-price">$650</p>
+            <p>Three two-hour visits focused on one area. This may fit a routine, transition, room setup, caregiving challenge, or recommendation that has been hard to use at home.</p>
+            <p>Visits usually happen over four to six weeks so there is time to try something, see what happens, and adjust.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>Three two-hour visits.</li>
+              <li>One agreed focus.</li>
+              <li>Usually completed within six weeks.</li>
+              <li>One active Focused Family Support series per family at a time.</li>
+              <li>Additional visits require a new agreement or a move into Monthly Family Support.</li>
+            </ul>
           </article>
         </div>
-
-        <p class="in-home-budget">In-home support can be shaped within client schedules, weekly caps, or agreed budgets. The exact blend and cost are talked through before support begins; no new in-home rate is being introduced here.</p>
       </div>
     </section>
 
-    <section class="section section-examples" aria-label="Adaptive in-home support examples">
+    <section class="section section-in-home pricing-group" aria-labelledby="ongoing-support-heading">
       <div class="wrap-wide">
-        <h2>Adaptive In-Home Support in Real Life</h2>
+        <p class="eyebrow">Ongoing Support</p>
+        <h2 id="ongoing-support-heading">Ongoing Family Support</h2>
+        <div class="pricing-option-grid pricing-option-grid-single">
+          <article class="pricing-option">
+            <h3>Monthly Family Support</h3>
+            <p class="standard-price">$900 per month</p>
+            <p>Four two-hour home visits, with time between visits for agreed planning, follow-up, resource work, or communication.</p>
+            <p>Monthly support may include childcare, caregiver coaching, routines, transitions, home setup, resources, and help making recommendations work in daily life.</p>
+            <p>What is included is agreed on before support begins.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>Four two-hour visits each month.</li>
+              <li>Up to two total hours each month for agreed planning, follow-up, resource work, or communication between visits.</li>
+              <li>Unused visits and support time do not automatically roll into another month.</li>
+              <li>Additional visits or work are agreed on and priced before they happen.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-group" aria-labelledby="additional-support-heading">
+      <div class="wrap-wide">
+        <h2 id="additional-support-heading">Additional Support</h2>
+        <div class="pricing-option-grid">
+          <article class="pricing-option">
+            <h3>Advocacy Preparation</h3>
+            <p class="standard-price">$150</p>
+            <p>Help getting ready for one school or provider conversation. Interwoven Family Care can help organize concerns, sort through relevant notes, build questions, and think through what the family wants to say.</p>
+            <p>This is preparation and support. Interwoven Family Care does not provide legal advice or formal representation.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>Up to 90 minutes together.</li>
+              <li>Up to 30 minutes reviewing relevant notes or documents.</li>
+              <li>One specific school or provider conversation.</li>
+              <li>Additional review or another meeting requires another booking.</li>
+            </ul>
+          </article>
+
+          <article class="pricing-option">
+            <h3>School or Provider Meeting Support</h3>
+            <p class="standard-price">Starting at $375</p>
+            <p>Includes preparation beforehand, attendance for up to 90 minutes as an agreed support person, and a short debrief afterward.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>One meeting per booking.</li>
+              <li>Attendance for up to 90 minutes.</li>
+              <li>Longer meetings or more extensive preparation are priced before the work begins.</li>
+            </ul>
+          </article>
+
+          <article class="pricing-option">
+            <h3>Home Environment Consultation</h3>
+            <p class="standard-price">$175 &middot; 90 minutes</p>
+            <p>A closer look at one room, routine area, or child-use space. The goal is to make the space easier to use for the people who actually live there.</p>
+            <p>Recommendations may support independence, participation, regulation, transitions, or less daily friction.</p>
+            <h4>Limits</h4>
+            <ul>
+              <li>One 90-minute visit.</li>
+              <li>One room, routine area, or child-use space.</li>
+              <li>One short written follow-up.</li>
+              <li>Materials and hands-on implementation are separate.</li>
+              <li>Larger projects move into Focused Family Support or Monthly Family Support.</li>
+            </ul>
+          </article>
+
+          <article class="pricing-option pricing-option-wide">
+            <h3>Custom Support</h3>
+            <p>Some families need a mix that does not fit neatly into one option. Interwoven Family Care will explain what is included and provide the price in writing before support begins.</p>
+            <h4>Every custom quote names</h4>
+            <ul class="custom-quote-list">
+              <li>Number of visits</li>
+              <li>Visit length</li>
+              <li>Included preparation</li>
+              <li>Included follow-up or written work</li>
+              <li>Communication limits</li>
+              <li>Total price</li>
+              <li>Start and end point</li>
+              <li>What would require a new quote</li>
+            </ul>
+            <p>Custom Support never includes unlimited access.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-examples" aria-label="Examples of support">
+      <div class="wrap-wide">
+        <p class="eyebrow">Examples of Support</p>
+        <h2>What Support Can Look Like</h2>
+        <p class="section-intro">These fictional examples show how a family might use the standard options above. They are examples, not separate services.</p>
         <div class="thread-map" aria-label="Support example choices">
           <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
@@ -1538,7 +1807,7 @@
             <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
           </button>
           <button class="map-node node-recommendations" type="button" data-example="recommendations" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
-            <span class="node-title"><span class="line">Making It</span><span class="line">Work</span></span>
+            <span class="node-title"><span class="line">Making</span><span class="line">Recommendations</span><span class="line">Work</span></span>
           </button>
           <button class="map-node node-advocacy" type="button" data-example="advocacy" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
             <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
@@ -1550,9 +1819,9 @@
             <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>
           </button>
 
-          <article class="story-panel" id="example-story" aria-live="polite" aria-hidden="true" aria-labelledby="story-title">
-            <button class="story-back" type="button" id="story-back" aria-label="Close example">&times;</button>
-            <h3 id="story-title"></h3>
+          <article class="story-panel" id="example-story" role="dialog" aria-modal="true" aria-live="polite" aria-hidden="true" aria-labelledby="story-title">
+            <button class="story-back" type="button" id="story-back" aria-label="Close support example">&times;</button>
+            <h3 id="story-title">Support example</h3>
             <div class="story-intro" id="story-intro"></div>
             <div class="story-copy" id="story-copy"></div>
           </article>
@@ -1560,94 +1829,15 @@
       </div>
     </section>
 
-    <section class="section section-coaching anchor-target" id="virtual-family-coaching" aria-labelledby="focused-ways-heading">
-      <div class="wrap-wide">
-        <p class="eyebrow">Protected Time to Think</p>
-        <h2 id="focused-ways-heading">Focused Ways to Begin</h2>
-        <div class="focused-intro">
-          <p>Some families need hands-on support inside the home. Others need protected time to slow something down, think it through, and decide what may actually help.</p>
-          <p>These virtual coaching offers have a clear rate and scope.</p>
-        </div>
-
-        <article class="coaching-panel" aria-labelledby="virtual-family-coaching-heading">
-          <h3 id="virtual-family-coaching-heading">Virtual Family Coaching</h3>
-          <p>Practical, collaborative support for caregivers working through one connected part of family life.</p>
-          <p>You do not need to arrive with a perfectly named problem or a finished plan. Start with what feels hard.</p>
-
-          <section class="coaching-examples" aria-labelledby="coaching-examples-heading">
-            <h4 id="coaching-examples-heading">This might look like:</h4>
-            <ul>
-              <li>Bedtime takes two exhausting hours, and every suggestion seems to create another fight.</li>
-              <li>A school or provider meeting is approaching, and your notes are everywhere. You need help identifying what you most need to ask and say.</li>
-              <li>Your child wants more independence, but the bedroom, bathroom, or morning setup still requires adult help at every step.</li>
-              <li>You received recommendations from a professional, but they do not seem possible within your actual schedule, home, or family capacity.</li>
-            </ul>
-          </section>
-
-          <div class="coaching-offers">
-            <article class="coaching-offer">
-              <h4>One Focused Session</h4>
-              <p class="offer-meaning">Help me think through this.</p>
-              <p class="offer-price">60 minutes &middot; $120</p>
-              <p>A focused coaching session for one primary part of family life that feels stuck, confusing, or harder to carry alone.</p>
-              <p><strong>Includes:</strong></p>
-              <ul>
-                <li>Short pre-session questions</li>
-                <li>One 60-minute virtual session</li>
-                <li>One primary area of focus</li>
-                <li>Conversation about what has already happened</li>
-                <li>Practical planning</li>
-                <li>A brief follow-up note with agreed next steps</li>
-              </ul>
-              <p><strong>May help with:</strong></p>
-              <ul>
-                <li>Routines and transitions</li>
-                <li>Caregiver problem-solving</li>
-                <li>Preparing questions for a school or provider conversation</li>
-                <li>Making recommendations more usable at home</li>
-                <li>A focused home-environment or independence question</li>
-                <li>Sorting through competing priorities</li>
-                <li>Deciding what to try next and what can wait</li>
-              </ul>
-            </article>
-
-            <article class="coaching-offer">
-              <h4>Three-Session Family Coaching Series</h4>
-              <p class="offer-meaning">Help me try this, notice what happens, and adjust.</p>
-              <p class="offer-price">Three 60-minute sessions &middot; $345</p>
-              <p class="offer-note">The sessions are generally used within eight weeks.</p>
-              <p>This series is for one connected family concern that needs more than one conversation. It creates time to choose something to try, notice what happens in real life, and make adjustments together.</p>
-              <p><strong>The series includes:</strong></p>
-              <ul>
-                <li>Three 60-minute virtual coaching sessions</li>
-                <li>One connected area of focus</li>
-                <li>Brief follow-up notes after each session</li>
-                <li>Time between sessions to try agreed next steps</li>
-                <li>Adjustments based on what the family notices</li>
-                <li>A final summary of what was tried, what seemed helpful, and possible next steps</li>
-              </ul>
-            </article>
-          </div>
-
-          <aside class="coaching-scope" aria-label="Virtual family coaching scope">
-            <p>Extensive document review, independent research, customized materials, detailed written plans, meeting attendance, and ongoing messaging are not included in the standard session or series. Additional support may be scoped separately when appropriate.</p>
-            <p>The three-session series is not a subscription, ongoing unlimited support, or ongoing messaging access.</p>
-            <p>Virtual Family Coaching is practical family support. It is not therapy, clinical treatment, medical care, legal advice or representation, special-education legal representation, formal case management, or crisis response.</p>
-          </aside>
-        </article>
-      </div>
-    </section>
-
     <section class="section">
       <div class="start-contact">
         <p class="eyebrow">Ready to Talk?</p>
-        <h2>Tell Bri what is hard right now</h2>
-        <p>If this sounds like the kind of support your family may need, you can start with the inquiry form, schedule a low-pressure call, or send an email if writing feels easier.</p>
-        <p class="pricing-final-note">Pricing and scope are confirmed before support begins. Virtual Family Coaching is $120 for one 60-minute session or $345 for the three-session series.</p>
+        <h2>Start with what feels hard</h2>
+        <p>You do not need to choose a service first. Interwoven Family Care will confirm the scope and price before support begins.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
           <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
-          <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Bri</a>
+          <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Interwoven Family Care</a>
         </div>
       </div>
     </section>
@@ -1663,16 +1853,25 @@
     const toggle = nav.querySelector('.nav-toggle');
     const links = nav.querySelectorAll('.nav-links a');
 
+    const closeNavigation = (returnFocus = false) => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+    };
+
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
     links.forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => closeNavigation());
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        closeNavigation(true);
+      }
     });
 
     const supportExamples = {
@@ -1682,8 +1881,8 @@
           "Your hardest window is after school and work. Everyone is tired. One child needs space, one needs one-on-one time, dinner still has to happen, dishes are there, the backpack pile is everywhere, and bedtime looks so far away.",
           "Support might look like helping the children settle, supporting transitions, noticing where the evening keeps getting stuck, helping with child-related cleanup, and talking with you about what could make tomorrow feel a little less impossible."
         ],
-        exampleSupport: "3 hours of in-home support - 1 afternoon per week",
-        exampleEstimate: "$150/week"
+        exampleSupport: "3 hours of Care-First Support - 1 afternoon",
+        exampleEstimate: "$120"
       },
       respite: {
         title: "Respite Childcare",
@@ -1692,8 +1891,8 @@
           "Children still need care. Transitions still happen. Snacks, cleanup, feelings, laundry piles, appointments, and bedtime do not just stop because you are tired.",
           "Support might look like supporting the children, helping with transitions, offering respite, noticing what is making the day harder, and helping with practical tasks that keep the family rhythm from fully tipping over."
         ],
-        exampleSupport: "4 hours of in-home support - 1 day per week",
-        exampleEstimate: "$200/week"
+        exampleSupport: "4 hours of Care-First Support - 1 day",
+        exampleEstimate: "$160"
       },
       backup: {
         title: "Backup Care",
@@ -1701,8 +1900,8 @@
           "You have a new baby, a toddler, a demanding job, and a household that does not pause. By the time evening arrives, everyone still needs food, connection, cleanup, transitions, and rest.",
           "Support might look like another capable set of hands during the stretched-thin parts of the day: caring for the baby and toddler, helping with meals, light cleanup, routines, and practical backup while the household keeps moving."
         ],
-        exampleSupport: "3 hours of in-home backup support, 1 day per week",
-        exampleEstimate: "$150/week"
+        exampleSupport: "3 hours of Care-First Support",
+        exampleEstimate: "$120"
       },
       recommendations: {
         title: "Making Recommendations Work",
@@ -1711,8 +1910,8 @@
           "Your child may be neurodivergent, sensory-sensitive, demand-sensitive, easily overwhelmed, or having a hard time moving through the day. Your family needs help figuring out what actually fits.",
           "Support might look like noticing where routines get stuck, helping shape a calmer time of day, setting up accessible systems, thinking through sensory needs, and helping make recommendations more usable."
         ],
-        exampleSupport: "3 hours of focused in-home support - 1 visit per week",
-        exampleEstimate: "$210/week"
+        exampleSupport: "One Focused In-Home Visit - 2 hours",
+        exampleEstimate: "$225"
       },
       advocacy: {
         title: "Advocacy Preparation",
@@ -1721,8 +1920,8 @@
           "You need help slowing down, sorting what matters, naming concerns clearly, and walking into the meeting with more confidence.",
           "Support might look like talking through priorities, organizing notes and thoughts, preparing questions, and making a simple follow-up plan for after the meeting."
         ],
-        exampleSupport: "4 focused hours during the week of a school meeting. This could be one 4-hour block or two 2-hour sessions",
-        exampleEstimate: "$280"
+        exampleSupport: "Advocacy Preparation for one school or provider conversation",
+        exampleEstimate: "$150"
       },
       summer: {
         title: "Summer Care",
@@ -1730,8 +1929,8 @@
           "You are looking at summer and realizing the usual patchwork is not enough. School is out, you are still working, camps don't cover every week, and your children still need routine, connection, food, movement, rest, and help with transitions.",
           "Support might look like care at home, outings, park/library time, screen-time transitions, and helping the day feel less scattered while summer break is on but work and life continue."
         ],
-        exampleSupport: "3 hours - 2 days per week during summer",
-        exampleEstimate: "$300/week"
+        exampleSupport: "3 hours of Care-First Support - 2 days",
+        exampleEstimate: "$240"
       },
       "drop-in": {
         title: "Drop-In Care",
@@ -1739,8 +1938,8 @@
           "You need a specific window of support: a school closure, camp gap, appointment, work meeting, recovery week, travel day, or a sudden hole in your plans.",
           "Support might look like giving you the chance to work, rest, go to an appointment, focus on another child, or get through a temporary pinch point. Practical backup while the household gets through the day."
         ],
-        exampleSupport: "One 3-hour block as needed during a school closure, camp gap, appointment, work meeting, recovery week, or temporary schedule hole.",
-        exampleEstimate: "$90-$150 that week"
+        exampleSupport: "One 3-hour Care-First Support booking",
+        exampleEstimate: "$120"
       }
     };
 
@@ -1782,7 +1981,7 @@
         })
       );
       storyCopy.replaceChildren(
-        detailRow('Example estimate', example.exampleSupport, example.exampleEstimate)
+        detailRow('Example price', example.exampleSupport, example.exampleEstimate)
       );
 
       exampleButtons.forEach((button) => {
@@ -1793,7 +1992,10 @@
 
       storyPanel.setAttribute('aria-hidden', 'false');
       threadMap.classList.add('is-detail-open');
-      backButton.focus({ preventScroll: true });
+      exampleButtons.forEach((button) => {
+        button.setAttribute('tabindex', '-1');
+      });
+      window.setTimeout(() => backButton.focus({ preventScroll: true }), 50);
     }
 
     function closeExample() {
@@ -1802,6 +2004,7 @@
       exampleButtons.forEach((button) => {
         button.setAttribute('aria-pressed', 'false');
         button.setAttribute('aria-expanded', 'false');
+        button.removeAttribute('tabindex');
       });
 
       if (activeExampleButton) {
@@ -1820,6 +2023,12 @@
     });
 
     backButton.addEventListener('click', closeExample);
+    storyPanel.addEventListener('keydown', (event) => {
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        backButton.focus();
+      }
+    });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && threadMap.classList.contains('is-detail-open')) {
