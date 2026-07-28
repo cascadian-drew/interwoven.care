@@ -2416,13 +2416,52 @@
     }
 
     .woven-approach {
-      padding-inline: 0.85rem;
+      position: relative;
+      padding: 1.2rem 1rem 2.7rem;
+      grid-template-columns: 1.12fr 0.94fr 1.08fr 0.86fr;
       align-items: center;
+    }
+
+    .woven-approach::before,
+    .woven-approach::after {
+      content: "";
+      position: absolute;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .woven-approach::before {
+      top: 4.6rem;
+      left: 27.1%;
+      width: 0.22rem;
+      height: 6.4rem;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(199, 154, 69, 0.82) 0 0.13rem, transparent 0.15rem),
+        repeating-linear-gradient(
+          180deg,
+          rgba(255, 253, 249, 0.68) 0 0.48rem,
+          transparent 0.48rem 0.82rem
+        );
+      transform: rotate(1.8deg);
+      filter: drop-shadow(0 1px 0 rgba(43, 43, 43, 0.14));
+    }
+
+    .woven-approach::after {
+      top: 14.4rem;
+      left: 49.1%;
+      width: 3.4rem;
+      height: 0.24rem;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(232, 194, 112, 0.92) 0 0.34rem,
+        transparent 0.34rem 0.64rem
+      );
+      transform: rotate(-6deg);
+      filter: drop-shadow(0 1px 0 rgba(107, 41, 69, 0.18));
     }
 
     .woven-panel {
       --panel-shape: 18px 13px 20px 15px;
-      --mend-angle: -2deg;
       min-height: var(--panel-height, 22rem);
       border-radius: var(--panel-shape);
       background:
@@ -2433,60 +2472,145 @@
         inset 0 0 0 1px rgba(255, 253, 249, 0.06);
     }
 
-    .woven-panel::before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      top: 0.56rem;
-      right: 0.9rem;
-      width: 2.4rem;
-      height: 0.2rem;
-      background: repeating-linear-gradient(
-        90deg,
-        rgba(232, 194, 112, 0.88) 0 0.34rem,
-        transparent 0.34rem 0.58rem
-      );
-      transform: rotate(var(--mend-angle));
+    .woven-panel::before,
+    .woven-panel::after {
+      display: none;
+      inset: auto;
+      border: 0;
+      border-radius: 0;
       pointer-events: none;
     }
 
-    .woven-panel::after {
-      border-color: rgba(255, 253, 249, 0.36);
-      border-radius: 14px 10px 16px 11px;
+    .woven-panel:nth-child(1) {
+      --panel-height: 20.8rem;
+      --panel-offset: 0.35rem;
+      --panel-tilt: -0.65deg;
+      --panel-shape: 24px 9px 18px 6px / 17px 13px 21px 9px;
+      z-index: 2;
+      margin-left: 0;
     }
 
-    .woven-panel:nth-child(1) {
-      --panel-height: 22.4rem;
-      --panel-shape: 22px 13px 19px 11px;
-      --mend-angle: -4deg;
+    .woven-panel:nth-child(1)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 3.4rem;
+      right: 0.36rem;
+      bottom: 2.8rem;
+      width: 0.18rem;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(255, 253, 249, 0.58) 0 0.46rem,
+        transparent 0.46rem 0.82rem
+      );
+      transform: rotate(0.7deg);
     }
 
     .woven-panel:nth-child(2) {
-      --panel-height: 21.5rem;
-      --panel-shape: 13px 23px 12px 21px;
-      --mend-angle: 3deg;
-      margin-left: -1.12rem;
+      --panel-height: 24.2rem;
+      --panel-offset: -0.3rem;
+      --panel-tilt: 0.35deg;
+      --panel-shape: 10px 23px 8px 19px / 14px 20px 11px 23px;
+      z-index: 3;
+      margin-left: -1.36rem;
+    }
+
+    .woven-panel:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      display: block;
+      right: 0.95rem;
+      bottom: 0.52rem;
+      width: 1.85rem;
+      height: 0.72rem;
+      background:
+        linear-gradient(45deg, transparent 42%, rgba(232, 194, 112, 0.9) 43% 55%, transparent 56%) 0 0 / 0.62rem 0.62rem repeat-x,
+        linear-gradient(-45deg, transparent 42%, rgba(232, 194, 112, 0.82) 43% 55%, transparent 56%) 0 0 / 0.62rem 0.62rem repeat-x;
+      transform: rotate(-3deg);
+    }
+
+    .woven-panel:nth-child(2)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      right: 2.9rem;
+      bottom: 0.58rem;
+      left: 1.05rem;
+      height: 0.18rem;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 253, 249, 0.55) 0 0.5rem,
+        transparent 0.5rem 0.88rem
+      );
+      transform: rotate(0.8deg);
     }
 
     .woven-panel:nth-child(3) {
-      --panel-height: 22.8rem;
-      --panel-shape: 20px 12px 24px 15px;
-      --mend-angle: -1deg;
-      margin-left: -0.68rem;
+      --panel-height: 21.7rem;
+      --panel-offset: 0.92rem;
+      --panel-tilt: -0.28deg;
+      --panel-shape: 17px 7px 13px 11px / 11px 9px 17px 13px;
+      z-index: 1;
+      margin-left: -1.18rem;
+    }
+
+    .woven-panel:nth-child(3)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 5rem;
+      left: 0.22rem;
+      width: 0.72rem;
+      height: 5.6rem;
+      background:
+        linear-gradient(90deg, rgba(255, 253, 249, 0.58) 0 0.13rem, transparent 0.13rem),
+        repeating-linear-gradient(
+          180deg,
+          rgba(255, 253, 249, 0.52) 0 0.14rem,
+          transparent 0.14rem 0.74rem
+        );
+      transform: rotate(-1.3deg);
     }
 
     .woven-panel:nth-child(4) {
-      --panel-height: 21.9rem;
-      --panel-shape: 12px 20px 15px 23px;
-      --mend-angle: 4deg;
-      margin-left: -1.05rem;
+      --panel-height: 22.6rem;
+      --panel-offset: 1.35rem;
+      --panel-tilt: 0.55deg;
+      --panel-shape: 8px 19px 17px 7px / 13px 22px 11px 16px;
+      z-index: 2;
+      margin-left: -0.62rem;
+    }
+
+    .woven-panel:nth-child(4)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      right: 0.55rem;
+      bottom: 0.55rem;
+      width: 1.45rem;
+      height: 1.35rem;
+      background:
+        linear-gradient(45deg, transparent 45%, rgba(255, 253, 249, 0.52) 46% 53%, transparent 54%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 253, 249, 0.42) 46% 53%, transparent 54%);
+      background-size: 0.7rem 0.7rem;
+      transform: rotate(5deg);
     }
 
     .woven-panel.is-active {
-      transform: translateY(calc(var(--panel-offset) - 0.42rem)) rotate(0deg) scale(1.014);
+      transform: translateY(calc(var(--panel-offset) - 0.32rem)) rotate(0deg) scale(1.009);
       box-shadow:
-        0 18px 34px var(--panel-shadow),
-        0 0 0 2px rgba(255, 253, 249, 0.46);
+        0 17px 31px var(--panel-shadow),
+        0 0 0 1px rgba(255, 253, 249, 0.42);
+    }
+
+    .woven-panel:nth-child(2).is-active {
+      transform: translateY(calc(var(--panel-offset) - 0.46rem)) rotate(0deg) scale(1.011);
+    }
+
+    .woven-panel.is-active::before,
+    .woven-panel.is-active::after {
+      opacity: 1;
+      filter: drop-shadow(0 1px 0 rgba(43, 43, 43, 0.16));
     }
 
     .woven-panel:not(.is-active) {
@@ -2635,9 +2759,16 @@
     }
 
     @media (max-width: 900px) {
+      .woven-approach::before,
+      .woven-approach::after {
+        display: none;
+      }
+
       .woven-panel,
       .woven-panel:first-child,
+      .woven-panel:nth-child(1),
       .woven-panel:nth-child(2),
+      .woven-panel:nth-child(2).is-active,
       .woven-panel:nth-child(3),
       .woven-panel:nth-child(4),
       .woven-panel.is-active {
@@ -2749,7 +2880,7 @@
         <a href="/#faqs">FAQs</a>
         <a href="/#about-bri">About Bri</a>
         <a href="/#about">About IFC</a>
-        <a class="nav-cta" href="/client-inquiry/">New Client Inquiry</a>
+        <a href="/client-inquiry/">New Client Inquiry</a>
       </div>
     </div>
   </nav>
