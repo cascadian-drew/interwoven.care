@@ -36,6 +36,12 @@
       --fabric-cream: #FFFDF9;
       --metal-thread: #C79A45;
       --nav-h: 3.6rem;
+      --space-section: clamp(3rem, 7vh, 5rem);
+      --space-section-compact: clamp(2.2rem, 5vh, 3.4rem);
+      --space-divider: clamp(0.55rem, 1.5vh, 0.9rem);
+      --space-heading-intro: 0.9rem;
+      --space-intro-content: clamp(1.45rem, 3vh, 2.15rem);
+      --space-section-tail: clamp(1.4rem, 3vh, 2.25rem);
       --font-brand: "Quicksand", "Trebuchet MS", sans-serif;
       --font-body: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
       --action-primary: var(--teal);
@@ -2758,6 +2764,355 @@
       transform: rotate(-2deg);
     }
 
+    /* ---------- Shared spacing and refinement pass ---------- */
+
+    .section {
+      padding: var(--space-section) 1.5rem;
+    }
+
+    .section h2 {
+      margin-bottom: var(--space-heading-intro);
+    }
+
+    .knot-divider {
+      padding-block: var(--space-divider);
+    }
+
+    #offerings {
+      padding-top: var(--space-section);
+      padding-bottom: var(--space-section-compact);
+    }
+
+    .support-carousel {
+      margin-top: var(--space-intro-content);
+    }
+
+    .support-card {
+      min-height: 23rem;
+    }
+
+    .support-card::before {
+      inset:
+        var(--inner-top, 0.66rem)
+        var(--inner-right, 0.66rem)
+        var(--inner-bottom, 0.66rem)
+        var(--inner-left, 0.66rem);
+      border-radius: var(--inner-shape, 18px 16px 19px 15px);
+      transform: translate(var(--inner-shift-x, 0), var(--inner-shift-y, 0));
+    }
+
+    .support-card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      inset: auto;
+      border: 0;
+      border-radius: 0;
+      pointer-events: none;
+    }
+
+    .support-card[data-support-index="0"] {
+      --inner-top: 0.72rem;
+      --inner-right: 0.84rem;
+      --inner-bottom: 0.62rem;
+      --inner-left: 0.58rem;
+      --inner-shape: 22px 11px 18px 8px / 15px 18px 11px 20px;
+    }
+
+    .support-card[data-support-index="0"]::after {
+      top: 2rem;
+      bottom: 2.4rem;
+      left: 0.79rem;
+      width: 2px;
+      background: repeating-linear-gradient(180deg, rgba(255, 253, 249, 0.72) 0 0.42rem, transparent 0.42rem 0.75rem);
+      transform: rotate(-0.8deg);
+    }
+
+    .support-card[data-support-index="1"] {
+      --inner-top: 0.58rem;
+      --inner-right: 0.56rem;
+      --inner-bottom: 0.82rem;
+      --inner-left: 0.8rem;
+      --inner-shape: 9px 24px 12px 19px / 18px 12px 21px 10px;
+    }
+
+    .support-card[data-support-index="1"]::after {
+      right: 2rem;
+      bottom: 0.62rem;
+      left: 3.4rem;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, rgba(255, 253, 249, 0.74) 0 0.44rem, transparent 0.44rem 0.78rem);
+      transform: rotate(0.7deg);
+    }
+
+    .support-card[data-support-index="2"] {
+      --inner-top: 0.8rem;
+      --inner-right: 0.6rem;
+      --inner-bottom: 0.56rem;
+      --inner-left: 0.7rem;
+      --inner-shape: 18px 7px 23px 13px / 11px 21px 14px 18px;
+    }
+
+    .support-card[data-support-index="2"]::after {
+      top: 0.7rem;
+      right: 1.05rem;
+      width: 2rem;
+      height: 0.2rem;
+      background: repeating-linear-gradient(90deg, rgba(199, 154, 69, 0.88) 0 0.28rem, transparent 0.28rem 0.48rem);
+      transform: rotate(4deg);
+    }
+
+    .support-card[data-support-index="3"] {
+      --inner-top: 0.62rem;
+      --inner-right: 0.9rem;
+      --inner-bottom: 0.7rem;
+      --inner-left: 0.55rem;
+      --inner-shift-y: 0.04rem;
+      --inner-shape: 25px 13px 8px 20px / 16px 9px 22px 13px;
+    }
+
+    .support-card[data-support-index="3"]::after {
+      top: 2.5rem;
+      right: 0.72rem;
+      bottom: 3rem;
+      width: 0.22rem;
+      background:
+        radial-gradient(circle, rgba(255, 253, 249, 0.72) 0 0.09rem, transparent 0.1rem)
+        center top / 0.22rem 0.72rem repeat-y;
+      transform: rotate(1deg);
+    }
+
+    .support-card[data-support-index="4"] {
+      --inner-top: 0.76rem;
+      --inner-right: 0.58rem;
+      --inner-bottom: 0.88rem;
+      --inner-left: 0.72rem;
+      --inner-shape: 12px 20px 9px 25px / 21px 11px 18px 14px;
+    }
+
+    .support-card[data-support-index="4"]::after {
+      top: 0.66rem;
+      left: 2.1rem;
+      width: 3.1rem;
+      height: 0.2rem;
+      background: repeating-linear-gradient(90deg, rgba(199, 154, 69, 0.9) 0 0.32rem, transparent 0.32rem 0.56rem);
+      transform: rotate(-3deg);
+    }
+
+    .support-card[data-support-index="5"] {
+      --inner-top: 0.55rem;
+      --inner-right: 0.74rem;
+      --inner-bottom: 0.66rem;
+      --inner-left: 0.88rem;
+      --inner-shape: 8px 18px 22px 11px / 16px 22px 10px 19px;
+    }
+
+    .support-card[data-support-index="5"]::after {
+      bottom: 0.65rem;
+      left: 1rem;
+      width: 2.5rem;
+      height: 0.2rem;
+      background: repeating-linear-gradient(90deg, rgba(255, 253, 249, 0.76) 0 0.3rem, transparent 0.3rem 0.52rem);
+      transform: rotate(3deg);
+    }
+
+    .support-card[data-support-index="6"] {
+      --inner-top: 0.7rem;
+      --inner-right: 0.82rem;
+      --inner-bottom: 0.6rem;
+      --inner-left: 0.56rem;
+      --inner-shift-x: 0.03rem;
+      --inner-shape: 19px 10px 16px 24px / 10px 20px 15px 18px;
+    }
+
+    .support-card[data-support-index="6"]::after {
+      top: 3.2rem;
+      right: 0.65rem;
+      height: 4.4rem;
+      width: 2px;
+      background: repeating-linear-gradient(180deg, rgba(255, 253, 249, 0.72) 0 0.38rem, transparent 0.38rem 0.7rem);
+      transform: rotate(-2deg);
+    }
+
+    .support-card[data-support-index="7"] {
+      --inner-top: 0.64rem;
+      --inner-right: 0.54rem;
+      --inner-bottom: 0.84rem;
+      --inner-left: 0.74rem;
+      --inner-shape: 21px 14px 7px 18px / 13px 18px 22px 9px;
+    }
+
+    .support-card[data-support-index="7"]::after {
+      right: 1rem;
+      bottom: 0.7rem;
+      width: 3.2rem;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, rgba(255, 253, 249, 0.78) 0 0.4rem, transparent 0.4rem 0.72rem);
+      transform: rotate(-2deg);
+    }
+
+    .support-card .support-card-format {
+      margin-top: 1.15rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed var(--stitch-color);
+      color: var(--panel-ink);
+      font-size: 0.94rem;
+      line-height: 1.58;
+    }
+
+    .quote-cycle {
+      min-height: 0;
+      margin-top: var(--space-section-tail);
+    }
+
+    #payment .payment-note {
+      position: relative;
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: clamp(1.6rem, 4vw, 2.35rem);
+      border: 1px solid rgba(51, 106, 100, 0.18);
+      border-left: 0.42rem solid rgba(122, 46, 79, 0.72);
+      border-radius: 13px 20px 15px 10px;
+      background:
+        linear-gradient(124deg, rgba(156, 167, 140, 0.07), transparent 28%),
+        var(--fabric-cream);
+      box-shadow: 0 12px 30px rgba(43, 43, 43, 0.075);
+    }
+
+    #payment .payment-note::before {
+      position: absolute;
+      top: 0.78rem;
+      right: 1.1rem;
+      width: 2.7rem;
+      height: 0.2rem;
+      margin: 0;
+      background: repeating-linear-gradient(90deg, rgba(199, 154, 69, 0.82) 0 0.3rem, transparent 0.3rem 0.52rem);
+      transform: rotate(2deg);
+    }
+
+    #payment .payment-actions {
+      margin-bottom: 0;
+    }
+
+    #faqs .faq-list {
+      display: grid;
+      gap: 0.68rem;
+      margin-top: var(--space-intro-content);
+    }
+
+    #faqs .faq-item {
+      --faq-thread: rgba(51, 106, 100, 0.48);
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid rgba(43, 43, 43, 0.09);
+      border-left: 0.42rem solid var(--faq-tab, var(--deep-teal));
+      border-radius: var(--faq-shape, 9px 16px 11px 14px);
+      background: var(--fabric-cream);
+      box-shadow: 0 5px 15px rgba(43, 43, 43, 0.045);
+    }
+
+    #faqs .faq-item:nth-child(3n + 1) {
+      --faq-tab: var(--deep-teal);
+      --faq-thread: rgba(51, 106, 100, 0.42);
+      --faq-shape: 9px 17px 10px 14px;
+    }
+
+    #faqs .faq-item:nth-child(3n + 2) {
+      --faq-tab: var(--plum);
+      --faq-thread: rgba(122, 46, 79, 0.38);
+      --faq-shape: 16px 8px 15px 10px;
+    }
+
+    #faqs .faq-item:nth-child(3n) {
+      --faq-tab: #52651C;
+      --faq-thread: rgba(82, 101, 28, 0.4);
+      --faq-shape: 11px 15px 7px 18px;
+    }
+
+    #faqs .faq-item h3 {
+      margin: 0;
+    }
+
+    #faqs .faq-question {
+      width: 100%;
+      min-height: 3.3rem;
+      padding: 0.9rem 3.2rem 0.9rem 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: var(--font-brand);
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    #faqs .faq-question::before {
+      content: "";
+      position: absolute;
+      right: 2.8rem;
+      bottom: 0.46rem;
+      width: 1.65rem;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--faq-thread) 0 0.28rem, transparent 0.28rem 0.5rem);
+    }
+
+    #faqs .faq-question > span {
+      position: absolute;
+      right: 1rem;
+      color: var(--faq-tab);
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    #faqs .faq-question:focus-visible {
+      outline: 3px solid rgba(51, 106, 100, 0.42);
+      outline-offset: -3px;
+      border-radius: inherit;
+    }
+
+    .js #faqs .faq-answer[hidden] {
+      display: none;
+    }
+
+    #faqs .faq-answer p {
+      margin: 0 1rem 1rem;
+      padding: 0.9rem 0.1rem 0;
+      border-top: 1px dashed var(--faq-thread);
+    }
+
+    .start-thread {
+      background: linear-gradient(166deg, transparent 48%, rgba(122, 46, 79, 0.045) 49% 51%, transparent 52%);
+    }
+
+    .start-thread article,
+    .start-thread article:nth-child(2),
+    .start-thread article:nth-child(3) {
+      padding: 1.9rem 1rem 0.3rem;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      transform: none;
+    }
+
+    .start-thread article::after {
+      display: none;
+    }
+
+    .start-thread article:nth-child(2)::after {
+      display: block;
+      top: 0.5rem;
+      right: 0.35rem;
+      width: 1.7rem;
+    }
+
     @media (max-width: 900px) {
       .woven-approach::before,
       .woven-approach::after {
@@ -2887,8 +3242,8 @@
 
   <main id="main">
     <div class="announcement" aria-label="Fall family support">
-      <p class="announcement-main">With fall comes new routines, shifting schedules, and your home feeling chaotic.</p>
-      <p class="announcement-support">Book an hour to talk it through and work through solutions.</p>
+      <p class="announcement-main">With fall comes a new school year, shifting schedules and routines, and saying goodbye to your free time.</p>
+      <p class="announcement-support">Book an hour to talk it through and figure out how to flow with it all.</p>
     </div>
 
     <section class="hero" id="top">
@@ -2902,6 +3257,37 @@
       <p class="sub rise d3">In Tacoma and nearby Pierce County - virtual coaching available.</p>
       <div class="hero-actions rise d4">
         <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry</a>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
+    <section class="section" id="about">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">About IFC</p>
+        <h2>Built around real family life</h2>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
+            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what you already do well, and building from there.</p>
+            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
+            <p>The goal is less stress and more room for you to enjoy time with your family.</p>
+          </div>
+        </div>
+        <div class="social-links" aria-label="Interwoven Family Care social links">
+          <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+            <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+            Substack
+          </a>
+          <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+            <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+            Facebook
+          </a>
+          <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+            <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+            Instagram
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2923,63 +3309,49 @@
                 <article class="support-card anchor-target" data-support-index="0" id="implementation-resources">
                   <span class="support-card-kicker">From Advice to Home</span>
                   <h3>Making Recommendations Work</h3>
-                  <p>Taking therapy strategies, provider recommendations, school ideas, and other good advice, then turning them into practical actions at home. We can also help connect you with local, trusted resources and community supports.</p>
-                  <p class="support-card-detail-title">When good advice needs real life</p>
-                  <p>You may already have recommendations, ideas, or next steps. We help sort through them, adapt them to your home, and make them usable for your actual family rhythm.</p>
+                  <p>We take therapy strategies, provider recommendations, school ideas, and other good advice and shape them into practical actions that fit your family&rsquo;s real rhythm.</p>
+                  <p class="support-card-format">Local resources and community connections can be part of the conversation.</p>
                 </article>
                 <article class="support-card anchor-target" data-support-index="1" id="routines-transitions">
-                  <h3>Smoother Days</h3>
-                  <span class="support-card-subtitle">Routines &amp; Transitions</span>
-                  <p>Support for the parts of the day that can take the most energy: mornings, bedtime, leaving the house, after-school transitions, appointments, and reset moments.</p>
-                  <p class="support-card-detail-title">When the day keeps getting stuck</p>
-                  <p>We look at what is happening inside the routine and build small supports that help daily life feel steadier, more predictable, and more manageable.</p>
+                  <span class="support-card-kicker">Smoother Days</span>
+                  <h3>Routines &amp; Transitions</h3>
+                  <p>We look closely at the moments where the day keeps getting stuck and build small, usable changes for mornings, bedtime, leaving, returning home, appointments, and reset moments.</p>
                 </article>
                 <article class="support-card" data-support-index="2">
-                  <h3>Whole-Family Support</h3>
-                  <span class="support-card-subtitle">Family Support</span>
-                  <p>Relationship-based care for families whose needs are more layered than standard childcare can hold.</p>
-                  <p>This may include caregiver support, childcare, immediate problem-solving, and practical planning.</p>
-                  <p class="support-card-detail-title">When care needs the whole picture</p>
-                  <p>Your family may need support that understands the children, caregivers, routines, stress, strengths, and context around the need.</p>
+                  <span class="support-card-kicker">Whole-Family Support</span>
+                  <h3>Family Support</h3>
+                  <p>We hold the whole picture&mdash;children, caregivers, relationships, routines, stress, strengths, and capacity&mdash;so care can respond to what the family actually needs.</p>
+                  <p class="support-card-format">This may include caregiver support, childcare, practical planning, or immediate problem-solving.</p>
                 </article>
                 <article class="support-card anchor-target" data-support-index="3" id="breathing-room">
-                  <h3>Breathing Room</h3>
-                  <span class="support-card-subtitle">Respite &amp; In-Home Support</span>
-                  <p>Sometimes help is having another capable adult in the house during the parts of the week that take the most out of everyone, especially you.</p>
-                  <p>Practical support that reduces overwhelm and gives your family more room to recover, connect, and reset as a family.</p>
-                  <p class="support-card-detail-title">When your capacity needs care too</p>
-                  <p>This can be for the days when everyone needs care, the routine needs support, and you need room to recover without carrying it all alone.</p>
+                  <span class="support-card-kicker">Breathing Room</span>
+                  <h3>Respite &amp; In-Home Support</h3>
+                  <p>Another capable adult joins the household during demanding stretches, making room for care, recovery, connection, and a little more breathing room.</p>
+                  <p class="support-card-format">Available as practical in-home care and respite.</p>
                 </article>
                 <article class="support-card" data-support-index="4">
-                  <h3>Spaces That Support You</h3>
-                  <span class="support-card-subtitle">Environment Support</span>
-                  <p>Tell us what is not working, let us observe what daily life is asking of your space, and we can help shape indoor and outdoor areas with less friction.</p>
-                  <p>This may include bathroom or bedroom independence, sensory and regulation supports, play setup, movement needs, or small changes that help the home work better for everyone who lives there.</p>
-                  <p class="support-card-detail-title">When the environment is part of the support</p>
-                  <p>Your child may need care shaped around regulation, communication, sensory needs, independence, and your family&rsquo;s rhythm. We help notice what the space is asking of everyone and adjust it in practical ways.</p>
+                  <span class="support-card-kicker">Spaces That Support You</span>
+                  <h3>Environment Support</h3>
+                  <p>We notice where the home is creating friction and make practical changes that support regulation, communication, movement, independence, and everyday use.</p>
+                  <p class="support-card-format">Indoor and outdoor spaces can both be part of the work.</p>
                 </article>
                 <article class="support-card" data-support-index="5">
-                  <h3>Prepared to Speak Up</h3>
-                  <span class="support-card-subtitle">Advocacy Preparation</span>
-                  <p>Navigating schools, providers, IEP meetings, 504 plans, referrals, waitlists, and other systems while carrying family life is a lot.</p>
-                  <p>We can help you organize questions, notes, priorities, and next steps so you feel more prepared to advocate for your family.</p>
-                  <p class="support-card-detail-title">When advocacy needs steadier footing</p>
-                  <p>You may be preparing for meetings, appointments, referrals, or support decisions and want help making sense of what matters most before you walk in.</p>
+                  <span class="support-card-kicker">Prepared to Speak Up</span>
+                  <h3>Advocacy Preparation</h3>
+                  <p>We help you sort questions, notes, priorities, and next steps before school meetings, provider appointments, referrals, waitlists, IEPs, or 504 conversations.</p>
+                  <p class="support-card-format">Preparation and organization only; IFC does not provide legal or special-education representation.</p>
                 </article>
                 <article class="support-card" data-support-index="6">
                   <span class="support-card-kicker">A place to think it through</span>
                   <h3>Virtual Family Coaching</h3>
-                  <p>Focused online support for a routine, transition, school or provider concern, home-environment question, or advice that still needs to become usable in real life.</p>
-                  <p class="support-card-price">60 minutes &middot; $120</p>
-                  <p class="support-card-price">Three-session series &middot; $345</p>
-                  <a class="support-card-link" href="/pricing-examples/#virtual-family-coaching">View Coaching Sessions</a>
+                  <p>Bring one focused routine, transition, school or provider concern, home-environment question, or recommendation. We will talk it through together, sort what matters, and make the advice more usable in real life.</p>
+                  <p class="support-card-format">Available virtually.</p>
                 </article>
                 <article class="support-card" data-support-index="7">
                   <span class="support-card-kicker">Support That Fits</span>
                   <h3>Family Support Planning</h3>
-                  <p>We look at what is happening across routines, relationships, communication, environment, and caregiver capacity, then shape practical next steps around your family&rsquo;s real life.</p>
-                  <p class="support-card-detail-title">When the plan needs to match the family</p>
-                  <p>A support plan should be easy to follow and able to change when your family&rsquo;s needs change.</p>
+                  <p>We look across routines, relationships, communication, environment, and caregiver capacity, then shape practical next steps around your family&rsquo;s actual life.</p>
+                  <p class="support-card-format">The plan can change as your family&rsquo;s needs change.</p>
                 </article>
               </div>
             </div>
@@ -3062,32 +3434,61 @@
         <div class="payment-note">
           <p class="payment-kicker">An open and honest conversation</p>
           <h2>Cost of Care</h2>
-          <p>You do not need to know which option fits before reaching out. Start with what feels hard, and we can talk through what may help and what it will cost.</p>
-          <div class="pricing-summary-grid" aria-label="Starting prices">
-            <article>
-              <h3>Free Introductory Conversation</h3>
-              <p>Free &middot; up to 30 minutes</p>
-            </article>
-            <article>
-              <h3>Care-First Support</h3>
-              <p>$40 per hour &middot; three-hour minimum</p>
-            </article>
-            <article>
-              <h3>Virtual Family Coaching</h3>
-              <p>$120 &middot; 60 minutes</p>
-            </article>
-            <article>
-              <h3>Focused In-Home Visit</h3>
-              <p>$225 &middot; two hours</p>
-            </article>
-            <article>
-              <h3>Monthly Family Support</h3>
-              <p>$900 per month</p>
-            </article>
-          </div>
+          <p>Interwoven Family Care is private pay at this time. Cost is something we can talk through as soon as you want. You do not need a perfect plan before reaching out. We can talk about what would help, what feels realistic, and what options are worth exploring.</p>
+          <p>IFC is learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
+          <p>Talking through care also means talking through what is sustainable for your family. That includes financially. The goal is to work with families openly in a way that is honest, practical, and clear. Any cost is agreed clearly before support begins.</p>
           <div class="payment-actions">
             <a class="btn btn-ghost" href="/pricing-examples/">See Pricing &amp; Support Options</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
+    <section class="section" id="faqs">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">FAQs</p>
+        <h2>Common Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-complex-question" aria-expanded="true" aria-controls="faq-complex-answer">Do you support more complex family needs?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-complex-answer" role="region" aria-labelledby="faq-complex-question">
+              <p>Yes. This is central to our work. We work with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and more. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow with real life.</p>
+            </div>
+          </article>
+          <article class="faq-item anchor-target" id="support-example">
+            <h3><button class="faq-question" type="button" id="faq-support-question" aria-expanded="true" aria-controls="faq-support-answer">What does support look like?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-support-answer" role="region" aria-labelledby="faq-support-question">
+              <p>Support is shaped around your family. It could be during the after-school stretch, when everyone is tired and still needs care, dinner, help winding down, and connection.</p>
+              <p>In those moments, we can bring another steady adult into your home: playing, helping with transitions, supporting feelings, noticing needs, folding laundry, loading dishes, organizing a space that is not working, or talking through what keeps feeling hardest.</p>
+              <p>We pay attention to your patterns, stress points, communication style, and what might help tomorrow feel a little smoother.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-adaptive-question" aria-expanded="true" aria-controls="faq-adaptive-answer">What does "adaptive" care mean?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-adaptive-answer" role="region" aria-labelledby="faq-adaptive-question">
+              <p>Adaptive care changes with your family&rsquo;s needs, schedule, and capacity. We do not ask families to fit into a box. We build care around your real situation and adjust as your needs change.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-ages-question" aria-expanded="true" aria-controls="faq-ages-answer">What ages do you work with?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-ages-answer" role="region" aria-labelledby="faq-ages-question">
+              <p>Interwoven Family Care supports families with children and youth from birth through 18. Care may include adult caregivers, siblings, and extended family. If you are wondering whether your situation fits, tell us about your household and what you are carrying.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-areas-question" aria-expanded="true" aria-controls="faq-areas-answer">What areas do you serve?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-areas-answer" role="region" aria-labelledby="faq-areas-question">
+              <p>In-home support is available in Tacoma and nearby Pierce County. Virtual Family Coaching is available separately. Not sure whether you are in range? Reach out and we can talk it through.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-scope-question" aria-expanded="true" aria-controls="faq-scope-answer">Is IFC therapy or clinical treatment?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-scope-answer" role="region" aria-labelledby="faq-scope-question">
+              <p>No. We are not therapy, clinical treatment, legal representation, special education representation, formal case management, medical care, or crisis support. We offer practical, relationship-based family support and coaching that can help carry recommendations, routines, and everyday care into real life.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -3120,43 +3521,6 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
-    <section class="section" id="faqs">
-      <div class="wrap" data-reveal>
-        <p class="eyebrow">FAQs</p>
-        <h2>Common Questions</h2>
-        <div class="faq-list">
-          <details>
-            <summary>Do you support more complex family needs?</summary>
-            <p>Yes. This is central to our work. We work with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and more. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow with real life.</p>
-          </details>
-          <details class="anchor-target" id="support-example">
-            <summary>What does support look like?</summary>
-            <p>Support is shaped around your family. It could be during the after-school stretch, when everyone is tired and still needs care, dinner, help winding down, and connection.</p>
-            <p>In those moments, we can bring another steady adult into your home: playing, helping with transitions, supporting feelings, noticing needs, folding laundry, loading dishes, organizing a space that is not working, or talking through what keeps feeling hardest.</p>
-            <p>We pay attention to your patterns, stress points, communication style, and what might help tomorrow feel a little smoother.</p>
-          </details>
-          <details>
-            <summary>What does "adaptive" care mean?</summary>
-            <p>Adaptive care changes with your family&rsquo;s needs, schedule, and capacity. We do not ask families to fit into a box. We build care around your real situation and adjust as your needs change.</p>
-          </details>
-          <details>
-            <summary>What ages do you work with?</summary>
-            <p>Interwoven Family Care supports families with children and youth from birth through 18. Care may include adult caregivers, siblings, and extended family. If you are wondering whether your situation fits, tell us about your household and what you are carrying.</p>
-          </details>
-          <details>
-            <summary>What areas do you serve?</summary>
-            <p>In-home support is available in Tacoma and nearby Pierce County. Virtual Family Coaching is available separately. Not sure whether you are in range? Reach out and we can talk it through.</p>
-          </details>
-          <details>
-            <summary>Is IFC therapy or clinical treatment?</summary>
-            <p>No. We are not therapy, clinical treatment, legal representation, special education representation, formal case management, medical care, or crisis support. We offer practical, relationship-based family support and coaching that can help carry recommendations, routines, and everyday care into real life.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
     <section class="section" id="about-bri">
       <div class="wrap" data-reveal>
         <p class="eyebrow">About Bri</p>
@@ -3171,37 +3535,6 @@
         <p>Again and again, my work has brought me alongside children with higher support needs and families holding several kinds of complexity at once. I am comfortable in the thick of family life and am happy to jump in no matter the mess.</p>
         <p>My background includes Reggio Emilia-inspired programs, Montessori, Head Start and Early Head Start, in-home care, and community-based family support. I lean towards play-based learning and relationship-centered practices and have deep respect for environments that encourage independence, curiosity, critical thinking, regulation, and belonging.</p>
         <p>More than anything, I believe this work has to be specific to your family. I want you to reach out and talk with me, because your family's nuance matters. Your children, your household, your schedule, your worries, your values, and your hopes all shape what care should look like for you.</p>
-      </div>
-    </section>
-
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
-    <section class="section" id="about">
-      <div class="wrap" data-reveal>
-        <p class="eyebrow">About IFC</p>
-        <h2>Built around real family life</h2>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
-            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what you already do well, and building from there.</p>
-            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
-            <p>The goal is less stress and more room for you to enjoy time with your family.</p>
-          </div>
-        </div>
-        <div class="social-links" aria-label="Interwoven Family Care social links">
-          <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
-            <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
-            Substack
-          </a>
-          <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
-            <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
-            Facebook
-          </a>
-          <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
-            <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
-            Instagram
-          </a>
-        </div>
       </div>
     </section>
 
@@ -3562,21 +3895,6 @@
           text: '"All human beings are born free and equal in dignity and rights."',
           author: 'Universal Declaration of Human Rights',
           source: 'Article 1'
-        },
-        {
-          text: '"Where, after all, do universal human rights begin? In small places, close to home."',
-          author: 'Eleanor Roosevelt',
-          source: '"In Your Hands" remarks, 1958'
-        },
-        {
-          text: '"True belonging doesn\'t require you to change who you are; it requires you to be who you are."',
-          author: 'Bren\u00e9 Brown',
-          source: 'Braving the Wilderness, 2017'
-        },
-        {
-          text: '"The curious paradox is that when I accept myself just as I am, then I can change."',
-          author: 'Carl Rogers',
-          source: 'On Becoming a Person, 1961'
         }
       ];
 
@@ -3643,10 +3961,35 @@
       scheduleQuoteRefresh();
     }
 
+    const faqButtons = document.querySelectorAll('.faq-question');
+
+    const setFaqState = (button, expanded) => {
+      const answer = document.getElementById(button.getAttribute('aria-controls'));
+      button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      button.querySelector('[aria-hidden="true"]').textContent = expanded ? '\u2212' : '+';
+      if (answer) answer.hidden = !expanded;
+    };
+
+    faqButtons.forEach(button => {
+      setFaqState(button, false);
+      button.addEventListener('click', () => {
+        setFaqState(button, button.getAttribute('aria-expanded') !== 'true');
+      });
+      button.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        setFaqState(button, button.getAttribute('aria-expanded') !== 'true');
+      });
+    });
+
     const openLinkedDetails = () => {
       if (!location.hash) return;
       const target = document.getElementById(location.hash.slice(1));
       if (target && target.tagName.toLowerCase() === 'details') target.open = true;
+      if (target && target.classList.contains('faq-item')) {
+        const button = target.querySelector('.faq-question');
+        if (button) setFaqState(button, true);
+      }
     };
 
     window.addEventListener('hashchange', openLinkedDetails);
