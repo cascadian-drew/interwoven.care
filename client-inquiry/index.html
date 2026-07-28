@@ -553,27 +553,23 @@
       text-underline-offset: 0.18em;
     }
 
+    .inquiry-form-wrap {
+      width: min(100%, 560px);
+      margin-inline: auto;
+    }
+
     .form-embed {
-      margin-top: 0;
+      width: 100%;
+      margin: 0;
       min-height: 18rem;
-      display: flex;
-      justify-content: center;
-      padding: 0.6rem 0.5rem;
-      border: 1px solid transparent;
-      border-top-width: 4px;
-      border-radius: 12px;
-      background:
-        linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
-        linear-gradient(90deg, rgba(63, 122, 115, 0.84), rgba(122, 46, 79, 0.55), rgba(217, 161, 93, 0.64)) border-box;
-      box-shadow: 0 4px 16px rgba(43, 43, 43, 0.055);
-      text-align: center;
+      background: #F6F3EE;
     }
 
     .form-embed iframe {
+      display: block;
       width: 100%;
-      max-width: 640px;
+      height: 4700px;
       border: 0;
-      border-radius: 8px;
       background: #fff;
     }
 
@@ -674,14 +670,22 @@
         border-top: 1px solid rgba(217, 161, 93, 0.56);
       }
 
-      .form-embed {
-        padding: 0.55rem 0.35rem;
-        border-radius: 12px;
-      }
+    }
 
-      .form-embed iframe {
-        border-radius: 8px;
-      }
+    @media (max-width: 600px) {
+      .form-embed iframe { height: 4800px; }
+    }
+
+    @media (max-width: 520px) {
+      .form-embed iframe { height: 5100px; }
+    }
+
+    @media (max-width: 460px) {
+      .form-embed iframe { height: 5450px; }
+    }
+
+    @media (max-width: 420px) {
+      .form-embed iframe { height: 5620px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -776,10 +780,10 @@
     </section>
 
     <section class="section inquiry-form" id="client-inquiry-form" aria-label="Client Inquiry Form">
-      <div class="wrap">
-        <p class="form-responder-link"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener">Open Inquiry Form in a new tab</a></p>
+      <div class="wrap inquiry-form-wrap">
+        <p class="form-responder-link"><a href="https://forms.gle/kNV39pLtgySJDZJ66" target="_blank" rel="noopener">Open Inquiry Form in a new tab</a></p>
         <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
-          <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="4524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe title="Interwoven Family Care inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="560" height="4700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
       </div>
     </section>
