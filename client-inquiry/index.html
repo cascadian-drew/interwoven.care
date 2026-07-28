@@ -291,13 +291,13 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: clamp(1.4rem, 3vh, 2.1rem) 1.5rem clamp(1.1rem, 2.4vh, 1.8rem);
+      padding: clamp(0.85rem, 2vh, 1.2rem) 1.5rem clamp(0.8rem, 1.8vh, 1.1rem);
       background-image:
         radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
-    .crest { width: min(63vw, 270px); }
+    .crest { width: min(32vw, 10vh, 96px); }
 
     h1, h2, h3 {
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
@@ -307,37 +307,62 @@
     }
 
     h1 {
-      margin: 0.55rem 0 0;
+      margin: 0.35rem 0 0;
       max-width: 42rem;
-      font-size: clamp(2.25rem, 5vw, 3.45rem);
+      font-size: clamp(1.9rem, 4.5vw, 2.75rem);
       color: var(--plum);
     }
 
-    .hero-subhead {
-      margin: 0.25rem auto 0;
-      max-width: 40rem;
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 700;
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      line-height: 1.35;
-      color: var(--ink);
-      text-wrap: balance;
-    }
-
     .hero-intro {
-      margin: 0.45rem auto 0;
-      max-width: 46rem;
-      font-size: clamp(1rem, 2.2vw, 1.08rem);
-      line-height: 1.55;
+      margin: 0.4rem auto 0;
+      max-width: 44rem;
+      font-size: clamp(0.94rem, 1.8vw, 1.04rem);
+      line-height: 1.45;
       color: rgba(43, 43, 43, 0.86);
       text-wrap: balance;
     }
 
-    .hero-note {
-      margin: 0.35rem auto 0;
+    .intro-conversation {
+      margin: 0.65rem auto 0;
+      max-width: 46rem;
+      padding: 0.6rem 0.9rem 0.55rem;
+      border-top: 1px solid rgba(51, 106, 100, 0.4);
+      border-bottom: 1px solid rgba(217, 161, 93, 0.56);
+    }
+
+    .intro-conversation h2 {
+      margin: 0;
+      color: var(--deep-teal);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .conversation-duration {
+      margin: 0.15rem auto 0;
+      color: var(--plum);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.6vw, 0.96rem);
+      line-height: 1.4;
+    }
+
+    .intro-conversation > p:not(.conversation-duration) {
+      margin: calc(0.42rem + 15pt) auto 0;
       max-width: 44rem;
-      font-size: 0.94rem;
-      line-height: 1.5;
+      color: rgba(43, 43, 43, 0.84);
+      font-size: clamp(0.91rem, 1.55vw, 0.98rem);
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    .hero-inquiry-action {
+      margin-top: var(--space-heading-intro);
+    }
+
+    .hero-note {
+      margin: var(--space-divider) auto 0;
+      max-width: 44rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
       color: rgba(43, 43, 43, 0.66);
       text-wrap: balance;
     }
@@ -346,12 +371,8 @@
       padding: clamp(1.8rem, 4.5vh, 3rem) 1.5rem;
     }
 
-    #start-client-inquiry {
-      padding-top: 0;
-    }
-
-    .hero + .section {
-      padding-top: 0.45rem;
+    #client-inquiry-form {
+      scroll-margin-top: calc(var(--nav-h) + 0.75rem);
     }
 
     .wrap { max-width: 44rem; margin: 0 auto; }
@@ -496,30 +517,44 @@
       text-align: center;
     }
 
-    .start-actions {
-      margin-top: 0.85rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.85rem;
+    .start-panel h2 {
+      margin: 0;
+      color: var(--deep-teal);
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
     }
 
-    .form-link {
-      margin: 0 auto 0.7rem;
+    .start-panel > p {
+      max-width: 46rem;
+      margin: var(--space-heading-intro) auto 0;
+    }
+
+    .start-panel .secondary-email {
+      margin-top: var(--space-heading-intro);
+      font-size: 0.94rem;
+      color: rgba(43, 43, 43, 0.72);
+    }
+
+    .secondary-email a {
+      color: var(--deep-teal);
+      font-weight: 700;
+      text-underline-offset: 0.18em;
+    }
+
+    .form-responder-link {
+      margin: 0 auto 0.75rem;
+      font-size: 0.9rem !important;
+      line-height: 1.4 !important;
       text-align: center;
     }
 
-    .form-guidance {
-      margin: 0 auto 0.85rem;
-      max-width: 38rem;
-      font-size: 0.94rem !important;
-      line-height: 1.5 !important;
-      color: rgba(43, 43, 43, 0.72) !important;
-      text-align: center;
+    .form-responder-link a {
+      color: var(--deep-teal);
+      font-weight: 700;
+      text-underline-offset: 0.18em;
     }
 
     .form-embed {
-      margin-top: 1rem;
+      margin-top: 0;
       min-height: 18rem;
       display: flex;
       justify-content: center;
@@ -662,14 +697,20 @@
       margin-bottom: var(--space-heading-intro);
     }
 
-    .section.inquiry-action,
     .section.inquiry-details {
+      padding-top: var(--space-section-compact);
       padding-bottom: var(--space-section-compact);
     }
 
-    .section.inquiry-details,
     .section.inquiry-form {
       padding-top: var(--space-section-compact);
+      padding-bottom: var(--space-section-compact);
+    }
+
+    @media (min-width: 721px) {
+      .crest {
+        width: min(18vw, 13vh, 110px);
+      }
     }
 
     @media (max-width: 720px) {
@@ -680,6 +721,15 @@
         --space-heading-intro: 0.75rem;
         --space-intro-content: clamp(1.2rem, 5vw, 1.55rem);
         --space-section-tail: clamp(1.25rem, 5vw, 1.65rem);
+      }
+
+      .hero {
+        padding-top: calc(var(--space-divider) / 2);
+        padding-bottom: var(--space-divider);
+      }
+
+      .crest {
+        width: min(15vw, 6.5vh, 56px);
       }
     }
   </style>
@@ -711,16 +761,26 @@
   <main id="main">
     <section class="hero">
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
-      <h1>Client Inquiry</h1>
-      <p class="hero-subhead">Start with what feels hard</p>
-      <p class="hero-intro">You do not need to know the right service before reaching out. Start with what feels hard. This form helps us understand what kind of support may fit your family, what feels realistic, and what next steps might make sense.</p>
+      <h1>Start with what feels hard.</h1>
+      <p class="hero-intro">Fill out the inquiry form to tell me a little bit about what&rsquo;s going on for your family and for you so I can reach out and we can figure out what comes next together.</p>
+      <div class="intro-conversation" aria-labelledby="intro-conversation-heading">
+        <h2 id="intro-conversation-heading">Free Introductory Conversation</h2>
+        <p class="conversation-duration">Up to 30 minutes by phone or video call</p>
+        <p>You can start with what feels hardest, what advice you&rsquo;ve already been given, what&rsquo;s working, and what still doesn&rsquo;t fit your child, your family, or your real life. We can go from there.</p>
+        <p>This is not a coaching session. There is no pressure to book anything. This is a chance to meet me, ask questions, and see how we fit.</p>
+      </div>
+      <div class="hero-inquiry-action">
+        <a class="btn btn-primary" href="#client-inquiry-form">Start the Inquiry</a>
+      </div>
       <p class="hero-note">Responses are collected through Google Forms.<br>Please do not include detailed medical, legal, custody, or crisis information here.</p>
     </section>
 
-    <section class="section inquiry-action" id="start-client-inquiry" aria-label="Start the client inquiry">
+    <section class="section inquiry-form" id="client-inquiry-form" aria-label="Client Inquiry Form">
       <div class="wrap">
-        <p class="form-link"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener" aria-label="Open Inquiry Form (opens in a new tab)">Open Inquiry Form</a></p>
-        <p class="form-guidance">Begin by describing what feels hard in your own words. If you are unsure which kind of support fits, choose &ldquo;Not sure yet, but we need support.&rdquo; We can talk through the service options afterward.</p>
+        <p class="form-responder-link"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform" target="_blank" rel="noopener">Open Inquiry Form in a new tab</a></p>
+        <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
+          <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="4524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
       </div>
     </section>
 
@@ -763,21 +823,11 @@
             <figcaption>- Heather Jeng</figcaption>
           </figure>
         </div>
-      </div>
-    </section>
-
-    <section class="section inquiry-form" aria-label="Client Inquiry Form">
-      <div class="wrap">
-        <div class="form-embed" aria-label="Client Inquiry and Family Fit Google Form">
-          <iframe title="Interwoven Family Care client inquiry form" src="https://docs.google.com/forms/d/e/1FAIpQLSfcU3zcw3dUBsKj7rrah9bmvRd1ndJIje8t0K_OyOboTHsFJA/viewform?embedded=true" width="640" height="4524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
 
         <div class="start-panel">
-          <p><strong>Questions before you start?</strong><br>The introductory conversation is a brief chance to share what feels hard, ask questions, and see whether Interwoven Family Care may be a good fit. A paid coaching session gives us a full hour to look closely at one concern, talk through what has already happened, and choose what to try next.</p>
-          <div class="start-actions">
-            <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule an Introductory Conversation</a>
-            <a class="btn btn-secondary" href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">Email Interwoven Family Care</a>
-          </div>
+          <h2>What happens next</h2>
+          <p>After you submit the form, I&rsquo;ll read through your inquiry and reach out using the contact method you chose. From there, we can schedule the free introductory conversation and figure out what comes next together.</p>
+          <p class="secondary-email">Have a question before filling out the form? Email <a href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">bri@interwoven.care</a>.</p>
           <p class="note">This is for non-urgent inquiries only.</p>
         </div>
       </div>
