@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interwoven Family Care™ - Family Support in Tacoma &amp; Nearby Pierce County</title>
-  <meta name="description" content="Interwoven Family Care™ offers family coaching and adaptive in-home support in Tacoma and nearby Pierce County, with focused virtual family coaching available.">
+  <title>Interwoven Family Care™ | Family Coaching &amp; Practical Support</title>
+  <meta name="description" content="Adaptive in-home family coaching and practical support for families with children and teens in Tacoma and nearby Pierce County, with virtual coaching offered separately.">
   <link rel="canonical" href="https://interwoven.care/">
   <link rel="icon" type="image/png" href="assets/heart.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/">
   <meta property="og:title" content="Interwoven Family Care™">
-  <meta property="og:description" content="Family coaching and adaptive in-home support for routines, resources, childcare, and real life, with virtual family coaching available.">
+  <meta property="og:description" content="Support that fits real family life: adaptive in-home family coaching and practical support in Tacoma and nearby Pierce County.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -2192,6 +2192,60 @@
       text-align: left;
     }
 
+    .process-list {
+      margin: 1.7rem 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      list-style: none;
+      counter-reset: support-step;
+    }
+
+    .process-list li {
+      position: relative;
+      min-width: 0;
+      padding: 1.05rem 1.1rem 1.05rem 3.4rem;
+      border: 1px solid rgba(51, 106, 100, 0.2);
+      border-radius: 1rem;
+      background: rgba(255, 253, 249, 0.72);
+      box-shadow: 0 8px 24px rgba(43, 43, 43, 0.05);
+      counter-increment: support-step;
+    }
+
+    .process-list li::before {
+      content: counter(support-step);
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--ivory);
+      font-family: var(--font-brand);
+      font-weight: 700;
+    }
+
+    .process-list strong,
+    .process-list span {
+      display: block;
+    }
+
+    .process-list strong {
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      line-height: 1.35;
+    }
+
+    .process-list span {
+      margin-top: 0.35rem;
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
     @media (max-width: 900px) {
       .support-card {
         min-height: 0;
@@ -3296,9 +3350,24 @@
         top: 0.8rem;
         left: -0.03rem;
       }
+
+      .process-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 540px) {
+      .hero-actions {
+        width: min(100%, 22rem);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        min-width: 0;
+      }
+
       #offerings::before,
       #philosophy::before,
       #kind-words::before {
@@ -3336,7 +3405,7 @@
     "name": "Interwoven Family Care™",
     "url": "https://interwoven.care/",
     "email": "bri@interwoven.care",
-    "description": "Family coaching and adaptive in-home support in Tacoma and nearby Pierce County, with focused virtual family coaching available.",
+    "description": "Adaptive in-home family coaching and practical support for families with children and teens in Tacoma and nearby Pierce County, with virtual coaching offered separately.",
     "areaServed": "Tacoma and nearby Pierce County, Washington"
   }
   </script>
@@ -3371,28 +3440,25 @@
         <a href="/pricing-examples/">Pricing</a>
         <a href="/#faqs">FAQs</a>
         <a href="/#about-bri">About Bri</a>
-        <a class="nav-inquiry" href="/client-inquiry/">New Client Inquiry</a>
+        <a class="nav-inquiry" href="/client-inquiry/">Start an Inquiry</a>
       </div>
     </div>
   </nav>
 
   <main id="main">
-    <div class="announcement" aria-label="Fall family support">
-      <p class="announcement-main">With fall comes a new school year, shifting schedules and routines, and saying goodbye to your free time.</p>
-      <p class="announcement-support">Book an hour to talk it through and figure out how to flow with it all.</p>
-    </div>
-
     <section class="hero" id="top">
       <img class="crest rise d1" src="assets/house.png" alt="" width="640" height="709">
       <h1 style="margin:0; line-height:0;">
         <span class="sr-only">Interwoven Family Care™</span>
         <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
       </h1>
-      <p class="lede rise d3">Adaptive in-home family coaching with hands-on practical support for you.</p>
+      <p class="lede rise d3">Support that fits real family life.</p>
+      <p class="sub rise d3">Adaptive in-home family coaching and practical support for families with children and teens in Tacoma and nearby Pierce County. Virtual coaching is offered separately.</p>
       <p class="hero-quote rise d4">&ldquo;I highly recommend her to families seeking child care or support, especially families with added layers of needs.&rdquo;<span>&mdash; Heather Jeng</span></p>
-      <p class="sub rise d3">In Tacoma and nearby Pierce County - virtual coaching available.</p>
+      <p class="sub rise d3"><strong>Start with what feels hard.</strong></p>
       <div class="hero-actions rise d4">
-        <a class="btn btn-primary" href="/client-inquiry/">New Client Inquiry</a>
+        <a class="btn btn-primary" href="/client-inquiry/">Start an Inquiry</a>
+        <a class="btn btn-ghost" href="#offerings">Explore Support</a>
       </div>
     </section>
 
@@ -3401,28 +3467,8 @@
     <section class="section path-overview" id="what-feels-hard">
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">Start With Real Life</p>
-        <h2>What feels hard right now?</h2>
-        <p class="path-intro">You do not need to know which service to ask for. Start with the part of family life that keeps taking more than you have to give.</p>
-        <div class="path-grid">
-          <a class="path-card" href="#offerings">
-            <span class="path-kicker">Advice into action</span>
-            <h3>I have recommendations, but making them work at home is another thing.</h3>
-            <p>We can turn good advice, school ideas, provider recommendations, or a diagnosis into practical next steps that fit your household.</p>
-            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a class="path-card" href="#offerings">
-            <span class="path-kicker">Stuck parts of the day</span>
-            <h3>Our routines, transitions, or home setup keep creating friction.</h3>
-            <p>We can look closely at where the day gets stuck and shape small changes around your family&rsquo;s rhythm, needs, and capacity.</p>
-            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a class="path-card" href="#offerings">
-            <span class="path-kicker">More support, less strain</span>
-            <h3>We need breathing room, another capable adult, or simply a place to begin.</h3>
-            <p>We can help with in-home support, respite, focused coaching, practical planning, or figuring out together what would help most.</p>
-            <span class="path-link">See ways we can help <span aria-hidden="true">&rarr;</span></span>
-          </a>
-        </div>
+        <h2>The advice makes sense. So why isn&rsquo;t it working for us?</h2>
+        <p class="path-intro">On paper, it should work. Then you look at your family, your real life, and think: how am I supposed to make that work? Show me what the problem looks like at home, what you have tried, and how the advice has been going. I will help you pull it apart, notice what may be getting missed, and suggest something different to try.</p>
       </div>
     </section>
 
@@ -3430,80 +3476,55 @@
 
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow offerings-heading">Support That Fits</p>
-        <h2>Ways We Support You</h2>
-        <p class="fit-intro"><span class="fit-intro-reduced">For the parts of family life that still feel hard after the appointment, diagnosis, school meeting, or good advice.</span><span class="fit-intro-standard">You do not need the perfect words before reaching out.</span></p>
-        <div class="support-bridge">
-          <p>Interwoven Family Care™ is for what comes after the advice, when you don&rsquo;t have room for one more thing but life keeps asking of you anyway. We help you make recommendations work, get ready to speak up in appointments, figure out where to begin, and get the support that makes a difference. You don&rsquo;t have to figure out how to make it work alone.</p>
-          <p>Together, we sit with the chaos-beast as it is and find the threads of your life that matter. We gently work them loose, one at a time, until it is untangled enough to move without tugging the rest of your life out of place.</p>
-        </div>
+        <p class="eyebrow offerings-heading">Support Pathways</p>
+        <h2>Support that fits real family life</h2>
+        <p class="fit-intro"><span class="fit-intro-reduced">You do not need the perfect service name before reaching out.</span><span class="fit-intro-standard">Start with what feels hard.</span></p>
         <div class="support-carousel" data-support-carousel>
           <div class="support-carousel-stage">
             <div class="support-carousel-viewport" data-support-carousel-viewport>
               <div class="cards support-carousel-track" data-support-carousel-track>
                 <article class="support-card anchor-target" data-support-index="0" id="implementation-resources">
                   <span class="support-card-kicker">From Advice to Home</span>
-                  <h3>Making Recommendations Work</h3>
-                  <p>We take therapy strategies, provider recommendations, school ideas, and other good advice and shape them into practical actions that fit your family&rsquo;s real rhythm.</p>
-                  <p class="support-card-format">Local resources and community connections can be part of the conversation.</p>
+                  <h3>Making Advice Usable</h3>
+                  <p>Turn recommendations, strategies, school ideas, and good intentions into practical actions that fit your home, schedule, people, materials, and capacity.</p>
                 </article>
-                <article class="support-card anchor-target" data-support-index="1" id="routines-transitions">
+                <article class="support-card" data-support-index="1">
+                  <span class="support-card-kicker">A Different Way Through</span>
+                  <h3>Why Do We Keep Ending Up Here?</h3>
+                  <p>The same moment keeps falling apart, or you keep circling the same decision without getting anywhere. Show me what keeps happening, and I will help you pull it apart and find something different to try.</p>
+                </article>
+                <article class="support-card anchor-target" data-support-index="2" id="routines-transitions">
                   <span class="support-card-kicker">Smoother Days</span>
-                  <h3>Routines &amp; Transitions</h3>
-                  <p>We look closely at the moments where the day keeps getting stuck and build small, usable changes for mornings, bedtime, leaving, returning home, appointments, and reset moments.</p>
-                </article>
-                <article class="support-card" data-support-index="2">
-                  <span class="support-card-kicker">Whole-Family Support</span>
-                  <h3>Family Support</h3>
-                  <p>We hold the whole picture&mdash;children, caregivers, relationships, routines, stress, strengths, and capacity&mdash;so care can respond to what the family actually needs.</p>
-                  <p class="support-card-format">This may include caregiver support, childcare, practical planning, or immediate problem-solving.</p>
+                  <h3>Smoother Routines and Transitions</h3>
+                  <p>Support for mornings, bedtime, leaving the house, after-school decompression, meals, cleanup, appointments, caregiver changes, and other moments that take more energy than they seem like they should.</p>
                 </article>
                 <article class="support-card anchor-target" data-support-index="3" id="breathing-room">
                   <span class="support-card-kicker">Breathing Room</span>
-                  <h3>Respite &amp; In-Home Support</h3>
-                  <p>Another capable adult joins the household during demanding stretches, making room for care, recovery, connection, and a little more breathing room.</p>
-                  <p class="support-card-format">Available as practical in-home care and respite.</p>
+                  <h3>Breathing Room</h3>
+                  <p>Sometimes support means another capable adult helping hold the part of the week that takes the most out of everyone. Caregiver relief and child-related care can be part of the larger support plan.</p>
                 </article>
                 <article class="support-card" data-support-index="4">
                   <span class="support-card-kicker">Spaces That Support You</span>
-                  <h3>Environment Support</h3>
-                  <p>We notice where the home is creating friction and make practical changes that support regulation, communication, movement, independence, and everyday use.</p>
-                  <p class="support-card-format">Indoor and outdoor spaces can both be part of the work.</p>
+                  <h3>Spaces That Help</h3>
+                  <p>Small, practical changes can help a space support participation, regulation, access, play, independence, and easier transitions. This is environment support&mdash;not interior design or a Pinterest-perfect makeover.</p>
                 </article>
                 <article class="support-card" data-support-index="5">
                   <span class="support-card-kicker">Prepared to Speak Up</span>
-                  <h3>Advocacy Preparation</h3>
-                  <p>We help you sort questions, notes, priorities, and next steps before school meetings, provider appointments, referrals, waitlists, IEPs, or 504 conversations.</p>
-                  <p class="support-card-format">Preparation and organization only; IFC does not provide legal or special-education representation.</p>
+                  <h3>Prepared to Speak Up</h3>
+                  <p>Organize questions, notes, priorities, and next steps before school or provider meetings. IFC offers preparation, not legal or special-education representation.</p>
                 </article>
                 <article class="support-card" data-support-index="6">
-                  <span class="support-card-kicker">A place to think it through</span>
-                  <h3>Virtual Family Coaching</h3>
-                  <p>Bring one focused routine, transition, school or provider concern, home-environment question, or recommendation. We will talk it through together, sort what matters, and make the advice more usable in real life.</p>
-                  <p class="support-card-format">Available virtually.</p>
-                </article>
-                <article class="support-card" data-support-index="7">
-                  <span class="support-card-kicker">Support That Fits</span>
-                  <h3>Family Support Planning</h3>
-                  <p>We look across routines, relationships, communication, environment, and caregiver capacity, then shape practical next steps around your family&rsquo;s actual life.</p>
-                  <p class="support-card-format">The plan can change as your family&rsquo;s needs change.</p>
+                  <span class="support-card-kicker">Finding a Way Through</span>
+                  <h3>Finding the Next Resource</h3>
+                  <p>Research, compare, and sort possible community resources so the maze feels less impossible. IFC offers navigation, not formal case management or guaranteed access.</p>
                 </article>
               </div>
             </div>
             <button class="support-carousel-arrow support-carousel-previous" type="button" data-support-carousel-previous aria-label="Previous support options">&#8249;</button>
             <button class="support-carousel-arrow support-carousel-next" type="button" data-support-carousel-next aria-label="Next support options">&#8250;</button>
           </div>
-          <p class="sr-only" data-support-carousel-progress aria-live="polite">Support option 1 of 8</p>
+          <p class="sr-only" data-support-carousel-progress aria-live="polite">Support option 1 of 7</p>
         </div>
-        <figure class="quote-cycle" data-quote-cycle aria-live="polite">
-          <blockquote>
-            <p data-quote-text>"All human beings are born free and equal in dignity and rights."</p>
-          </blockquote>
-          <figcaption>
-            <span data-quote-author>Universal Declaration of Human Rights</span>
-            <span data-quote-source>Article 1</span>
-          </figcaption>
-        </figure>
       </div>
     </section>
 
@@ -3515,10 +3536,8 @@
         <h2>Built around real family life</h2>
         <div class="about-grid">
           <div class="about-copy">
-            <p>Interwoven Family Care is made for the parts of family life that do not fit neatly into a preset service: routines, relationships, stress, capacity, values, chaos, and calm.</p>
-            <p>Care is shaped with families, not pushed onto them. The work begins with listening, documenting, noticing what you already do well, and building from there.</p>
-            <p>This work is for families needing practical, relationship-based help that respects the people who live there.</p>
-            <p>The goal is less stress and more room for you to enjoy time with your family.</p>
+            <p>Interwoven Family Care is built for the parts of family life that do not fit neatly into a preset service. Support is shaped with families around what works, what feels hard, what people communicate, what the environment demands, and what the caregiver can realistically carry.</p>
+            <p>The goal is not a polished family or a perfect routine. The goal is more clarity, more support, and more moments when daily life feels workable.</p>
           </div>
         </div>
         <div class="social-links" aria-label="Interwoven Family Care social links">
@@ -3544,7 +3563,7 @@
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">Deeper Philosophy</p>
         <h2>Care Starts With Understanding</h2>
-        <p class="approach-intro">Childcare is one thread in the larger tapestry of family support. Families are whole systems. A hard morning can shape the whole day. Your exhaustion, your child&rsquo;s needs, your home setup, your schedule, and your relationships all shape what is possible.</p>
+        <p class="approach-intro">Childcare is one thread in the larger weave of family support. IFC looks at the people, relationships, routines, environment, stress, strengths, values, and capacity around what feels hard.</p>
 
         <div class="woven-approach" data-woven-approach>
           <article class="woven-panel is-active" style="--panel-color: #6B2945; --panel-shadow: rgba(107, 41, 69, 0.28);" data-woven-panel>
@@ -3574,21 +3593,17 @@
         </div>
 
         <div class="approach-start">
-          <h3 class="approach-start-heading">How We Start</h3>
-          <div class="start-thread">
-            <article>
-              <h4>Reach Out</h4>
-              <p>Send an email, schedule a 30-minute call, or fill out the inquiry form. We&rsquo;ll go from there.</p>
-            </article>
-            <article>
-              <h4>Have a Conversation</h4>
-              <p>You can start with whatever feels hardest, what is already working, what you have tried, or just what you wish felt easier.</p>
-            </article>
-            <article>
-              <h4>Choose Your Own Adventure</h4>
-              <p>Now we can look at what your family needs, what IFC offers, and figure out together what would help most.</p>
-            </article>
-          </div>
+          <p class="eyebrow">Warm entry, clear container</p>
+          <h3 class="approach-start-heading">How Support Begins</h3>
+          <ol class="process-list">
+            <li><strong>Inquiry</strong><span>Tell Bri what feels hard. You do not need the right service name.</span></li>
+            <li><strong>Introductory Conversation</strong><span>Talk through the people, routines, goals, schedule, safety, location, and what you have already tried.</span></li>
+            <li><strong>Support Recommendation</strong><span>Bri recommends a focused session, ongoing support, care-first support, a custom blend, a referral, or another next step.</span></li>
+            <li><strong>Written Scope and Price</strong><span>Before support begins, receive the service scope, communication and documentation limits, schedule, price, and end or review point.</span></li>
+            <li><strong>Agreement and Permissions</strong><span>Complete the agreements, authorizations, emergency information, and other forms the service requires.</span></li>
+            <li><strong>Support Begins</strong><span>Work together in the agreed lane.</span></li>
+            <li><strong>Review and Adjust</strong><span>Notice what is helping, what changed, and whether support should continue, shift, pause, or end.</span></li>
+          </ol>
         </div>
       </div>
     </section>
@@ -3598,13 +3613,12 @@
     <section class="section anchor-target" id="payment">
       <div class="wrap-wide" data-reveal>
         <div class="payment-note">
-          <p class="payment-kicker">An open and honest conversation</p>
+          <p class="payment-kicker">Written scope, clear price</p>
           <h2>Cost of Care</h2>
-          <p>Interwoven Family Care is private pay at this time. Cost is something we can talk through as soon as you want. You do not need a perfect plan before reaching out. We can talk about what would help, what feels realistic, and what options are worth exploring.</p>
-          <p>IFC is learning more about possible funding paths and family support resources. If you already receive services or support, you are welcome to ask whether there may be a connection.</p>
-          <p>Talking through care also means talking through what is sustainable for your family. That includes financially. The goal is to work with families openly in a way that is honest, practical, and clear. Any cost is agreed clearly before support begins.</p>
+          <p>Interwoven Family Care is primarily private pay at this time. You do not need a perfect plan before asking about cost. The website includes examples so families can picture possible support, and every arrangement receives a written scope and price before support begins.</p>
+          <p>IFC is researching future funding and accessibility pathways, but none are promised until they are verified and usable.</p>
           <div class="payment-actions">
-            <a class="btn btn-ghost" href="/pricing-examples/">See Pricing &amp; Support Options</a>
+            <a class="btn btn-ghost" href="/pricing-examples/">See How Pricing Works</a>
           </div>
         </div>
       </div>
@@ -3618,41 +3632,45 @@
         <h2>Common Questions</h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3><button class="faq-question" type="button" id="faq-complex-question" aria-expanded="true" aria-controls="faq-complex-answer">Do you support more complex family needs?<span aria-hidden="true">+</span></button></h3>
-            <div class="faq-answer" id="faq-complex-answer" role="region" aria-labelledby="faq-complex-question">
-              <p>Yes. This is central to our work. We work with families navigating all kinds of complex needs, including Autism, ADHD, sensory needs, developmental differences, and more. Care is shaped through listening, observation, and respect for what each person and the household as a whole are already communicating, so support can grow with real life.</p>
-            </div>
-          </article>
-          <article class="faq-item anchor-target" id="support-example">
-            <h3><button class="faq-question" type="button" id="faq-support-question" aria-expanded="true" aria-controls="faq-support-answer">What does support look like?<span aria-hidden="true">+</span></button></h3>
-            <div class="faq-answer" id="faq-support-answer" role="region" aria-labelledby="faq-support-question">
-              <p>Support is shaped around your family. It could be during the after-school stretch, when everyone is tired and still needs care, dinner, help winding down, and connection.</p>
-              <p>In those moments, we can bring another steady adult into your home: playing, helping with transitions, supporting feelings, noticing needs, folding laundry, loading dishes, organizing a space that is not working, or talking through what keeps feeling hardest.</p>
-              <p>We pay attention to your patterns, stress points, communication style, and what might help tomorrow feel a little smoother.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <h3><button class="faq-question" type="button" id="faq-adaptive-question" aria-expanded="true" aria-controls="faq-adaptive-answer">What does "adaptive" care mean?<span aria-hidden="true">+</span></button></h3>
-            <div class="faq-answer" id="faq-adaptive-answer" role="region" aria-labelledby="faq-adaptive-question">
-              <p>Adaptive care changes with your family&rsquo;s needs, schedule, and capacity. We do not ask families to fit into a box. We build care around your real situation and adjust as your needs change.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <h3><button class="faq-question" type="button" id="faq-ages-question" aria-expanded="true" aria-controls="faq-ages-answer">What ages do you work with?<span aria-hidden="true">+</span></button></h3>
+            <h3><button class="faq-question" type="button" id="faq-ages-question" aria-expanded="true" aria-controls="faq-ages-answer">What ages does IFC serve?<span aria-hidden="true">+</span></button></h3>
             <div class="faq-answer" id="faq-ages-answer" role="region" aria-labelledby="faq-ages-question">
-              <p>Interwoven Family Care supports families with children and youth from birth through 18. Care may include adult caregivers, siblings, and extended family. If you are wondering whether your situation fits, tell us about your household and what you are carrying.</p>
+              <p>Children and youth from birth through 18 are the specialty; support may involve caregivers, siblings, and trusted adults around the child or youth.</p>
             </div>
           </article>
           <article class="faq-item">
-            <h3><button class="faq-question" type="button" id="faq-areas-question" aria-expanded="true" aria-controls="faq-areas-answer">What areas do you serve?<span aria-hidden="true">+</span></button></h3>
+            <h3><button class="faq-question" type="button" id="faq-areas-question" aria-expanded="true" aria-controls="faq-areas-answer">Where does IFC work?<span aria-hidden="true">+</span></button></h3>
             <div class="faq-answer" id="faq-areas-answer" role="region" aria-labelledby="faq-areas-question">
-              <p>In-home support is available in Tacoma and nearby Pierce County. Virtual Family Coaching is available separately. Not sure whether you are in range? Reach out and we can talk it through.</p>
+              <p>Tacoma and nearby Pierce County. Virtual coaching is offered separately. Location and travel fit are confirmed before service.</p>
             </div>
           </article>
           <article class="faq-item">
-            <h3><button class="faq-question" type="button" id="faq-scope-question" aria-expanded="true" aria-controls="faq-scope-answer">Is IFC therapy or clinical treatment?<span aria-hidden="true">+</span></button></h3>
+            <h3><button class="faq-question" type="button" id="faq-diagnosis-question" aria-expanded="true" aria-controls="faq-diagnosis-answer">Do I need a diagnosis?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-diagnosis-answer" role="region" aria-labelledby="faq-diagnosis-question">
+              <p>No. Families can start with what feels hard. IFC does not diagnose.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-scope-question" aria-expanded="true" aria-controls="faq-scope-answer">Is IFC therapy or advocacy representation?<span aria-hidden="true">+</span></button></h3>
             <div class="faq-answer" id="faq-scope-answer" role="region" aria-labelledby="faq-scope-question">
-              <p>No. We are not therapy, clinical treatment, legal representation, special education representation, formal case management, medical care, or crisis support. We offer practical, relationship-based family support and coaching that can help carry recommendations, routines, and everyday care into real life.</p>
+              <p>No. IFC offers practical coaching, implementation, preparation, navigation, and care within scope.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-childcare-question" aria-expanded="true" aria-controls="faq-childcare-answer">Can IFC provide childcare?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-childcare-answer" role="region" aria-labelledby="faq-childcare-question">
+              <p>Child-related care or caregiver relief may be part of a written support scope. Childcare is one thread, not the whole business.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-next-question" aria-expanded="true" aria-controls="faq-next-answer">What happens after I inquire?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-next-answer" role="region" aria-labelledby="faq-next-question">
+              <p>Introductory conversation, support recommendation, written scope and price, agreements and permissions, support, then review and adjust.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" id="faq-notes-question" aria-expanded="true" aria-controls="faq-notes-answer">Will I receive notes?<span aria-hidden="true">+</span></button></h3>
+            <div class="faq-answer" id="faq-notes-answer" role="region" aria-labelledby="faq-notes-question">
+              <p>Only the care note or practical recap defined in the written scope. Recaps support continuity; they are not clinical, legal, custody, diagnostic, or school-evaluation documents.</p>
             </div>
           </article>
         </div>
@@ -3697,10 +3715,8 @@
           </div>
           <p class="founder-caption">Little Bri, before she had language for being AuDHD. I know what it can mean to be a child who notices everything, feels deeply, and is still learning how to communicate. That kind of understanding is woven into how I care for children and families.</p>
         </div>
-        <p>I'm Brianna (Bri) Waugh, Owner &amp; Family Support Provider at Interwoven Family Care™. I built this work after more than a decade alongside children and families in early childhood centers, in-home care, and community programs.</p>
-        <p>Again and again, my work has brought me alongside children with higher support needs and families holding several kinds of complexity at once. I am comfortable in the thick of family life and am happy to jump in no matter the mess.</p>
-        <p>My background includes Reggio Emilia-inspired programs, Montessori, Head Start and Early Head Start, in-home care, and community-based family support. I lean towards play-based learning and relationship-centered practices and have deep respect for environments that encourage independence, curiosity, critical thinking, regulation, and belonging.</p>
-        <p>More than anything, I believe this work has to be specific to your family. I want you to reach out and talk with me, because your family's nuance matters. Your children, your household, your schedule, your worries, your values, and your hopes all shape what care should look like for you.</p>
+        <p>I&rsquo;m Brianna &ldquo;Bri&rdquo; Waugh, Owner and Family Support Provider. I have worked in early childhood education and family-related care since 2015. My background includes an Associate&rsquo;s Degree with an early-childhood focus, Reggio Emilia-inspired and Montessori experience, Head Start and Early Head Start, in-home care, and work with neurodivergent children and families with layered needs.</p>
+        <p>I pay attention to what opens a door: the favorite cup, the song that soothes, the color someone chooses every time, the routine that almost works, and the moment everyone keeps getting stuck. Support has to be specific to the family in front of me.</p>
       </div>
     </section>
 
@@ -3712,7 +3728,7 @@
         <h2>Ready to talk about what would help?</h2>
         <p>You do not need to choose a service first. Start with what feels hard, and we can talk through the next step.</p>
         <div class="contact-actions">
-          <a class="btn btn-call" href="/client-inquiry/">New Client Inquiry</a>
+          <a class="btn btn-call" href="/client-inquiry/">Start an Inquiry</a>
           <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
           <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Interwoven Family Care</a>
         </div>
