@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How Pricing Works | Interwoven Family Care™</title>
-  <meta name="description" content="Examples that help families picture possible IFC support. Every arrangement receives a written scope and price before support begins.">
+  <meta name="description" content="All support is shaped around what your family needs. You will always know the agreed price before support begins.">
   <link rel="canonical" href="https://interwoven.care/pricing-examples/">
   <link rel="icon" type="image/png" href="../assets/heart.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://interwoven.care/pricing-examples/">
   <meta property="og:title" content="How Pricing Works | Interwoven Family Care™">
-  <meta property="og:description" content="Examples that help families picture possible support, with a written scope and price before support begins.">
+  <meta property="og:description" content="All support is shaped around what your family needs. You will always know the agreed price before support begins.">
   <meta property="og:image" content="https://interwoven.care/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -899,6 +899,7 @@
         repeating-radial-gradient(ellipse at 50% 50%, rgba(82, 105, 31, 0.055) 0 1px, transparent 1px 7px),
         linear-gradient(145deg, rgba(255, 253, 249, 0.96), rgba(246, 243, 238, 0.86));
       color: var(--plum);
+      text-decoration: none;
       box-shadow:
         0 0 0 2px rgba(67, 89, 25, 0.18),
         0 0 0 5px rgba(122, 150, 43, 0.065),
@@ -1502,6 +1503,38 @@
       font-weight: 700;
     }
 
+    .pricing-option .pricing-minimum {
+      margin-top: 0.15rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .pricing-option-grid-foundation {
+      margin-bottom: 1.2rem;
+    }
+
+    .pricing-context-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .secondary-contact {
+      margin: 1rem auto 0;
+      max-width: 38rem;
+      color: rgba(43, 43, 43, 0.72);
+      font-size: 0.96rem;
+    }
+
+    .secondary-contact a {
+      color: var(--deep-teal);
+      font-weight: 600;
+      text-underline-offset: 0.18em;
+    }
+
     .pricing-option ul {
       margin: 0.35rem 0 0;
       padding-left: 1.2rem;
@@ -1540,6 +1573,10 @@
 
     @media (max-width: 650px) {
       .pricing-option-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-context-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1624,20 +1661,21 @@
     <section class="hero">
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
       <h1>How Pricing Works</h1>
-      <p class="hero-subhead">Examples to help you picture possible support.</p>
-      <p class="hero-intro">These examples are not packages, guarantees, or automatic quotes. They are fictional family situations based on the kinds of support IFC may provide and the current public example-pricing structure. Start with what feels hard. After an introductory conversation, Bri will recommend a support shape and provide a written scope and price before support begins.</p>
+      <p class="hero-subhead">All support is shaped around what your family needs.</p>
+      <p class="hero-intro">You don&rsquo;t need to figure out the exact service or calculate the package before reaching out.</p>
+      <p class="hero-intro">We will talk through what feels hard together, what kind of support may fit, and what the work would realistically involve and cost.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/client-inquiry/">Start an Inquiry</a>
         <a class="btn btn-ghost" href="/#offerings">Explore Support</a>
       </div>
     </section>
 
-    <section class="section section-examples" aria-label="Examples of support">
+    <section class="section section-examples" aria-labelledby="support-map-heading">
       <div class="wrap-wide">
-        <p class="eyebrow">Public Examples</p>
-        <h2>What Support Can Look Like</h2>
-        <p class="section-intro">Choose a fictional family situation to see one example. These are not packages, guarantees, or automatic quotes.</p>
-        <div class="thread-map" aria-label="Support example choices">
+        <p class="eyebrow">Many Starting Points</p>
+        <h2 id="support-map-heading">What Support Can Look Like</h2>
+        <p class="section-intro">Families can start with many different things. These examples are starting points, not packages or automatic quotes.</p>
+        <div class="thread-map" aria-label="Examples of where family support may begin">
           <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
             <path class="branch-shadow line-option-b" d="M13 62 C25 56, 31 64, 42 58 C51 52, 59 54, 67 62 C76 70, 84 64, 90 67"></path>
@@ -1686,33 +1724,66 @@
             <span>Start with what feels hard</span>
           </div>
 
-          <button class="map-node node-after-school" type="button" data-example="after-school" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          <a class="map-node node-after-school" href="#public-pricing-heading" data-tone="option-b" aria-label="After-School Care: continue to support options and rates">
             <span class="node-title"><span class="line">After-School</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-respite" type="button" data-example="respite" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-respite" href="#public-pricing-heading" data-tone="option-d" aria-label="Respite Childcare: continue to support options and rates">
             <span class="node-title"><span class="line">Respite</span><span class="line">Childcare</span></span>
-          </button>
-          <button class="map-node node-backup" type="button" data-example="backup" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-backup" href="#public-pricing-heading" data-tone="option-b" aria-label="Backup Care: continue to support options and rates">
             <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-recommendations" type="button" data-example="recommendations" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-recommendations" href="#public-pricing-heading" data-tone="option-d" aria-label="Making It Work: continue to support options and rates">
             <span class="node-title"><span class="line">Making It</span><span class="line">Work</span></span>
-          </button>
-          <button class="map-node node-advocacy" type="button" data-example="advocacy" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-advocacy" href="#public-pricing-heading" data-tone="option-b" aria-label="Advocacy Preparation: continue to support options and rates">
             <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
-          </button>
-          <button class="map-node node-summer" type="button" data-example="summer" data-tone="option-d" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-summer" href="#public-pricing-heading" data-tone="option-d" aria-label="Summer Care: continue to support options and rates">
             <span class="node-title"><span class="line">Summer</span><span class="line">Care</span></span>
-          </button>
-          <button class="map-node node-drop-in" type="button" data-example="drop-in" data-tone="option-b" aria-controls="example-story" aria-pressed="false" aria-expanded="false">
+          </a>
+          <a class="map-node node-drop-in" href="#public-pricing-heading" data-tone="option-b" aria-label="Drop-In Care: continue to support options and rates">
             <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>
-          </button>
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <article class="story-panel" id="example-story" role="dialog" aria-modal="true" aria-live="polite" aria-hidden="true" aria-labelledby="story-title">
-            <button class="story-back" type="button" id="story-back" aria-label="Close support example">&times;</button>
-            <h3 id="story-title">Support example</h3>
-            <div class="story-intro" id="story-intro"></div>
-            <div class="story-copy" id="story-copy"></div>
+    <section class="section section-examples" aria-labelledby="public-pricing-heading">
+      <div class="wrap-wide">
+        <h2 id="public-pricing-heading">Support Options and Rates</h2>
+        <div class="pricing-option-grid pricing-option-grid-foundation">
+          <article class="pricing-option">
+            <h3>Care-First In-Home Support</h3>
+            <p class="standard-price">Starting at $40/hour</p>
+            <p class="pricing-minimum">2-hour minimum</p>
+            <p>For support that is primarily care-centered: caregiver breathing room, recurring care, backup care, respite, or practical in-home support where deeper planning and follow-up are limited.</p>
+          </article>
+          <article class="pricing-option">
+            <h3>Virtual Family Coaching</h3>
+            <p class="standard-price">$60/hour</p>
+            <p>For support that can happen without an in-home visit, including planning, resource navigation, advocacy preparation, body doubling, follow-through, or talking through one focused area of family life.</p>
+          </article>
+          <article class="pricing-option">
+            <h3>Focused Family Support</h3>
+            <p class="standard-price">Generally $65&ndash;$80/hour, depending on scope</p>
+            <p>For support involving more observation, problem-solving, hands-on implementation, caregiver coaching, routine or transition work, environment support, research, documentation, or follow-up.</p>
+            <p>The price depends on the work involved, including what happens before and after the time spent together.</p>
+          </article>
+        </div>
+        <div class="pricing-context-grid">
+          <article class="pricing-option">
+            <h3>Custom Support</h3>
+            <p>Some support just will not fit neatly into a box.</p>
+            <p>Advocacy preparation, recurring family support, research-heavy work, meeting support, or blended projects are priced through a written custom scope based on the actual work involved.</p>
+            <p>The scope defines what is included, communication, documentation, price, and where the work ends or is reviewed.</p>
+          </article>
+          <article class="pricing-option">
+            <h3>Accessibility and Private Arrangements</h3>
+            <p>Pricing is part of the conversation.</p>
+            <p>We may sometimes use an intentionally reduced or individually arranged price when it is sustainable to do so; those arrangements are private and do not change the value or standard pricing of the work.</p>
+            <p>You will always know the agreed price before support begins.</p>
+            <p><strong>Start with what feels hard. We can figure out the shape of the support together.</strong></p>
           </article>
         </div>
       </div>
@@ -1746,13 +1817,13 @@
     <section class="section">
       <div class="start-contact">
         <p class="eyebrow">Ready to Talk?</p>
-        <h2>Start with what feels hard</h2>
-        <p>You do not need to choose a service first. Interwoven Family Care will confirm the scope and price before support begins.</p>
+        <h2>Ready to Talk About What Would Help?</h2>
+        <p>You don&rsquo;t need to choose a service first. A conversation.</p>
+        <p>Start with what feels hard, tell me a little about what is happening, how life feels, and we can figure out the next step together.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">Start an Inquiry</a>
-          <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
-          <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Interwoven Family Care</a>
         </div>
+        <p class="secondary-contact">Prefer email? You can also reach Bri at <a href="mailto:bri@interwoven.care">bri@interwoven.care</a>.</p>
       </div>
     </section>
   </main>
@@ -1785,168 +1856,6 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && nav.classList.contains('open')) {
         closeNavigation(true);
-      }
-    });
-
-    const supportExamples = {
-      "after-school": {
-        title: "After-School",
-        body: [
-          "Your hardest window is after school and work. Everyone is tired. One child needs space, one needs one-on-one time, dinner still has to happen, dishes are there, the backpack pile is everywhere, and bedtime looks so far away.",
-          "Support might look like helping the children settle, supporting transitions, noticing where the evening keeps getting stuck, helping with child-related cleanup, and talking with you about what could make tomorrow feel a little less impossible."
-        ],
-        exampleSupport: "One possible week of after-school support",
-        exampleEstimate: "$150/week"
-      },
-      respite: {
-        title: "Respite Childcare",
-        body: [
-          "You are stretched thin. Not in a “busy season” way. In a “I cannot keep being the only thing holding this whole rhythm together” way. You need breathing room, and the day still needs to keep moving.",
-          "Children still need care. Transitions still happen. Snacks, cleanup, feelings, laundry piles, appointments, and bedtime do not just stop because you are tired.",
-          "Support might look like supporting the children, helping with transitions, offering respite, noticing what is making the day harder, and helping with practical tasks that keep the family rhythm from fully tipping over."
-        ],
-        exampleSupport: "One possible week of respite childcare",
-        exampleEstimate: "$200/week"
-      },
-      backup: {
-        title: "Backup Care",
-        body: [
-          "You have a new baby, a toddler, a demanding job, and a household that does not pause. By the time evening arrives, everyone still needs food, connection, cleanup, transitions, and rest.",
-          "Support might look like another capable set of hands during the stretched-thin parts of the day: caring for the baby and toddler, helping with meals, light cleanup, routines, and practical backup while the household keeps moving."
-        ],
-        exampleSupport: "One possible week of backup care",
-        exampleEstimate: "$150/week"
-      },
-      recommendations: {
-        title: "Making It Work",
-        body: [
-          "You have heard “use a visual schedule,” “make the routine predictable,” and “build independence,” and none of that is bad advice. It just does not magically install itself in the middle of real life.",
-          "Your child may be neurodivergent, sensory-sensitive, demand-sensitive, easily overwhelmed, or having a hard time moving through the day. Your family needs help figuring out what actually fits.",
-          "Support might look like noticing where routines get stuck, helping shape a calmer time of day, setting up accessible systems, thinking through sensory needs, and helping make recommendations more usable."
-        ],
-        exampleSupport: "One possible week of practical support",
-        exampleEstimate: "$210/week"
-      },
-      advocacy: {
-        title: "Advocacy Preparation",
-        body: [
-          "You have an IEP or 504 meeting coming up. The notes, emails, worries, questions, and unknowns are all tangled together. You don't need someone to take over.",
-          "You need help slowing down, sorting what matters, naming concerns clearly, and walking into the meeting with more confidence.",
-          "Support might look like talking through priorities, organizing notes and thoughts, preparing questions, and making a simple follow-up plan for after the meeting."
-        ],
-        exampleSupport: "Preparation for one school or provider conversation",
-        exampleEstimate: "$280"
-      },
-      summer: {
-        title: "Summer Care",
-        body: [
-          "You are looking at summer and realizing the usual patchwork is not enough. School is out, you are still working, camps don't cover every week, and your children still need routine, connection, food, movement, rest, and help with transitions.",
-          "Support might look like care at home, outings, park/library time, screen-time transitions, and helping the day feel less scattered while summer break is on but work and life continue."
-        ],
-        exampleSupport: "One possible week of summer care",
-        exampleEstimate: "$300/week"
-      },
-      "drop-in": {
-        title: "Drop-In Care",
-        body: [
-          "You need a specific window of support: a school closure, camp gap, appointment, work meeting, recovery week, travel day, or a sudden hole in your plans.",
-          "Support might look like giving you the chance to work, rest, go to an appointment, focus on another child, or get through a temporary pinch point. Practical backup while the household gets through the day."
-        ],
-        exampleSupport: "One possible week with a drop-in care window",
-        exampleEstimate: "$90–$150 that week"
-      }
-    };
-
-    const threadMap = document.querySelector('.thread-map');
-    const exampleButtons = document.querySelectorAll('[data-example]');
-    const storyPanel = document.getElementById('example-story');
-    const backButton = document.getElementById('story-back');
-    const storyTitle = document.getElementById('story-title');
-    const storyIntro = document.getElementById('story-intro');
-    const storyCopy = document.getElementById('story-copy');
-    let activeExampleButton = null;
-
-    function detailRow(label, support, estimate) {
-      const row = document.createElement('section');
-      row.className = 'detail-row';
-
-      const heading = document.createElement('h4');
-      heading.textContent = label;
-      const supportLine = document.createElement('p');
-      supportLine.textContent = support;
-      const estimateLine = document.createElement('p');
-      estimateLine.className = 'detail-price';
-      estimateLine.textContent = estimate;
-
-      row.append(heading, supportLine, estimateLine);
-      return row;
-    }
-
-    function showExample(key) {
-      const example = supportExamples[key];
-      activeExampleButton = document.querySelector(`[data-example="${key}"]`);
-
-      storyTitle.textContent = example.title;
-      storyIntro.replaceChildren(
-        ...example.body.map((paragraphText) => {
-          const paragraph = document.createElement('p');
-          paragraph.textContent = paragraphText;
-          return paragraph;
-        })
-      );
-      storyCopy.replaceChildren(
-        detailRow('Example price', example.exampleSupport, example.exampleEstimate)
-      );
-
-      exampleButtons.forEach((button) => {
-        const active = button.dataset.example === key;
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-        button.setAttribute('aria-expanded', active ? 'true' : 'false');
-      });
-
-      storyPanel.setAttribute('aria-hidden', 'false');
-      threadMap.classList.add('is-detail-open');
-      exampleButtons.forEach((button) => {
-        button.setAttribute('tabindex', '-1');
-      });
-      window.setTimeout(() => backButton.focus({ preventScroll: true }), 50);
-    }
-
-    function closeExample() {
-      threadMap.classList.remove('is-detail-open');
-      storyPanel.setAttribute('aria-hidden', 'true');
-      exampleButtons.forEach((button) => {
-        button.setAttribute('aria-pressed', 'false');
-        button.setAttribute('aria-expanded', 'false');
-        button.removeAttribute('tabindex');
-      });
-
-      if (activeExampleButton) {
-        activeExampleButton.focus({ preventScroll: true });
-      }
-    }
-
-    exampleButtons.forEach((button) => {
-      button.addEventListener('click', () => showExample(button.dataset.example));
-      button.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          showExample(button.dataset.example);
-        }
-      });
-    });
-
-    backButton.addEventListener('click', closeExample);
-    storyPanel.addEventListener('keydown', (event) => {
-      if (event.key === 'Tab') {
-        event.preventDefault();
-        backButton.focus();
-      }
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && threadMap.classList.contains('is-detail-open')) {
-        closeExample();
       }
     });
 

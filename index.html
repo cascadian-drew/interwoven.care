@@ -1369,6 +1369,37 @@
     .social-links .facebook { color: #336A64; }
     .social-links .substack { color: #9A622A; }
 
+    /* ---------- Early Bri credibility ---------- */
+
+    .early-bri {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(217, 161, 93, 0.12), transparent 34%),
+        linear-gradient(135deg, rgba(255, 253, 249, 0.9), rgba(240, 244, 232, 0.86));
+    }
+
+    .early-bri-card {
+      max-width: 54rem;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 2.35rem);
+      border: 1px solid rgba(51, 106, 100, 0.16);
+      border-left: 0.42rem solid var(--teal);
+      border-radius: 18px;
+      background: rgba(255, 253, 249, 0.84);
+      box-shadow: 0 8px 24px rgba(43, 43, 43, 0.06);
+    }
+
+    .early-bri-card h2 {
+      margin-top: 0;
+      color: var(--deep-teal);
+    }
+
+    .early-bri-card p {
+      margin: 0 0 1rem;
+      line-height: 1.7;
+    }
+
+    .early-bri-card p:last-child { margin-bottom: 0; }
+
     .social-band { padding: 2.3rem 1.5rem 2.8rem; }
 
     .social-band .social-links {
@@ -1401,6 +1432,19 @@
     .contact-actions .btn:hover {
       transform: translateY(-1.5px);
       box-shadow: 0 5px 16px rgba(43, 43, 43, 0.1);
+    }
+
+    .secondary-contact {
+      margin: 1rem auto 0;
+      max-width: 38rem;
+      color: rgba(43, 43, 43, 0.72);
+      font-size: 0.96rem;
+    }
+
+    .secondary-contact a {
+      color: var(--deep-teal);
+      font-weight: 600;
+      text-underline-offset: 0.18em;
     }
 
     .btn-email {
@@ -3464,6 +3508,19 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
+    <section class="section early-bri" aria-labelledby="early-bri-heading">
+      <div class="wrap" data-reveal>
+        <div class="early-bri-card">
+          <h2 id="early-bri-heading">You&rsquo;ll Work Directly With Bri</h2>
+          <p>Interwoven Family Care is owner-operated. When you reach out, you&rsquo;re speaking with me, Brianna Waugh, but call me Bri. I am the person who will be working alongside your family.</p>
+          <p>I&rsquo;ve worked with children and families since 2015, with a background in early childhood education, in-home care, Reggio Emilia-inspired and Montessori environments, Head Start and Early Head Start, and trauma-informed support for neurodivergent children and families with layered needs.</p>
+          <p>That experience shapes how Interwoven Family Care approaches your family life: with curiosity, respect, practical support, and attention to all of you and your family.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
+
     <section class="section path-overview" id="what-feels-hard">
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">Start With Real Life</p>
@@ -3725,13 +3782,13 @@
     <section class="section final-inquiry" id="contact">
       <div class="wrap" data-reveal>
         <p class="eyebrow">Start a Conversation</p>
-        <h2>Ready to talk about what would help?</h2>
-        <p>You do not need to choose a service first. Start with what feels hard, and we can talk through the next step.</p>
+        <h2>Ready to Talk About What Would Help?</h2>
+        <p>You don&rsquo;t need to choose a service first. A conversation.</p>
+        <p>Start with what feels hard, tell me a little about what is happening, how life feels, and we can figure out the next step together.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">Start an Inquiry</a>
-          <a class="btn btn-schedule" href="https://calendar.app.google/fEgukaQpFfN6zkHm7">Schedule a Call</a>
-          <a class="btn btn-email" href="mailto:bri@interwoven.care?subject=Question%20about%20family%20support">Email Interwoven Family Care</a>
         </div>
+        <p class="secondary-contact">Prefer email? You can also reach Bri at <a href="mailto:bri@interwoven.care">bri@interwoven.care</a>.</p>
       </div>
     </section>
 

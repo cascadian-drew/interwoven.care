@@ -1,1 +1,45 @@
 .DS_Store
+
+# Bri's private business library link
+_BRI BUSINESS FILES/
+
+# Codex working areas
+_codex-work/
+.codex-work/
+.codex-doc-render-*/
+output/
+outputs/
+tmp/
+temp/
+scripts/
+
+# Dependencies and caches
+node_modules/
+cache/
+caches/
+*.log
+*.ndjson
+*.pyc
+
+# Office temporary files
+.~lock.*
+~$*
+
+# Private business documents and archives do not belong in the public website repository
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.csv
+*.pdf
+*.ppt
+*.pptx
+*.zip
+
+# Codex scripts and generated template/resource work
+*.py
+*.ps1
+IFC_*_Update/
+IFC_Template_System/
+IFC_Final_Template_System/
+IFC_Formatted_Resources/
