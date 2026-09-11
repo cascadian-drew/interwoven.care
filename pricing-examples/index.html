@@ -305,7 +305,7 @@
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
-    .crest { width: min(45vw, 190px); }
+    .crest { width: min(63vw, 19vh, 170px); }
 
     h1, h2, h3 {
       font-weight: 700;
@@ -1433,6 +1433,11 @@
       scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
 
+    #support-map,
+    .pricing-target {
+      scroll-margin-top: calc(var(--nav-h) + 1rem);
+    }
+
     .pricing-option-grid {
       margin-top: 1.8rem;
       display: grid;
@@ -1509,6 +1514,16 @@
       font-family: var(--font-brand);
       font-size: 0.94rem;
       font-weight: 700;
+    }
+
+    .back-to-map {
+      display: inline-block;
+      margin-top: 0.85rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-underline-offset: 0.18em;
     }
 
     .pricing-option-grid-foundation {
@@ -1670,11 +1685,11 @@
       </div>
     </section>
 
-    <section class="section section-examples" aria-labelledby="support-map-heading">
+    <section class="section section-examples" id="support-map" aria-labelledby="support-map-heading">
       <div class="wrap-wide">
         <p class="eyebrow">Many Starting Points</p>
         <h2 id="support-map-heading">What Support Can Look Like</h2>
-        <p class="section-intro">Families can start with many different things. These examples are starting points, not packages or automatic quotes.</p>
+        <p class="section-intro">Start with what feels hard. You do not need to determine the service category yourself. These examples are starting points, not packages or automatic quotes.</p>
         <div class="thread-map" aria-label="Examples of where family support may begin">
           <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
@@ -1724,25 +1739,25 @@
             <span>Start with what feels hard</span>
           </div>
 
-          <a class="map-node node-after-school" href="#public-pricing-heading" data-tone="option-b" aria-label="After-School Care: continue to support options and rates">
+          <a class="map-node node-after-school" href="#care-first-in-home-support" data-tone="option-b" aria-label="After-School Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">After-School</span><span class="line">Care</span></span>
           </a>
-          <a class="map-node node-respite" href="#public-pricing-heading" data-tone="option-d" aria-label="Respite Childcare: continue to support options and rates">
+          <a class="map-node node-respite" href="#care-first-in-home-support" data-tone="option-d" aria-label="Respite Childcare: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Respite</span><span class="line">Childcare</span></span>
           </a>
-          <a class="map-node node-backup" href="#public-pricing-heading" data-tone="option-b" aria-label="Backup Care: continue to support options and rates">
+          <a class="map-node node-backup" href="#care-first-in-home-support" data-tone="option-b" aria-label="Backup Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
           </a>
-          <a class="map-node node-recommendations" href="#public-pricing-heading" data-tone="option-d" aria-label="Making It Work: continue to support options and rates">
+          <a class="map-node node-recommendations" href="#focused-family-support" data-tone="option-d" aria-label="Making It Work: view Focused Family Support pricing">
             <span class="node-title"><span class="line">Making It</span><span class="line">Work</span></span>
           </a>
-          <a class="map-node node-advocacy" href="#public-pricing-heading" data-tone="option-b" aria-label="Advocacy Preparation: continue to support options and rates">
+          <a class="map-node node-advocacy" href="#virtual-family-coaching" data-tone="option-b" aria-label="Advocacy Preparation: view Virtual Family Coaching pricing">
             <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
           </a>
-          <a class="map-node node-summer" href="#public-pricing-heading" data-tone="option-d" aria-label="Summer Care: continue to support options and rates">
+          <a class="map-node node-summer" href="#care-first-in-home-support" data-tone="option-d" aria-label="Summer Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Summer</span><span class="line">Care</span></span>
           </a>
-          <a class="map-node node-drop-in" href="#public-pricing-heading" data-tone="option-b" aria-label="Drop-In Care: continue to support options and rates">
+          <a class="map-node node-drop-in" href="#care-first-in-home-support" data-tone="option-b" aria-label="Drop-In Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>
           </a>
         </div>
@@ -1753,22 +1768,25 @@
       <div class="wrap-wide">
         <h2 id="public-pricing-heading">Support Options and Rates</h2>
         <div class="pricing-option-grid pricing-option-grid-foundation">
-          <article class="pricing-option">
+          <article class="pricing-option pricing-target" id="care-first-in-home-support">
             <h3>Care-First In-Home Support</h3>
             <p class="standard-price">Starting at $40/hour</p>
             <p class="pricing-minimum">2-hour minimum</p>
             <p>For support that is primarily care-centered: caregiver breathing room, recurring care, backup care, respite, or practical in-home support where deeper planning and follow-up are limited.</p>
+            <a class="back-to-map" href="#support-map">Back to support map</a>
           </article>
-          <article class="pricing-option">
+          <article class="pricing-option pricing-target" id="virtual-family-coaching">
             <h3>Virtual Family Coaching</h3>
             <p class="standard-price">$60/hour</p>
             <p>For support that can happen without an in-home visit, including planning, resource navigation, advocacy preparation, body doubling, follow-through, or talking through one focused area of family life.</p>
+            <a class="back-to-map" href="#support-map">Back to support map</a>
           </article>
-          <article class="pricing-option">
+          <article class="pricing-option pricing-target" id="focused-family-support">
             <h3>Focused Family Support</h3>
             <p class="standard-price">Generally $65&ndash;$80/hour, depending on scope</p>
             <p>For support involving more observation, problem-solving, hands-on implementation, caregiver coaching, routine or transition work, environment support, research, documentation, or follow-up.</p>
             <p>The price depends on the work involved, including what happens before and after the time spent together.</p>
+            <a class="back-to-map" href="#support-map">Back to support map</a>
           </article>
         </div>
         <div class="pricing-context-grid">
@@ -1785,16 +1803,8 @@
             <p>You will always know the agreed price before support begins.</p>
             <p><strong>Start with what feels hard. We can figure out the shape of the support together.</strong></p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tight pricing-group" aria-labelledby="scope-heading">
-      <div class="wrap-wide">
-        <p class="eyebrow">Before Support Begins</p>
-        <h2 id="scope-heading">Written Scope and Price</h2>
-        <div class="pricing-option-grid pricing-option-grid-single">
           <article class="pricing-option pricing-option-wide">
+            <h3>Written Scope and Price</h3>
             <p>A written scope may define the focus, dates or hours, location, travel, child-related care, caregiver participation, communication, documentation, materials, price, and review or end point.</p>
             <p><strong>Nothing quietly becomes unlimited messaging, research, documentation, or rolling access.</strong></p>
           </article>
@@ -1804,7 +1814,6 @@
 
     <section class="section pricing-group" aria-labelledby="boundary-heading">
       <div class="wrap-wide">
-        <p class="eyebrow">Clear Boundaries</p>
         <h2 id="boundary-heading">What IFC Is Not</h2>
         <div class="pricing-option-grid pricing-option-grid-single">
           <article class="pricing-option pricing-option-wide">
@@ -1818,7 +1827,7 @@
       <div class="start-contact">
         <p class="eyebrow">Ready to Talk?</p>
         <h2>Ready to Talk About What Would Help?</h2>
-        <p>You don&rsquo;t need to choose a service first. A conversation.</p>
+        <p>You don&rsquo;t need to choose a service first. Start with a conversation.</p>
         <p>Start with what feels hard, tell me a little about what is happening, how life feels, and we can figure out the next step together.</p>
         <div class="contact-actions">
           <a class="btn btn-call" href="/client-inquiry/">Start an Inquiry</a>

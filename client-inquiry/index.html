@@ -297,7 +297,7 @@
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
-    .crest { width: min(32vw, 10vh, 96px); }
+    .crest { width: min(63vw, 19vh, 170px); }
 
     h1, h2, h3 {
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
@@ -323,35 +323,18 @@
     }
 
     .intro-conversation {
-      margin: 0.65rem auto 0;
-      max-width: 46rem;
-      padding: 0.6rem 0.9rem 0.55rem;
-      border-top: 1px solid rgba(51, 106, 100, 0.4);
-      border-bottom: 1px solid rgba(217, 161, 93, 0.56);
-    }
-
-    .intro-conversation h2 {
-      margin: 0;
-      color: var(--deep-teal);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-    }
-
-    .conversation-duration {
-      margin: 0.15rem auto 0;
-      color: var(--plum);
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 700;
-      font-size: clamp(0.88rem, 1.6vw, 0.96rem);
-      line-height: 1.4;
-    }
-
-    .intro-conversation > p:not(.conversation-duration) {
-      margin: calc(0.42rem + 15pt) auto 0;
+      margin: 0.55rem auto 0;
       max-width: 44rem;
       color: rgba(43, 43, 43, 0.84);
-      font-size: clamp(0.91rem, 1.55vw, 0.98rem);
+      font-size: clamp(0.94rem, 1.7vw, 1rem);
       line-height: 1.45;
       text-wrap: balance;
+    }
+
+    .intro-conversation strong {
+      color: var(--deep-teal);
+      font-family: "Quicksand", "Trebuchet MS", sans-serif;
+      font-weight: 700;
     }
 
     .hero-inquiry-action {
@@ -541,7 +524,7 @@
     }
 
     .form-responder-link {
-      margin: 0 auto 0.75rem;
+      margin: 0 auto 0.45rem;
       font-size: 0.9rem !important;
       line-height: 1.4 !important;
       text-align: center;
@@ -568,7 +551,7 @@
     .form-embed iframe {
       display: block;
       width: 100%;
-      height: 4700px;
+      height: 3200px;
       border: 0;
       background: #fff;
     }
@@ -673,19 +656,19 @@
     }
 
     @media (max-width: 600px) {
-      .form-embed iframe { height: 4800px; }
+      .form-embed iframe { height: 3400px; }
     }
 
     @media (max-width: 520px) {
-      .form-embed iframe { height: 5100px; }
+      .form-embed iframe { height: 3500px; }
     }
 
     @media (max-width: 460px) {
-      .form-embed iframe { height: 5450px; }
+      .form-embed iframe { height: 3550px; }
     }
 
     @media (max-width: 420px) {
-      .form-embed iframe { height: 5620px; }
+      .form-embed iframe { height: 3600px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -702,20 +685,16 @@
     }
 
     .section.inquiry-details {
-      padding-top: var(--space-section-compact);
-      padding-bottom: var(--space-section-compact);
+      padding-top: clamp(1.4rem, 3vh, 2rem);
+      padding-bottom: clamp(1.4rem, 3vh, 2rem);
     }
 
     .section.inquiry-form {
-      padding-top: var(--space-section-compact);
-      padding-bottom: var(--space-section-compact);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
 
-    @media (min-width: 721px) {
-      .crest {
-        width: min(18vw, 13vh, 110px);
-      }
-    }
+    .inquiry-form .hero-note { margin-top: 0; }
 
     @media (max-width: 720px) {
       :root {
@@ -732,9 +711,6 @@
         padding-bottom: var(--space-divider);
       }
 
-      .crest {
-        width: min(15vw, 6.5vh, 56px);
-      }
     }
   </style>
 </head>
@@ -767,14 +743,10 @@
       <img class="crest" src="../assets/house.png" alt="" width="640" height="709">
       <h1>Start with what feels hard</h1>
       <p class="hero-intro">You do not need to know the right service before reaching out. Tell Bri what is happening, what feels hardest to hold, what you have tried, and what you wish felt easier. The form helps determine whether IFC may fit and what the next step should be.</p>
-      <div class="intro-conversation" aria-labelledby="intro-conversation-heading">
-        <h2 id="intro-conversation-heading">Introductory Conversation</h2>
-        <p>Talk through the people, routines, goals, schedule, safety, location, and what you have already tried. From there, Bri can recommend IFC support, a referral, or another next step.</p>
-      </div>
+      <p class="intro-conversation"><strong>Introductory conversation:</strong> Talk through the people, routines, goals, schedule, safety, location, and what you have already tried. From there, Bri can recommend IFC support, a referral, or another next step.</p>
       <div class="hero-inquiry-action">
         <a class="btn btn-primary" href="#client-inquiry-form">Start the Inquiry</a>
       </div>
-      <p class="hero-note">Responses are collected through Google Forms. Please do not include detailed medical, legal, custody, or crisis information. This is an inquiry, not a full intake, service agreement, evaluation, emergency request, or guarantee of service.</p>
     </section>
 
     <section class="section inquiry-form" id="client-inquiry-form" aria-label="Client Inquiry Form">
