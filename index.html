@@ -755,6 +755,130 @@
       }
     }
 
+    .how-i-work-intro {
+      margin: var(--space-heading-intro) auto 0;
+      max-width: 48rem;
+      font-size: 1.04rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .how-i-work-intro strong {
+      color: var(--plum);
+    }
+
+    .how-i-work-principles {
+      margin: var(--space-intro-content) auto 0;
+      padding: 0;
+      max-width: 58rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.25rem, 3vw, 2.25rem);
+      list-style: none;
+    }
+
+    .how-i-work-principles li {
+      min-width: 0;
+      padding-top: 0.85rem;
+      border-top: 2px solid rgba(51, 106, 100, 0.28);
+    }
+
+    .how-i-work-principles h3 {
+      margin: 0 0 0.35rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .how-i-work-principles p {
+      margin: 0;
+      color: rgba(43, 43, 43, 0.8);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .how-i-work-start {
+      margin: clamp(2rem, 5vw, 3rem) auto 0;
+      padding-top: clamp(1.35rem, 3vw, 1.8rem);
+      max-width: 58rem;
+      border-top: 1px solid rgba(122, 46, 79, 0.24);
+      text-align: center;
+    }
+
+    .how-i-work-start h3 {
+      margin: 0;
+      color: var(--plum);
+      font-family: var(--font-brand);
+      font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+    }
+
+    .how-i-work-start p {
+      margin: 0.65rem auto 0;
+      max-width: 48rem;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .how-i-work-steps {
+      margin: 1.25rem auto 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      list-style: none;
+    }
+
+    .how-i-work-steps li {
+      position: relative;
+      min-width: 0;
+      padding: 0.15rem 0.8rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .how-i-work-steps li:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -0.25rem;
+      color: rgba(122, 46, 79, 0.58);
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 719px) {
+      .how-i-work-principles {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .how-i-work-start {
+        margin-top: 1.8rem;
+      }
+
+      .how-i-work-steps {
+        max-width: 18rem;
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+
+      .how-i-work-steps li {
+        padding: 0 0 1rem;
+      }
+
+      .how-i-work-steps li:not(:last-child)::after {
+        top: auto;
+        right: auto;
+        bottom: -0.35rem;
+        left: 50%;
+        content: "↓";
+        transform: translateX(-50%);
+      }
+    }
+
     /* ---------- Offerings ---------- */
 
     .cards {
@@ -1208,6 +1332,65 @@
 
     .offerings-heading {
       margin-top: -0.35rem;
+    }
+
+    .services-intro {
+      margin: var(--space-heading-intro) auto 0;
+      max-width: 44rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .services-list {
+      margin: var(--space-intro-content) auto 0;
+      padding: 0;
+      max-width: 58rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(1.5rem, 4vw, 3rem);
+      row-gap: 1.2rem;
+      list-style: none;
+    }
+
+    .services-list li {
+      position: relative;
+      min-width: 0;
+      padding-left: 1.35rem;
+    }
+
+    .services-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.48rem;
+      left: 0;
+      width: 0.56rem;
+      height: 0.56rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%);
+      box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.13);
+    }
+
+    .services-list h3 {
+      margin: 0 0 0.3rem;
+      color: var(--deep-teal);
+      font-family: var(--font-brand);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .services-list p {
+      margin: 0;
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: rgba(43, 43, 43, 0.82);
+    }
+
+    @media (max-width: 719px) {
+      .services-list {
+        max-width: 36rem;
+        grid-template-columns: 1fr;
+        row-gap: 1.05rem;
+      }
     }
 
     .steps {
@@ -2379,7 +2562,7 @@
 
     /* ---------- Price summary and closing invitation ---------- */
 
-    #payment .payment-note {
+    #pricing .payment-note {
       max-width: 68rem;
     }
 
@@ -3200,7 +3383,7 @@
       }
     }
 
-    #payment .payment-note {
+    #pricing .payment-note {
       position: relative;
       max-width: 48rem;
       margin: 0 auto;
@@ -3214,7 +3397,7 @@
       box-shadow: 0 12px 30px rgba(43, 43, 43, 0.075);
     }
 
-    #payment .payment-note::before {
+    #pricing .payment-note::before {
       position: absolute;
       top: 0.78rem;
       right: 1.1rem;
@@ -3225,7 +3408,7 @@
       transform: rotate(2deg);
     }
 
-    #payment .payment-actions {
+    #pricing .payment-actions {
       margin-bottom: 0;
     }
 
@@ -3481,7 +3664,7 @@
         <a href="/#offerings">Services</a>
         <a href="/#about">About IFC</a>
         <a href="/#philosophy">Philosophy</a>
-        <a href="/pricing-examples/">Pricing</a>
+        <a href="/#pricing">Pricing</a>
         <a href="/#faqs">FAQs</a>
         <a href="/#about-bri">About Bri</a>
         <a class="nav-inquiry" href="/client-inquiry/">Start an Inquiry</a>
@@ -3497,8 +3680,8 @@
         <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
       </h1>
       <p class="lede rise d3">Support that fits real family life.</p>
-      <p class="sub rise d3">Adaptive in-home family coaching and practical support for families with children and teens in Tacoma and nearby Pierce County. Virtual coaching is offered separately.</p>
-      <p class="hero-quote rise d4">&ldquo;I highly recommend her to families seeking child care or support, especially families with added layers of needs.&rdquo;<span>&mdash; Heather Jeng</span></p>
+      <p class="hero-quote rise d4">&ldquo;I highly recommend her to families seeking child care or support, especially families with added layers of needs.&rdquo; <span>&mdash; Heather Jeng</span></p>
+      <p class="sub rise d3">Adaptive in-home family coaching and practical support for families in Tacoma and nearby Pierce County.</p>
       <p class="sub rise d3"><strong>Start with what feels hard.</strong></p>
       <div class="hero-actions rise d4">
         <a class="btn btn-primary" href="/client-inquiry/">Start an Inquiry</a>
@@ -3525,7 +3708,8 @@
       <div class="wrap-wide" data-reveal>
         <p class="eyebrow">Start With Real Life</p>
         <h2>The advice makes sense. So why isn&rsquo;t it working for us?</h2>
-        <p class="path-intro">On paper, it should work. Then you look at your family, your real life, and think: how am I supposed to make that work? Show me what the problem looks like at home, what you have tried, and how the advice has been going. I will help you pull it apart, notice what may be getting missed, and suggest something different to try.</p>
+        <p class="path-intro">On paper, it should work. Then you look at your family, your reality, and think: how am I supposed to make that work?</p>
+        <p class="path-intro">Do your best to show me what the problem looks like at home, what you've tried, and how it's been going. Let me help you examine it all, notice what needs noticed, and suggest something clear to try next.</p>
       </div>
     </section>
 
@@ -3533,55 +3717,34 @@
 
     <section class="section" id="offerings">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow offerings-heading">Support Pathways</p>
-        <h2>Support that fits real family life</h2>
-        <p class="fit-intro"><span class="fit-intro-reduced">You do not need the perfect service name before reaching out.</span><span class="fit-intro-standard">Start with what feels hard.</span></p>
-        <div class="support-carousel" data-support-carousel>
-          <div class="support-carousel-stage">
-            <div class="support-carousel-viewport" data-support-carousel-viewport>
-              <div class="cards support-carousel-track" data-support-carousel-track>
-                <article class="support-card anchor-target" data-support-index="0" id="implementation-resources">
-                  <span class="support-card-kicker">From Advice to Home</span>
-                  <h3>Making Advice Usable</h3>
-                  <p>Turn recommendations, strategies, school ideas, and good intentions into practical actions that fit your home, schedule, people, materials, and capacity.</p>
-                </article>
-                <article class="support-card" data-support-index="1">
-                  <span class="support-card-kicker">A Different Way Through</span>
-                  <h3>Why Do We Keep Ending Up Here?</h3>
-                  <p>The same moment keeps falling apart, or you keep circling the same decision without getting anywhere. Show me what keeps happening, and I will help you pull it apart and find something different to try.</p>
-                </article>
-                <article class="support-card anchor-target" data-support-index="2" id="routines-transitions">
-                  <span class="support-card-kicker">Smoother Days</span>
-                  <h3>Smoother Routines and Transitions</h3>
-                  <p>Support for mornings, bedtime, leaving the house, after-school decompression, meals, cleanup, appointments, caregiver changes, and other moments that take more energy than they seem like they should.</p>
-                </article>
-                <article class="support-card anchor-target" data-support-index="3" id="breathing-room">
-                  <span class="support-card-kicker">Breathing Room</span>
-                  <h3>Breathing Room</h3>
-                  <p>Sometimes support means another capable adult helping hold the part of the week that takes the most out of everyone. Caregiver relief and child-related care can be part of the larger support plan.</p>
-                </article>
-                <article class="support-card" data-support-index="4">
-                  <span class="support-card-kicker">Spaces That Support You</span>
-                  <h3>Spaces That Help</h3>
-                  <p>Small, practical changes can help a space support participation, regulation, access, play, independence, and easier transitions. This is environment support&mdash;not interior design or a Pinterest-perfect makeover.</p>
-                </article>
-                <article class="support-card" data-support-index="5">
-                  <span class="support-card-kicker">Prepared to Speak Up</span>
-                  <h3>Prepared to Speak Up</h3>
-                  <p>Organize questions, notes, priorities, and next steps before school or provider meetings. IFC offers preparation, not legal or special-education representation.</p>
-                </article>
-                <article class="support-card" data-support-index="6">
-                  <span class="support-card-kicker">Finding a Way Through</span>
-                  <h3>Finding the Next Resource</h3>
-                  <p>Research, compare, and sort possible community resources so the maze feels less impossible. IFC offers navigation, not formal case management or guaranteed access.</p>
-                </article>
-              </div>
-            </div>
-            <button class="support-carousel-arrow support-carousel-previous" type="button" data-support-carousel-previous aria-label="Previous support options">&#8249;</button>
-            <button class="support-carousel-arrow support-carousel-next" type="button" data-support-carousel-next aria-label="Next support options">&#8250;</button>
-          </div>
-          <p class="sr-only" data-support-carousel-progress aria-live="polite">Support option 1 of 7</p>
-        </div>
+        <h2>Services</h2>
+        <p class="services-intro">Family support can take different shapes depending on what is making life harder. These are some of the ways I can help.</p>
+        <ul class="services-list">
+          <li>
+            <h3>Making Things Work in Real Life</h3>
+            <p>Recommendations that make sense on paper, recurring problems, stuck decisions, or things you have already tried that are not working in your actual family life. We can look at what is getting in the way and find something practical to try next.</p>
+          </li>
+          <li>
+            <h3>Routines &amp; Transitions</h3>
+            <p>Mornings, bedtime, leaving the house, after-school decompression, meals, cleanup, appointments, caregiver changes, and other moments that take more energy than they seem like they should.</p>
+          </li>
+          <li>
+            <h3>Caregiver Relief &amp; Child-Related Care</h3>
+            <p>Respite, recurring care, backup care, or another capable adult helping hold part of the week when your family needs more breathing room.</p>
+          </li>
+          <li>
+            <h3>Environment Support</h3>
+            <p>Small, practical changes to spaces, materials, access, and setup that can support regulation, participation, play, independence, and easier transitions. This is environment support, not interior design or a Pinterest-perfect makeover.</p>
+          </li>
+          <li>
+            <h3>Advocacy Preparation</h3>
+            <p>Organizing questions, notes, priorities, and next steps before school or provider conversations so you feel more prepared for what you want to ask, share, or understand. Preparation, not representation.</p>
+          </li>
+          <li>
+            <h3>Resource Navigation</h3>
+            <p>Finding, comparing, and sorting through community resources, referrals, programs, or next-step options so the maze feels less impossible. Navigation, not formal case management or guaranteed access.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -3618,48 +3781,34 @@
 
     <section class="section" id="philosophy">
       <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Deeper Philosophy</p>
-        <h2>Care Starts With Understanding</h2>
-        <p class="approach-intro">Childcare is one thread in the larger weave of family support. IFC looks at the people, relationships, routines, environment, stress, strengths, values, and capacity around what feels hard.</p>
+        <h2>How I Work</h2>
+        <p class="how-i-work-intro"><strong>Childcare is one thread in the larger weave of family support.</strong> I look at what is happening around the hard part so the support can fit the actual people, relationships, routines, environment, and capacity involved.</p>
 
-        <div class="woven-approach" data-woven-approach>
-          <article class="woven-panel is-active" style="--panel-color: #6B2945; --panel-shadow: rgba(107, 41, 69, 0.28);" data-woven-panel>
-            <h3><button type="button" aria-label="Whole-Family Lens" aria-controls="approach-whole-family" data-woven-toggle>Whole-Family Lens</button></h3>
-            <div class="woven-panel-content" id="approach-whole-family" data-woven-content>
-              <p>Every family member matters as an individual and is shaped by relationships, routines, home life, community, capacity, and need. We look at the whole picture so support can fit the actual family in front of us.</p>
-            </div>
-          </article>
-          <article class="woven-panel" style="--panel-color: #2B5A55; --panel-shadow: rgba(43, 90, 85, 0.28);" data-woven-panel>
-            <h3><button type="button" aria-label="Adaptive for You" aria-controls="approach-adaptive" data-woven-toggle>Adaptive for You</button></h3>
-            <div class="woven-panel-content" id="approach-adaptive" data-woven-content>
-              <p>Life happens. Schedules shift, routines shift, needs shift, and family capacity changes. Our care is designed to move with your family, without shame, pressure, or extra hoops.</p>
-            </div>
-          </article>
-          <article class="woven-panel" style="--panel-color: #8D5A27; --panel-shadow: rgba(141, 90, 39, 0.28);" data-woven-panel>
-            <h3><button type="button" aria-label="Rooted in Relationship" aria-controls="approach-relationship" data-woven-toggle>Rooted in Relationship</button></h3>
-            <div class="woven-panel-content" id="approach-relationship" data-woven-content>
-              <p>Trust is built over time, especially when support happens inside your home and family life. We show up with consistency, curiosity, respect, and honest communication so families can feel safe being real about what is hard.</p>
-            </div>
-          </article>
-          <article class="woven-panel" style="--panel-color: #52651C; --panel-shadow: rgba(82, 101, 28, 0.28);" data-woven-panel>
-            <h3><button type="button" aria-label="Community through Care" aria-controls="approach-community" data-woven-toggle>Community through Care</button></h3>
-            <div class="woven-panel-content" id="approach-community" data-woven-content>
-              <p>Families are not meant to do this alone. Meaningful care includes connection, belonging, community resources, and relationships that help families feel supported beyond one conversation or one visit.</p>
-            </div>
-          </div>
-        </div>
+        <ul class="how-i-work-principles">
+          <li>
+            <h3>Whole-Family Lens</h3>
+            <p>The child is never the only person in the picture. Support considers the people, relationships, routines, and realities around them.</p>
+          </li>
+          <li>
+            <h3>Adaptive Support</h3>
+            <p>Family life changes. Support can change with it, without treating a shifted schedule, capacity, or need like a failure.</p>
+          </li>
+          <li>
+            <h3>Rooted in Relationship</h3>
+            <p>Trust matters when support happens inside your home and family life. I work with curiosity, consistency, respect, and honest communication.</p>
+          </li>
+        </ul>
 
-        <div class="approach-start">
-          <p class="eyebrow">Warm entry, clear container</p>
-          <h3 class="approach-start-heading">How Support Begins</h3>
-          <ol class="process-list">
-            <li><strong>Inquiry</strong><span>Tell Bri what feels hard. You do not need the right service name.</span></li>
-            <li><strong>Introductory Conversation</strong><span>Talk through the people, routines, goals, schedule, safety, location, and what you have already tried.</span></li>
-            <li><strong>Support Recommendation</strong><span>Bri recommends a focused session, ongoing support, care-first support, a custom blend, a referral, or another next step.</span></li>
-            <li><strong>Written Scope and Price</strong><span>Before support begins, receive the service scope, communication and documentation limits, schedule, price, and end or review point.</span></li>
-            <li><strong>Agreement and Permissions</strong><span>Complete the agreements, authorizations, emergency information, and other forms the service requires.</span></li>
-            <li><strong>Support Begins</strong><span>Work together in the agreed lane.</span></li>
-            <li><strong>Review and Adjust</strong><span>Notice what is helping, what changed, and whether support should continue, shift, pause, or end.</span></li>
+        <div class="how-i-work-start">
+          <h3>Warm entry, clear container</h3>
+          <p>You do not need to know the right service name before reaching out. Tell me what feels hard. We’ll talk through what is happening, figure out what support fits, and agree on the scope and price before support begins.</p>
+          <ol class="how-i-work-steps" aria-label="How support begins">
+            <li>Inquiry</li>
+            <li>Conversation</li>
+            <li>Recommendation</li>
+            <li>Scope &amp; Price</li>
+            <li>Support</li>
+            <li>Review</li>
           </ol>
         </div>
       </div>
@@ -3667,15 +3816,16 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
-    <section class="section anchor-target" id="payment">
+    <section class="section anchor-target" id="pricing">
       <div class="wrap-wide" data-reveal>
         <div class="payment-note">
           <p class="payment-kicker">Written scope, clear price</p>
-          <h2>Cost of Care</h2>
-          <p>Interwoven Family Care is primarily private pay at this time. You do not need a perfect plan before asking about cost. The website includes examples so families can picture possible support, and every arrangement receives a written scope and price before support begins.</p>
-          <p>IFC is researching future funding and accessibility pathways, but none are promised until they are verified and usable.</p>
+          <h2>Pricing</h2>
+          <p>Interwoven Family Care is primarily private pay. You do not need to know exactly what kind of support you need before asking about cost.</p>
+          <p>Start with what feels hard. Once we understand what support fits, you’ll receive a written scope and price before support begins.</p>
+          <p>See current rates, what affects pricing, and how custom support is scoped.</p>
           <div class="payment-actions">
-            <a class="btn btn-ghost" href="/pricing-examples/">See How Pricing Works</a>
+            <a class="btn btn-ghost" href="https://interwoven.care/pricing-examples/">See How Pricing Works</a>
           </div>
         </div>
       </div>

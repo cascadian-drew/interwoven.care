@@ -294,12 +294,13 @@
     }
 
     .hero {
+      min-height: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      padding: clamp(1.8rem, 4.6vh, 3.2rem) 1.5rem clamp(2rem, 5vh, 3.5rem);
+      padding: clamp(1rem, 2.4vh, 1.5rem) 1.5rem clamp(1.1rem, 2.6vh, 1.6rem);
       background-image:
         radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
@@ -314,7 +315,7 @@
     }
 
     h1 {
-      margin: 0.7rem 0 0;
+      margin: clamp(0.35rem, 1vh, 0.65rem) 0 0;
       max-width: 48rem;
       font-size: clamp(2.35rem, 5vw, 3.6rem);
       color: var(--plum);

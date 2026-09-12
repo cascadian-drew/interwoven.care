@@ -289,9 +289,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      padding: clamp(0.85rem, 2vh, 1.2rem) 1.5rem clamp(0.8rem, 1.8vh, 1.1rem);
+      padding: clamp(1rem, 2.4vh, 1.5rem) 1.5rem clamp(1.1rem, 2.6vh, 1.6rem);
       background-image:
         radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
@@ -307,7 +307,7 @@
     }
 
     h1 {
-      margin: 0.35rem 0 0;
+      margin: clamp(0.35rem, 1vh, 0.65rem) 0 0;
       max-width: 42rem;
       font-size: clamp(1.9rem, 4.5vw, 2.75rem);
       color: var(--plum);
@@ -704,11 +704,6 @@
         --space-heading-intro: 0.75rem;
         --space-intro-content: clamp(1.2rem, 5vw, 1.55rem);
         --space-section-tail: clamp(1.25rem, 5vw, 1.65rem);
-      }
-
-      .hero {
-        padding-top: calc(var(--space-divider) / 2);
-        padding-bottom: var(--space-divider);
       }
 
     }
