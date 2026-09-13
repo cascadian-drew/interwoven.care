@@ -1527,8 +1527,13 @@
       text-underline-offset: 0.18em;
     }
 
-    .pricing-option-grid-foundation {
+    .pricing-option-grid.pricing-option-grid-foundation {
+      max-width: 52rem;
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 1.2rem;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.25rem);
     }
 
     .pricing-context-grid {
@@ -1690,7 +1695,7 @@
       <div class="wrap-wide">
         <p class="eyebrow">Many Starting Points</p>
         <h2 id="support-map-heading">What Support Can Look Like</h2>
-        <p class="section-intro">Start with what feels hard. You do not need to determine the service category yourself. These examples are starting points, not packages or automatic quotes.</p>
+        <p class="section-intro">Start with what feels hard. You do not need to determine the service category yourself. These are starting points, not fixed packages. The same need may be priced differently depending on whether support is virtual, in-home, care-centered, research-heavy, or blended.</p>
         <div class="thread-map" aria-label="Examples of where family support may begin">
           <svg class="thread-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="branch-shadow line-option-b" d="M13 34 C22 26, 32 27, 40 38 C48 49, 55 47, 64 38 C73 29, 82 29, 90 37"></path>
@@ -1743,8 +1748,8 @@
           <a class="map-node node-after-school" href="#care-first-in-home-support" data-tone="option-b" aria-label="After-School Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">After-School</span><span class="line">Care</span></span>
           </a>
-          <a class="map-node node-respite" href="#care-first-in-home-support" data-tone="option-d" aria-label="Respite Childcare: view Care-First In-Home Support pricing">
-            <span class="node-title"><span class="line">Respite</span><span class="line">Childcare</span></span>
+          <a class="map-node node-respite" href="#care-first-in-home-support" data-tone="option-d" aria-label="Respite: view Care-First In-Home Support pricing">
+            <span class="node-title"><span class="line">Respite</span></span>
           </a>
           <a class="map-node node-backup" href="#care-first-in-home-support" data-tone="option-b" aria-label="Backup Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Backup</span><span class="line">Care</span></span>
@@ -1755,8 +1760,8 @@
           <a class="map-node node-advocacy" href="#virtual-family-coaching" data-tone="option-b" aria-label="Advocacy Preparation: view Virtual Family Coaching pricing">
             <span class="node-title"><span class="line">Advocacy</span><span class="line">Preparation</span></span>
           </a>
-          <a class="map-node node-summer" href="#care-first-in-home-support" data-tone="option-d" aria-label="Summer Care: view Care-First In-Home Support pricing">
-            <span class="node-title"><span class="line">Summer</span><span class="line">Care</span></span>
+          <a class="map-node node-summer" href="#care-first-in-home-support" data-tone="option-d" aria-label="Seasonal Care: view Care-First In-Home Support pricing">
+            <span class="node-title"><span class="line">Seasonal</span><span class="line">Care</span></span>
           </a>
           <a class="map-node node-drop-in" href="#care-first-in-home-support" data-tone="option-b" aria-label="Drop-In Care: view Care-First In-Home Support pricing">
             <span class="node-title"><span class="line">Drop-In</span><span class="line">Care</span></span>

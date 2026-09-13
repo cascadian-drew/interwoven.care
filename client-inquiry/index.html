@@ -337,10 +337,6 @@
       font-weight: 700;
     }
 
-    .hero-inquiry-action {
-      margin-top: var(--space-heading-intro);
-    }
-
     .hero-note {
       margin: var(--space-divider) auto 0;
       max-width: 44rem;
@@ -437,6 +433,18 @@
     .card:nth-child(2) li::before { background: radial-gradient(circle at 35% 30%, rgba(216, 154, 179, 0.95), var(--plum) 58%, #4B1830 100%); box-shadow: 0 0 0 3px rgba(122, 46, 79, 0.1); }
     .card:nth-child(2) li:nth-child(2)::before { background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 58%, #8D5A27 100%); box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.15); }
 
+    .inquiry-help {
+      padding-top: clamp(1.4rem, 3vh, 2rem);
+      padding-bottom: clamp(1.4rem, 3vh, 2rem);
+    }
+
+    .inquiry-help .card {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .inquiry-help .card h2 { text-align: center; }
+
     .crisis-note {
       margin: 1rem auto 0;
       max-width: 48rem;
@@ -473,6 +481,8 @@
 
     .quote-snippet + .quote-snippet { border-left: 1px solid rgba(217, 161, 93, 0.56); }
 
+    .quote-snippet[hidden] { display: none; }
+
     .quote-snippet blockquote {
       margin: 0;
       font-style: italic;
@@ -493,6 +503,58 @@
       font-weight: 700;
       font-size: 0.9rem;
       color: var(--plum);
+    }
+
+    .testimonial-rotator {
+      margin: 1rem auto 0;
+      max-width: 56rem;
+    }
+
+    .testimonial-rotator .quote-snippets {
+      display: block;
+      margin-top: 0;
+    }
+
+    .testimonial-rotator .quote-snippet + .quote-snippet {
+      margin-top: 0;
+      padding-top: 0.1rem;
+      border-top: 0;
+      border-left: 0;
+    }
+
+    .testimonial-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .testimonial-control {
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(51, 106, 100, 0.48);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.82);
+      color: var(--deep-teal);
+      font: 700 0.92rem/1 var(--font-brand);
+      cursor: pointer;
+    }
+
+    .testimonial-control:hover,
+    .testimonial-control:focus-visible {
+      border-color: var(--deep-teal);
+      background: rgba(51, 106, 100, 0.1);
+    }
+
+    .testimonial-status {
+      min-width: 7rem;
+      margin: 0;
+      font-size: 0.88rem !important;
+      line-height: 1.4 !important;
+      text-align: center;
+      color: rgba(43, 43, 43, 0.68) !important;
     }
 
     .start-panel {
@@ -739,8 +801,19 @@
       <h1>Start with what feels hard</h1>
       <p class="hero-intro">You do not need to know the right service before reaching out. Tell Bri what is happening, what feels hardest to hold, what you have tried, and what you wish felt easier. The form helps determine whether IFC may fit and what the next step should be.</p>
       <p class="intro-conversation">From there, Bri can recommend IFC support, a referral, or another next step.</p>
-      <div class="hero-inquiry-action">
-        <a class="btn btn-primary" href="#client-inquiry-form">Start the Inquiry</a>
+    </section>
+
+    <section class="section inquiry-help" aria-labelledby="inquiry-help-heading">
+      <div class="wrap-wide">
+        <div class="card">
+          <h2 id="inquiry-help-heading">This inquiry helps IFC:</h2>
+          <ul>
+            <li>Understand what feels hard and who is involved.</li>
+            <li>Check location, scheduling, safety, scope, and general affordability fit.</li>
+            <li>Identify whether an introductory conversation makes sense.</li>
+            <li>Recommend IFC support, a referral, or another next step.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -756,50 +829,37 @@
 
     <section class="section inquiry-details" aria-label="Inquiry details">
       <div class="wrap-wide">
-        <div class="cards">
-          <div class="card">
-            <h2>This inquiry helps IFC:</h2>
-            <ul>
-              <li>Understand what feels hard and who is involved.</li>
-              <li>Check location, scheduling, safety, scope, and general affordability fit.</li>
-              <li>Identify whether an introductory conversation makes sense.</li>
-              <li>Recommend IFC support, a referral, or another next step.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h2>This form is not for:</h2>
-            <ul>
-              <li>Emergency requests or crisis response.</li>
-              <li>Detailed medical, legal, custody, or crisis information.</li>
-              <li>A full intake, service agreement, evaluation, or guarantee of service.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="crisis-note" role="note" aria-label="Emergency and crisis note">
-          <p>If this is an emergency or there is immediate danger, call 911.<br>If you or someone needs urgent mental health crisis support, call or text 988 for the Suicide &amp; Crisis Lifeline.</p>
-        </div>
-
-        <div class="quote-snippets" aria-label="Kind words from families">
-          <figure class="quote-snippet">
-            <blockquote>
-              <p>Bri brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
-            </blockquote>
-            <figcaption>- Jewel Spencer</figcaption>
-          </figure>
-          <figure class="quote-snippet">
-            <blockquote>
-              <p>Bri brings the same warmth to the whole family and is a true partner in care.</p>
-            </blockquote>
-            <figcaption>- Heather Jeng</figcaption>
-          </figure>
-        </div>
-
         <div class="start-panel">
           <h2>What happens next</h2>
           <p>After you submit the form, I&rsquo;ll read through your inquiry and reach out using the contact method you chose. From there, we can schedule an introductory conversation and figure out what comes next together.</p>
           <p class="secondary-email">Have a question before filling out the form? Email <a href="mailto:bri@interwoven.care?subject=Client%20Inquiry%20question">bri@interwoven.care</a>.</p>
           <p class="note">This is for non-urgent inquiries only.</p>
+        </div>
+
+        <div class="testimonial-rotator" data-testimonial-rotator role="region" aria-label="Kind words from families" aria-roledescription="carousel">
+          <div class="quote-snippets">
+            <figure class="quote-snippet" data-testimonial role="group" aria-roledescription="slide">
+              <blockquote>
+                <p>Bri brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
+              </blockquote>
+              <figcaption>- Jewel Spencer</figcaption>
+            </figure>
+            <figure class="quote-snippet" data-testimonial role="group" aria-roledescription="slide" hidden>
+              <blockquote>
+                <p>Bri brings the same warmth to the whole family and is a true partner in care.</p>
+              </blockquote>
+              <figcaption>- Heather Jeng</figcaption>
+            </figure>
+          </div>
+          <div class="testimonial-controls">
+            <button class="testimonial-control" type="button" data-testimonial-previous aria-label="Previous testimonial">Previous</button>
+            <p class="testimonial-status" data-testimonial-status aria-live="polite" aria-atomic="true"></p>
+            <button class="testimonial-control" type="button" data-testimonial-next aria-label="Next testimonial">Next</button>
+          </div>
+        </div>
+
+        <div class="crisis-note" role="note" aria-label="Emergency and crisis note">
+          <p>If this is an emergency or there is immediate danger, call 911.<br>If you or someone needs urgent mental health crisis support, call or text 988 for the Suicide &amp; Crisis Lifeline.</p>
         </div>
       </div>
     </section>
@@ -834,6 +894,27 @@
       if (event.key === 'Escape' && nav.classList.contains('open')) {
         closeNavigation(true);
       }
+    });
+
+    document.querySelectorAll('[data-testimonial-rotator]').forEach((rotator) => {
+      const testimonials = Array.from(rotator.querySelectorAll('[data-testimonial]'));
+      const previous = rotator.querySelector('[data-testimonial-previous]');
+      const next = rotator.querySelector('[data-testimonial-next]');
+      const status = rotator.querySelector('[data-testimonial-status]');
+      let current = 0;
+
+      const showTestimonial = (index) => {
+        current = (index + testimonials.length) % testimonials.length;
+        testimonials.forEach((testimonial, testimonialIndex) => {
+          testimonial.hidden = testimonialIndex !== current;
+          testimonial.setAttribute('aria-label', `${testimonialIndex + 1} of ${testimonials.length}`);
+        });
+        status.textContent = `Testimonial ${current + 1} of ${testimonials.length}`;
+      };
+
+      previous.addEventListener('click', () => showTestimonial(current - 1));
+      next.addEventListener('click', () => showTestimonial(current + 1));
+      showTestimonial(0);
     });
   </script>
 </body>
