@@ -336,7 +336,10 @@
         radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
     }
 
-    .crest { width: min(63vw, 19vh, 170px); }
+    /* The homepage house is intentionally larger than the secondary-page crest. */
+    .hero .crest { width: min(63vw, 25vh, 220px); }
+
+    .hero-wordmark { margin: 0; line-height: 0; }
 
     .wordmark {
       width: min(88vw, 42vh, 420px);
@@ -344,7 +347,7 @@
     }
 
     .lede {
-      margin: clamp(0.55rem, 1.2vh, 0.75rem) 0 0;
+      margin: var(--space-intro-content) 0 0;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 700;
       font-size: clamp(1.15rem, 2.4vw, 1.42rem);
@@ -518,7 +521,7 @@
     }
 
     .hero-quote {
-      margin: clamp(0.5rem, 1.1vh, 0.7rem) auto 0;
+      margin: var(--space-intro-content) auto 0;
       max-width: 46rem;
       padding: 0.45rem 0;
       border-top: 1px solid rgba(217, 161, 93, 0.56);
@@ -1214,6 +1217,20 @@
       text-wrap: balance;
     }
 
+    .path-intro + .path-intro { margin-top: var(--space-heading-intro); }
+
+    .services-list + p {
+      max-width: 42rem;
+      margin: var(--space-intro-content) auto 0;
+      text-align: center;
+    }
+
+    .section-subheading {
+      font-family: var(--font-brand);
+      font-style: normal;
+      font-weight: 700;
+    }
+
     .path-grid {
       margin-top: var(--space-intro-content);
       display: grid;
@@ -1518,7 +1535,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      margin: 1.55rem auto 0;
+      margin: var(--space-section-compact) auto 0;
       font-family: "Quicksand", "Trebuchet MS", sans-serif;
       font-weight: 600;
       font-size: 0.92rem;
@@ -1558,23 +1575,17 @@
     .social-links .facebook { color: #336A64; }
     .social-links .substack { color: #9A622A; }
 
-    /* ---------- Early Bri credibility ---------- */
+    /* ---------- Page-integrated, two-sided brackets ---------- */
 
-    .early-bri {
-      background:
-        radial-gradient(circle at 12% 20%, rgba(217, 161, 93, 0.12), transparent 34%),
-        linear-gradient(135deg, rgba(255, 253, 249, 0.9), rgba(240, 244, 232, 0.86));
-    }
-
-    .early-bri-card {
-      max-width: 54rem;
+    .bracketed-block {
+      --bracket-color: var(--teal);
       margin: 0 auto;
       padding: clamp(1.5rem, 4vw, 2.35rem);
-      border: 1px solid rgba(51, 106, 100, 0.16);
-      border-left: 0.42rem solid var(--teal);
+      border: 0;
+      border-inline: 0.42rem solid var(--bracket-color);
       border-radius: 18px;
-      background: rgba(255, 253, 249, 0.84);
-      box-shadow: 0 8px 24px rgba(43, 43, 43, 0.06);
+      background: transparent;
+      box-shadow: none;
     }
 
     .early-bri-card h2 {
@@ -2714,24 +2725,7 @@
       transform: rotate(7deg);
     }
 
-    .knot-divider {
-      gap: 0.9rem;
-      padding-block: 0.8rem;
-    }
-
-    .knot-divider::before,
-    .knot-divider::after {
-      height: 2px;
-      background: repeating-linear-gradient(
-        90deg,
-        rgba(82, 101, 28, 0.48) 0 0.48rem,
-        transparent 0.48rem 0.78rem
-      );
-    }
-
-    .knot-divider img {
-      filter: brightness(0.93) saturate(1.08) drop-shadow(0 1px 0 rgba(199, 154, 69, 0.22));
-    }
+    /* All homepage dividers retain the lighter 1px gradient and unfiltered heart. */
 
     #offerings {
       padding-bottom: clamp(2.1rem, 4.5vh, 3.15rem);
@@ -2742,7 +2736,7 @@
     }
 
     .knot-divider + #philosophy {
-      padding-top: clamp(2.2rem, 5vh, 3.5rem);
+      padding-top: var(--space-section-compact);
     }
 
     .support-card {
@@ -3413,29 +3407,48 @@
     }
 
     #pricing .payment-note {
-      position: relative;
+      --bracket-color: var(--plum);
       max-width: 48rem;
-      margin: 0 auto;
-      padding: clamp(1.6rem, 4vw, 2.35rem);
-      border: 1px solid rgba(51, 106, 100, 0.18);
-      border-left: 0.42rem solid rgba(122, 46, 79, 0.72);
-      border-radius: 13px 20px 15px 10px;
-      background:
-        linear-gradient(124deg, rgba(156, 167, 140, 0.07), transparent 28%),
-        var(--fabric-cream);
-      box-shadow: 0 12px 30px rgba(43, 43, 43, 0.075);
+      margin: var(--space-heading-intro) auto 0;
     }
 
     #pricing .payment-note::before {
-      position: absolute;
-      top: 0.78rem;
-      right: 1.1rem;
-      width: 2.7rem;
-      height: 0.2rem;
-      margin: 0;
-      background: repeating-linear-gradient(90deg, rgba(199, 154, 69, 0.82) 0 0.3rem, transparent 0.3rem 0.52rem);
-      transform: rotate(2deg);
+      content: none;
     }
+
+    #pricing .payment-note p:not(.eyebrow) { text-align: center; }
+
+    #pricing .payment-note h2 { margin-top: 0; }
+
+    /* One section-start offset and one eyebrow rhythm across the homepage. */
+    #offerings,
+    #pricing,
+    #about,
+    #philosophy,
+    #about-bri,
+    #faqs {
+      padding-top: var(--space-section-compact);
+      scroll-margin-top: calc(var(--nav-h) + 1rem);
+    }
+
+    .section .eyebrow + h2,
+    .section .eyebrow + .bracketed-block {
+      margin-top: var(--space-heading-intro);
+    }
+
+    #about-bri .founder-intro { margin-top: var(--space-section-compact); }
+
+    #kind-words {
+      margin-top: var(--space-section-compact);
+      background: transparent;
+      overflow: visible;
+    }
+
+    #kind-words::before { content: none; }
+
+    #kind-words .section-subheading { margin: 0 0 var(--space-heading-intro); }
+
+    #kind-words .quotes { margin-top: var(--space-intro-content); }
 
     #pricing .payment-actions {
       margin-bottom: 0;
@@ -3704,13 +3717,13 @@
   <main id="main">
     <section class="hero" id="top">
       <img class="crest rise d1" src="assets/house.png" alt="" width="640" height="709">
-      <h1 style="margin:0; line-height:0;">
+      <div class="hero-wordmark">
         <span class="sr-only">Interwoven Family Care™</span>
         <img class="wordmark rise d2" src="assets/wordmark.png" alt="" width="1120" height="530">
-      </h1>
-      <p class="lede rise d3">Support that fits real family life.</p>
+      </div>
+      <h1 class="lede rise d3">Support that fits real family life.</h1>
       <p class="hero-quote rise d4">&ldquo;I highly recommend her to families seeking child care or support, especially families with added layers of needs.&rdquo; <span>&mdash; Heather Jeng</span></p>
-      <p class="sub rise d3">Adaptive in-home family coaching and practical support for families in Tacoma and nearby Pierce County.</p>
+      <p class="sub rise d3">Adaptive in-home family coaching with practical support for families in Tacoma and nearby Pierce County.</p>
       <div class="hero-actions rise d4">
         <a class="btn btn-primary" href="/client-inquiry/">Start an Inquiry</a>
       </div>
@@ -3718,25 +3731,13 @@
 
     <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
 
-    <section class="section early-bri" aria-labelledby="early-bri-heading">
-      <div class="wrap" data-reveal>
-        <div class="early-bri-card">
-          <h2 id="early-bri-heading">Working With Miss Bri</h2>
-          <p>Interwoven Family Care is owner-operated. When you reach out, you&rsquo;re speaking with me, Brianna Waugh. Call me Bri. I am the person who will be working alongside your family.</p>
-          <p>I&rsquo;ve worked with children and families since 2015, with a background in early childhood education, in-home care, Reggio Emilia-inspired and Montessori environments, and Head Start and Early Head Start. My experience also includes trauma-informed support and neurodivergent-affirming care for children and families with layered needs.</p>
-          <p>That experience shapes how I work alongside your family: with curiosity, respect, practical support, and attention to each person in your family.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
     <section class="section path-overview" id="offerings">
       <div class="wrap-wide" data-reveal>
-        <h2>The Advice Makes Sense. So Why Isn&rsquo;t It Working for Us?</h2>
-        <p class="path-intro">On paper, it works. Then you look at your family, your reality, and worry: how am I supposed to make that work?</p>
-        <p class="path-intro">Show me what feels hard, what that looks like at home, what you&rsquo;ve tried, and how it&rsquo;s been going. Let me help you look at the whole picture, notice what needs noticing, and work with you to find a clear next step.</p>
-        <p class="services-intro">These are some of the ways I can help:</p>
+        <p class="eyebrow">Services</p>
+        <h2>The Advice Makes Sense.</h2>
+        <h3 class="pullquote section-subheading">So Why Isn&rsquo;t It Working for Us?</h3>
+        <p class="path-intro">On paper, it works. Then you look at your family and your reality and worry, &lsquo;How am <em>I</em> supposed to make that work?&rsquo;</p>
+        <p class="path-intro">Show me what feels hard, what that looks like at home, what you&rsquo;ve tried, and how it&rsquo;s going. Let me help you see the whole picture. Let me notice what needs noticing and work with you to find a clear next step.</p>
         <ul class="services-list">
           <li>
             <h3>Routines &amp; Transitions</h3>
@@ -3747,7 +3748,7 @@
             <p>Organizing questions, notes, priorities, and next steps before school or provider conversations so you feel more prepared for what you want to ask, share, or understand.</p>
           </li>
           <li>
-            <h3>Making It Work</h3>
+            <h3>Making Recommendations Work</h3>
             <p>Advice or recommendations that make sense on paper, recurring conflicts, stuck decisions, or things you have already tried that are not working in real life. We can look at what is getting in the way and find something practical to try next.</p>
           </li>
           <li>
@@ -3755,7 +3756,7 @@
             <p>Small, practical changes to home spaces, materials, access, and setup that can support regulation, participation, play, independence, and easier transitions.</p>
           </li>
           <li>
-            <h3>Caregiver Relief &amp; In-Home Care</h3>
+            <h3>Practical In-Home Care</h3>
             <p>Respite, recurring childcare, backup care, or another capable adult helping care for your children and hold part of the week when you need more breathing room.</p>
           </li>
           <li>
@@ -3763,7 +3764,7 @@
             <p>Finding, comparing, and sorting through community resources, referrals, programs, or next-step options so the maze feels less impossible. Navigation, not formal case management or guaranteed access.</p>
           </li>
         </ul>
-        <p>You do not need to know the right service name before reaching out. Tell me what feels hard. We&rsquo;ll talk through what is happening, figure out what support fits, and make sure you know what I&rsquo;m recommending and what it will cost before you decide what comes next.</p>
+        <p>You don&rsquo;t need to know what particular service you need before reaching out. Just tell me what feels hard and we&rsquo;ll talk about what&rsquo;s happening. We&rsquo;ll figure out what support fits, and I&rsquo;ll make sure you understand what I&rsquo;m recommending and what it will cost before you decide whether you want to move forward.</p>
       </div>
     </section>
 
@@ -3771,11 +3772,10 @@
 
     <section class="section anchor-target" id="pricing">
       <div class="wrap-wide" data-reveal>
-        <div class="payment-note">
-          <p class="eyebrow">Written scope, clear price</p>
-          <h2>Pricing</h2>
-          <p>Pricing depends on the kind of support involved, the time it takes, and what is included.</p>
-          <p>You will know the recommended scope and price before support begins.</p>
+        <p class="eyebrow">Pricing</p>
+        <div class="payment-note bracketed-block">
+          <h2>Support shaped around your needs.</h2>
+          <p>Take a look at support options, starting rates, and how pricing works for different kinds of support.</p>
           <div class="payment-actions">
             <a class="btn btn-ghost" href="https://interwoven.care/pricing/">View Pricing</a>
           </div>
@@ -3788,7 +3788,7 @@
     <section class="section" id="about">
       <div class="wrap" data-reveal>
         <p class="eyebrow">About IFC</p>
-        <h2>Built around your family</h2>
+        <h2>Care built around your family</h2>
         <div class="about-grid">
           <div class="about-copy">
             <p>Interwoven Family Care is built for the parts of family life that do not fit neatly into a preset service. Support is shaped with families around what works, what feels hard, what each person communicates, what the environment demands, and what the caregiver can realistically carry.</p>
@@ -3853,7 +3853,13 @@
 
     <section class="section" id="about-bri">
       <div class="wrap" data-reveal>
-        <h2>About Miss Bri</h2>
+        <p class="eyebrow">About Miss Bri</p>
+        <div class="early-bri-card bracketed-block">
+          <h2 id="early-bri-heading">Working With Miss Bri</h2>
+          <p>Interwoven Family Care is owner-operated. When you reach out, you&rsquo;re speaking with me, Brianna Waugh. Call me Bri. I am the person who will be working alongside your family.</p>
+          <p>I&rsquo;ve worked with children and families since 2015, with a background in early childhood education, in-home care, Reggio Emilia- and Montessori-inspired environments, and Head Start/Early Head Start. My experience also includes trauma-informed, neurodiversity-affirming support for children and families with layered needs.</p>
+          <p>This experience shapes how I work alongside your family: with curiosity, respect, practical support, and attention to each person in your family.</p>
+        </div>
         <div class="founder-intro">
           <div class="founder-portrait">
             <img src="assets/bri-founder.jpg" alt="Brianna Waugh as a child" width="960" height="686">
@@ -3863,31 +3869,43 @@
         <p>I&rsquo;m Brianna &ldquo;Bri&rdquo; Waugh, Owner and Family Support Provider. I have worked in early childhood education and family-related care since 2015. My background includes an Associate&rsquo;s Degree with an early-childhood focus, Reggio Emilia-inspired and Montessori experience, Head Start and Early Head Start, in-home care, and work with neurodivergent children and families with layered needs.</p>
         <p>I pay attention to what opens a door: the favorite cup, the song that soothes, the color someone chooses every time, the routine that almost works, and the moment everyone keeps getting stuck. Support has to be specific to the family in front of me.</p>
       </div>
-    </section>
-
-    <div class="knot-divider" aria-hidden="true"><img src="assets/heart.png" alt=""></div>
-
-    <section class="section" id="kind-words">
-      <div class="wrap-wide" data-reveal>
-        <p class="eyebrow">Trust &amp; Experience</p>
-        <h2>Built on Trust</h2>
-        <div class="quotes quotes-pair">
-          <figure class="quote-card">
-            <blockquote>
-              <p>Bri has been a remarkable caregiver for both of my children, first when my oldest was a toddler and again years later with my younger child. She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
-              <p>One of my children is nonverbal and autistic, and Bri went above and beyond to connect with him through visual tools and his special interests. She is thorough, follows up with detailed care plans, and her expertise in child development shines through in every interaction. I trust her completely and highly recommend her holistic approach to anyone seeking exceptional child care and family support. I know any parent who walks through her door will feel the same trust and warmth we did.</p>
-            </blockquote>
-            <figcaption>Jewel Spencer <span>Past client, connected since 2015</span></figcaption>
-          </figure>
-          <figure class="quote-card">
-            <blockquote>
-              <p>Bri's holistic care for children, seeing and accepting them just as they are, is phenomenal. She has always shown up for our neurodivergent daughter with real presence and investment in our child's special interests and favorite activities. She brings the same warmth to the whole family and is a true partner in care.</p>
-              <p>Bri's reliability, strong background in early childhood education and child development, and excellent judgment are additional reasons we have always rested easy when our daughter has been in her care. I highly recommend her to families seeking child care or support, especially families with added layers of needs, including IEPs, 504s, diagnostic processes, and respite care. Our daughter adores Bri and always enjoys their time together.</p>
-              <p>Bri was an excellent caretaker for my child. She was patient and kind, and took my child's needs to heart. I wholeheartedly recommend her services.</p>
-            </blockquote>
-            <figcaption>Heather and Way Jeng <span>Past clients, connected since 2019</span></figcaption>
-          </figure>
+      <div id="kind-words">
+        <div class="wrap-wide" data-reveal>
+          <!-- Retain the original label accessibly without a second visible eyebrow. -->
+          <p class="sr-only">Trust &amp; Experience</p>
+          <h3 class="pullquote section-subheading">Built on Trust</h3>
+          <div class="quotes quotes-pair">
+            <figure class="quote-card">
+              <blockquote>
+                <p>Bri has been a remarkable caregiver for both of my children, first when my oldest was a toddler and again years later with my younger child. She brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
+                <p>One of my children is nonverbal and autistic, and Bri went above and beyond to connect with him through visual tools and his special interests. She is thorough, follows up with detailed care plans, and her expertise in child development shines through in every interaction. I trust her completely and highly recommend her holistic approach to anyone seeking exceptional child care and family support. I know any parent who walks through her door will feel the same trust and warmth we did.</p>
+              </blockquote>
+              <figcaption>Jewel Spencer <span>Past client, connected since 2015</span></figcaption>
+            </figure>
+            <figure class="quote-card">
+              <blockquote>
+                <p>Bri's holistic care for children, seeing and accepting them just as they are, is phenomenal. She has always shown up for our neurodivergent daughter with real presence and investment in our child's special interests and favorite activities. She brings the same warmth to the whole family and is a true partner in care.</p>
+                <p>Bri's reliability, strong background in early childhood education and child development, and excellent judgment are additional reasons we have always rested easy when our daughter has been in her care. I highly recommend her to families seeking child care or support, especially families with added layers of needs, including IEPs, 504s, diagnostic processes, and respite care. Our daughter adores Bri and always enjoys their time together.</p>
+                <p>Bri was an excellent caretaker for my child. She was patient and kind, and took my child's needs to heart. I wholeheartedly recommend her services.</p>
+              </blockquote>
+              <figcaption>Heather and Way Jeng <span>Past clients, connected since 2019</span></figcaption>
+            </figure>
+          </div>
         </div>
+      </div>
+      <div class="social-links" aria-label="Interwoven Family Care social links">
+        <a class="substack" href="https://substack.com/@interwovenfamilycare" aria-label="Interwoven Family Care on Substack">
+          <svg aria-hidden="true"><use href="#icon-substack"></use></svg>
+          Substack
+        </a>
+        <a class="facebook" href="https://www.facebook.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Facebook">
+          <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+          Facebook
+        </a>
+        <a class="instagram" href="https://www.instagram.com/interwovenfamilycare/" aria-label="Interwoven Family Care on Instagram">
+          <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+          Instagram
+        </a>
       </div>
     </section>
 
