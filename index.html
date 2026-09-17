@@ -1210,19 +1210,33 @@
       padding-bottom: var(--space-section-compact);
     }
 
-    .path-intro {
+    #offerings .path-intro,
+    #offerings .services-list + p {
       max-width: 54rem;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       text-align: left;
       text-wrap: pretty;
     }
 
+    .path-intro { margin-top: 0; margin-bottom: 0; }
+
     .path-intro + .path-intro { margin-top: var(--space-heading-intro); }
 
     .services-list + p {
-      max-width: 42rem;
-      margin: var(--space-intro-content) auto 0;
-      text-align: left;
+      margin-top: var(--space-intro-content);
+      margin-bottom: 0;
+    }
+
+    #offerings > .wrap-wide > h2 {
+      margin: var(--space-intro-content) 0 var(--space-heading-intro);
+      color: var(--ink);
+    }
+
+    #offerings .section-subheading {
+      margin: 0 0 var(--space-intro-content);
+      color: var(--ink);
+      line-height: 1.35;
     }
 
     .section-subheading {
@@ -1391,40 +1405,22 @@
       width: 0.56rem;
       height: 0.56rem;
       border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%);
-      box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.13);
+      background: var(--service-accent-color);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--service-accent-color) 13%, transparent);
     }
 
     .services-list h3 {
       margin: 0 0 0.3rem;
-      color: var(--deep-teal);
+      color: var(--ink);
       font-family: var(--font-brand);
       font-size: 1.08rem;
       line-height: 1.35;
     }
 
-    #offerings .service-title {
-      padding: 0.12em 0.4em;
-      border-radius: 0.15rem;
-      background: var(--service-title-color);
-      color: var(--fabric-cream);
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-    }
-
-    #offerings .service-title--moss { --service-title-color: var(--service-moss); }
-    #offerings .service-title--plum { --service-title-color: var(--plum); }
-
-    #offerings .service-title--ochre {
-      --service-title-color: var(--ochre);
-      /* This darker neutral meets AA contrast on golden ochre. */
-      color: #202020;
-    }
-
-    #offerings .service-title--copper {
-      --service-title-color: var(--copper);
-      color: var(--ink);
-    }
+    #offerings .service-accent--moss { --service-accent-color: var(--service-moss); }
+    #offerings .service-accent--plum { --service-accent-color: var(--plum); }
+    #offerings .service-accent--ochre { --service-accent-color: var(--ochre); }
+    #offerings .service-accent--copper { --service-accent-color: var(--copper); }
 
     .services-list p {
       margin: 0;
@@ -3776,28 +3772,28 @@
         <p class="path-intro">On paper, it works. Then you look at your family and your reality and worry, &lsquo;How am <em>I</em> supposed to make that work?&rsquo;</p>
         <p class="path-intro">Show me what feels hard, what that looks like at home, what you&rsquo;ve tried, and how it&rsquo;s going. Let me help you see the whole picture. Let me notice what needs noticing and work with you to find a clear next step.</p>
         <ul class="services-list">
-          <li>
-            <h3><span class="service-title service-title--moss">Routines &amp; Transitions</span></h3>
+          <li class="service-accent--moss">
+            <h3>Routines &amp; Transitions</h3>
             <p>If getting out the door, bedtime, handoffs, cleanup, or any other everyday transition keeps becoming hard, I can help in the moment. That may mean helping your child through it, caring for siblings so you can hold space for your child, or stepping in when you need a minute. We can talk about what you are seeing, what I am seeing, and adjust the routine together so it works better for your family.</p>
           </li>
-          <li>
-            <h3><span class="service-title service-title--plum">Advocacy Preparation</span></h3>
+          <li class="service-accent--plum">
+            <h3>Advocacy Preparation</h3>
             <p>If you have a school, healthcare, or other important meeting coming up, I can help you sort through what you want to make sure gets discussed. I can organize notes, prepare questions, and, if you need, attend with you to listen and help you keep track of what was said. Afterward, we can debrief, sort through what still needs clarification, and figure out next steps. I am there to support and prepare you.</p>
           </li>
-          <li>
-            <h3><span class="service-title service-title--ochre">Making Recommendations Work</span></h3>
+          <li class="service-accent--ochre">
+            <h3>Making Recommendations Work</h3>
             <p>When advice makes sense on paper but is hard to apply to real life, let me help. We can figure out what the recommendation looks like for your family, put supports in place, try things together, and change what needs it along the way. I can also help find opportunities to participate outside the home and in the community.</p>
           </li>
-          <li>
-            <h3><span class="service-title service-title--copper">Home Environment Support</span></h3>
+          <li class="service-accent--copper">
+            <h3>Home Environment Support</h3>
             <p>Is your home working for you or against you? Can your child reach what they need, put things away, and genuinely participate in caring for the home? If there&rsquo;s a space in your home that&rsquo;s making life harder, I can help you figure out what needs to shift and work on it with you.</p>
           </li>
-          <li>
-            <h3><span class="service-title service-title--plum">Practical In-Home Care</span></h3>
+          <li class="service-accent--plum">
+            <h3>Practical In-Home Care</h3>
             <p>Sometimes you need a partner. Let me assist in caring for your children, keeping the day moving, stepping in where you need me, and giving you room to do whatever you want or need to do with that time. I&rsquo;m there to carry part of that load with and for you.</p>
           </li>
-          <li>
-            <h3><span class="service-title service-title--moss">Resource Navigation</span></h3>
+          <li class="service-accent--moss">
+            <h3>Resource Navigation</h3>
             <p>There are a lot of resources out there, and knowing which ones are worth your time can be half the battle. I understand local systems well and can help you find options that fit and understand how to access them. I can help with the process as needed. Sometimes it&rsquo;s paperwork, a phone call, or just knowing where to start.</p>
           </li>
         </ul>
