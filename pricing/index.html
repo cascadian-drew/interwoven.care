@@ -1039,22 +1039,21 @@
     .thread-map .map-node {
       border-width: 2px;
       border-color: var(--node-accent);
-      background:
-        radial-gradient(ellipse at 48% 42%, color-mix(in srgb, var(--ifc-soft-ivory) 96%, white), color-mix(in srgb, var(--ifc-soft-ivory) 88%, white) 44%, transparent 66%),
-        radial-gradient(ellipse at 50% 50%, transparent 62%, color-mix(in srgb, var(--node-accent) 7%, transparent) 82%, color-mix(in srgb, var(--node-accent) 14%, transparent) 100%),
-        var(--ifc-light-surface);
+      background: var(--ifc-light-surface);
       color: var(--ifc-charcoal);
       box-shadow:
-        0 0 0 2px color-mix(in srgb, var(--node-accent) 58%, transparent),
-        0 0 0 7px color-mix(in srgb, var(--node-accent) 16%, transparent),
-        0 0 18px 7px color-mix(in srgb, var(--node-accent) 12%, transparent),
-        0 9px 18px rgba(43, 43, 43, 0.055);
+        0 0 0 2px color-mix(in srgb, var(--node-accent) 16%, transparent),
+        0 5px 11px rgba(43, 43, 43, 0.07);
+    }
+
+    .thread-map .map-node::before {
+      opacity: 0;
     }
 
     .thread-map .map-node::after {
-      border-color: color-mix(in srgb, var(--node-accent) 76%, transparent);
-      box-shadow: 0 0 0 1px color-mix(in srgb, var(--node-accent) 20%, transparent);
-      opacity: 0.86;
+      border: 0;
+      box-shadow: none;
+      opacity: 0;
     }
 
     .thread-map .map-node:hover,
@@ -1062,10 +1061,10 @@
     .thread-map .map-node[aria-pressed="true"] {
       border-color: var(--node-accent);
       box-shadow:
-        0 0 0 3px color-mix(in srgb, var(--node-accent) 64%, transparent),
-        0 0 0 8px color-mix(in srgb, var(--node-accent) 20%, transparent),
-        0 0 20px 8px color-mix(in srgb, var(--node-accent) 14%, transparent),
-        0 12px 24px rgba(43, 43, 43, 0.09);
+        0 0 0 3px color-mix(in srgb, var(--node-accent) 24%, transparent),
+        0 7px 14px rgba(43, 43, 43, 0.09);
+      filter: none;
+      transform: translate(-50%, calc(-50% - 2px));
     }
 
     .thread-map .map-node:focus-visible,
