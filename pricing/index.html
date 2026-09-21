@@ -25,14 +25,14 @@
 
   <style>
     :root {
-      --teal: #336A64;
-      --deep-teal: #2B5A55;
-      --moss: #7A962B;
-      --copper: #D9A15D;
-      --plum: #7A2E4F;
-      --ivory: #F6F3EE;
-      --ink: #2B2B2B;
-      --sunlit-moss: #9CA78C;
+      --teal: var(--ifc-smoky-dark-teal);
+      --deep-teal: var(--ifc-teal-hover);
+      --moss: var(--ifc-moss-sunlight);
+      --copper: var(--ifc-copper);
+      --plum: var(--ifc-mulberry);
+      --ivory: var(--ifc-page-bg);
+      --ink: var(--ifc-body-text);
+      --sunlit-moss: color-mix(in srgb, var(--ifc-moss-sunlight) 28%, var(--ifc-soft-ivory));
       --nav-h: 3.6rem;
       --space-section: clamp(3rem, 7vh, 5rem);
       --space-section-compact: clamp(2.2rem, 5vh, 3.4rem);
@@ -41,13 +41,13 @@
       --space-intro-content: clamp(1.45rem, 3vh, 2.15rem);
       --space-section-tail: clamp(1.4rem, 3vh, 2.25rem);
       --font-display: Georgia, "Times New Roman", serif;
-      --action-primary: var(--teal);
-      --action-primary-hover: var(--deep-teal);
-      --action-schedule: var(--plum);
-      --action-schedule-hover: #642640;
-      --action-secondary-bg: rgba(255, 253, 249, 0.8);
-      --action-secondary-border: rgba(122, 46, 79, 0.42);
-      --action-text-on-dark: #FFFDF9;
+      --action-primary: var(--ifc-primary-action);
+      --action-primary-hover: var(--ifc-teal-hover);
+      --action-schedule: var(--ifc-schedule-action);
+      --action-schedule-hover: var(--ifc-mulberry-hover);
+      --action-secondary-bg: color-mix(in srgb, var(--ifc-soft-ivory) 88%, transparent);
+      --action-secondary-border: color-mix(in srgb, var(--ifc-copper) 54%, transparent);
+      --action-text-on-dark: var(--ifc-action-text-on-dark);
     }
 
     * { box-sizing: border-box; }
@@ -61,9 +61,9 @@
         linear-gradient(
           180deg,
           var(--ivory) 0%,
-          #F8F5EF 32%,
-          #F4F2EA 62%,
-          #F7F3EC 100%
+          color-mix(in srgb, var(--ifc-soft-ivory) 97%, var(--ifc-logo-peach)) 32%,
+          color-mix(in srgb, var(--ifc-soft-ivory) 96%, var(--ifc-smoky-dark-teal)) 62%,
+          color-mix(in srgb, var(--ifc-soft-ivory) 97%, var(--ifc-mulberry)) 100%
         );
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -88,7 +88,7 @@
           rgba(246, 243, 238, 0) 0%,
           rgba(63, 122, 115, 0.035) 42%,
           rgba(122, 46, 79, 0.03) 68%,
-          rgba(217, 161, 93, 0.035) 100%
+          rgba(201, 162, 39, 0.035) 100%
         );
     }
 
@@ -168,7 +168,7 @@
       bottom: 0;
       height: 2px;
       border-radius: 2px;
-      background: var(--copper);
+      background: var(--ifc-nav-detail);
       transform: scaleX(0);
       transform-origin: center;
       transition: transform 180ms ease;
@@ -185,7 +185,7 @@
     }
 
     .nav-links a.nav-inquiry::after {
-      background: var(--teal);
+      background: var(--ifc-nav-detail);
       transform: scaleX(0.36);
     }
 
@@ -278,7 +278,7 @@
 
       .nav-links a.nav-inquiry {
         padding-left: 0.75rem;
-        box-shadow: inset 3px 0 0 rgba(51, 106, 100, 0.62);
+        box-shadow: inset 3px 0 0 rgba(63, 122, 115, 0.62);
       }
 
       .nav-cta {
@@ -299,7 +299,7 @@
       padding: clamp(1rem, 2.4vh, 1.5rem) 1.5rem clamp(1.1rem, 2.6vh, 1.6rem);
       background-image:
         radial-gradient(55rem 38rem at 10% -10%, rgba(63, 122, 115, 0.08), transparent 60%),
-        radial-gradient(48rem 34rem at 105% 108%, rgba(217, 161, 93, 0.12), transparent 60%);
+        radial-gradient(48rem 34rem at 105% 108%, rgba(201, 162, 39, 0.12), transparent 60%);
     }
 
     .crest { width: min(63vw, 19vh, 170px); }
@@ -327,7 +327,7 @@
     .hero-intro {
       margin: 0.8rem auto 0;
       max-width: 50rem;
-      color: rgba(43, 43, 43, 0.86);
+
       text-wrap: balance;
     }
 
@@ -378,10 +378,7 @@
       text-wrap: balance;
     }
 
-    .section p,
-    .section li {
-      color: rgba(43, 43, 43, 0.88);
-    }
+
 
     .knot-divider {
       display: flex;
@@ -408,9 +405,9 @@
       max-width: 48rem;
       padding: 0.75rem 1rem;
       border-left: 4px solid var(--plum);
-      border-right: 4px solid rgba(217, 161, 93, 0.72);
+      border-right: 4px solid rgba(201, 162, 39, 0.72);
       border-radius: 12px;
-      background: linear-gradient(90deg, rgba(122, 46, 79, 0.08), rgba(217, 161, 93, 0.055));
+      background: linear-gradient(90deg, rgba(122, 46, 79, 0.08), rgba(201, 162, 39, 0.055));
     }
 
     .soft-note p {
@@ -458,18 +455,18 @@
       width: 0.42rem;
       height: 0.42rem;
       border-radius: 999px;
-      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #254D49 100%);
+      background: radial-gradient(circle at 35% 30%, rgba(151, 203, 197, 0.95), var(--teal) 58%, #3F7A73 100%);
       box-shadow: 0 0 0 3px rgba(63, 122, 115, 0.12);
     }
 
     .care-thread-list li:nth-child(2n)::before {
-      background: radial-gradient(circle at 35% 30%, rgba(216, 154, 179, 0.95), var(--plum) 58%, #4B1830 100%);
+      background: radial-gradient(circle at 35% 30%, rgba(216, 154, 179, 0.95), var(--plum) 58%, #7A2E4F 100%);
       box-shadow: 0 0 0 3px rgba(122, 46, 79, 0.1);
     }
 
     .care-thread-list li:nth-child(3n)::before {
-      background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 58%, #8D5A27 100%);
-      box-shadow: 0 0 0 3px rgba(217, 161, 93, 0.14);
+      background: radial-gradient(circle at 35% 30%, rgba(247, 206, 166, 0.95), var(--copper) 58%, #98552F 100%);
+      box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.14);
     }
 
     .section-in-home {
@@ -507,7 +504,7 @@
     .coaching-offer:nth-child(2) {
       background:
         linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
-        linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(217, 161, 93, 0.42)) border-box;
+        linear-gradient(90deg, rgba(122, 46, 79, 0.66), rgba(201, 162, 39, 0.42)) border-box;
     }
 
     .in-home-card:nth-child(3) {
@@ -550,7 +547,7 @@
       padding: 0.85rem 1rem;
       border-left: 4px solid var(--copper);
       border-radius: 10px;
-      background: rgba(217, 161, 93, 0.075);
+      background: rgba(201, 162, 39, 0.075);
       font-size: 0.92rem !important;
       line-height: 1.5 !important;
     }
@@ -581,7 +578,7 @@
       border-radius: 16px;
       background:
         linear-gradient(rgba(255, 253, 249, 0.92), rgba(255, 253, 249, 0.92)) padding-box,
-        linear-gradient(90deg, rgba(63, 122, 115, 0.86), rgba(122, 46, 79, 0.58), rgba(217, 161, 93, 0.7)) border-box;
+        linear-gradient(90deg, rgba(63, 122, 115, 0.86), rgba(122, 46, 79, 0.58), rgba(201, 162, 39, 0.7)) border-box;
       box-shadow: 0 6px 22px rgba(43, 43, 43, 0.07);
     }
 
@@ -738,7 +735,7 @@
 
     .line-option-b { stroke: rgba(82, 105, 31, 0.68); }
     .line-option-d { stroke: rgba(63, 122, 115, 0.5); }
-    .line-gold { stroke: rgba(217, 161, 93, 0.46); }
+    .line-gold { stroke: rgba(201, 162, 39, 0.46); }
 
     .thread-lines .vine-leaf {
       fill: rgba(122, 150, 43, 0.58);
@@ -748,7 +745,7 @@
     }
 
     .thread-lines .vine-leaf.plum { fill: rgba(122, 46, 79, 0.6); }
-    .thread-lines .vine-leaf.gold { fill: rgba(217, 161, 93, 0.66); }
+    .thread-lines .vine-leaf.gold { fill: rgba(201, 162, 39, 0.66); }
 
     .thread-lines .botanical-stem {
       fill: none;
@@ -771,7 +768,7 @@
       stroke-width: 0.18;
     }
 
-    .thread-lines .botanical-bud.gold { fill: rgba(217, 161, 93, 0.82); }
+    .thread-lines .botanical-bud.gold { fill: rgba(201, 162, 39, 0.82); }
 
     .thread-lines .vine-wrap {
       fill: none;
@@ -800,12 +797,12 @@
       justify-content: center;
       gap: 0.18rem;
       padding: 1.2rem;
-      border: 1.5px solid rgba(217, 161, 93, 0.42);
+      border: 1.5px solid rgba(201, 162, 39, 0.42);
       border-radius: 52% 48% 46% 54% / 48% 54% 46% 52%;
       background:
         radial-gradient(ellipse at 48% 42%, rgba(255, 253, 249, 0.98), rgba(255, 253, 249, 0.88) 45%, transparent 68%),
         radial-gradient(ellipse at 74% 82%, rgba(122, 46, 79, 0.11), transparent 48%),
-        radial-gradient(ellipse at 24% 18%, rgba(217, 161, 93, 0.1), transparent 44%),
+        radial-gradient(ellipse at 24% 18%, rgba(201, 162, 39, 0.1), transparent 44%),
         repeating-radial-gradient(ellipse at 50% 50%, rgba(82, 105, 31, 0.055) 0 1px, transparent 1px 7px),
         linear-gradient(145deg, rgba(255, 253, 249, 0.96), rgba(246, 243, 238, 0.86));
       color: var(--plum);
@@ -817,7 +814,7 @@
         0 12px 24px rgba(75, 24, 48, 0.09);
       line-height: 1.14;
       text-align: center;
-      outline: 1px solid rgba(217, 161, 93, 0.26);
+      outline: 1px solid rgba(201, 162, 39, 0.26);
       outline-offset: 5px;
     }
 
@@ -829,7 +826,7 @@
       background:
         repeating-conic-gradient(
           from -10deg,
-          rgba(217, 161, 93, 0.62) 0 5deg,
+          rgba(201, 162, 39, 0.62) 0 5deg,
           transparent 5deg 15deg,
           rgba(82, 105, 31, 0.42) 15deg 20deg,
           transparent 20deg 33deg
@@ -866,7 +863,7 @@
       font-weight: 400;
     }
 
-    .map-node {
+    .thread-map .map-node {
       position: absolute;
       z-index: 3;
       width: var(--node-w, clamp(9.9rem, 14vw, 12rem));
@@ -914,7 +911,7 @@
       border-radius: var(--node-radius, inherit);
       box-shadow:
         inset 0 0 18px rgba(122, 150, 43, 0.06),
-        0 0 0 1px rgba(217, 161, 93, 0.18);
+        0 0 0 1px rgba(201, 162, 39, 0.18);
       transform: rotate(var(--ring-tilt, 7deg)) scaleX(0.96);
       opacity: 0.7;
     }
@@ -925,7 +922,7 @@
       box-shadow:
         0 0 0 2px rgba(67, 89, 25, 0.24),
         0 0 0 6px rgba(122, 150, 43, 0.1),
-        0 0 0 9px rgba(217, 161, 93, 0.075),
+        0 0 0 9px rgba(201, 162, 39, 0.075),
         inset 0 0 22px rgba(255, 253, 249, 0.2),
         0 12px 24px rgba(75, 24, 48, 0.09);
       filter: brightness(1.055) saturate(1.02);
@@ -933,7 +930,7 @@
     }
 
     .map-node:focus-visible {
-      outline: 2px dashed rgba(217, 161, 93, 0.88);
+      outline: 2px dashed rgba(201, 162, 39, 0.88);
       outline-offset: 0.55rem;
     }
 
@@ -945,12 +942,12 @@
     .map-node[aria-pressed="true"] {
       border-color: rgba(122, 150, 43, 0.68);
       transform: translate(-50%, calc(-50% - 3px));
-      outline: 2px dashed rgba(217, 161, 93, 0.78);
+      outline: 2px dashed rgba(201, 162, 39, 0.78);
       outline-offset: 0.52rem;
       box-shadow:
         0 0 0 2px rgba(122, 46, 79, 0.22),
         0 0 0 6px rgba(122, 150, 43, 0.13),
-        0 0 0 10px rgba(217, 161, 93, 0.1),
+        0 0 0 10px rgba(201, 162, 39, 0.1),
         inset 0 0 22px rgba(255, 253, 249, 0.2),
         0 13px 26px rgba(75, 24, 48, 0.12);
       filter: brightness(1.045) saturate(1.01);
@@ -958,7 +955,7 @@
 
     .map-node[aria-pressed="true"]::after {
       border-style: dashed;
-      border-color: rgba(217, 161, 93, 0.58);
+      border-color: rgba(201, 162, 39, 0.58);
       opacity: 0.92;
     }
 
@@ -1030,13 +1027,51 @@
       padding-left: 0.4rem;
     }
 
-    .node-after-school { left: 13%; top: 31%; --node-w: clamp(10rem, 14.6vw, 12.4rem); --node-h: clamp(7.8rem, 11.4vw, 9.4rem); --node-radius: 55% 45% 51% 49% / 48% 54% 46% 52%; --ring-tilt: 8deg; }
-    .node-respite { left: 44%; top: 15%; --node-w: clamp(9.6rem, 13.5vw, 11.4rem); --node-h: clamp(7.4rem, 10.8vw, 9.2rem); --node-radius: 48% 52% 47% 53% / 53% 47% 52% 48%; --ring-tilt: -7deg; }
-    .node-backup { left: 79%; top: 29%; --node-w: clamp(9.8rem, 13.8vw, 11.8rem); --node-h: clamp(7.7rem, 11.2vw, 9.5rem); --node-radius: 50% 50% 54% 46% / 46% 53% 47% 54%; --ring-tilt: 5deg; }
-    .node-recommendations { left: 83%; top: 67%; --node-w: clamp(10.1rem, 14.4vw, 12.2rem); --node-h: clamp(8.2rem, 12vw, 10.1rem); --node-radius: 47% 53% 50% 50% / 52% 46% 54% 48%; --ring-tilt: -9deg; }
-    .node-advocacy { left: 61%; top: 88%; --node-w: clamp(9.8rem, 13.8vw, 11.7rem); --node-h: clamp(7.9rem, 11.5vw, 9.7rem); --node-radius: 54% 46% 48% 52% / 47% 53% 49% 51%; --ring-tilt: 11deg; }
-    .node-summer { left: 35%; top: 86%; --node-w: clamp(9.6rem, 13.5vw, 11.5rem); --node-h: clamp(7.6rem, 11vw, 9.4rem); --node-radius: 49% 51% 53% 47% / 54% 46% 51% 49%; --ring-tilt: -6deg; }
-    .node-drop-in { left: 14%; top: 66%; --node-w: clamp(9.5rem, 13.3vw, 11.4rem); --node-h: clamp(7.4rem, 10.9vw, 9.1rem); --node-radius: 53% 47% 49% 51% / 49% 51% 46% 54%; --ring-tilt: 7deg; }
+    .node-after-school { left: 13%; top: 31%; --node-accent: var(--ifc-sapphire); --node-w: clamp(10rem, 14.6vw, 12.4rem); --node-h: clamp(7.8rem, 11.4vw, 9.4rem); --node-radius: 55% 45% 51% 49% / 48% 54% 46% 52%; --ring-tilt: 8deg; }
+    .node-respite { left: 44%; top: 15%; --node-accent: var(--ifc-emerald); --node-w: clamp(9.6rem, 13.5vw, 11.4rem); --node-h: clamp(7.4rem, 10.8vw, 9.2rem); --node-radius: 48% 52% 47% 53% / 53% 47% 52% 48%; --ring-tilt: -7deg; }
+    .node-backup { left: 79%; top: 29%; --node-accent: var(--ifc-ruby); --node-w: clamp(9.8rem, 13.8vw, 11.8rem); --node-h: clamp(7.7rem, 11.2vw, 9.5rem); --node-radius: 50% 50% 54% 46% / 46% 53% 47% 54%; --ring-tilt: 5deg; }
+    .node-recommendations { left: 83%; top: 67%; --node-accent: var(--ifc-amethyst); --node-w: clamp(10.1rem, 14.4vw, 12.2rem); --node-h: clamp(8.2rem, 12vw, 10.1rem); --node-radius: 47% 53% 50% 50% / 52% 46% 54% 48%; --ring-tilt: -9deg; }
+    .node-advocacy { left: 61%; top: 88%; --node-accent: var(--ifc-topaz); --node-w: clamp(9.8rem, 13.8vw, 11.7rem); --node-h: clamp(7.9rem, 11.5vw, 9.7rem); --node-radius: 54% 46% 48% 52% / 47% 53% 49% 51%; --ring-tilt: 11deg; }
+    .node-summer { left: 35%; top: 86%; --node-accent: var(--ifc-copper); --node-w: clamp(9.6rem, 13.5vw, 11.5rem); --node-h: clamp(7.6rem, 11vw, 9.4rem); --node-radius: 49% 51% 53% 47% / 54% 46% 51% 49%; --ring-tilt: -6deg; }
+    .node-drop-in { left: 14%; top: 66%; --node-accent: var(--ifc-gold); --node-w: clamp(9.5rem, 13.3vw, 11.4rem); --node-h: clamp(7.4rem, 10.9vw, 9.1rem); --node-radius: 53% 47% 49% 51% / 49% 51% 46% 54%; --ring-tilt: 7deg; }
+
+    /* Each map option keeps Charcoal text and carries its accent in the ring. */
+    .thread-map .map-node {
+      border-width: 2px;
+      border-color: var(--node-accent);
+      background:
+        radial-gradient(ellipse at 48% 42%, color-mix(in srgb, var(--ifc-soft-ivory) 96%, white), color-mix(in srgb, var(--ifc-soft-ivory) 88%, white) 44%, transparent 66%),
+        radial-gradient(ellipse at 50% 50%, transparent 62%, color-mix(in srgb, var(--node-accent) 7%, transparent) 82%, color-mix(in srgb, var(--node-accent) 14%, transparent) 100%),
+        var(--ifc-light-surface);
+      color: var(--ifc-charcoal);
+      box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--node-accent) 58%, transparent),
+        0 0 0 7px color-mix(in srgb, var(--node-accent) 16%, transparent),
+        0 0 18px 7px color-mix(in srgb, var(--node-accent) 12%, transparent),
+        0 9px 18px rgba(43, 43, 43, 0.055);
+    }
+
+    .thread-map .map-node::after {
+      border-color: color-mix(in srgb, var(--node-accent) 76%, transparent);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--node-accent) 20%, transparent);
+      opacity: 0.86;
+    }
+
+    .thread-map .map-node:hover,
+    .thread-map .map-node:focus-visible,
+    .thread-map .map-node[aria-pressed="true"] {
+      border-color: var(--node-accent);
+      box-shadow:
+        0 0 0 3px color-mix(in srgb, var(--node-accent) 64%, transparent),
+        0 0 0 8px color-mix(in srgb, var(--node-accent) 20%, transparent),
+        0 0 20px 8px color-mix(in srgb, var(--node-accent) 14%, transparent),
+        0 12px 24px rgba(43, 43, 43, 0.09);
+    }
+
+    .thread-map .map-node:focus-visible,
+    .thread-map .map-node[aria-pressed="true"] {
+      outline-color: var(--node-accent);
+    }
 
     .story-panel {
       position: absolute;
@@ -1050,7 +1085,7 @@
       border: 1px solid rgba(122, 46, 79, 0.22);
       border-radius: 8px;
       background:
-        linear-gradient(90deg, rgba(122, 46, 79, 0.035), transparent 12%, transparent 88%, rgba(217, 161, 93, 0.05)),
+        linear-gradient(90deg, rgba(122, 46, 79, 0.035), transparent 12%, transparent 88%, rgba(201, 162, 39, 0.05)),
         repeating-linear-gradient(0deg, transparent 0 12px, rgba(122, 150, 43, 0.018) 12px 13px),
         rgba(255, 253, 249, 0.97);
       box-shadow: 0 18px 38px rgba(43, 43, 43, 0.12);
@@ -1122,16 +1157,16 @@
 
     .story-back:hover,
     .story-back:focus-visible {
-      border-color: rgba(217, 161, 93, 0.72);
-      color: #4B1830;
-      outline: 2px dashed rgba(217, 161, 93, 0.85);
+      border-color: rgba(201, 162, 39, 0.72);
+      color: #7A2E4F;
+      outline: 2px dashed rgba(201, 162, 39, 0.85);
       outline-offset: 3px;
     }
 
     .story-panel h3 {
       margin: 0;
       padding-right: 2.7rem;
-      color: #4B1830;
+      color: #7A2E4F;
       font-family: var(--font-display);
       font-size: clamp(1.65rem, 3.5vw, 2.55rem);
       font-weight: 400;
@@ -1176,7 +1211,7 @@
 
     .detail-row {
       padding: 0.85rem 0.95rem 0.9rem;
-      border-top: 1px solid rgba(217, 161, 93, 0.42);
+      border-top: 1px solid rgba(201, 162, 39, 0.42);
       border-left: 3px solid rgba(122, 150, 43, 0.42);
       border-radius: 7px;
       background:
@@ -1198,7 +1233,7 @@
       margin: 1.25rem auto 0;
       max-width: 36rem;
       padding-top: 0.95rem;
-      border-top: 1px solid rgba(217, 161, 93, 0.44);
+      border-top: 1px solid rgba(201, 162, 39, 0.44);
       color: rgba(43, 43, 43, 0.72);
       font-style: italic;
       font-size: 0.96rem;
@@ -1291,7 +1326,7 @@
       padding: 2rem 1rem 1.6rem;
       border-top: 0;
       background:
-        linear-gradient(180deg, rgba(63, 122, 115, 0.08), rgba(217, 161, 93, 0.1) 58%, rgba(255, 253, 249, 0.68));
+        linear-gradient(180deg, rgba(63, 122, 115, 0.08), rgba(201, 162, 39, 0.1) 58%, rgba(255, 253, 249, 0.68));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1470,11 +1505,11 @@
 
     .pricing-option-wide {
       grid-column: 1 / -1;
+      border-bottom-color: color-mix(in srgb, var(--ifc-gold) 58%, transparent);
     }
 
     .pricing-option h3 {
       margin: 0 0 0.3rem;
-      color: var(--deep-teal);
     }
 
     .pricing-option h4 {
@@ -1492,7 +1527,8 @@
 
     .pricing-option .standard-price {
       margin: 0;
-      color: var(--plum);
+      border-bottom: 1px solid color-mix(in srgb, var(--ifc-gold) 52%, transparent);
+      color: var(--ifc-copper);
     }
 
     .pricing-option .pricing-minimum {
@@ -1529,7 +1565,6 @@
     .secondary-contact {
       margin: 1rem auto 0;
       max-width: 38rem;
-      color: rgba(43, 43, 43, 0.72);
     }
 
     .secondary-contact a {
@@ -1556,6 +1591,23 @@
       padding-left: 0.12rem;
     }
 
+    #after-school-care { --target-accent: var(--ifc-sapphire); }
+    #respite { --target-accent: var(--ifc-emerald); }
+    #backup-care { --target-accent: var(--ifc-ruby); }
+    #making-it-work { --target-accent: var(--ifc-amethyst); }
+    #advocacy-preparation { --target-accent: var(--ifc-topaz); }
+    #seasonal-care { --target-accent: var(--ifc-copper); }
+    #occasional-care { --target-accent: var(--ifc-gold); }
+
+    .pricing-option .pricing-examples .pricing-target::marker {
+      color: var(--target-accent);
+    }
+
+    .pricing-examples .pricing-target:target {
+      box-shadow: inset 3px 0 0 var(--target-accent);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--target-accent) 9%, transparent), transparent 74%);
+    }
+
     .pricing-option .pricing-examples strong {
       color: var(--plum);
     }
@@ -1563,6 +1615,10 @@
     .pricing-option .scope-elements {
       margin-top: 0.55rem;
       margin-bottom: 0.9rem;
+    }
+
+    .pricing-option .scope-elements li::marker {
+      color: var(--ifc-moss-sunlight);
     }
 
     .custom-quote-list {
