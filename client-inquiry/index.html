@@ -71,8 +71,7 @@
     .brand,
     .nav-links a:not(.nav-cta),
     .nav-cta,
-    .hero-subhead,
-    .quote-snippet figcaption {
+    .hero-subhead {
       font-family: var(--font-brand);
     }
 
@@ -333,7 +332,7 @@
 
     .hero-note {
       margin: var(--space-divider) auto 0;
-      max-width: 44rem;
+      max-width: 50rem;
 
       text-wrap: balance;
     }
@@ -482,17 +481,15 @@
 
     .quote-snippet p + p { margin-top: 0.35rem; }
 
-    .quote-snippet figcaption {
-      margin-top: 0.45rem;
-      font-family: "Quicksand", "Trebuchet MS", sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--plum);
-    }
-
     .testimonial-rotator {
       margin: 1rem auto 0;
       max-width: 56rem;
+    }
+
+    .testimonial-rotator:focus-visible {
+      outline: 3px solid var(--ifc-mulberry);
+      outline-offset: 4px;
+      border-radius: 4px;
     }
 
     .testimonial-rotator .quote-snippets {
@@ -505,41 +502,6 @@
       padding-top: 0.1rem;
       border-top: 0;
       border-left: 0;
-    }
-
-    .testimonial-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-
-    .testimonial-control {
-      min-width: 2.75rem;
-      min-height: 2.75rem;
-      padding: 0.45rem 0.8rem;
-      border: 1px solid rgba(63, 122, 115, 0.48);
-      border-radius: 999px;
-      background: rgba(255, 253, 249, 0.82);
-      color: var(--deep-teal);
-      font: 700 0.92rem/1 var(--font-brand);
-      cursor: pointer;
-    }
-
-    .testimonial-control:hover,
-    .testimonial-control:focus-visible {
-      border-color: var(--deep-teal);
-      background: rgba(63, 122, 115, 0.1);
-    }
-
-    .testimonial-status {
-      min-width: 7rem;
-      margin: 0;
-      font-size: 0.88rem !important;
-      line-height: 1.4 !important;
-      text-align: center;
-      color: rgba(43, 43, 43, 0.68) !important;
     }
 
     .start-panel {
@@ -596,13 +558,15 @@
     }
 
     .inquiry-form-wrap {
-      width: min(100%, 560px);
+      width: 100%;
+      max-width: 50rem;
       margin-inline: auto;
     }
 
     .form-embed {
       width: 100%;
-      margin: 0;
+      max-width: 560px;
+      margin: 0 auto;
       min-height: 18rem;
       background: #F6F3EE;
     }
@@ -743,7 +707,10 @@
       padding-bottom: 1rem;
     }
 
-    .inquiry-form .hero-note { margin-top: 0; }
+    .inquiry-form .hero-note {
+      margin-top: 0;
+      text-align: center;
+    }
 
     @media (max-width: 720px) {
       :root {
@@ -822,25 +789,18 @@
           <p class="note">This is for non-urgent inquiries only.</p>
         </div>
 
-        <div class="testimonial-rotator" data-testimonial-rotator role="region" aria-label="Kind words from families" aria-roledescription="carousel">
-          <div class="quote-snippets">
+        <div class="testimonial-rotator" data-testimonial-rotator role="region" aria-label="Kind words from families. Focus to pause; use left and right arrow keys to change quotations." aria-roledescription="carousel" tabindex="0">
+          <div class="quote-snippets" aria-live="off">
             <figure class="quote-snippet" data-testimonial role="group" aria-roledescription="slide">
               <blockquote>
-                <p>Bri brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.</p>
+                <p>&ldquo;Bri brings genuine warmth to families and is deeply invested in parent engagement. I have never seen someone connect with children the way she does.&rdquo;</p>
               </blockquote>
-              <figcaption>- Jewel Spencer</figcaption>
             </figure>
             <figure class="quote-snippet" data-testimonial role="group" aria-roledescription="slide" hidden>
               <blockquote>
-                <p>Bri brings the same warmth to the whole family and is a true partner in care.</p>
+                <p>&ldquo;Bri brings the same warmth to the whole family and is a true partner in care.&rdquo;</p>
               </blockquote>
-              <figcaption>- Heather Jeng</figcaption>
             </figure>
-          </div>
-          <div class="testimonial-controls">
-            <button class="testimonial-control" type="button" data-testimonial-previous aria-label="Previous testimonial">Previous</button>
-            <p class="testimonial-status" data-testimonial-status aria-live="polite" aria-atomic="true"></p>
-            <button class="testimonial-control" type="button" data-testimonial-next aria-label="Next testimonial">Next</button>
           </div>
         </div>
 
@@ -884,23 +844,65 @@
 
     document.querySelectorAll('[data-testimonial-rotator]').forEach((rotator) => {
       const testimonials = Array.from(rotator.querySelectorAll('[data-testimonial]'));
-      const previous = rotator.querySelector('[data-testimonial-previous]');
-      const next = rotator.querySelector('[data-testimonial-next]');
-      const status = rotator.querySelector('[data-testimonial-status]');
+      const quoteSnippets = rotator.querySelector('.quote-snippets');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       let current = 0;
+      let rotationTimer = null;
+      let hovered = false;
+      let focused = false;
 
-      const showTestimonial = (index) => {
+      const showTestimonial = (index, announce = false) => {
         current = (index + testimonials.length) % testimonials.length;
+        quoteSnippets.setAttribute('aria-live', announce ? 'polite' : 'off');
         testimonials.forEach((testimonial, testimonialIndex) => {
           testimonial.hidden = testimonialIndex !== current;
           testimonial.setAttribute('aria-label', `${testimonialIndex + 1} of ${testimonials.length}`);
         });
-        status.textContent = `Testimonial ${current + 1} of ${testimonials.length}`;
       };
 
-      previous.addEventListener('click', () => showTestimonial(current - 1));
-      next.addEventListener('click', () => showTestimonial(current + 1));
+      const pauseRotation = () => {
+        window.clearTimeout(rotationTimer);
+        rotationTimer = null;
+      };
+
+      const playRotation = () => {
+        if (rotationTimer || testimonials.length < 2 || reducedMotion.matches || hovered || focused || document.hidden) return;
+        const holdTime = 15000 + Math.floor(Math.random() * 5001);
+        rotationTimer = window.setTimeout(() => {
+          rotationTimer = null;
+          showTestimonial(current + 1);
+          playRotation();
+        }, holdTime);
+      };
+
+      rotator.addEventListener('pointerenter', () => {
+        hovered = true;
+        pauseRotation();
+      });
+      rotator.addEventListener('pointerleave', () => {
+        hovered = false;
+        playRotation();
+      });
+      rotator.addEventListener('focusin', () => {
+        focused = true;
+        pauseRotation();
+      });
+      rotator.addEventListener('focusout', (event) => {
+        if (rotator.contains(event.relatedTarget)) return;
+        focused = false;
+        playRotation();
+      });
+      rotator.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        showTestimonial(current + (event.key === 'ArrowRight' ? 1 : -1), true);
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) pauseRotation();
+        else playRotation();
+      });
       showTestimonial(0);
+      playRotation();
     });
   </script>
 </body>
