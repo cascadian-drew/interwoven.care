@@ -811,6 +811,16 @@
       transform: translateY(-50%);
     }
 
+    @media (min-width: 720px) {
+      .how-i-work-steps li:nth-child(3) {
+        padding-inline: 0.1rem;
+      }
+
+      .how-i-work-steps li:nth-child(3)::after {
+        right: -0.8rem;
+      }
+    }
+
     @media (max-width: 719px) {
       .how-i-work-principles {
         grid-template-columns: 1fr;
