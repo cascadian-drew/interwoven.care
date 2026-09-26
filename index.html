@@ -1325,20 +1325,47 @@
       margin: var(--space-intro-content) auto 0;
       padding: 0;
       max-width: 58rem;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: clamp(1.5rem, 4vw, 3rem);
-      row-gap: 1.2rem;
       list-style: none;
     }
 
     .services-list li {
-      position: relative;
       min-width: 0;
+      padding: clamp(1.15rem, 2.5vw, 1.55rem) 0;
+      border-top: 1px solid rgba(43, 43, 43, 0.12);
+    }
+
+    .services-list li:last-child {
+      border-bottom: 1px solid rgba(43, 43, 43, 0.12);
+    }
+
+    .service-details summary {
+      display: block;
+      list-style: none;
+      padding: 0;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .service-details {
+      border: 0;
+      padding-left: 0;
+    }
+
+    .service-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .service-details summary::after {
+      content: none;
+    }
+
+    .service-details summary h3 {
+      position: relative;
+      margin: 0;
       padding-left: 1.35rem;
     }
 
-    .services-list li::before {
+    .service-details summary h3::before {
       content: "";
       position: absolute;
       top: 0.48rem;
@@ -1350,8 +1377,8 @@
       box-shadow: 0 0 0 3px color-mix(in srgb, var(--service-accent-color) 13%, transparent);
     }
 
-    .services-list h3 {
-      margin: 0 0 0.3rem;
+    .service-toggle {
+      display: none;
     }
 
     /* Jewel markers follow the live service order without recoloring headings. */
@@ -1362,15 +1389,77 @@
     #offerings .services-list li:nth-child(5) { --service-accent-color: var(--ifc-topaz); }
     #offerings .services-list li:nth-child(6) { --service-accent-color: var(--ifc-copper); }
 
-    .services-list p {
+    .service-description {
+      max-width: 54rem;
+      padding: 0.55rem 0 0 1.35rem;
+    }
+
+    .service-description p {
       margin: 0;
+      padding: 0;
+    }
+
+    .service-description p + p {
+      margin-top: 0.82rem;
     }
 
     @media (max-width: 719px) {
       .services-list {
         max-width: 36rem;
-        grid-template-columns: 1fr;
-        row-gap: 1.05rem;
+      }
+
+      .services-list li {
+        padding: 0;
+      }
+
+      .service-details summary {
+        min-height: 3.35rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0.9rem 2.8rem 0.9rem 0;
+        pointer-events: auto;
+        cursor: pointer;
+      }
+
+      .service-details summary:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--service-accent-color) 42%, transparent);
+        outline-offset: 0.2rem;
+        border-radius: 0.35rem;
+      }
+
+      .service-details summary h3 {
+        width: 100%;
+      }
+
+      .service-toggle {
+        width: 1.8rem;
+        height: 1.8rem;
+        position: absolute;
+        right: 0.15rem;
+        top: 50%;
+        display: grid;
+        place-items: center;
+        transform: translateY(-50%);
+        border: 1px solid color-mix(in srgb, var(--service-accent-color) 42%, transparent);
+        border-radius: 50%;
+        color: var(--service-accent-color);
+        font-family: "Quicksand", "Trebuchet MS", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .service-toggle::before {
+        content: "+";
+      }
+
+      .service-details[open] .service-toggle::before {
+        content: "\2212";
+      }
+
+      .service-description {
+        padding: 0 0 1.05rem;
       }
     }
 
@@ -3685,42 +3774,66 @@
         <p class="path-intro">Show me what feels hard, what that looks like at home, what you&rsquo;ve tried, and how it&rsquo;s going. Let me help you see the whole picture. Let me notice what needs noticing and work with you to find a clear next step.</p>
         <ul class="services-list">
           <li class="service-accent--moss">
-            <h3>Routines &amp; Transitions</h3>
-            <p>Whether it&rsquo;s getting out the door, bedtime, handoffs, cleaning up, or another part of the day, I can help you build routines that work for your family and adjust the ones that aren&rsquo;t working.</p>
-            <p>Sometimes that means figuring out what&rsquo;s making a transition difficult or finding ways for your child to participate more independently. Sometimes you just need another pair of hands. I can help your child through a difficult moment, care for siblings so you can focus on your child, or step in when you need a minute.</p>
-            <p>You know your family best, and I bring an outside perspective. By working through everyday moments together, we can better understand what helps, what keeps getting in the way, and what might need support. I want our time together to give you more than just one easier morning or single smooth bedtime. I want you and your children to feel more capable and confident, not just while I&rsquo;m there, but as you continue learning and figuring things out together long after my visit.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Routines &amp; Transitions</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>Whether it&rsquo;s getting out the door, bedtime, handoffs, cleaning up, or another part of the day, I can help you build routines that work for your family and adjust the ones that aren&rsquo;t working.</p>
+                <p>Sometimes that means figuring out what&rsquo;s making a transition difficult or finding ways for your child to participate more independently. Sometimes you just need another pair of hands. I can help your child through a difficult moment, care for siblings so you can focus on your child, or step in when you need a minute.</p>
+                <p>You know your family best, and I bring an outside perspective. By working through everyday moments together, we can better understand what helps, what keeps getting in the way, and what might need support. I want our time together to give you more than just one easier morning or single smooth bedtime. I want you and your children to feel more capable and confident, not just while I&rsquo;m there, but as you continue learning and figuring things out together long after my visit.</p>
+              </div>
+            </details>
           </li>
           <li class="service-accent--plum">
-            <h3>Advocacy Preparation</h3>
-            <p>When you&rsquo;re preparing for a conversation or meeting about your child, I can help you sort through your thoughts, concerns, and questions so you know what you want to make sure gets discussed.</p>
-            <p>Depending on what you need, we can go through your records, organize your notes, and prepare questions together.</p>
-            <p>If you&rsquo;d like me with you there, I can also attend the meeting with you. You&rsquo;re there to have the conversation, and I&rsquo;m there to document what&rsquo;s discussed and help you keep track of what you wanted to address, including questions that come up during the meeting.</p>
-            <p>Afterward, we can talk through how the conversation went, review what was discussed, and make room for anything you didn&rsquo;t get a chance to address.</p>
-            <p>Together, we can sort through remaining questions, figure out what you might want to follow up on, and figure out your next steps.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Advocacy Preparation</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>When you&rsquo;re preparing for a conversation or meeting about your child, I can help you sort through your thoughts, concerns, and questions so you know what you want to make sure gets discussed.</p>
+                <p>Depending on what you need, we can go through your records, organize your notes, and prepare questions together.</p>
+                <p>If you&rsquo;d like me with you there, I can also attend the meeting with you. You&rsquo;re there to have the conversation, and I&rsquo;m there to document what&rsquo;s discussed and help you keep track of what you wanted to address, including questions that come up during the meeting.</p>
+                <p>Afterward, we can talk through how the conversation went, review what was discussed, and make room for anything you didn&rsquo;t get a chance to address.</p>
+                <p>Together, we can sort through remaining questions, figure out what you might want to follow up on, and figure out your next steps.</p>
+              </div>
+            </details>
           </li>
           <li class="service-accent--ochre">
-            <h3>Making Recommendations Work</h3>
-            <p>When advice makes sense on paper but is hard (or impossible) to apply to your life, let me help.</p>
-            <p>Together, we can figure out what the recommendation could look like for your family. I can help put practical supports in place, and we can give it a try. We&rsquo;ll see how it works in your everyday life and tweak what needs it. Or we can try something different.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Making Recommendations Work</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>When advice makes sense on paper but is hard (or impossible) to apply to your life, let me help.</p>
+                <p>Together, we can figure out what the recommendation could look like for your family. I can help put practical supports in place, and we can give it a try. We&rsquo;ll see how it works in your everyday life and tweak what needs it. Or we can try something different.</p>
+              </div>
+            </details>
           </li>
           <li class="service-accent--copper">
-            <h3>Home Environment Support</h3>
-            <p>Is your home working for you or against you?</p>
-            <p>If something about your home is making everyday life harder, we can figure out what needs to change and work on it together.</p>
-            <p>Can your child reach what they need, put things away, and genuinely participate in caring for the home?</p>
-            <p>Sometimes a change in where things belong or how a space is used can make a real difference in how your family moves through the day.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Home Environment Support</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>Is your home working for you or against you?</p>
+                <p>If something about your home is making everyday life harder, we can figure out what needs to change and work on it together.</p>
+                <p>Can your child reach what they need, put things away, and genuinely participate in caring for the home?</p>
+                <p>Sometimes a change in where things belong or how a space is used can make a real difference in how your family moves through the day.</p>
+              </div>
+            </details>
           </li>
           <li class="service-accent--plum">
-            <h3>Practical In-Home Care</h3>
-            <p>Sometimes you need a partner who can see your home like you do. Someone who gets to know your family, understands how your days work, and can step in without needing you to explain every little thing.</p>
-            <p>Maybe you need me to care for your children while you get something done. Maybe you need help caring for your home and keeping the day moving. Or maybe you just need some time to yourself.</p>
-            <p>Whatever you need that day, I&rsquo;m there to help carry the weight.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Practical In-Home Care</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>Sometimes you need a partner who can see your home like you do. Someone who gets to know your family, understands how your days work, and can step in without needing you to explain every little thing.</p>
+                <p>Maybe you need me to care for your children while you get something done. Maybe you need help caring for your home and keeping the day moving. Or maybe you just need some time to yourself.</p>
+                <p>Whatever you need that day, I&rsquo;m there to help carry the weight.</p>
+              </div>
+            </details>
           </li>
           <li class="service-accent--moss">
-            <h3>Resource Navigation</h3>
-            <p>Finding resources is one thing. Figuring out which ones might actually help your family, and how to access them, is another.</p>
-            <p>We can look at what&rsquo;s available and talk through which options make sense for your family.</p>
-            <p>Paperwork, a phone call, holding your hand through the steps. Whatever helps.</p>
+            <details class="service-details" open>
+              <summary><h3><span>Resource Navigation</span><span class="service-toggle" aria-hidden="true"></span></h3></summary>
+              <div class="service-description">
+                <p>Finding resources is one thing. Figuring out which ones might actually help your family, and how to access them, is another.</p>
+                <p>We can look at what&rsquo;s available and talk through which options make sense for your family.</p>
+                <p>Paperwork, a phone call, holding your hand through the steps. Whatever helps.</p>
+              </div>
+            </details>
           </li>
         </ul>
         <p>You don&rsquo;t have to know exactly what you need. Start with what feels hard, and we&rsquo;ll talk through what&rsquo;s happening.</p>
@@ -3943,6 +4056,31 @@
 
   <script>
     document.documentElement.classList.add('js');
+
+    const serviceDisclosures = [...document.querySelectorAll('.service-details')];
+    const serviceMobileQuery = window.matchMedia('(max-width: 719px)');
+
+    const syncServiceDisclosureMode = () => {
+      const isMobile = serviceMobileQuery.matches;
+      const mode = isMobile ? 'mobile' : 'desktop';
+
+      serviceDisclosures.forEach((details, index) => {
+        const summary = details.querySelector('summary');
+
+        if (details.dataset.layoutMode !== mode) {
+          details.open = isMobile ? index === 0 : true;
+          details.dataset.layoutMode = mode;
+        }
+
+        if (summary) {
+          if (isMobile) summary.removeAttribute('tabindex');
+          else summary.setAttribute('tabindex', '-1');
+        }
+      });
+    };
+
+    syncServiceDisclosureMode();
+    serviceMobileQuery.addEventListener('change', syncServiceDisclosureMode);
 
     const nav = document.getElementById('nav');
     const toggle = nav.querySelector('.nav-toggle');
